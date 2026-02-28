@@ -1,0 +1,41 @@
+import json
+import random
+import os
+
+os.makedirs("data", exist_ok=True)
+
+categories = {
+    "Animals": ["cat","dog","lion","tiger","zebra","giraffe","elephant","kangaroo","dolphin","whale","shark","penguin","bear","fox","wolf","owl","snake","frog","eagle","parrot"],
+    "Food": ["pizza","burger","pasta","salad","taco","sushi","cupcake","brownie","cheese","waffle","donut","bagel","steak","pie","omelette","pancake","bread","apple","banana","chocolate"],
+    "Movies": ["nemo","titanic","inception","gladiator","frozen","mulan","coco","up","alien","matrix","avatar","joker","batman","thor","hulk","ironman","spiderman","superman","blackpanther","wonderwoman"],
+    "Science": ["atom","quark","photon","gravity","eclipse","galaxy","neutron","dna","evolution","volcano","microscope","telescope","energy","force","mass","speed","planet","star","cell","virus"],
+    "Geography": ["amazon","sahara","nile","everest","alps","andorra","iceland","paris","tokyo","sydney","berlin","london","madrid","rome","moscow","nigeria","china","india","canada","brazil"],
+    "History": ["renaissance","revolution","medieval","empire","pharaoh","colonial","sputnik","apollo","viking","napoleon","gutenberg","industrial","roman","medici","caesar","alexander","cleopatra","washington","churchill","lincoln"]
+}
+
+def difficulty(word):
+    if len(word)<=4:
+        return "Easy"
+    elif len(word)<=6:
+        return "Medium"
+    elif len(word)<=8:
+        return "Hard"
+    else:
+        return "Very Hard"
+
+full_list = {}
+
+for cat, seeds in categories.items():
+    entries=[]
+    while len(entries) < 170:
+        w = random.choice(seeds)
+        suffix = "".join(random.choices("ABCDEFGHIJKLMNOPQRSTUVWXYZ", k=random.randint(0,3)))
+        word_final = (w + suffix).upper()
+        hint = f"A word related to {cat.lower()}."
+        entries.append({"word": word_final, "hint": hint, "difficulty": difficulty(word_final)})
+    full_list[cat] = entries
+
+with open("data/words.json","w") as f:
+    json.dump(full_list,f,indent=2)
+
+print(f"✅ Generated 'data/words.json' with total words: {sum(len(v) for v in full_list.values())}")
