@@ -212,13 +212,18 @@ class Game(commands.Cog):
             )
             # Show mini scoreboard (names only)
             round_scores = []
-            for pid in game["players"]:
-                total = self.scores[guild_id].get(pid, 0)
-                member = message.guild.get_member(pid)
-                name = member.name if member else f"User {pid}"
-                round_scores.append(f"{name} - {total} points")
-            scoreboard = "\n".join(round_scores)
-            await message.channel.send(f"📊 **Current Scores (All Players):**\n{scoreboard}")
+for pid, pdata in game["players"].items():
+    total = self.scores[guild_id].get(pid, 0)
+    # Try to get member from cache
+    member = message.guild.get_member(pid)
+    if member:
+        name = member.name
+    else:
+        # Fallback to stored name in pdata or "Unknown"
+        name = pdata.get("name", "Unknown")
+    round_scores.append(f"{name} - {total} points")
+scoreboard = "\n".join(round_scores)
+await message.channel.send(f"📊 **Current Scores :**\n{scoreboard}")
 
             # Move to next word automatically
             await asyncio.sleep(2)  # small delay
