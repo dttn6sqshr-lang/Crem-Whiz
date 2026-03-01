@@ -223,3 +223,8 @@ class Game(commands.Cog):
         timer_task = self.timers.pop(guild_id, None)
         if timer_task:
             timer_task.cancel()
+
+
+# ----- Cog setup -----
+async def setup(bot: commands.Bot):
+    await bot.add_cog(Game(bot))
