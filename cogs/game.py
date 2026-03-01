@@ -213,15 +213,15 @@ class Game(commands.Cog):
             await message.channel.send(f"{feedback_line}\n❤️ {message.author.mention} guesses left: {player['guesses_left']}")
 
         # Mini round scoreboard after any correct guess
-        if correct:
-            round_scores = []
-            for pid, pdata in game["players"].items():
-                total = self.scores[guild_id].get(pid, 0)
-                member = message.guild.get_member(pid)
-                name = member.name if member else f"User {pid}"
-                round_scores.append(f"{name} - {total} points")
-            scoreboard = "\n".join(round_scores)
-            await message.channel.send(f"📊 **Current Scores (All Players):**\n{scoreboard}")
+        # NEW: Mini round scoreboard using only player names, no mention
+round_scores = []
+for pid, pdata in game["players"].items():
+    total = self.scores[guild_id].get(pid, 0)
+    member = message.guild.get_member(pid)
+    name = member.name if member else f"User {pid}"
+    round_scores.append(f"{name} - {total} points")
+scoreboard = "\n".join(round_scores)
+await message.channel.send(f"📊 **Current Scores:**\n{scoreboard}")
 
         await self.bot.process_commands(message)
 
