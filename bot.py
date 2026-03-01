@@ -4,16 +4,19 @@ from discord.ext import commands
 TOKEN = "PUT_YOUR_TOKEN_HERE"
 
 intents = discord.Intents.default()
-bot = commands.Bot(command_prefix="!", intents=intents)
+
+class MyBot(commands.Bot):
+    async def setup_hook(self):
+        # Load cogs properly
+        await self.load_extension("cogs.game")
+        # Sync commands
+        await self.tree.sync()
+        print("✅ Commands synced")
+
+bot = MyBot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
-    await bot.tree.sync()
     print(f"✅ Logged in as {bot.user}")
-
-async def load():
-    await bot.load_extension("cogs.game")
-
-bot.loop.create_task(load())
 
 bot.run(TOKEN)
