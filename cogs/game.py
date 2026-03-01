@@ -9,8 +9,19 @@ class Game(commands.Cog):
         self.bot = bot
         self.games = {}  # {guild_id: game_data}
 
+        # Load words
         with open("data/words.json", "r", encoding="utf-8") as f:
             self.words = json.load(f)
+
+        # Points scaling by difficulty, guesses fixed to 3
+        self.difficulties = [
+            {"points": 1},  # Very Easy
+            {"points": 2},  # Easy
+            {"points": 3},  # Medium
+            {"points": 4},  # Hard
+            {"points": 5},  # Very Hard
+            {"points": 6},  # Extreme
+        ]
 
     # ----- Category dropdown -----
     class CategorySelect(discord.ui.Select):
@@ -23,11 +34,13 @@ class Game(commands.Cog):
             category = self.values[0]
             entry = random.choice(self.cog.words[category])
 
+            difficulty = random.choice(self.cog.difficulties)
+
             self.cog.games[interaction.guild_id] = {
                 "word": entry["word"].upper(),
                 "hint": entry["hint"],
-                "guesses": 3,
-                "points": 3
+                "guesses": 3,  # fixed guesses
+                "points": difficulty["points"],
             }
 
             word_len = len(entry["word"])
@@ -36,7 +49,7 @@ class Game(commands.Cog):
                 f"📚 Category: **{category}**\n"
                 f"✏ Word length: **{word_len} letters**\n"
                 f"💡 Hint: {entry['hint']}\n"
-                f"❤️ Guesses: 3 | Points: 3\n\n"
+                f"❤️ Guesses: 3 | Points: {difficulty['points']}\n\n"
                 f"Type your guess directly in the channel!\n"
                 f"Use `/hint` for extra help!"
             )
@@ -88,7 +101,6 @@ class Game(commands.Cog):
     # ----- Listen for guesses in channel -----
     @commands.Cog.listener()
     async def on_message(self, message):
-        # ignore bots
         if message.author.bot:
             return
 
@@ -100,7 +112,7 @@ class Game(commands.Cog):
         answer = game["word"]
 
         if len(guess_word) != len(answer):
-            return  # only accept guesses of correct length
+            return
 
         # Wordle feedback
         feedback = []
@@ -125,18 +137,25 @@ class Game(commands.Cog):
         game["guesses"] -= 1
 
         if guess_word == answer:
+            points_won = game["points"]
             del self.games[message.guild.id]
-            await message.channel.send(f"🎉 **Correct!** The word was **{answer}**\n{feedback_line}")
+            await message.channel.send(
+                f"🎉 **Correct!** The word was **{answer}**\n{feedback_line}\n"
+                f"🏆 You earned **{points_won} points!**"
+            )
         elif game["guesses"] <= 0:
+            points_lost = game["points"]
             del self.games[message.guild.id]
-            await message.channel.send(f"💀 Out of guesses! The word was **{answer}**\n{feedback_line}")
+            await message.channel.send(
+                f"💀 Out of guesses! The word was **{answer}**\n{feedback_line}\n"
+                f"⚠ You lost **{points_lost} points**"
+            )
         else:
             await message.channel.send(
                 f"{feedback_line}\n💡 Hint: {game['hint']}\n"
                 f"❤️ Guesses left: {game['guesses']} | Points: {game['points']}"
             )
 
-        # ⚡ Important: allow commands to process if you have other cogs/commands
         await self.bot.process_commands(message)
 
 async def setup(bot):
