@@ -70,20 +70,18 @@ class Game(commands.Cog):
             await interaction.response.send_message("❌ No game running. Use /startgame first.", ephemeral=True)
             return
 
-        # Player-specific hint tracking
         player = game["players"].setdefault(user_id, {"guesses_left": 3, "hints_used": 0})
         if player["hints_used"] >= 3:
             await interaction.response.send_message("❌ You have used all 3 hints for this round.", ephemeral=True)
             return
 
-        # Deduct cumulative points for this hint
         self.scores.setdefault(guild_id, {})
         self.scores[guild_id][user_id] = self.scores[guild_id].get(user_id, 0)
         deduction = player["hints_used"] + 1
         self.scores[guild_id][user_id] = max(0, self.scores[guild_id][user_id] - deduction)
         player["hints_used"] += 1
 
-        # Generate hint display
+        # Reveal first letter + random letter
         answer = game["word"]
         revealed = ["_" for _ in answer]
         revealed[0] = answer[0]
@@ -98,7 +96,7 @@ class Game(commands.Cog):
             f"🏆 {interaction.user.mention}, total points: {self.scores[guild_id][user_id]}"
         )
 
-    # ----- /score command (mention user) -----
+    # ----- /score command -----
     @app_commands.command(name="score", description="Check a player's total points")
     @app_commands.describe(user="Optional: Tag a user to see their points")
     async def score(self, interaction: discord.Interaction, user: discord.User = None):
@@ -141,7 +139,7 @@ class Game(commands.Cog):
             "word": entry["word"].upper(),
             "hint": entry["hint"],
             "category": category,
-            "players": {},  # Each player will have guesses_left, hints_used
+            "players": {},
             "points_per_word": difficulty["points"],
             "timer_alerts_sent": {"30": False, "15": False}
         }
@@ -156,10 +154,9 @@ class Game(commands.Cog):
             f"Type your guesses in the channel! Use `/hint` (max 3 hints per player)."
         )
 
-    # ----- Robust on_message listener -----
+    # ----- Handle guesses -----
     @commands.Cog.listener()
     async def on_message(self, message):
-        # Ignore bots and DMs
         if message.author.bot or message.guild is None:
             return
 
@@ -168,16 +165,15 @@ class Game(commands.Cog):
         if not game:
             return
 
-        guess = message.content.strip().upper()  # Case-insensitive & trim spaces
-        answer = game["word"].upper()
+        guess = message.content.strip().upper()
+        answer = game["word"]
         if len(guess) != len(answer):
-            return  # Ignore wrong length
+            return
 
         user_id = message.author.id
-        # Initialize player if needed
         player = game["players"].setdefault(user_id, {"guesses_left": 3, "hints_used": 0})
         if player["guesses_left"] <= 0:
-            return  # Player out of guesses
+            return
 
         # Wordle-style feedback
         feedback = []
@@ -198,30 +194,40 @@ class Game(commands.Cog):
         feedback_line = "".join(feedback)
 
         correct = guess == answer
+
         # Initialize guild scores
         self.scores.setdefault(guild_id, {})
         self.scores[guild_id][user_id] = self.scores[guild_id].get(user_id, 0)
 
         if correct:
+            # Award points
             self.scores[guild_id][user_id] += game["points_per_word"]
+            # Cancel timer since round ends immediately
+            timer_task = game.get("timer_task")
+            if timer_task:
+                timer_task.cancel()
             await message.channel.send(
                 f"✅ {message.author.mention} guessed correctly! +{game['points_per_word']} points\n"
                 f"💰 Total points: {self.scores[guild_id][user_id]}"
             )
+            # Show mini scoreboard (names only)
+            round_scores = []
+            for pid in game["players"]:
+                total = self.scores[guild_id].get(pid, 0)
+                member = message.guild.get_member(pid)
+                name = member.name if member else f"User {pid}"
+                round_scores.append(f"{name} - {total} points")
+            scoreboard = "\n".join(round_scores)
+            await message.channel.send(f"📊 **Current Scores (All Players):**\n{scoreboard}")
+
+            # Move to next word automatically
+            await asyncio.sleep(2)  # small delay
+            await self.start_next_word(message.channel, game["category"])
+            return
+
         else:
             player["guesses_left"] -= 1
-            await message.channel.send(f"{feedback_line}\n❤️ {message.author.mention} guesses left: {player['guesses_left']}")
-
-        # Mini round scoreboard after any correct guess
-        # NEW: Mini round scoreboard using only player names, no mention
-round_scores = []
-for pid, pdata in game["players"].items():
-    total = self.scores[guild_id].get(pid, 0)
-    member = message.guild.get_member(pid)
-    name = member.name if member else f"User {pid}"
-    round_scores.append(f"{name} - {total} points")
-scoreboard = "\n".join(round_scores)
-await message.channel.send(f"📊 **Current Scores:**\n{scoreboard}")
+            await message.channel.send(f"{feedback_line}\n❤️ {message.author.name} guesses left: {player['guesses_left']}")
 
         await self.bot.process_commands(message)
 
@@ -243,6 +249,7 @@ await message.channel.send(f"📊 **Current Scores:**\n{scoreboard}")
                     await channel.send("⏳ 15 seconds remaining!")
                     alerts["15"] = True
 
+            # Timer ended, no one guessed correctly
             game = self.games.get(guild_id)
             if game:
                 answer = game["word"]
