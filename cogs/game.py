@@ -3,17 +3,20 @@ from discord.ext import commands
 from discord import app_commands
 import json
 import random
+import asyncio
 
 class Game(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.games = {}  # {guild_id: game_data}
+        self.games = {}   # {guild_id: game_data}
+        self.timers = {}  # {guild_id: asyncio.Task}
+        self.scores = {}  # {user_id: total_points}
 
         # Load words
         with open("data/words.json", "r", encoding="utf-8") as f:
             self.words = json.load(f)
 
-        # Points scaling by difficulty, guesses fixed to 3
+        # Hidden difficulties (points per word)
         self.difficulties = [
             {"points": 1},  # Very Easy
             {"points": 2},  # Easy
@@ -32,27 +35,7 @@ class Game(commands.Cog):
 
         async def callback(self, interaction: discord.Interaction):
             category = self.values[0]
-            entry = random.choice(self.cog.words[category])
-
-            difficulty = random.choice(self.cog.difficulties)
-
-            self.cog.games[interaction.guild_id] = {
-                "word": entry["word"].upper(),
-                "hint": entry["hint"],
-                "guesses": 3,  # fixed guesses
-                "points": difficulty["points"],
-            }
-
-            word_len = len(entry["word"])
-            await interaction.response.send_message(
-                f"🎮 **Crème Whiz Started!**\n"
-                f"📚 Category: **{category}**\n"
-                f"✏ Word length: **{word_len} letters**\n"
-                f"💡 Hint: {entry['hint']}\n"
-                f"❤️ Guesses: 3 | Points: {difficulty['points']}\n\n"
-                f"Type your guess directly in the channel!\n"
-                f"Use `/hint` for extra help!"
-            )
+            await self.cog.start_round(interaction, category, interaction.user)
 
     class CategoryView(discord.ui.View):
         def __init__(self, categories, cog):
@@ -75,18 +58,15 @@ class Game(commands.Cog):
             )
             return
 
-        if game["points"] <= 0:
-            await interaction.response.send_message(
-                "❌ You have no points left to use a hint!", ephemeral=True
-            )
-            return
-
-        game["points"] -= 1
+        # Deduct 1 point from user
+        user_id = interaction.user.id
+        self.scores[user_id] = self.scores.get(user_id, 0)
+        if self.scores[user_id] > 0:
+            self.scores[user_id] -= 1
 
         answer = game["word"]
         revealed = ["_" for _ in answer]
-        revealed[0] = answer[0]
-
+        revealed[0] = answer[0]  # always reveal first letter
         unrevealed = [i for i, l in enumerate(revealed) if l == "_"]
         if unrevealed:
             idx = random.choice(unrevealed)
@@ -95,16 +75,50 @@ class Game(commands.Cog):
         hint_display = " ".join(revealed)
         await interaction.response.send_message(
             f"💡 Hint (costs 1 point): {hint_display}\n"
-            f"❤️ Points left: {game['points']}"
+            f"🏆 Your total points: {self.scores[user_id]}"
         )
 
-    # ----- Listen for guesses in channel -----
+    # ----- Start a round -----
+    async def start_round(self, interaction, category, user):
+        entry = random.choice(self.words[category])
+        difficulty = random.choice(self.difficulties)
+        guild_id = interaction.guild_id
+
+        self.games[guild_id] = {
+            "word": entry["word"].upper(),
+            "hint": entry["hint"],
+            "guesses": 3,
+            "points": difficulty["points"],
+            "user": user,
+            "category": category  # store category for continuous words
+        }
+
+        # Start 1.5-minute timer
+        if guild_id in self.timers:
+            self.timers[guild_id].cancel()
+        self.timers[guild_id] = self.bot.loop.create_task(
+            self.end_game_timer(interaction.channel, guild_id)
+        )
+
+        word_len = len(entry["word"])
+        await interaction.response.send_message(
+            f"🎮 **Crème Whiz Started!**\n"
+            f"📚 Category: **{category}**\n"
+            f"✏ Word length: **{word_len} letters**\n"
+            f"💡 Hint: {entry['hint']}\n"
+            f"❤️ Guesses: 3 | Points for this word: {difficulty['points']}\n\n"
+            f"Type your guess directly in the channel!\n"
+            f"Use `/hint` for extra help! ⏱ 1.5 minutes to guess."
+        )
+
+    # ----- Listen for guesses -----
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.bot:
             return
 
-        game = self.games.get(message.guild.id)
+        guild_id = message.guild.id
+        game = self.games.get(guild_id)
         if not game:
             return
 
@@ -114,17 +128,15 @@ class Game(commands.Cog):
         if len(guess_word) != len(answer):
             return
 
-        # Wordle feedback
+        # Wordle-style feedback
         feedback = []
         answer_letters = list(answer)
-
         for i in range(len(guess_word)):
             if guess_word[i] == answer[i]:
                 feedback.append("🟩")
                 answer_letters[i] = None
             else:
                 feedback.append(None)
-
         for i in range(len(guess_word)):
             if feedback[i] is None:
                 if guess_word[i] in answer_letters:
@@ -136,27 +148,78 @@ class Game(commands.Cog):
         feedback_line = "".join(feedback)
         game["guesses"] -= 1
 
+        # Correct guess
         if guess_word == answer:
-            points_won = game["points"]
-            del self.games[message.guild.id]
+            user = game["user"]
+            self.scores[user.id] = self.scores.get(user.id, 0) + game["points"]
             await message.channel.send(
                 f"🎉 **Correct!** The word was **{answer}**\n{feedback_line}\n"
-                f"🏆 You earned **{points_won} points!**"
+                f"🏆 You earned **{game['points']} points!**\n"
+                f"💰 Total points: {self.scores[user.id]}"
             )
+            # Start next word in the SAME category
+            await self.start_next_word(message.channel, game["category"], user)
         elif game["guesses"] <= 0:
-            points_lost = game["points"]
-            del self.games[message.guild.id]
             await message.channel.send(
                 f"💀 Out of guesses! The word was **{answer}**\n{feedback_line}\n"
-                f"⚠ You lost **{points_lost} points**"
+                f"⚠ You earned 0 points. Use /startgame to start a new category."
             )
+            await self.end_game_cleanup(guild_id)
         else:
             await message.channel.send(
                 f"{feedback_line}\n💡 Hint: {game['hint']}\n"
-                f"❤️ Guesses left: {game['guesses']} | Points: {game['points']}"
+                f"❤️ Guesses left: {game['guesses']}"
             )
 
         await self.bot.process_commands(message)
 
-async def setup(bot):
-    await bot.add_cog(Game(bot))
+    # ----- Start next word in same category automatically -----
+    async def start_next_word(self, channel, category, user):
+        entry = random.choice(self.words[category])
+        difficulty = random.choice(self.difficulties)
+        guild_id = channel.guild.id
+
+        self.games[guild_id] = {
+            "word": entry["word"].upper(),
+            "hint": entry["hint"],
+            "guesses": 3,
+            "points": difficulty["points"],
+            "user": user,
+            "category": category
+        }
+
+        # Start 1.5-minute timer
+        if guild_id in self.timers:
+            self.timers[guild_id].cancel()
+        self.timers[guild_id] = self.bot.loop.create_task(
+            self.end_game_timer(channel, guild_id)
+        )
+
+        word_len = len(entry["word"])
+        await channel.send(
+            f"🎮 **Next word!**\n"
+            f"📚 Category: **{category}**\n"
+            f"✏ Word length: **{word_len} letters**\n"
+            f"💡 Hint: {entry['hint']}\n"
+            f"❤️ Guesses: 3 | Points for this word: {difficulty['points']}\n"
+            f"Type your guess in the channel! ⏱ 1.5 minutes to guess."
+        )
+
+    # ----- Timer ends round -----
+    async def end_game_timer(self, channel, guild_id):
+        await asyncio.sleep(90)  # 1.5 minutes
+        game = self.games.get(guild_id)
+        if game:
+            answer = game["word"]
+            await channel.send(
+                f"⏰ Time's up! The word was **{answer}**\n"
+                f"⚠ You earned 0 points. Use /startgame to start a new category."
+            )
+            await self.end_game_cleanup(guild_id)
+
+    # ----- Cleanup -----
+    async def end_game_cleanup(self, guild_id):
+        self.games.pop(guild_id, None)
+        timer_task = self.timers.pop(guild_id, None)
+        if timer_task:
+            timer_task.cancel()
