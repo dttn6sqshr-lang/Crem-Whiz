@@ -156,25 +156,28 @@ class Game(commands.Cog):
             f"Type your guesses in the channel! Use `/hint` (max 3 hints per player)."
         )
 
-    # ----- Handle guesses -----
+    # ----- Robust on_message listener -----
     @commands.Cog.listener()
     async def on_message(self, message):
+        # Ignore bots and DMs
         if message.author.bot or message.guild is None:
             return
+
         guild_id = message.guild.id
         game = self.games.get(guild_id)
         if not game:
             return
 
-        guess = message.content.strip().upper()
-        answer = game["word"]
+        guess = message.content.strip().upper()  # Case-insensitive & trim spaces
+        answer = game["word"].upper()
         if len(guess) != len(answer):
-            return
+            return  # Ignore wrong length
 
         user_id = message.author.id
+        # Initialize player if needed
         player = game["players"].setdefault(user_id, {"guesses_left": 3, "hints_used": 0})
         if player["guesses_left"] <= 0:
-            return  # Player already out of guesses
+            return  # Player out of guesses
 
         # Wordle-style feedback
         feedback = []
@@ -195,20 +198,21 @@ class Game(commands.Cog):
         feedback_line = "".join(feedback)
 
         correct = guess == answer
+        # Initialize guild scores
+        self.scores.setdefault(guild_id, {})
+        self.scores[guild_id][user_id] = self.scores[guild_id].get(user_id, 0)
+
         if correct:
-            # Award points
-            self.scores.setdefault(guild_id, {})
-            self.scores[guild_id][user_id] = self.scores[guild_id].get(user_id, 0) + game["points_per_word"]
+            self.scores[guild_id][user_id] += game["points_per_word"]
             await message.channel.send(
                 f"✅ {message.author.mention} guessed correctly! +{game['points_per_word']} points\n"
                 f"💰 Total points: {self.scores[guild_id][user_id]}"
             )
-
         else:
             player["guesses_left"] -= 1
             await message.channel.send(f"{feedback_line}\n❤️ {message.author.mention} guesses left: {player['guesses_left']}")
 
-        # Mini round scoreboard after each correct guess
+        # Mini round scoreboard after any correct guess
         if correct:
             round_scores = []
             for pid, pdata in game["players"].items():
