@@ -8,14 +8,14 @@ import asyncio
 class Game(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.games = {}  # {guild_id: current_round_data}
-        self.scores = {}  # {guild_id: {user_id: total_points}, "usernames": {user_id: name}}
+        self.games = {}   # {guild_id: current_game_data}
+        self.scores = {}  # cumulative {guild_id: {user_id: points}}, "usernames": {user_id: name}
 
-        # Load words from file
+        # Load words from JSON
         with open("data/words.json", "r", encoding="utf-8") as f:
             self.words = json.load(f)
 
-        # Hidden difficulties affecting points per word
+        # Hidden difficulties affect points per word
         self.difficulties = [
             {"points": 1},  # Very Easy
             {"points": 2},  # Easy
@@ -44,6 +44,13 @@ class Game(commands.Cog):
     # ----- /startgame -----
     @app_commands.command(name="startgame", description="Start a Crème Whiz game")
     async def startgame(self, interaction: discord.Interaction):
+        guild_id = interaction.guild.id
+
+        # Reset mini scoreboard only for this new game
+        self.games[guild_id] = {
+            "round_scores": {}
+        }
+
         view = Game.CategoryView(self.words.keys(), self)
         await interaction.response.send_message("Choose a category:", view=view)
 
@@ -66,7 +73,7 @@ class Game(commands.Cog):
         guild_id = interaction.guild.id
         user_id = interaction.user.id
         game = self.games.get(guild_id)
-        if not game:
+        if not game or "word" not in game:
             await interaction.response.send_message("❌ No game running. Use /startgame first.", ephemeral=True)
             return
 
@@ -75,6 +82,7 @@ class Game(commands.Cog):
             await interaction.response.send_message("❌ You have used all 3 hints for this round.", ephemeral=True)
             return
 
+        # Cumulative scores
         self.scores.setdefault(guild_id, {})
         self.scores.setdefault("usernames", {})
         self.scores["usernames"][user_id] = interaction.user.name
@@ -136,14 +144,14 @@ class Game(commands.Cog):
         if prev_task:
             prev_task.cancel()
 
-        self.games[guild_id] = {
+        self.games[guild_id].update({
             "word": entry["word"].upper(),
             "hint": entry["hint"],
             "category": category,
-            "players": {},  # tracks guesses & hints per player
+            "players": {},  # track guesses left & hints used per player
             "points_per_word": difficulty["points"],
             "timer_alerts_sent": {"30": False, "15": False}
-        }
+        })
 
         task = asyncio.create_task(self.timer_with_alerts(channel, guild_id))
         self.games[guild_id]["timer_task"] = task
@@ -162,7 +170,7 @@ class Game(commands.Cog):
 
         guild_id = message.guild.id
         game = self.games.get(guild_id)
-        if not game:
+        if not game or "word" not in game:
             return
 
         guess = message.content.strip().upper()
@@ -175,7 +183,7 @@ class Game(commands.Cog):
         if player["guesses_left"] <= 0:
             return
 
-        # Wordle feedback
+        # Wordle-style feedback
         feedback = []
         answer_letters = list(answer)
         for i in range(len(guess)):
@@ -201,30 +209,31 @@ class Game(commands.Cog):
         self.scores["usernames"][user_id] = message.author.name
         self.scores[guild_id][user_id] = self.scores[guild_id].get(user_id, 0)
 
+        # Initialize round-only scores if not exist
+        game.setdefault("round_scores", {})
+
         if correct:
+            # Add points to both round and cumulative
+            game["round_scores"][user_id] = game["round_scores"].get(user_id, 0) + game["points_per_word"]
             self.scores[guild_id][user_id] += game["points_per_word"]
+
             task = game.get("timer_task")
             if task:
                 task.cancel()
 
             await message.channel.send(
                 f"✅ {message.author.mention} guessed correctly! +{game['points_per_word']} points\n"
-                f"💰 Total points: {self.scores[guild_id][user_id]}"
+                f"💰 Total cumulative points: {self.scores[guild_id][user_id]}"
             )
 
-            # Mini scoreboard (cumulative)
-            round_scores = []
-            for pid, pdata in game["players"].items():
-                total = self.scores[guild_id].get(pid, 0)
-                name = pdata.get("name", "Unknown")
-                round_scores.append(f"{name} - {total} points")
-            scoreboard = "\n".join(round_scores)
-            await message.channel.send(f"📊 **Current Scores (All Players):**\n{scoreboard}")
+            # Show mini scoreboard for current game session
+            lines = [f"{game['players'][uid]['name']} - {pts} points" for uid, pts in game["round_scores"].items()]
+            if lines:
+                await message.channel.send("📊 **Current Game Scores:**\n" + "\n".join(lines))
 
             await asyncio.sleep(2)
             await self.start_next_word(message.channel, game["category"])
             return
-
         else:
             player["guesses_left"] -= 1
             await message.channel.send(f"{feedback_line}\n❤️ {message.author.name} guesses left: {player['guesses_left']}")
