@@ -70,7 +70,7 @@ class Game(commands.Cog):
             await interaction.response.send_message("❌ No game running. Use /startgame first.", ephemeral=True)
             return
 
-        player = game["players"].setdefault(user_id, {"guesses_left": 3, "hints_used": 0})
+        player = game["players"].setdefault(user_id, {"guesses_left": 3, "hints_used": 0, "name": interaction.user.name})
         if player["hints_used"] >= 3:
             await interaction.response.send_message("❌ You have used all 3 hints for this round.", ephemeral=True)
             return
@@ -116,7 +116,7 @@ class Game(commands.Cog):
         embed = discord.Embed(title="🏆 Crème Whiz Leaderboard", color=discord.Color.gold())
         for rank, (user_id, points) in enumerate(top, start=1):
             member = interaction.guild.get_member(user_id)
-            name = member.name if member else f"User {user_id}"
+            name = member.name if member else "Unknown"
             embed.add_field(name=f"{rank}. {name}", value=f"{points} points", inline=False)
         await interaction.response.send_message(embed=embed)
 
@@ -139,13 +139,13 @@ class Game(commands.Cog):
             "word": entry["word"].upper(),
             "hint": entry["hint"],
             "category": category,
-            "players": {},
+            "players": {},  # player_id: {guesses_left, hints_used, name}
             "points_per_word": difficulty["points"],
             "timer_alerts_sent": {"30": False, "15": False}
         }
 
-        # Start timer
-        task = self.bot.loop.create_task(self.timer_with_alerts(channel, guild_id))
+        # Start timer safely
+        task = asyncio.create_task(self.timer_with_alerts(channel, guild_id))
         self.games[guild_id]["timer_task"] = task
 
         await channel.send(
@@ -171,7 +171,7 @@ class Game(commands.Cog):
             return
 
         user_id = message.author.id
-        player = game["players"].setdefault(user_id, {"guesses_left": 3, "hints_used": 0})
+        player = game["players"].setdefault(user_id, {"guesses_left": 3, "hints_used": 0, "name": message.author.name})
         if player["guesses_left"] <= 0:
             return
 
@@ -210,23 +210,18 @@ class Game(commands.Cog):
                 f"✅ {message.author.mention} guessed correctly! +{game['points_per_word']} points\n"
                 f"💰 Total points: {self.scores[guild_id][user_id]}"
             )
-            # Show mini scoreboard (names only)
+
+            # Mini scoreboard (names only)
             round_scores = []
-for pid, pdata in game["players"].items():
-    total = self.scores[guild_id].get(pid, 0)
-    # Try to get member from cache
-    member = message.guild.get_member(pid)
-    if member:
-        name = member.name
-    else:
-        # Fallback to stored name in pdata or "Unknown"
-        name = pdata.get("name", "Unknown")
-    round_scores.append(f"{name} - {total} points")
-scoreboard = "\n".join(round_scores)
-await message.channel.send(f"📊 **Current Scores :**\n{scoreboard}")
+            for pid, pdata in game["players"].items():
+                total = self.scores[guild_id].get(pid, 0)
+                name = pdata.get("name", "Unknown")
+                round_scores.append(f"{name} - {total} points")
+            scoreboard = "\n".join(round_scores)
+            await message.channel.send(f"📊 **Current Scores (All Players):**\n{scoreboard}")
 
             # Move to next word automatically
-            await asyncio.sleep(2)  # small delay
+            await asyncio.sleep(2)  # small delay before next word
             await self.start_next_word(message.channel, game["category"])
             return
 
