@@ -9,7 +9,7 @@ class Game(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.games = {}   # {guild_id: game_data}
-        self.scores = {}  # {user_id: total_points}
+        self.scores = {}  # {guild_id: {user_id: points}}
 
         # Load words
         with open("data/words.json", "r", encoding="utf-8") as f:
@@ -58,9 +58,10 @@ class Game(commands.Cog):
             return
 
         user_id = interaction.user.id
-        self.scores[user_id] = self.scores.get(user_id, 0)
-        if self.scores[user_id] > 0:
-            self.scores[user_id] -= 1
+        guild_scores = self.scores.setdefault(interaction.guild_id, {})
+        guild_scores[user_id] = guild_scores.get(user_id, 0)
+        if guild_scores[user_id] > 0:
+            guild_scores[user_id] -= 1
 
         answer = game["word"]
         revealed = ["_" for _ in answer]
@@ -73,8 +74,33 @@ class Game(commands.Cog):
         hint_display = " ".join(revealed)
         await interaction.response.send_message(
             f"💡 Hint (costs 1 point): {hint_display}\n"
-            f"🏆 Your total points: {self.scores[user_id]}"
+            f"🏆 Your total points: {guild_scores[user_id]}"
         )
+
+    # ----- /score command -----
+    @app_commands.command(name="score", description="Check your total points")
+    async def score(self, interaction: discord.Interaction):
+        guild_scores = self.scores.get(interaction.guild_id, {})
+        points = guild_scores.get(interaction.user.id, 0)
+        await interaction.response.send_message(
+            f"🏆 {interaction.user.display_name}, you have **{points} points**!"
+        )
+
+    # ----- /leaderboard command -----
+    @app_commands.command(name="leaderboard", description="Show top 10 players in this server")
+    async def leaderboard(self, interaction: discord.Interaction):
+        guild_scores = self.scores.get(interaction.guild_id, {})
+        if not guild_scores:
+            await interaction.response.send_message("No points yet! Start playing with /startgame.")
+            return
+
+        top = sorted(guild_scores.items(), key=lambda x: x[1], reverse=True)[:10]
+        embed = discord.Embed(title="🏆 Crème Whiz Leaderboard", color=discord.Color.gold())
+        for rank, (user_id, points) in enumerate(top, start=1):
+            member = interaction.guild.get_member(user_id)
+            name = member.display_name if member else f"User {user_id}"
+            embed.add_field(name=f"{rank}. {name}", value=f"{points} points", inline=False)
+        await interaction.response.send_message(embed=embed)
 
     # ----- Start a round -----
     async def start_round(self, interaction, category, user):
@@ -93,7 +119,6 @@ class Game(commands.Cog):
 
         guess_word = message.content.strip().upper()
         answer = game["word"]
-
         if len(guess_word) != len(answer):
             return
 
@@ -113,20 +138,20 @@ class Game(commands.Cog):
                     answer_letters[answer_letters.index(guess_word[i])] = None
                 else:
                     feedback[i] = "⬛"
-
         feedback_line = "".join(feedback)
 
-        # Check if first try correct
         first_try = game["guesses"] == 3
         correct = guess_word == answer
 
+        guild_scores = self.scores.setdefault(guild_id, {})
+
         if correct:
             user = game["user"]
-            self.scores[user.id] = self.scores.get(user.id, 0) + game["points"]
+            guild_scores[user.id] = guild_scores.get(user.id, 0) + game["points"]
             await message.channel.send(
                 f"🎉 **Correct!** The word was **{answer}**\n"
                 f"🏆 You earned **{game['points']} points!**\n"
-                f"💰 Total points: {self.scores[user.id]}"
+                f"💰 Total points: {guild_scores[user.id]}"
             )
             await self.start_next_word(message.channel, game["category"], user)
         else:
@@ -135,7 +160,6 @@ class Game(commands.Cog):
             await message.channel.send(
                 f"{feedback_line}\n❤️ Guesses left: {game['guesses']}"
             )
-            # End round if out of guesses
             if game["guesses"] <= 0:
                 await message.channel.send(
                     f"💀 Out of guesses! The word was **{answer}**\n"
@@ -161,12 +185,10 @@ class Game(commands.Cog):
             "timer_alerts_sent": {"30": False, "15": False}
         }
 
-        # Cancel previous timer
         prev_task = self.games[guild_id].get("timer_task")
         if prev_task:
             prev_task.cancel()
 
-        # Start timer
         task = self.bot.loop.create_task(self.timer_with_alerts(channel, guild_id))
         self.games[guild_id]["timer_task"] = task
 
@@ -191,7 +213,7 @@ class Game(commands.Cog):
                 f"Type your guess in the channel! ⏱ 1.5 minutes to guess."
             )
 
-    # ----- Timer with 30s & 15s alerts -----
+    # ----- Timer with countdown -----
     async def timer_with_alerts(self, channel, guild_id):
         try:
             total_time = 90
@@ -208,7 +230,6 @@ class Game(commands.Cog):
                 if total_time == 15 and not alerts["15"]:
                     await channel.send("⏳ 15 seconds remaining!")
                     alerts["15"] = True
-            # Time's up
             game = self.games.get(guild_id)
             if game:
                 answer = game["word"]
