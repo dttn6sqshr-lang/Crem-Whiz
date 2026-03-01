@@ -1,140 +1,101 @@
 import discord
 from discord.ext import commands
-import random
+from discord import app_commands
 import json
-import os
+import random
 
-# load words
-with open("data/words.json", "r") as f:
-    WORD_BANK = json.load(f)
-
-# leaderboard
-LEADERBOARD_FILE = "data/leaderboard.json"
-if os.path.exists(LEADERBOARD_FILE):
-    with open(LEADERBOARD_FILE, "r") as f:
-        LEADERBOARD = json.load(f)
-else:
-    LEADERBOARD = {}
-
-active_games = {}
-
-def choose_word(category):
-    word_entry = random.choice(WORD_BANK[category])
-    return word_entry["word"].upper(), word_entry["hint"], word_entry["difficulty"]
-
-def wordle_feedback(word, guess):
-    feedback = ""
-    word_letters = list(word)
-    guess_letters = list(guess.upper())
-    for i, letter in enumerate(guess_letters):
-        if i < len(word_letters):
-            if letter == word_letters[i]:
-                feedback += "💚"
-            elif letter in word_letters:
-                feedback += "💛"
-            else:
-                feedback += "⬛"
-        else:
-            feedback += "⬛"
-    return feedback
-
-def save_leaderboard():
-    with open(LEADERBOARD_FILE, "w") as f:
-        json.dump(LEADERBOARD, f, indent=2)
-
-class CrèmeWhiz(commands.Cog):
+class Game(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.games = {}
 
-    @discord.slash_command(name="startgame", description="Start a Crème Whiz round")
-    async def startgame(self, ctx):
-        categories = list(WORD_BANK.keys())
-        options = [discord.SelectOption(label=cat) for cat in categories]
-        select = discord.ui.Select(placeholder="Select a category", options=options)
+        with open("data/words.json", "r", encoding="utf-8") as f:
+            self.words = json.load(f)
 
-        async def dropdown_callback(interaction):
-            user_id = str(interaction.user.id)
-            word, hint, difficulty = choose_word(select.values[0])
-            active_games[user_id] = {
-                "word": word,
-                "hint": hint,
-                "category": select.values[0],
-                "difficulty": difficulty,
-                "guesses_left": 3,
-                "streak": LEADERBOARD.get(user_id, {}).get("streak",0),
-                "points": LEADERBOARD.get(user_id, {}).get("points",0),
-                "hint_used": False
+    # ---------- CATEGORY SELECT ----------
+    class CategorySelect(discord.ui.Select):
+        def __init__(self, categories, parent):
+            self.parent = parent
+            options = [
+                discord.SelectOption(label=cat, description=f"Play {cat}")
+                for cat in categories
+            ]
+            super().__init__(
+                placeholder="Choose a category...",
+                min_values=1,
+                max_values=1,
+                options=options
+            )
+
+        async def callback(self, interaction: discord.Interaction):
+            category = self.values[0]
+            entry = random.choice(self.parent.words[category])
+
+            self.parent.games[interaction.guild_id] = {
+                "word": entry["word"].upper(),
+                "hint": entry["hint"],
+                "guesses": 3
             }
+
             await interaction.response.send_message(
-                f"🕵️ Category: {select.values[0]}\n"
-                f"🎲 Difficulty: {difficulty}\n"
-                f"📝 Word length: {len(word)} letters\n"
-                f"Hint: {hint}\n"
-                f"You have 3 guesses. Use `/guess [word]`!")
-        select.callback = dropdown_callback
-        view = discord.ui.View()
-        view.add_item(select)
-        await ctx.send("🎉 Crème Whiz – pick a category!", view=view)
+                f"🍦 **Crème Whiz Started!**\n"
+                f"📚 Category: **{category}**\n"
+                f"💡 Hint: {entry['hint']}\n"
+                f"❤️ Guesses: **3**\n\n"
+                f"Use **/guess <word>**",
+                ephemeral=False
+            )
 
-    @discord.slash_command(name="guess", description="Submit a guess")
-    async def guess(self, ctx, word: str):
-        user_id = str(ctx.author.id)
-        if user_id not in active_games:
-            return await ctx.send("❌ No active game. Use `/startgame`")
+    class CategoryView(discord.ui.View):
+        def __init__(self, categories, parent):
+            super().__init__()
+            self.add_item(Game.CategorySelect(categories, parent))
 
-        game = active_games[user_id]
-        if game["guesses_left"] <= 0:
-            await ctx.send(f"❌ Out of guesses! Word was {game['word']}")
-            del active_games[user_id]
+    # ---------- START GAME ----------
+    @app_commands.command(name="startgame", description="Start a Crème Whiz game")
+    async def startgame(self, interaction: discord.Interaction):
+        view = Game.CategoryView(self.words.keys(), self)
+        await interaction.response.send_message(
+            "🍨 Choose a category:",
+            view=view,
+            ephemeral=True
+        )
+
+    # ---------- GUESS ----------
+    @app_commands.command(name="guess", description="Guess the word")
+    @app_commands.describe(word="Your guess")
+    async def guess(self, interaction: discord.Interaction, word: str):
+        game = self.games.get(interaction.guild_id)
+
+        if not game:
+            await interaction.response.send_message(
+                "❌ No game running. Use **/startgame** first.",
+                ephemeral=True
+            )
             return
 
-        game["guesses_left"] -= 1
-        feedback = wordle_feedback(game["word"], word)
+        word = word.upper()
+        answer = game["word"]
 
-        if word.upper() == game["word"]:
-            pts_map = {3:50,2:70,1:100}
-            base = pts_map[3 - game["guesses_left"]]
-            if game["hint_used"]:
-                base -= 20
-            game["points"] += base
-            game["streak"] += 1
-            LEADERBOARD[user_id] = {"points":game["points"], "streak":game["streak"]}
-            save_leaderboard()
-            await ctx.send(f"✅ You guessed it! {game['word']}\nPoints:{base}\nStreak:{game['streak']}")
-            del active_games[user_id]
-            return
-
-        if game["guesses_left"] == 0:
-            await ctx.send(f"{feedback}\n❌ Out of guesses! Word was {game['word']}")
-            del active_games[user_id]
+        if word == answer:
+            del self.games[interaction.guild_id]
+            await interaction.response.send_message(
+                f"🎉 Correct! The word was **{answer}**"
+            )
         else:
-            await ctx.send(f"{feedback}\nGuesses left: {game['guesses_left']}\nUse `/hint`")
+            game["guesses"] -= 1
 
-    @discord.slash_command(name="hint", description="Reveal a hint (costs 20 points)")
-    async def hint(self, ctx):
-        user_id = str(ctx.author.id)
-        if user_id not in active_games:
-            return await ctx.send("❌ No active game")
-        game = active_games[user_id]
-        if game["hint_used"]:
-            return await ctx.send("❌ Hint already used!")
-        game["hint_used"] = True
-        await ctx.send(f"💡 Extra hint: {game['hint']}")
+            if game["guesses"] <= 0:
+                del self.games[interaction.guild_id]
+                await interaction.response.send_message(
+                    f"💀 Out of guesses! The word was **{answer}**"
+                )
+            else:
+                await interaction.response.send_message(
+                    f"❌ Wrong guess!\n"
+                    f"💡 Hint: {game['hint']}\n"
+                    f"❤️ Guesses left: {game['guesses']}"
+                )
 
-    @discord.slash_command(name="stats", description="Show your Crème Whiz stats")
-    async def stats(self, ctx):
-        user_id = str(ctx.author.id)
-        stats = LEADERBOARD.get(user_id, {"points":0,"streak":0})
-        await ctx.send(f"📊 Points: {stats['points']}\nStreak: {stats['streak']}")
-
-    @discord.slash_command(name="leaderboard", description="Show top players")
-    async def leaderboard(self, ctx):
-        sorted_lb = sorted(LEADERBOARD.items(), key=lambda x:x[1]["points"], reverse=True)[:10]
-        desc=""
-        for i,(u,d) in enumerate(sorted_lb,1):
-            try:
-                user = await self.bot.fetch_user(int(u))
-                desc += f"{i}. {user.name} — {d['points']} pts (Streak {d['streak']})\n"
-            except:
-                desc += f"{i}. Unknown — {d['points']} pts\n"
-        await ctx.send(f"🏆 Leaderboard:\n{desc}")
+async def setup(bot):
+    await bot.add_cog(Game(bot))
