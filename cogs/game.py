@@ -93,11 +93,11 @@ class Game(commands.Cog):
             "category": category  # store category for continuous words
         }
 
-        # Start 1.5-minute timer
+        # Start 1.5-minute timer with countdown alerts
         if guild_id in self.timers:
             self.timers[guild_id].cancel()
         self.timers[guild_id] = self.bot.loop.create_task(
-            self.end_game_timer(interaction.channel, guild_id)
+            self.timer_with_alerts(interaction.channel, guild_id)
         )
 
         word_len = len(entry["word"])
@@ -159,17 +159,21 @@ class Game(commands.Cog):
             )
             # Start next word in the SAME category
             await self.start_next_word(message.channel, game["category"], user)
-        elif game["guesses"] <= 0:
+
+        # Wrong guess but guesses remain
+        elif game["guesses"] > 0:
+            await message.channel.send(
+                f"{feedback_line}\n💡 Hint: {game['hint']}\n"
+                f"❤️ Guesses left: {game['guesses']}"
+            )
+
+        # Out of guesses
+        else:
             await message.channel.send(
                 f"💀 Out of guesses! The word was **{answer}**\n{feedback_line}\n"
                 f"⚠ You earned 0 points. Use /startgame to start a new category."
             )
             await self.end_game_cleanup(guild_id)
-        else:
-            await message.channel.send(
-                f"{feedback_line}\n💡 Hint: {game['hint']}\n"
-                f"❤️ Guesses left: {game['guesses']}"
-            )
 
         await self.bot.process_commands(message)
 
@@ -188,11 +192,11 @@ class Game(commands.Cog):
             "category": category
         }
 
-        # Start 1.5-minute timer
+        # Start 1.5-minute timer with countdown alerts
         if guild_id in self.timers:
             self.timers[guild_id].cancel()
         self.timers[guild_id] = self.bot.loop.create_task(
-            self.end_game_timer(channel, guild_id)
+            self.timer_with_alerts(channel, guild_id)
         )
 
         word_len = len(entry["word"])
@@ -205,17 +209,28 @@ class Game(commands.Cog):
             f"Type your guess in the channel! ⏱ 1.5 minutes to guess."
         )
 
-    # ----- Timer ends round -----
-    async def end_game_timer(self, channel, guild_id):
-        await asyncio.sleep(90)  # 1.5 minutes
-        game = self.games.get(guild_id)
-        if game:
-            answer = game["word"]
-            await channel.send(
-                f"⏰ Time's up! The word was **{answer}**\n"
-                f"⚠ You earned 0 points. Use /startgame to start a new category."
-            )
-            await self.end_game_cleanup(guild_id)
+    # ----- Timer with 30s & 15s alerts -----
+    async def timer_with_alerts(self, channel, guild_id):
+        try:
+            await asyncio.sleep(60)  # 30s remaining
+            game = self.games.get(guild_id)
+            if game:
+                await channel.send("⏳ 30 seconds remaining!")
+            await asyncio.sleep(15)  # 15s remaining
+            game = self.games.get(guild_id)
+            if game:
+                await channel.send("⏳ 15 seconds remaining!")
+            await asyncio.sleep(15)  # 0s remaining
+            game = self.games.get(guild_id)
+            if game:
+                answer = game["word"]
+                await channel.send(
+                    f"⏰ Time's up! The word was **{answer}**\n"
+                    f"⚠ You earned 0 points. Use /startgame to start a new category."
+                )
+                await self.end_game_cleanup(guild_id)
+        except asyncio.CancelledError:
+            return
 
     # ----- Cleanup -----
     async def end_game_cleanup(self, guild_id):
@@ -223,7 +238,6 @@ class Game(commands.Cog):
         timer_task = self.timers.pop(guild_id, None)
         if timer_task:
             timer_task.cancel()
-
 
 # ----- Cog setup -----
 async def setup(bot: commands.Bot):
