@@ -26,7 +26,8 @@ class Game(commands.Cog):
             self.cog.games[interaction.guild_id] = {
                 "word": entry["word"].upper(),
                 "hint": entry["hint"],
-                "guesses": 3
+                "guesses": 3,
+                "points": 3  # Start with 3 points
             }
 
             word_len = len(entry["word"])
@@ -35,8 +36,8 @@ class Game(commands.Cog):
                 f"📚 Category: **{category}**\n"
                 f"✏ Word length: **{word_len} letters**\n"
                 f"💡 Hint: {entry['hint']}\n"
-                f"❤️ Guesses: 3\n\n"
-                f"Use `/guess <word>` to play!"
+                f"❤️ Guesses: 3 | Points: 3\n\n"
+                f"Use `/guess <word>` to play or `/hint` for extra help!"
             )
 
     class CategoryView(discord.ui.View):
@@ -105,8 +106,46 @@ class Game(commands.Cog):
             )
         else:
             await interaction.response.send_message(
-                f"{feedback_line}\n💡 Hint: {game['hint']}\n❤️ Guesses left: {game['guesses']}"
+                f"{feedback_line}\n💡 Hint: {game['hint']}\n"
+                f"❤️ Guesses left: {game['guesses']} | Points: {game['points']}"
             )
+
+    # ----- /hint command -----
+    @app_commands.command(name="hint", description="Use a hint (costs 1 point)")
+    async def hint(self, interaction: discord.Interaction):
+        game = self.games.get(interaction.guild_id)
+        if not game:
+            await interaction.response.send_message(
+                "❌ No game running. Use /startgame first.", ephemeral=True
+            )
+            return
+
+        if game["points"] <= 0:
+            await interaction.response.send_message(
+                "❌ You have no points left to use a hint!", ephemeral=True
+            )
+            return
+
+        game["points"] -= 1
+
+        # Give a hint: reveal a random unrevealed letter position
+        answer = game["word"]
+        revealed = ["_" for _ in answer]
+        for i, c in enumerate(answer):
+            if i == 0:  # always reveal first letter
+                revealed[i] = c
+
+        # Randomly reveal another unrevealed letter if points > 0
+        unrevealed_indices = [i for i, l in enumerate(revealed) if l == "_"]
+        if unrevealed_indices:
+            idx = random.choice(unrevealed_indices)
+            revealed[idx] = answer[idx]
+
+        hint_display = " ".join(revealed)
+        await interaction.response.send_message(
+            f"💡 Hint (costs 1 point): {hint_display}\n"
+            f"❤️ Points left: {game['points']}"
+        )
 
 async def setup(bot):
     await bot.add_cog(Game(bot))
