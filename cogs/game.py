@@ -57,7 +57,6 @@ class Game(commands.Cog):
             )
             return
 
-        # Deduct 1 point from user
         user_id = interaction.user.id
         self.scores[user_id] = self.scores.get(user_id, 0)
         if self.scores[user_id] > 0:
@@ -116,15 +115,12 @@ class Game(commands.Cog):
                     feedback[i] = "⬛"
 
         feedback_line = "".join(feedback)
-        game["guesses"] -= 1
 
-        # Always show feedback + guesses left
-        await message.channel.send(
-            f"{feedback_line}\n❤️ Guesses left: {game['guesses']}"
-        )
+        # Check if first try correct
+        first_try = game["guesses"] == 3
+        correct = guess_word == answer
 
-        # Correct guess
-        if guess_word == answer:
+        if correct:
             user = game["user"]
             self.scores[user.id] = self.scores.get(user.id, 0) + game["points"]
             await message.channel.send(
@@ -133,18 +129,23 @@ class Game(commands.Cog):
                 f"💰 Total points: {self.scores[user.id]}"
             )
             await self.start_next_word(message.channel, game["category"], user)
-
-        # Out of guesses
-        elif game["guesses"] <= 0:
+        else:
+            # Deduct guess only if not first attempt
+            game["guesses"] -= 1 if not first_try else 0
             await message.channel.send(
-                f"💀 Out of guesses! The word was **{answer}**\n"
-                f"⚠ You earned 0 points. Use /startgame to start a new category."
+                f"{feedback_line}\n❤️ Guesses left: {game['guesses']}"
             )
-            await self.end_game_cleanup(guild_id)
+            # End round if out of guesses
+            if game["guesses"] <= 0:
+                await message.channel.send(
+                    f"💀 Out of guesses! The word was **{answer}**\n"
+                    f"⚠ You earned 0 points. Use /startgame to start a new category."
+                )
+                await self.end_game_cleanup(guild_id)
 
         await self.bot.process_commands(message)
 
-    # ----- Start next word in same category -----
+    # ----- Start next word -----
     async def start_next_word(self, channel, category, user, first=False):
         entry = random.choice(self.words[category])
         difficulty = random.choice(self.difficulties)
@@ -156,15 +157,16 @@ class Game(commands.Cog):
             "guesses": 3,
             "points": difficulty["points"],
             "user": user,
-            "category": category
+            "category": category,
+            "timer_alerts_sent": {"30": False, "15": False}
         }
 
-        # Cancel existing timer
-        timer_task = self.games[guild_id].get("timer_task")
-        if timer_task:
-            timer_task.cancel()
+        # Cancel previous timer
+        prev_task = self.games[guild_id].get("timer_task")
+        if prev_task:
+            prev_task.cancel()
 
-        # Start timer with countdown alerts
+        # Start timer
         task = self.bot.loop.create_task(self.timer_with_alerts(channel, guild_id))
         self.games[guild_id]["timer_task"] = task
 
@@ -189,18 +191,24 @@ class Game(commands.Cog):
                 f"Type your guess in the channel! ⏱ 1.5 minutes to guess."
             )
 
-    # ----- Timer with countdown -----
+    # ----- Timer with 30s & 15s alerts -----
     async def timer_with_alerts(self, channel, guild_id):
         try:
-            await asyncio.sleep(30)  # 30s left
-            game = self.games.get(guild_id)
-            if game:
-                await channel.send("⏳ 30 seconds remaining!")
-            await asyncio.sleep(15)  # 15s left
-            game = self.games.get(guild_id)
-            if game:
-                await channel.send("⏳ 15 seconds remaining!")
-            await asyncio.sleep(15)  # 0s
+            total_time = 90
+            while total_time > 0:
+                await asyncio.sleep(1)
+                total_time -= 1
+                game = self.games.get(guild_id)
+                if not game:
+                    return
+                alerts = game["timer_alerts_sent"]
+                if total_time == 30 and not alerts["30"]:
+                    await channel.send("⏳ 30 seconds remaining!")
+                    alerts["30"] = True
+                if total_time == 15 and not alerts["15"]:
+                    await channel.send("⏳ 15 seconds remaining!")
+                    alerts["15"] = True
+            # Time's up
             game = self.games.get(guild_id)
             if game:
                 answer = game["word"]
