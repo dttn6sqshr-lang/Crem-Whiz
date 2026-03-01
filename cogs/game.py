@@ -8,14 +8,14 @@ import asyncio
 class Game(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.games = {}   # {guild_id: game_data}
-        self.scores = {}  # {guild_id: {user_id: total_points}}
+        self.games = {}  # {guild_id: current_round_data}
+        self.scores = {}  # {guild_id: {user_id: total_points}, "usernames": {user_id: name}}
 
-        # Load words
+        # Load words from file
         with open("data/words.json", "r", encoding="utf-8") as f:
             self.words = json.load(f)
 
-        # Hidden difficulties for points per word
+        # Hidden difficulties affecting points per word
         self.difficulties = [
             {"points": 1},  # Very Easy
             {"points": 2},  # Easy
@@ -53,9 +53,9 @@ class Game(commands.Cog):
         guild_id = interaction.guild.id
         game = self.games.pop(guild_id, None)
         if game:
-            timer_task = game.get("timer_task")
-            if timer_task:
-                timer_task.cancel()
+            task = game.get("timer_task")
+            if task:
+                task.cancel()
             await interaction.response.send_message("🛑 The current Crème Whiz game has been stopped.")
         else:
             await interaction.response.send_message("❌ No game is running in this server.", ephemeral=True)
@@ -76,7 +76,10 @@ class Game(commands.Cog):
             return
 
         self.scores.setdefault(guild_id, {})
+        self.scores.setdefault("usernames", {})
+        self.scores["usernames"][user_id] = interaction.user.name
         self.scores[guild_id][user_id] = self.scores[guild_id].get(user_id, 0)
+
         deduction = player["hints_used"] + 1
         self.scores[guild_id][user_id] = max(0, self.scores[guild_id][user_id] - deduction)
         player["hints_used"] += 1
@@ -112,11 +115,11 @@ class Game(commands.Cog):
         if not guild_scores:
             await interaction.response.send_message("No points yet! Start playing with /startgame.")
             return
+
         top = sorted(guild_scores.items(), key=lambda x: x[1], reverse=True)[:10]
         embed = discord.Embed(title="🏆 Crème Whiz Leaderboard", color=discord.Color.gold())
         for rank, (user_id, points) in enumerate(top, start=1):
-            member = interaction.guild.get_member(user_id)
-            name = member.name if member else "Unknown"
+            name = self.scores.get("usernames", {}).get(user_id, "Unknown")
             embed.add_field(name=f"{rank}. {name}", value=f"{points} points", inline=False)
         await interaction.response.send_message(embed=embed)
 
@@ -129,22 +132,19 @@ class Game(commands.Cog):
         difficulty = random.choice(self.difficulties)
         guild_id = channel.guild.id
 
-        # Cancel previous timer if exists
         prev_task = self.games.get(guild_id, {}).get("timer_task")
         if prev_task:
             prev_task.cancel()
 
-        # Initialize game
         self.games[guild_id] = {
             "word": entry["word"].upper(),
             "hint": entry["hint"],
             "category": category,
-            "players": {},  # player_id: {guesses_left, hints_used, name}
+            "players": {},  # tracks guesses & hints per player
             "points_per_word": difficulty["points"],
             "timer_alerts_sent": {"30": False, "15": False}
         }
 
-        # Start timer safely
         task = asyncio.create_task(self.timer_with_alerts(channel, guild_id))
         self.games[guild_id]["timer_task"] = task
 
@@ -175,7 +175,7 @@ class Game(commands.Cog):
         if player["guesses_left"] <= 0:
             return
 
-        # Wordle-style feedback
+        # Wordle feedback
         feedback = []
         answer_letters = list(answer)
         for i in range(len(guess)):
@@ -195,23 +195,24 @@ class Game(commands.Cog):
 
         correct = guess == answer
 
-        # Initialize guild scores
+        # Initialize cumulative scores
         self.scores.setdefault(guild_id, {})
+        self.scores.setdefault("usernames", {})
+        self.scores["usernames"][user_id] = message.author.name
         self.scores[guild_id][user_id] = self.scores[guild_id].get(user_id, 0)
 
         if correct:
-            # Award points
             self.scores[guild_id][user_id] += game["points_per_word"]
-            # Cancel timer since round ends immediately
-            timer_task = game.get("timer_task")
-            if timer_task:
-                timer_task.cancel()
+            task = game.get("timer_task")
+            if task:
+                task.cancel()
+
             await message.channel.send(
                 f"✅ {message.author.mention} guessed correctly! +{game['points_per_word']} points\n"
                 f"💰 Total points: {self.scores[guild_id][user_id]}"
             )
 
-            # Mini scoreboard (names only)
+            # Mini scoreboard (cumulative)
             round_scores = []
             for pid, pdata in game["players"].items():
                 total = self.scores[guild_id].get(pid, 0)
@@ -220,8 +221,7 @@ class Game(commands.Cog):
             scoreboard = "\n".join(round_scores)
             await message.channel.send(f"📊 **Current Scores (All Players):**\n{scoreboard}")
 
-            # Move to next word automatically
-            await asyncio.sleep(2)  # small delay before next word
+            await asyncio.sleep(2)
             await self.start_next_word(message.channel, game["category"])
             return
 
@@ -231,7 +231,7 @@ class Game(commands.Cog):
 
         await self.bot.process_commands(message)
 
-    # ----- Timer per round -----
+    # ----- Timer -----
     async def timer_with_alerts(self, channel, guild_id):
         try:
             total_time = 90
@@ -249,7 +249,6 @@ class Game(commands.Cog):
                     await channel.send("⏳ 15 seconds remaining!")
                     alerts["15"] = True
 
-            # Timer ended, no one guessed correctly
             game = self.games.get(guild_id)
             if game:
                 answer = game["word"]
@@ -258,14 +257,13 @@ class Game(commands.Cog):
         except asyncio.CancelledError:
             return
 
-    # ----- Cleanup -----
     async def end_game_cleanup(self, guild_id):
         game = self.games.pop(guild_id, None)
         if game:
-            timer_task = game.get("timer_task")
-            if timer_task:
-                timer_task.cancel()
+            task = game.get("timer_task")
+            if task:
+                task.cancel()
 
-# ----- Cog setup -----
+# Cog setup
 async def setup(bot: commands.Bot):
     await bot.add_cog(Game(bot))
