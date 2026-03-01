@@ -1,30 +1,29 @@
-import os
 import discord
 from discord.ext import commands
+import os
 
-TOKEN = os.getenv("DISCORD_TOKEN")
-if not TOKEN:
-    raise RuntimeError("DISCORD_TOKEN environment variable not set!")
-
-# ⚡ Enable all necessary intents
+# Intents
 intents = discord.Intents.default()
-intents.message_content = True  # required for reading messages typed by users
-intents.guilds = True  # required for slash commands
-intents.messages = True
+intents.message_content = True  # Needed to read guesses typed in channel
 
-class MyBot(commands.Bot):
-    def __init__(self):
-        super().__init__(command_prefix="!", intents=intents)
+# Bot setup
+bot = commands.Bot(command_prefix="!", intents=intents)
 
-    async def setup_hook(self):
-        await self.load_extension("cogs.game")
-        await self.tree.sync()
-        print("✅ Commands synced")
+# Load cogs on startup
+@bot.event
+async def setup_hook():
+    await bot.load_extension("cogs.game")  # Your cog path
 
-bot = MyBot()
-
+# Ready event
 @bot.event
 async def on_ready():
-    print(f"✅ Logged in as {bot.user}")
+    print(f"✅ Logged in as {bot.user} ({bot.user.id})")
+    try:
+        synced = await bot.tree.sync()
+        print(f"🌐 Synced {len(synced)} slash commands.")
+    except Exception as e:
+        print(f"Error syncing commands: {e}")
 
+# Run the bot using token from environment variable
+TOKEN = os.getenv("DISCORD_TOKEN")  # Set your Railway/GitHub secret as DISCORD_TOKEN
 bot.run(TOKEN)
