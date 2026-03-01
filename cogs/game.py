@@ -27,7 +27,7 @@ class Game(commands.Cog):
                 "word": entry["word"].upper(),
                 "hint": entry["hint"],
                 "guesses": 3,
-                "points": 3  # Start with 3 points
+                "points": 3  # Start points
             }
 
             word_len = len(entry["word"])
@@ -37,7 +37,8 @@ class Game(commands.Cog):
                 f"✏ Word length: **{word_len} letters**\n"
                 f"💡 Hint: {entry['hint']}\n"
                 f"❤️ Guesses: 3 | Points: 3\n\n"
-                f"Use `/guess <word>` to play or `/hint` for extra help!"
+                f"Type your guess directly in the channel!\n"
+                f"Use `/hint` for extra help!"
             )
 
     class CategoryView(discord.ui.View):
@@ -50,65 +51,6 @@ class Game(commands.Cog):
     async def startgame(self, interaction: discord.Interaction):
         view = Game.CategoryView(self.words.keys(), self)
         await interaction.response.send_message("Choose a category:", view=view)
-
-    # ----- /guess with Wordle feedback -----
-    @app_commands.command(name="guess", description="Guess the word")
-    @app_commands.describe(word="Your guess")
-    async def guess(self, interaction: discord.Interaction, word: str):
-        game = self.games.get(interaction.guild_id)
-        if not game:
-            await interaction.response.send_message(
-                "❌ No game running. Use /startgame first.", ephemeral=True
-            )
-            return
-
-        guess_word = word.upper()
-        answer = game["word"]
-
-        if len(guess_word) != len(answer):
-            await interaction.response.send_message(
-                f"⚠️ Your guess must be {len(answer)} letters long!", ephemeral=True
-            )
-            return
-
-        feedback = []
-        answer_letters = list(answer)
-
-        # First pass: correct letters in correct positions
-        for i in range(len(guess_word)):
-            if guess_word[i] == answer[i]:
-                feedback.append("🟩")
-                answer_letters[i] = None
-            else:
-                feedback.append(None)
-
-        # Second pass: correct letters in wrong positions
-        for i in range(len(guess_word)):
-            if feedback[i] is None:
-                if guess_word[i] in answer_letters:
-                    feedback[i] = "🟨"
-                    answer_letters[answer_letters.index(guess_word[i])] = None
-                else:
-                    feedback[i] = "⬛"
-
-        feedback_line = "".join(feedback)
-        game["guesses"] -= 1
-
-        if guess_word == answer:
-            del self.games[interaction.guild_id]
-            await interaction.response.send_message(
-                f"🎉 **Correct!** The word was **{answer}**\n{feedback_line}"
-            )
-        elif game["guesses"] <= 0:
-            del self.games[interaction.guild_id]
-            await interaction.response.send_message(
-                f"💀 Out of guesses! The word was **{answer}**\n{feedback_line}"
-            )
-        else:
-            await interaction.response.send_message(
-                f"{feedback_line}\n💡 Hint: {game['hint']}\n"
-                f"❤️ Guesses left: {game['guesses']} | Points: {game['points']}"
-            )
 
     # ----- /hint command -----
     @app_commands.command(name="hint", description="Use a hint (costs 1 point)")
@@ -128,17 +70,14 @@ class Game(commands.Cog):
 
         game["points"] -= 1
 
-        # Give a hint: reveal a random unrevealed letter position
+        # Reveal first letter + random letter
         answer = game["word"]
         revealed = ["_" for _ in answer]
-        for i, c in enumerate(answer):
-            if i == 0:  # always reveal first letter
-                revealed[i] = c
+        revealed[0] = answer[0]  # always first letter
 
-        # Randomly reveal another unrevealed letter if points > 0
-        unrevealed_indices = [i for i, l in enumerate(revealed) if l == "_"]
-        if unrevealed_indices:
-            idx = random.choice(unrevealed_indices)
+        unrevealed = [i for i, l in enumerate(revealed) if l == "_"]
+        if unrevealed:
+            idx = random.choice(unrevealed)
             revealed[idx] = answer[idx]
 
         hint_display = " ".join(revealed)
@@ -146,6 +85,58 @@ class Game(commands.Cog):
             f"💡 Hint (costs 1 point): {hint_display}\n"
             f"❤️ Points left: {game['points']}"
         )
+
+    # ----- Listen for guesses in channel -----
+    @commands.Cog.listener()
+    async def on_message(self, message):
+        if message.author.bot:
+            return
+
+        game = self.games.get(message.guild.id)
+        if not game:
+            return
+
+        guess_word = message.content.strip().upper()
+        answer = game["word"]
+
+        # Only accept guesses of correct length
+        if len(guess_word) != len(answer):
+            return
+
+        feedback = []
+        answer_letters = list(answer)
+
+        # First pass for correct letters
+        for i in range(len(guess_word)):
+            if guess_word[i] == answer[i]:
+                feedback.append("🟩")
+                answer_letters[i] = None
+            else:
+                feedback.append(None)
+
+        # Second pass for correct letters in wrong position
+        for i in range(len(guess_word)):
+            if feedback[i] is None:
+                if guess_word[i] in answer_letters:
+                    feedback[i] = "🟨"
+                    answer_letters[answer_letters.index(guess_word[i])] = None
+                else:
+                    feedback[i] = "⬛"
+
+        feedback_line = "".join(feedback)
+        game["guesses"] -= 1
+
+        if guess_word == answer:
+            del self.games[message.guild.id]
+            await message.channel.send(f"🎉 **Correct!** The word was **{answer}**\n{feedback_line}")
+        elif game["guesses"] <= 0:
+            del self.games[message.guild.id]
+            await message.channel.send(f"💀 Out of guesses! The word was **{answer}**\n{feedback_line}")
+        else:
+            await message.channel.send(
+                f"{feedback_line}\n💡 Hint: {game['hint']}\n"
+                f"❤️ Guesses left: {game['guesses']} | Points: {game['points']}"
+            )
 
 async def setup(bot):
     await bot.add_cog(Game(bot))
