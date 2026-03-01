@@ -27,7 +27,7 @@ class Game(commands.Cog):
                 "word": entry["word"].upper(),
                 "hint": entry["hint"],
                 "guesses": 3,
-                "points": 3  # Start points
+                "points": 3
             }
 
             word_len = len(entry["word"])
@@ -70,10 +70,9 @@ class Game(commands.Cog):
 
         game["points"] -= 1
 
-        # Reveal first letter + random letter
         answer = game["word"]
         revealed = ["_" for _ in answer]
-        revealed[0] = answer[0]  # always first letter
+        revealed[0] = answer[0]
 
         unrevealed = [i for i, l in enumerate(revealed) if l == "_"]
         if unrevealed:
@@ -89,6 +88,7 @@ class Game(commands.Cog):
     # ----- Listen for guesses in channel -----
     @commands.Cog.listener()
     async def on_message(self, message):
+        # ignore bots
         if message.author.bot:
             return
 
@@ -99,14 +99,13 @@ class Game(commands.Cog):
         guess_word = message.content.strip().upper()
         answer = game["word"]
 
-        # Only accept guesses of correct length
         if len(guess_word) != len(answer):
-            return
+            return  # only accept guesses of correct length
 
+        # Wordle feedback
         feedback = []
         answer_letters = list(answer)
 
-        # First pass for correct letters
         for i in range(len(guess_word)):
             if guess_word[i] == answer[i]:
                 feedback.append("🟩")
@@ -114,7 +113,6 @@ class Game(commands.Cog):
             else:
                 feedback.append(None)
 
-        # Second pass for correct letters in wrong position
         for i in range(len(guess_word)):
             if feedback[i] is None:
                 if guess_word[i] in answer_letters:
@@ -137,6 +135,9 @@ class Game(commands.Cog):
                 f"{feedback_line}\n💡 Hint: {game['hint']}\n"
                 f"❤️ Guesses left: {game['guesses']} | Points: {game['points']}"
             )
+
+        # ⚡ Important: allow commands to process if you have other cogs/commands
+        await self.bot.process_commands(message)
 
 async def setup(bot):
     await bot.add_cog(Game(bot))
