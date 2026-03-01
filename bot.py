@@ -1,15 +1,17 @@
+import os
 import discord
 from discord.ext import commands
 
-TOKEN = "PUT_YOUR_TOKEN_HERE"
+TOKEN = os.getenv("DISCORD_TOKEN")
+
+if TOKEN is None:
+    raise RuntimeError("DISCORD_TOKEN environment variable not set")
 
 intents = discord.Intents.default()
 
 class MyBot(commands.Bot):
     async def setup_hook(self):
-        # Load cogs properly
         await self.load_extension("cogs.game")
-        # Sync commands
         await self.tree.sync()
         print("✅ Commands synced")
 
