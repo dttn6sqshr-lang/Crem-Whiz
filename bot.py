@@ -1,29 +1,37 @@
 import discord
 from discord.ext import commands
 import os
+import subprocess
+import asyncio
 
-# Intents
+TOKEN = os.getenv("DISCORD_TOKEN")
+
 intents = discord.Intents.default()
-intents.message_content = True  # Needed to read guesses typed in channel
-
-# Bot setup
+intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-# Load cogs on startup
-@bot.event
-async def setup_hook():
-    await bot.load_extension("cogs.game")  # Your cog path
+# ---------------- RUN GENERATOR ----------------
 
-# Ready event
+def generate_words():
+    print("🔄 Generating words.json...")
+    subprocess.run(["python", "generate_words_json.py"], check=True)
+    print("✅ words.json ready")
+
+# ---------------- BOT EVENTS ------------------
+
 @bot.event
 async def on_ready():
-    print(f"✅ Logged in as {bot.user} ({bot.user.id})")
+    print(f"🤖 Logged in as {bot.user}")
     try:
         synced = await bot.tree.sync()
-        print(f"🌐 Synced {len(synced)} slash commands.")
+        print(f"✅ Synced {len(synced)} commands")
     except Exception as e:
-        print(f"Error syncing commands: {e}")
+        print(e)
 
-# Run the bot using token from environment variable
-TOKEN = os.getenv("DISCORD_TOKEN")  # Set your Railway/GitHub secret as DISCORD_TOKEN
-bot.run(TOKEN)
+async def main():
+    generate_words()  # <-- THIS runs your generator file
+    async with bot:
+        await bot.load_extension("cogs.game")
+        await bot.start(TOKEN)
+
+asyncio.run(main())
