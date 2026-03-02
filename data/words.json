@@ -3391,6 +3391,14 @@
       "hint2": "Organizes and catalogs collections",
       "hint3": "Starts with 'L'",
       "difficulty": 1
+    },
+    {
+      "word": "Dragon",
+      "start_hint": "This creature can breathe fire.",
+      "hint1": "It often has large wings and scaly skin.",
+      "hint2": "Knights and heroes in legends often battle it.",
+      "hint3": "Starts with 'D'"
+      "difficulty": 1
     }
   ]
 }
