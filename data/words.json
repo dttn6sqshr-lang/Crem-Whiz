@@ -434,5 +434,5 @@
     {"word":"MODEL","start_hint":"Poses for photos or fashion shows","hint1":"Works in advertising or runway","hint2":"Showcases clothing or products","hint3":"Starts with 'M'","difficulty":1},
     {"word":"PAINTER","start_hint":"Creates art using paints","hint1":"Can work on canvas, walls, or murals","hint2":"Expresses creativity visually","hint3":"Starts with 'P'","difficulty":1},
     {"word":"LIBRARIAN","start_hint":"Manages library resources","hint1":"Helps people find books and information","hint2":"Organizes and catalogs collections","hint3":"Starts with 'L'","difficulty":1}
-    ]
-    }
+]
+}
