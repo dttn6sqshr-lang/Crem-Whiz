@@ -5,9 +5,9 @@ import json
 import random
 from collections import defaultdict
 
-# Load all words from JSON
+# Load words once at startup
 with open("data/words.json", "r") as f:
-    WORDS = json.load(f)["All"]  # Use the "All" category
+    WORDS = json.load(f)["All"]
 
 class Game(commands.Cog):
     def __init__(self, bot: commands.Bot):
@@ -19,7 +19,7 @@ class Game(commands.Cog):
         self.leaderboard = defaultdict(int)
 
     def start_new_round(self):
-        """Pick a random word avoiding the previous one."""
+        """Pick a random word avoiding previous word."""
         if not WORDS:
             return "No words available!"
         new_word = random.choice(WORDS)
@@ -31,7 +31,7 @@ class Game(commands.Cog):
         return self.current_word["start_hint"]
 
     def next_hint(self):
-        """Return the next hint and increment hints used."""
+        """Return the next hint."""
         self.hints_used += 1
         if self.hints_used == 1:
             return self.current_word.get("hint1", "No more hints!")
