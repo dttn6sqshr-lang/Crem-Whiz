@@ -21,7 +21,6 @@ class Game(commands.Cog):
         self.current_word = None
         self.hints_used = 0
         self.round_task = None
-        self.guesses_per_player = defaultdict(int)
         self.mini_scoreboard = defaultdict(int)
         self.leaderboard = defaultdict(int)
         self.active_game = False
@@ -31,7 +30,6 @@ class Game(commands.Cog):
         word = random.choice(WORDS)
         self.current_word = WORD_DETAILS[word]
         self.hints_used = 0
-        self.guesses_per_player.clear()
         return self.current_word["start_hint"]
 
     def next_hint(self):
@@ -46,6 +44,7 @@ class Game(commands.Cog):
             return "No more hints!"
 
     def calculate_points(self):
+        # Difficulty minus hints, minimum 1
         return max(1, self.current_word.get("difficulty", 1) - self.hints_used)
 
     def wordle_feedback(self, guess):
@@ -80,17 +79,9 @@ class Game(commands.Cog):
             for remaining in range(total_time, 0, -1):
                 if remaining in warnings:
                     hints_left = max(0, 3 - self.hints_used)
-                    guesses_left_per_player = {
-                        user: max(0, 3 - guesses)
-                        for user, guesses in self.guesses_per_player.items()
-                    }
-                    guesses_text = ", ".join([f"{user}: {g}" for user, g in guesses_left_per_player.items()])
-                    if not guesses_text:
-                        guesses_text = "No guesses made yet"
                     await channel.send(
                         f"⏳ {remaining} seconds remaining!\n"
-                        f"💡 Hints left: {hints_left}\n"
-                        f"✏️ Guesses left per player: {guesses_text}"
+                        f"💡 Hints left: {hints_left}"
                     )
                 await asyncio.sleep(1)
 
@@ -101,7 +92,7 @@ class Game(commands.Cog):
                 "Game over! Use /startgame to play again."
             )
         except asyncio.CancelledError:
-            return  # Timer was cancelled because someone guessed correctly
+            return  # Timer cancelled because someone guessed correctly
 
     # ---------------- Slash Commands ----------------
     @app_commands.command(name="startgame", description="Start a new game")
@@ -123,11 +114,16 @@ class Game(commands.Cog):
         if not self.active_game or not self.current_word:
             await interaction.response.send_message("No active game! Use /startgame first.")
             return
+
         if self.hints_used >= 3:
             await interaction.response.send_message("No more hints left for this round!")
             return
+
         hint_text = self.next_hint()
-        await interaction.response.send_message(f"💡 Hint: {hint_text}")
+        hints_left = 3 - self.hints_used
+        await interaction.response.send_message(
+            f"💡 Hint: {hint_text}\nPoints will be reduced for using hints. Hints left: {hints_left}"
+        )
 
     @app_commands.command(name="miniscore", description="View mini scoreboard")
     async def miniscore(self, interaction: discord.Interaction):
@@ -149,6 +145,7 @@ class Game(commands.Cog):
 
     # ---------------- Message Listener ----------------
     def clean_message(self, msg):
+        # Remove punctuation, trim spaces, uppercase
         return re.sub(r'[^\w\s]', '', msg).strip().upper()
 
     @commands.Cog.listener()
@@ -188,10 +185,6 @@ class Game(commands.Cog):
             )
             self.round_task = asyncio.create_task(self.round_timer(message.channel))
         else:
-            # Wrong guess → reduce guesses, show Wordle feedback
-            self.guesses_per_player[user] += 1
-            if self.guesses_per_player[user] > 3:
-                await message.channel.send(f"{user}, you've already used all 3 guesses for this round!")
-                return
+            # Wrong guess → Wordle feedback only
             feedback = self.wordle_feedback(guess)
             await message.channel.send(f"{user}: {feedback}")
