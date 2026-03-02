@@ -1,24 +1,25 @@
 import discord
 from discord.ext import commands
+from discord import app_commands
 import json
 import random
 from collections import defaultdict
 
-# Load all words from the JSON file
+# Load all words from JSON
 with open("data/words.json", "r") as f:
-    WORDS = json.load(f)
+    WORDS = json.load(f)["All"]  # Use the "All" category
 
 class Game(commands.Cog):
-    def __init__(self, bot):
+    def __init__(self, bot: commands.Bot):
         self.bot = bot
         self.current_word = None
-        self.hints_used = 0
         self.previous_word = None
+        self.hints_used = 0
         self.mini_scoreboard = defaultdict(int)
         self.leaderboard = defaultdict(int)
 
     def start_new_round(self):
-        """Pick a random word avoiding the previous one and reset hints."""
+        """Pick a random word avoiding the previous one."""
         if not WORDS:
             return "No words available!"
         new_word = random.choice(WORDS)
@@ -30,7 +31,7 @@ class Game(commands.Cog):
         return self.current_word["start_hint"]
 
     def next_hint(self):
-        """Return the next hint for the current word and increment hint counter."""
+        """Return the next hint and increment hints used."""
         self.hints_used += 1
         if self.hints_used == 1:
             return self.current_word.get("hint1", "No more hints!")
@@ -41,40 +42,34 @@ class Game(commands.Cog):
         else:
             return "No more hints!"
 
-    def check_answer(self, answer):
-        """Check if the player's answer is correct."""
-        if not self.current_word:
-            return False
-        return self.current_word["word"].lower() == answer.lower()
+    def check_answer(self, guess):
+        return self.current_word and self.current_word["word"].lower() == guess.lower()
 
     def get_points(self):
-        """Calculate points based on difficulty and hints used."""
         difficulty = self.current_word.get("difficulty", 1)
-        # Ensure points are at least 1
         return max(1, difficulty - self.hints_used)
 
-    @commands.command()
-    async def startgame(self, ctx):
-        """Start a new game round and reset mini scoreboard."""
+    # ----------------- Slash Commands -----------------
+    @app_commands.command(name="startgame", description="Start a new game round")
+    async def startgame(self, interaction: discord.Interaction):
         self.mini_scoreboard.clear()
         hint = self.start_new_round()
-        await ctx.send(f"🎮 New round started! Here's your first hint:\n**{hint}**")
+        await interaction.response.send_message(f"🎮 New round! First hint:\n**{hint}**")
 
-    @commands.command()
-    async def hint(self, ctx):
-        """Give the next hint for the current word."""
+    @app_commands.command(name="hint", description="Get the next hint for the current word")
+    async def hint(self, interaction: discord.Interaction):
         if not self.current_word:
-            await ctx.send("No active round. Use /startgame to begin!")
+            await interaction.response.send_message("No active round. Use /startgame first!")
             return
         hint_text = self.next_hint()
-        await ctx.send(f"💡 Hint: {hint_text}")
+        await interaction.response.send_message(f"💡 Hint: {hint_text}")
 
-    @commands.command()
-    async def answer(self, ctx, *, guess):
-        """Check a player's guess and update scores."""
-        user = ctx.author.name
+    @app_commands.command(name="answer", description="Submit your guess for the current word")
+    @app_commands.describe(guess="Your guess for the current word")
+    async def answer(self, interaction: discord.Interaction, guess: str):
+        user = interaction.user.name
         if not self.current_word:
-            await ctx.send("No active round. Use /startgame to begin!")
+            await interaction.response.send_message("No active round. Use /startgame first!")
             return
         if self.check_answer(guess):
             points = self.get_points()
@@ -82,28 +77,26 @@ class Game(commands.Cog):
             self.leaderboard[user] += points
             correct_word = self.current_word["word"]
             new_hint = self.start_new_round()
-            await ctx.send(
+            await interaction.response.send_message(
                 f"✅ Correct, {user}! You earned {points} point(s).\n"
                 f"📊 Mini Score: {self.mini_scoreboard[user]}\n"
-                f"🏆 Leaderboard: {self.leaderboard[user]}\n"
-                f"Next round! Here's your first hint:\n**{new_hint}**"
+                f"🏆 Total Leaderboard: {self.leaderboard[user]}\n"
+                f"Next round! First hint:\n**{new_hint}**"
             )
         else:
-            await ctx.send(f"❌ Incorrect, {user}! Try again.")
+            await interaction.response.send_message(f"❌ Incorrect, {user}! Try again.")
 
-    @commands.command()
-    async def miniscore(self, ctx):
-        """Show the mini scoreboard."""
-        user = ctx.author.name
+    @app_commands.command(name="miniscore", description="Check your mini score")
+    async def miniscore(self, interaction: discord.Interaction):
+        user = interaction.user.name
         score = self.mini_scoreboard.get(user, 0)
-        await ctx.send(f"📊 {user} - Mini Score: {score}")
+        await interaction.response.send_message(f"📊 {user} - Mini Score: {score}")
 
-    @commands.command()
-    async def leaderboard(self, ctx):
-        """Show the total leaderboard."""
+    @app_commands.command(name="leaderboard", description="View the total leaderboard")
+    async def leaderboard(self, interaction: discord.Interaction):
         if not self.leaderboard:
-            await ctx.send("Leaderboard is empty.")
+            await interaction.response.send_message("Leaderboard is empty.")
             return
         sorted_lb = sorted(self.leaderboard.items(), key=lambda x: x[1], reverse=True)
         leaderboard_text = "\n".join([f"{user}: {score}" for user, score in sorted_lb])
-        await ctx.send(f"🏆 Leaderboard:\n{leaderboard_text}")
+        await interaction.response.send_message(f"🏆 Leaderboard:\n{leaderboard_text}")
