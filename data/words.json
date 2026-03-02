@@ -1370,58 +1370,42 @@
     },
     {
       "word": "COFFEE",
-      "start_hint": "Beverage",
-      "hint1": "Made from roasted beans",
-      "hint2": "Boosts alertness",
-      "hint3": "Starts with 'C'",
+      "start_hint": "This is a popular hot drink made from roasted beans.",
+      "hint1": "People often drink it to wake up in the morning.",
+      "hint2": "It can be served black, with milk, or with sugar.",
+      "hint3": "Popular types include espresso, latte, and cappuccino.",
       "difficulty": 1
     },
     {
       "word": "CORN",
-      "start_hint": "Yellow vegetable",
-      "hint1": "Often eaten on the cob",
+      "start_hint": "People eat it boiled, roasted, or as popcorn.",
+      "hint1": "Farm animals like cows and pigs often eat it as feed.",
       "hint2": "Can be ground into flour",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
     {
-      "word": "CRANBERRY",
-      "start_hint": "Red tart fruit",
-      "hint1": "Used in sauces and juices",
-      "hint2": "Grows in bogs",
-      "hint3": "Starts with 'C'",
-      "difficulty": 1
-    },
-    {
-      "word": "CREAM",
-      "start_hint": "Dairy product",
-      "hint1": "Used in desserts and coffee",
-      "hint2": "Thick and white",
-      "hint3": "Starts with 'C'",
-      "difficulty": 1
-    },
-    {
       "word": "CROISSANT",
-      "start_hint": "Flaky pastry",
-      "hint1": "Crescent-shaped",
-      "hint2": "Popular in France",
+      "start_hint": "This is a buttery, flaky pastry.",
+      "hint1": "It originates from France.",
+      "hint2": "It can be plain or filled with chocolate, almond, or ham and cheese.",
       "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "CUCUMBER",
-      "start_hint": "Green vegetable",
-      "hint1": "Often eaten in salads",
-      "hint2": "Has a watery crunch",
+      "start_hint": "It is commonly used in spa treatments and beauty products.",
+      "hint1": "It can be pickled to make pickles.",
+      "hint2": "It has a crisp, watery texture.",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
     {
       "word": "DOUGHNUT",
-      "start_hint": "Sweet fried dessert",
-      "hint1": "Ring-shaped",
-      "hint2": "Often glazed or filled",
-      "hint3": "Starts with 'D'",
+      "start_hint": "It is often ring-shaped with a hole in the middle.",
+      "hint1": "It can be glazed, frosted, or covered in sugar.",
+      "hint2": " can be filled with cream, jam, or chocolate.",
+      "hint3": "It comes in many flavors, like chocolate, vanilla, and strawberry.",
       "difficulty": 1
     },
     {
@@ -1442,11 +1426,11 @@
     },
     {
       "word": "EGGPLANT",
-      "start_hint": "Purple vegetable",
-      "hint1": "Also called aubergine",
+      "start_hint": "This is a purple, glossy vegetable.",
+      "hint1": "It is used in dishes like ratatouille, moussaka, and baba ganoush.",
       "hint2": "Used in many cuisines",
       "hint3": "Starts with 'E'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "FLOUR",
@@ -1466,41 +1450,41 @@
     },
     {
       "word": "GARLIC",
-      "start_hint": "Pungent bulb used in cooking",
-      "hint1": "Adds flavor to dishes",
+      "start_hint": "This is a small, white bulb with a strong smell.",
+      "hint1": "It has several cloves inside its bulb.",
       "hint2": "Can ward off vampires in legends",
-      "hint3": "Starts with 'G'",
-      "difficulty": 1
+      "hint3": "People use it to flavor food in cooking.",
+      "difficulty": 2
     },
     {
       "word": "GINGER",
-      "start_hint": "Spicy root used in cooking",
-      "hint1": "Used in tea and desserts",
-      "hint2": "Often pickled in sushi",
+      "start_hint": "This is a knobby, light brown root.",
+      "hint1": "It is used fresh, dried, powdered, or as a juice.",
+      "hint2": "It is popular in Asian, Indian, and Middle Eastern cuisines.",
       "hint3": "Starts with 'G'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "GRAPE",
-      "start_hint": "Small juicy fruit",
-      "hint1": "Can be red, green, or purple",
-      "hint2": "Used to make wine",
+      "start_hint": "It is widely cultivated in many countries for food and wine production.",
+      "hint1": "They are a popular snack and used in desserts.",
+      "hint2": "People eat it fresh, dried as raisins, or use it to make juice and wine.",
       "hint3": "Starts with 'G'",
       "difficulty": 1
     },
     {
       "word": "GRAPEFRUIT",
-      "start_hint": "Citrus fruit",
-      "hint1": "Tart and slightly bitter",
-      "hint2": "Pink or white inside",
+      "start_hint": "This is a large, round citrus fruit.",
+      "hint1": "The flesh inside can be pink, red, or pale yellow.",
+      "hint2": "It is larger than most common citrus fruits like oranges or lemons.",
       "hint3": "Starts with 'G'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "HAM",
-      "start_hint": "Cured pork meat",
-      "hint1": "Often served at breakfast or sandwiches",
-      "hint2": "Can be smoked or baked",
+      "start_hint": "It is popular during holidays like Christmas and Easter.",
+      "hint1": "It can be glazed with honey or brown sugar.",
+      "hint2": "It can be diced for omelets or wrapped around other foods.",
       "hint3": "Starts with 'H'",
       "difficulty": 1
     },
@@ -1563,66 +1547,66 @@
     {
       "word": "LASAGNA",
       "start_hint": "Layered pasta dish",
-      "hint1": "Often has cheese, meat, and sauce",
+      "hint1": "People add meat, cheese, and tomato sauce between the layers.",
       "hint2": "Baked in the oven",
       "hint3": "Starts with 'L'",
       "difficulty": 2
     },
     {
       "word": "LEMON",
-      "start_hint": "Yellow citrus fruit",
-      "hint1": "Sour taste",
-      "hint2": "Used in drinks and cooking",
+      "start_hint": "People use it for juice, zest, or slices in drinks and dishes.",
+      "hint1": "Its peel is often grated for flavoring.",
+      "hint2": "It is used to add acidity to sauces, marinades, and dressings.",
       "hint3": "Starts with 'L'",
       "difficulty": 1
     },
     {
       "word": "LETTUCE",
       "start_hint": "Leafy green vegetable",
-      "hint1": "Used in salads and sandwiches",
-      "hint2": "Crunchy texture",
-      "hint3": "Starts with 'L'",
+      "hint1": "It is commonly used in salads and sandwiches.",
+      "hint2": "There are varieties like iceberg, romaine, and butterhead.",
+      "hint3": "It can be used as a garnish or in wraps.",
       "difficulty": 1
     },
     {
       "word": "LOBSTER",
-      "start_hint": "Large marine crustacean",
-      "hint1": "Has claws",
-      "hint2": "Considered a luxury seafood",
+      "start_hint": "It has a hard shell and two large claws.",
+      "hint1": "It is considered a luxury seafood.",
+      "hint2": "Its tail and claws are the most commonly eaten parts.",
       "hint3": "Starts with 'L'",
       "difficulty": 2
     },
     {
       "word": "MACARONI",
       "start_hint": "Short tube-shaped pasta",
-      "hint1": "Used in macaroni and cheese",
-      "hint2": "Boiled before eating",
-      "hint3": "Starts with 'M'",
+      "hint1": "People often use it in baked dishes or pasta salads.",
+      "hint2": "It is the main ingredient in macaroni and cheese.",
+      "hint3": "It can be served with sauces like tomato or cheese sauce.",
       "difficulty": 1
     },
     {
       "word": "MANGO",
-      "start_hint": "Sweet tropical fruit",
-      "hint1": "Orange-yellow inside",
-      "hint2": "Often eaten fresh or in smoothies",
+      "start_hint": "This is a tropical fruit with smooth skin.",
+      "hint1": "The skin can be yellow, green, or red when ripe.",
+      "hint2": "People eat it fresh, in smoothies, or in desserts.",
       "hint3": "Starts with 'M'",
       "difficulty": 1
     },
     {
       "word": "MARSHMALLOW",
-      "start_hint": "Soft sugary treat",
-      "hint1": "White and fluffy",
-      "hint2": "Roasted over a fire or in hot chocolate",
-      "hint3": "Starts with 'M'",
+      "start_hint": "It is popular at campfires and holiday treats.",
+      "hint1": "People often roast it over a fire.",
+      "hint2": "It is used in s’mores with chocolate and graham crackers.",
+      "hint3": "It can be melted in hot chocolate or baked in desserts.",
       "difficulty": 1
     },
     {
       "word": "MAYONNAISE",
-      "start_hint": "Creamy condiment",
-      "hint1": "Made from eggs and oil",
-      "hint2": "Often used in sandwiches and salads",
-      "hint3": "Starts with 'M'",
-      "difficulty": 1
+      "start_hint": "It is a key ingredient in many salads, like coleslaw and potato salad.",
+      "hint1": "People often use it on sandwiches and burgers.",
+      "hint2": "It is made from oil, egg yolk, and vinegar or lemon juice.",
+      "hint3": "It is usually white or pale yellow in color.",
+      "difficulty": 2
     },
     {
       "word": "MEATBALL",
@@ -1650,19 +1634,19 @@
     },
     {
       "word": "MUSHROOM",
-      "start_hint": "Fungi often used in cooking",
-      "hint1": "Comes in many varieties",
-      "hint2": "Can be sautéed or grilled",
+      "start_hint": "It comes in many varieties, some edible and some poisonous.",
+      "hint1": "It can be eaten raw in salads or cooked in dishes.",
+      "hint2": "It adds an earthy flavor to food.",
       "hint3": "Starts with 'M'",
       "difficulty": 1
     },
     {
       "word": "MUSTARD",
-      "start_hint": "Condiment made from seeds",
-      "hint1": "Yellow or brown",
-      "hint2": "Often used on hot dogs and sandwiches",
-      "hint3": "Starts with 'M'",
-      "difficulty": 1
+      "start_hint": "This is a yellow condiment often used on sandwiches and hot dogs.",
+      "hint1": "It can be mild, spicy, or Dijon-style.",
+      "hint2": "It is common in barbecue and picnic foods.",
+      "hint3": "It is often paired with meats like ham, sausages, or burgers.",
+      "difficulty": 2
     },
     {
       "word": "NOODLES",
@@ -1682,17 +1666,17 @@
     },
     {
       "word": "ONION",
-      "start_hint": "Vegetable with layers",
-      "hint1": "Makes you cry when cutting",
+      "start_hint": "Chopping it often makes people’s eyes water.",
+      "hint1": "It can be eaten raw, sautéed, roasted, or caramelized.",
       "hint2": "Used in many dishes",
       "hint3": "Starts with 'O'",
       "difficulty": 1
     },
     {
       "word": "ORANGE",
-      "start_hint": "Citrus fruit",
-      "hint1": "Orange color",
-      "hint2": "Juicy and sweet",
+      "start_hint": "This is a round citrus fruit.",
+      "hint1": "Its peel is bright orange.",
+      "hint2": "People drink its juice or eat it fresh.",
       "hint3": "Starts with 'O'",
       "difficulty": 1
     },
@@ -1706,56 +1690,56 @@
     },
     {
       "word": "PASTA",
-      "start_hint": "Italian staple",
-      "hint1": "Can be spaghetti or penne",
-      "hint2": "Boiled before eating",
-      "hint3": "Starts with 'P'",
+      "start_hint": "It comes in many shapes like spaghetti, penne, and fusilli.",
+      "hint1": "People often serve it with sauces, cheese, or vegetables.",
+      "hint2": "It is a key part of Italian cuisine.",
+      "hint3": "It is used in dishes like lasagna, macaroni and cheese, and spaghetti Bolognese.",
       "difficulty": 1
     },
     {
       "word": "PEACH",
-      "start_hint": "Soft fuzzy fruit",
-      "hint1": "Orange inside",
-      "hint2": "Sweet and juicy",
+      "start_hint": "Its skin is fuzzy and usually orange-pink in color.",
+      "hint1": "It has a large pit or stone in the center.",
+      "hint2": "It is used in pies, jams, and smoothies.",
       "hint3": "Starts with 'P'",
       "difficulty": 1
     },
     {
       "word": "PEANUT",
       "start_hint": "Legume often eaten as a snack",
-      "hint1": "Can be made into butter",
+      "hint1": "It can be salted, honey-roasted, or plain.",
       "hint2": "Small and brown",
       "hint3": "Starts with 'P'",
       "difficulty": 1
     },
     {
       "word": "PEAR",
-      "start_hint": "Green or yellow fruit",
-      "hint1": "Sweet and juicy",
-      "hint2": "Bell-shaped",
+      "start_hint": "It is shaped like a teardrop, wider at the bottom.",
+      "hint1": "People eat it fresh, canned, or in desserts.",
+      "hint2": "Its flesh is soft and sweet when ripe.",
       "hint3": "Starts with 'P'",
       "difficulty": 1
     },
     {
       "word": "PINEAPPLE",
-      "start_hint": "Tropical fruit",
-      "hint1": "Spiky skin",
-      "hint2": "Yellow juicy inside",
+      "start_hint": "This is a tropical fruit with rough, spiky skin.",
+      "hint1": "People eat it fresh, canned, or in desserts and drinks.",
+      "hint2": "It is often used in fruit salads, smoothies, and on pizza.",
       "hint3": "Starts with 'P'",
       "difficulty": 1
     },
     {
       "word": "PIZZA",
-      "start_hint": "Baked flatbread with toppings",
-      "hint1": "Cheese and tomato sauce",
-      "hint2": "Popular Italian food",
-      "hint3": "Starts with 'P'",
+      "start_hint": "This is a popular baked dish with a flat dough base.",
+      "hint1": "It is usually topped with tomato sauce and cheese.",
+      "hint2": "It can be thin-crust, thick-crust, or stuffed crust.",
+      "hint3": "It is enjoyed as a snack, lunch, or dinner.",
       "difficulty": 1
     },
     {
       "word": "PLUM",
-      "start_hint": "Purple or red fruit",
-      "hint1": "Sweet and juicy",
+      "start_hint": "People eat it fresh, dried as prunes, or in desserts.",
+      "hint1": "It has a single hard pit in the center.",
       "hint2": "Often made into jam",
       "hint3": "Starts with 'P'",
       "difficulty": 1
@@ -1770,9 +1754,9 @@
     },
     {
       "word": "POTATO",
-      "start_hint": "Starchy tuber",
+      "start_hint": "It is used to make French fries and chips.",
       "hint1": "Can be baked, mashed, or fried",
-      "hint2": "Used for French fries",
+      "hint2": "It can be roasted, stuffed, or used in soups and stews.",
       "hint3": "Starts with 'P'",
       "difficulty": 1
     },
@@ -1786,17 +1770,17 @@
     },
     {
       "word": "PUDDING",
-      "start_hint": "Sweet dessert",
-      "hint1": "Can be chocolate or vanilla",
-      "hint2": "Soft and creamy",
-      "hint3": "Starts with 'P'",
+      "start_hint": "It can be creamy or custard-like in texture.",
+      "hint1": "Common flavors include chocolate, vanilla, and caramel.",
+      "hint2": "It is often made with milk, sugar, and thickening agents like cornstarch.",
+      "hint3": "It can be layered in desserts like trifles or eaten on its own.",
       "difficulty": 1
     },
     {
       "word": "PUMPKIN",
-      "start_hint": "Orange gourd",
-      "hint1": "Used in pies and decorations",
-      "hint2": "Popular at Halloween",
+      "start_hint": "This is a large, round, orange fruit/vegetable.",
+      "hint1": "It is popular during Halloween and Thanksgiving.",
+      "hint2": "It can be carved into jack-o’-lanterns.",
       "hint3": "Starts with 'P'",
       "difficulty": 1
     },
@@ -1810,7 +1794,7 @@
     },
     {
       "word": "RASPBERRY",
-      "start_hint": "Small red berry",
+      "start_hint": "This is a small, red, sweet fruit.",
       "hint1": "Used in desserts and jams",
       "hint2": "Sweet and slightly tart",
       "hint3": "Starts with 'R'",
@@ -1818,17 +1802,17 @@
     },
     {
       "word": "RICE",
-      "start_hint": "Staple grain",
-      "hint1": "White or brown",
+      "start_hint": "It comes in varieties like white, brown, jasmine, and basmati.",
+      "hint1": "It is often served with vegetables, meat, or seafood.",
       "hint2": "Boiled before eating",
       "hint3": "Starts with 'R'",
       "difficulty": 1
     },
     {
       "word": "SAUSAGE",
-      "start_hint": "Ground meat in casing",
-      "hint1": "Often grilled or fried",
-      "hint2": "Breakfast food",
+      "start_hint": "It is commonly served in sandwiches, with eggs, or in pasta dishes.",
+      "hint1": "can be smoked, fresh, or cured.",
+      "hint2": "It is often encased in a skin or casing.",
       "hint3": "Starts with 'S'",
       "difficulty": 1
     },
@@ -1859,32 +1843,32 @@
     {
       "word": "SARDINE",
       "start_hint": "Small oily fish",
-      "hint1": "Often canned",
+      "hint1": "People often eat it canned in oil, water, or sauce.",
       "hint2": "Eaten as snack or in meals",
       "hint3": "Starts with 'S'",
       "difficulty": 1
     },
     {
       "word": "SAUCE",
-      "start_hint": "Liquid or semi-liquid food",
-      "hint1": "Adds flavor",
+      "start_hint": "People pour it over pasta, meat, or vegetables.",
+      "hint1": "It is often cooked or simmered before serving.",
       "hint2": "Can be tomato, soy, or cream-based",
-      "hint3": "Starts with 'S'",
+      "hint3": "It can be used as a dip or a cooking ingredient.",
       "difficulty": 1
     },
     {
       "word": "SHRIMP",
-      "start_hint": "Small crustacean",
-      "hint1": "Eaten as seafood",
-      "hint2": "Pink when cooked",
-      "hint3": "Starts with 'S'",
+      "start_hint": "This is a small, pink or gray crustacean.",
+      "hint1": "It is commonly used in dishes like cocktails, stir-fries, and pasta.",
+      "hint2": "It is smaller than a lobster or crab but similar in structure.",
+      "hint3": "It is a popular seafood worldwide.",
       "difficulty": 1
     },
     {
       "word": "STEAK",
-      "start_hint": "Cut of beef",
-      "hint1": "Cooked by grilling or frying",
-      "hint2": "Served medium, rare, or well-done",
+      "start_hint": "This is a slice of meat, usually beef.",
+      "hint1": "People cook it to different levels like rare, medium, or well-done.",
+      "hint2": "It can be served with sides like potatoes or vegetables.",
       "hint3": "Starts with 'S'",
       "difficulty": 1
     },
@@ -1898,10 +1882,10 @@
     },
     {
       "word": "SUGAR",
-      "start_hint": "Sweet white crystals",
-      "hint1": "Used to sweeten food",
-      "hint2": "Comes from sugarcane or sugar beets",
-      "hint3": "Starts with 'S'",
+      "start_hint": "It is commonly used to sweeten drinks and food.",
+      "hint1": "It comes from sugarcane or sugar beets.",
+      "hint2": "It dissolves easily in liquids.",
+      "hint3": "It is a key ingredient in candies, cakes, and cookies.",
       "difficulty": 1
     },
     {
@@ -1914,10 +1898,10 @@
     },
     {
       "word": "SWEET POTATO",
-      "start_hint": "Orange root vegetable",
-      "hint1": "Can be baked or mashed",
-      "hint2": "Sweeter than regular potato",
-      "hint3": "Starts with 'S'",
+      "start_hint": "It is sweeter than regular potatoes.",
+      "hint1": "People bake, boil, roast, or mash it.",
+      "hint2": "It is used in soups, casseroles, pies, and fries.",
+      "hint3": "It can also be pureed for baby food or desserts.",
       "difficulty": 1
     },
     {
@@ -1954,11 +1938,11 @@
     },
     {
       "word": "TOFU",
-      "start_hint": "Soy product",
+      "start_hint": "This is a soft, white food made from soybeans.",
       "hint1": "Used in vegetarian dishes",
       "hint2": "Soft and white",
       "hint3": "Starts with 'T'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "TOMATO",
@@ -1970,10 +1954,10 @@
     },
     {
       "word": "TUNA",
-      "start_hint": "Large ocean fish",
-      "hint1": "Often canned or grilled",
-      "hint2": "Popular in sushi",
-      "hint3": "Starts with 'T'",
+      "start_hint": "This is a type of canned or packaged seafood.",
+      "hint1": "People eat it in sandwiches, salads, or casseroles.",
+      "hint2": "It is often packed in water, oil, or brine.",
+      "hint3": "It can be mixed with mayonnaise for a popular salad.",
       "difficulty": 1
     },
     {
@@ -1986,8 +1970,8 @@
     },
     {
       "word": "VANILLA",
-      "start_hint": "Flavoring from orchid pods",
-      "hint1": "Used in desserts and ice cream",
+      "start_hint": "It is often used in ice cream, cakes, and cookies.",
+      "hint1": "It comes from the pods of a tropical orchid plant.m",
       "hint2": "White or light-colored",
       "hint3": "Starts with 'V'",
       "difficulty": 1
@@ -2002,48 +1986,48 @@
     },
     {
       "word": "YOGURT",
-      "start_hint": "Fermented dairy product",
-      "hint1": "Creamy texture",
-      "hint2": "Often eaten with fruit or honey",
+      "start_hint": "This is a creamy dairy product made by fermenting milk.",
+      "hint1": "People eat it plain or flavored with fruit, honey, or vanilla.",
+      "hint2": "It is often served with granola or nuts for breakfast.",
       "hint3": "Starts with 'Y'",
       "difficulty": 1
     },
     {
       "word": "CHEESECAKE",
-      "start_hint": "Sweet dessert with a creamy filling",
-      "hint1": "Often has a crust",
-      "hint2": "Baked or chilled",
+      "start_hint": "This is a sweet dessert made primarily from cream cheese.",
+      "hint1": "It usually has a crust made of crushed cookies or graham crackers.",
+      "hint2": "It can be baked or served no-bake.",
       "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "BROWNIE",
       "start_hint": "Chocolate baked dessert",
-      "hint1": "Dense and fudgy",
-      "hint2": "Square or rectangular pieces",
+      "hint1": "It is usually cut into squares or rectangles.",
+      "hint2": "Blondies are a variation made with brown sugar instead of chocolate.",
       "hint3": "Starts with 'B'",
       "difficulty": 1
     },
     {
       "word": "CUPCAKE",
-      "start_hint": "Small individual cake",
-      "hint1": "Often frosted on top",
-      "hint2": "Served in paper cups",
-      "hint3": "Starts with 'C'",
+      "start_hint": "This is a small, individual-sized cake.",
+      "hint1": "It can be decorated with sprinkles, fruit, or candies.",
+      "hint2": "They are often served at birthdays, parties, and celebrations.",
+      "hint3": "They can be frozen and stored for later use.",
       "difficulty": 1
     },
     {
       "word": "MUFFIN",
       "start_hint": "Small baked bread-like item",
-      "hint1": "Can be sweet or savory",
+      "hint1": "Common sweet flavors include blueberry, chocolate chip, and banana.",
       "hint2": "Often eaten for breakfast",
       "hint3": "Starts with 'M'",
       "difficulty": 1
     },
     {
       "word": "BISCUIT",
-      "start_hint": "Small baked bread",
-      "hint1": "Can be sweet or savory",
+      "start_hint": "This is a small, baked bread or cookie-like treat.",
+      "hint1": "It can contain ingredients like chocolate chips, nuts, or dried fruit.",
       "hint2": "Soft or crunchy",
       "hint3": "Starts with 'B'",
       "difficulty": 1
@@ -2058,17 +2042,17 @@
     },
     {
       "word": "CARAMEL",
-      "start_hint": "Sweet brown candy or syrup",
-      "hint1": "Made by heating sugar",
-      "hint2": "Used in desserts and sauces",
+      "start_hint": "It is made by heating sugar until it melts and browns.",
+      "hint1": "People use it in candies, desserts, and sauces.",
+      "hint2": "It can be poured over popcorn for a sweet treat.",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
     {
       "word": "COTTON CANDY",
-      "start_hint": "Fluffy sugary treat",
-      "hint1": "Often pink or blue",
-      "hint2": "Sold at fairs and carnivals",
+      "start_hint": "This is a fluffy, spun sugar treat.",
+      "hint1": "It melts quickly in your mouth.",
+      "hint2": "It is a popular treat for children and party-goers.",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
@@ -2090,9 +2074,9 @@
     },
     {
       "word": "LEMONADE",
-      "start_hint": "Sweet citrus drink",
-      "hint1": "Made from lemons",
-      "hint2": "Often served cold",
+      "start_hint": "It is usually made from lemons, water, and sugar.",
+      "hint1": "It can be served cold or over ice.",
+      "hint2": "It is a popular summer beverage.",
       "hint3": "Starts with 'L'",
       "difficulty": 1
     },
@@ -2106,11 +2090,11 @@
     },
     {
       "word": "GRANOLA",
-      "start_hint": "Crunchy breakfast food",
-      "hint1": "Made from oats, nuts, and honey",
-      "hint2": "Often eaten with yogurt or milk",
-      "hint3": "Starts with 'G'",
-      "difficulty": 1
+      "start_hint": "This is a breakfast food made from oats.",
+      "hint1": "People usually eat it with yogurt, milk, or as a snack.",
+      "hint2": "It can be sweetened with honey, maple syrup, or sugar.",
+      "hint3": "It is popular in cereals, parfaits, and trail mixes.",
+      "difficulty": 2
     },
     {
       "word": "CORNFLAKES",
@@ -2122,18 +2106,10 @@
     },
     {
       "word": "OMELETTE",
-      "start_hint": "Egg dish cooked in a pan",
-      "hint1": "Can include vegetables, cheese, or meat",
-      "hint2": "Folded before serving",
+      "start_hint": "This is a dish made from beaten eggs.",
+      "hint1": "People often fold it over fillings like cheese, vegetables, or meat.",
+      "hint2": "It can be plain or seasoned with herbs and spices.",
       "hint3": "Starts with 'O'",
-      "difficulty": 1
-    },
-    {
-      "word": "SCRAMBLED EGGS",
-      "start_hint": "Eggs beaten and cooked",
-      "hint1": "Soft and fluffy",
-      "hint2": "Often eaten for breakfast",
-      "hint3": "Starts with 'S'",
       "difficulty": 1
     },
     {
@@ -2234,11 +2210,11 @@
     },
     {
       "word": "WOODWORKING",
-      "start_hint": "Crafting with wood",
-      "hint1": "Can make furniture or decor",
-      "hint2": "Involves carving or assembling",
+      "start_hint": "This is the craft of making things out of wood.",
+      "hint1": "Tools like saws, chisels, planes, and hammers are used.",
+      "hint2": "It is one of the oldest human crafts, dating back thousands of years.",
       "hint3": "Starts with 'W'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "KNITTING",
@@ -2250,25 +2226,25 @@
     },
     {
       "word": "JEWELRY MAKING",
-      "start_hint": "Creating wearable art",
-      "hint1": "Involves beads, metals, or gems",
-      "hint2": "Can make necklaces, bracelets, or rings",
+      "start_hint": "It involves making necklaces, bracelets, earrings, and rings.",
+      "hint1": "Materials like metals, beads, gemstones, and wire are used.",
+      "hint2": "It can be done as a hobby or professionally for sale.",
       "hint3": "Starts with 'J'",
       "difficulty": 1
     },
     {
       "word": "CANDLE MAKING",
-      "start_hint": "Crafting wax items that light up",
-      "hint1": "Can be scented or decorative",
-      "hint2": "Involves melting wax",
+      "start_hint": "This is the craft of creating wax sticks that produce light.",
+      "hint1": "It can be a hobby, a DIY project, or a business.",
+      "hint2": "It is a popular craft for holidays, gifts, and home décor.",
       "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "SOAP MAKING",
-      "start_hint": "Creating hygiene products",
+      "start_hint": "This is the craft of creating cleansing bars or liquids.",
       "hint1": "Can be scented or colored",
-      "hint2": "Involves oils and lye",
+      "hint2": "It can be used for personal hygiene or decorative purposes.",
       "hint3": "Starts with 'S'",
       "difficulty": 1
     },
@@ -2299,15 +2275,15 @@
     {
       "word": "READING BOOKS",
       "start_hint": "Engaging with written stories",
-      "hint1": "Fiction or non-fiction",
-      "hint2": "Can be for entertainment or learning",
-      "hint3": "Starts with 'R'",
+      "hint1": "People do it for learning, entertainment, or relaxation.",
+      "hint2": "It can be done with physical books or digital e-readers.",
+      "hint3": "Genres include fiction, non-fiction, mystery, fantasy, and more.",
       "difficulty": 1
     },
     {
-      "word": "PLAYING MUSICAL INSTRUMENTS",
-      "start_hint": "Creating music with instruments",
-      "hint1": "Can be piano, guitar, drums, etc.",
+      "word": "PLAYING INSTRUMENTS",
+      "start_hint": "This is the activity of producing music using tools or devices.",
+      "hint1": "It can be done solo or in a group like a band or orchestra.",
       "hint2": "Requires practice",
       "hint3": "Starts with 'P'",
       "difficulty": 1
@@ -2354,7 +2330,7 @@
     },
     {
       "word": "BALLET",
-      "start_hint": "Classical dance form",
+      "start_hint": "Dancers often wear tutus, leotards, and pointe shoes.",
       "hint1": "Graceful and precise movements",
       "hint2": "Often performed on stage with music",
       "hint3": "Starts with 'B'",
@@ -2402,16 +2378,16 @@
     },
     {
       "word": "YOGA",
-      "start_hint": "Physical and mental exercise",
-      "hint1": "Involves poses and breathing",
+      "start_hint": "This is a practice that combines physical postures, breathing, and meditation.",
+      "hint1": "It can be practiced alone, in classes, or online.",
       "hint2": "Promotes flexibility and relaxation",
       "hint3": "Starts with 'Y'",
       "difficulty": 1
     },
     {
       "word": "HIKING",
-      "start_hint": "Walking in nature",
-      "hint1": "Often on trails or mountains",
+      "start_hint": "This is the activity of walking in nature or on trails.",
+      "hint1": "It is sometimes combined with camping on longer routes.",
       "hint2": "Outdoor activity for exercise",
       "hint3": "Starts with 'H'",
       "difficulty": 1
@@ -2427,8 +2403,8 @@
     {
       "word": "ROCK CLIMBING",
       "start_hint": "Climbing natural rock formations",
-      "hint1": "Requires ropes or safety gear",
-      "hint2": "Can be indoor or outdoor",
+      "hint1": "It can be done indoors on climbing gyms or outdoors on cliffs.",
+      "hint2": "It can be recreational, competitive, or part of mountaineering.",
       "hint3": "Starts with 'R'",
       "difficulty": 2
     },
@@ -2450,8 +2426,8 @@
     },
     {
       "word": "GARDENING",
-      "start_hint": "Cultivating plants and flowers",
-      "hint1": "Can be for food or decoration",
+      "start_hint": "This is the activity of growing and caring for plants.",
+      "hint1": "Tools like trowels, shovels, and gloves are commonly used.",
       "hint2": "Involves soil, water, and sunlight",
       "hint3": "Starts with 'G'",
       "difficulty": 1
@@ -2546,10 +2522,10 @@
     },
     {
       "word": "JIGSAW PUZZLES",
-      "start_hint": "Assembling interlocking pieces",
-      "hint1": "Can create an image when complete",
-      "hint2": "Often done for leisure",
-      "hint3": "Starts with 'J'",
+      "start_hint": "This is a game where you fit pieces together to form a picture.",
+      "hint1": "Pieces are usually cardboard or wood and interlocking.",
+      "hint2": "The finished image can be a photograph, painting, or design.",
+      "hint3": "It can have anywhere from a few pieces to thousands of pieces.",
       "difficulty": 1
     },
     {
@@ -2562,9 +2538,9 @@
     },
     {
       "word": "CROSSWORDS",
-      "start_hint": "Word puzzle with intersecting answers",
-      "hint1": "Often found in newspapers",
-      "hint2": "Requires knowledge and vocabulary",
+      "start_hint": "This is a word puzzle where you fill in answers on a grid.",
+      "hint1": "Clues are given for words that go across and down.",
+      "hint2": "It can be found in newspapers, books, or online.",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
@@ -2578,15 +2554,15 @@
     },
     {
       "word": "CHESS",
-      "start_hint": "Strategy game with 16 pieces per side",
-      "hint1": "King, Queen, and pawns involved",
-      "hint2": "Played on a checkered board",
+      "start_hint": "Each player starts with 16 pieces, including pawns, rooks, knights, bishops, a queen, and a king.",
+      "hint1": "The goal is to checkmate your opponent’s king.",
+      "hint2": "It is sometimes called the ‘game of kings.",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
     {
       "word": "CHECKERS",
-      "start_hint": "Jumping game on a board",
+      "start_hint": "The goal is to capture all your opponent’s pieces or block them.",
       "hint1": "Pieces move diagonally",
       "hint2": "Capture opponent by jumping over pieces",
       "hint3": "Starts with 'C'",
@@ -2602,9 +2578,9 @@
     },
     {
       "word": "DOCTOR",
-      "start_hint": "Medical professional",
-      "hint1": "Diagnoses and treats patients",
-      "hint2": "Works in hospitals or clinics",
+      "start_hint": "This is a professional who helps people stay healthy.",
+      "hint1": "They diagnose and treat illnesses and injuries.",
+      "hint2": "Specialties include pediatrics, surgery, cardiology, and more.",
       "hint3": "Starts with 'D'",
       "difficulty": 1
     },
@@ -2618,9 +2594,9 @@
     },
     {
       "word": "SURGEON",
-      "start_hint": "Performs operations",
-      "hint1": "Specialized doctor",
-      "hint2": "Works in operating rooms",
+      "start_hint": "This is a medical doctor who performs operations.",
+      "hint1": "They treat injuries, diseases, or deformities through surgery.",
+      "hint2": "They use scalpels, scissors, and other surgical tools.",
       "hint3": "Starts with 'S'",
       "difficulty": 2
     },
@@ -2634,7 +2610,7 @@
     },
     {
       "word": "PHARMACIST",
-      "start_hint": "Dispenses medications",
+      "start_hint": "They check for drug interactions and proper dosages.",
       "hint1": "Works in pharmacies or hospitals",
       "hint2": "Advises patients on drug use",
       "hint3": "Starts with 'P'",
