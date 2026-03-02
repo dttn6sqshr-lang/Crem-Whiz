@@ -1,9 +1,10 @@
+import os
 import discord
 from discord.ext import commands
 from cogs.game import Game
 
 intents = discord.Intents.default()
-intents.message_content = True  # Needed to read guesses
+intents.message_content = True
 
 bot = commands.Bot(command_prefix='/', intents=intents)
 
@@ -14,4 +15,5 @@ bot.add_cog(Game(bot))
 async def on_ready():
     print(f'Bot is ready! Logged in as {bot.user}')
 
-bot.run("YOUR_BOT_TOKEN")  # Replace with your bot token
+# Use environment variable for the token
+bot.run(os.getenv("DISCORD_TOKEN"))
