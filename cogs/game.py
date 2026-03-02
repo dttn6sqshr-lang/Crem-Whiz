@@ -1,69 +1,76 @@
 import discord
-from discord.ext import commands, tasks
-from discord.commands import slash_command
+from discord.ext import commands
+from discord import app_commands
 import random, json, os, asyncio
 
-# ----- Constants -----
-EMBED_COLOR = discord.Color.from_rgb(27, 28, 35)  # #1b1c23
+EMBED_COLOR = discord.Color.from_rgb(27, 28, 35)
 ROUND_TIME = 60
-HEARTS = 10
 
-# Load words.json from data folder
-path = os.path.join(os.path.dirname(__file__), "..", "data", "words.json")
-with open(path, "r", encoding="utf-8") as f:
+BASE_DIR = os.path.dirname(__file__)
+WORDS_PATH = os.path.join(BASE_DIR, "..", "data", "words.json")
+LEADERBOARD_PATH = os.path.join(BASE_DIR, "..", "data", "leaderboard.json")
+
+with open(WORDS_PATH, "r", encoding="utf-8") as f:
     WORDS = json.load(f)["All"]
 
+if not os.path.exists(LEADERBOARD_PATH):
+    with open(LEADERBOARD_PATH, "w") as f:
+        json.dump({}, f)
+
+def load_leaderboard():
+    with open(LEADERBOARD_PATH, "r") as f:
+        return json.load(f)
+
+def save_leaderboard(data):
+    with open(LEADERBOARD_PATH, "w") as f:
+        json.dump(data, f, indent=2)
+
 class Game(commands.Cog):
-    def __init__(self, bot: commands.Bot):
+    def __init__(self, bot):
         self.bot = bot
+        self.running = False
         self.channel = None
-        self.game_running = False
-        self.current_word = ""
-        self.display = []
+        self.word = ""
         self.hints = []
         self.used_hints = []
-        self.time_left = ROUND_TIME
+        self.display = []
+        self.time_left = 0
         self.message = None
         self.round_scores = {}
-        self.global_scores = {}
         self.streaks = {}
-        self.round = 1
-        self.double_points_users = set()
-        self.guessed_players = set()
         self.timer_task = None
+        self.double_points_users = set()
 
-    # ------------------- START GAME ------------------- #
-    @slash_command(name="gamestart", description="Start a new Guess the Word game")
-    async def gamestart(self, ctx: discord.ApplicationContext):
-        if self.game_running:
-            return await ctx.respond("A game is already running!", ephemeral=True)
+    # ---------------- /gamestart ---------------- #
+    @app_commands.command(name="gamestart", description="Start Guess the Word")
+    async def gamestart(self, interaction: discord.Interaction):
+        if self.running:
+            await interaction.response.send_message("Game already running.", ephemeral=True)
+            return
 
-        self.game_running = True
-        self.channel = ctx.channel
-        self.round = 1
+        self.running = True
+        self.channel = interaction.channel
         self.round_scores.clear()
-        self.guessed_players.clear()
-        await ctx.respond("Starting Guess the Word game!")
+        self.double_points_users.clear()
+        await interaction.response.send_message("🎮 Game started!")
         await self.new_round()
 
-    # ------------------- NEW ROUND ------------------- #
+    # ---------------- NEW ROUND ---------------- #
     async def new_round(self):
         data = random.choice(WORDS)
-        self.current_word = data["word"].upper()
+        self.word = data["word"].upper()
         self.hints = [data["start_hint"], data["hint1"], data["hint2"], data["hint3"]]
         self.used_hints = []
+        self.display = ["⬜" if c != " " else " " for c in self.word]
         self.time_left = ROUND_TIME
-        self.display = ["⬜" if c != " " else " " for c in self.current_word]
-        self.double_points_users.clear()
-        self.guessed_players.clear()
-
-        await self.send_embed()
 
         if self.timer_task:
             self.timer_task.cancel()
         self.timer_task = asyncio.create_task(self.timer_loop())
 
-    # ------------------- TIMER ------------------- #
+        await self.send_embed()
+
+    # ---------------- TIMER ---------------- #
     async def timer_loop(self):
         while self.time_left > 0:
             await asyncio.sleep(1)
@@ -74,56 +81,58 @@ class Game(commands.Cog):
 
             await self.send_embed()
 
-        await self.end_game()
+        await self.game_over()
 
-    # ------------------- HEART TIMER WITH ANIMATION ------------------- #
-    def heart_timer(self):
-        filled = int((self.time_left / ROUND_TIME) * HEARTS)
-        hearts = ["❤️" if i < filled else "🖤" for i in range(HEARTS)]
-        if self.time_left % 2 == 0:
-            hearts = hearts[::-1]
-        return "".join(hearts)
+    # ---------------- WORDLE PROCESS ---------------- #
+    def process_guess(self, guess):
+        guess = guess.upper()
+        result = ["⬛"] * len(self.word)
+        word_copy = list(self.word)
 
-    # ------------------- WORDLE DISPLAY ------------------- #
+        for i, ch in enumerate(guess):
+            if ch == self.word[i]:
+                result[i] = "🟩"
+                word_copy[i] = None
+
+        for i, ch in enumerate(guess):
+            if result[i] == "🟩":
+                continue
+            if ch in word_copy:
+                result[i] = "🟨"
+                word_copy[word_copy.index(ch)] = None
+            else:
+                result[i] = "⬛"
+
+        self.display = result
+
     def wordle_display(self):
         return "".join(self.display)
 
-    def process_guess(self, guess):
-        guess = guess.upper()
-        new_display = self.display.copy()
-        for i, letter in enumerate(guess):
-            if i < len(self.current_word):
-                if letter == self.current_word[i]:
-                    new_display[i] = "🟩"
-                elif letter in self.current_word:
-                    new_display[i] = "🟨"
-                else:
-                    new_display[i] = "⬛"
-        self.display = new_display
-
-    # ------------------- MINI LEADERBOARD ------------------- #
+    # ---------------- MINI LEADERBOARD ---------------- #
     def mini_leaderboard(self):
         if not self.round_scores:
             return ""
         lines = []
         sorted_scores = sorted(self.round_scores.items(), key=lambda x: x[1], reverse=True)
-        for name, pts in sorted_scores:
-            trophy = "<:CC_trophy:1474577678790299821> " if pts == sorted_scores[0][1] else ""
+        for i, (name, pts) in enumerate(sorted_scores):
+            trophy = "<:CC_trophy:1474577678790299821> " if i == 0 else ""
             lines.append(f"◡◡  {trophy}{name} : {pts} Points ♡  ࣪")
         return "\n".join(lines)
 
-    # ------------------- SEND EMBED ------------------- #
+    # ---------------- SEND EMBED ---------------- #
     async def send_embed(self):
         if self.message:
-            try: await self.message.delete()
-            except: pass
+            try:
+                await self.message.delete()
+            except:
+                pass
 
         desc = f"""
 Word:
 {self.wordle_display()}
 
 ⠀♡⃕⠀⠀Timer 𓂃　۪ ׄ
-{self.heart_timer()}
+{self.time_left}s
 
 Starter Hint:
 {self.hints[0]}
@@ -133,81 +142,117 @@ Used Hints:
 
 {self.mini_leaderboard()}
 """
+
         embed = discord.Embed(description=desc, color=EMBED_COLOR)
         self.message = await self.channel.send(embed=embed)
 
-    # ------------------- GUESS LISTENER ------------------- #
+    # ---------------- IGNORE NORMAL CHAT ---------------- #
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
-        if not self.game_running or message.author.bot or message.channel != self.channel:
+        if not self.running:
+            return
+        if message.author.bot:
+            return
+        if message.channel != self.channel:
             return
 
         guess = message.content.strip().upper()
-        # Only accept exact words from WORDS list
-        if not any(guess == w["word"].upper() for w in WORDS):
-            return
 
-        if message.author.display_name in self.guessed_players:
+        if len(guess) != len(self.word):
             return
 
         self.process_guess(guess)
-        if self.timer_task:
-            self.timer_task.cancel()
+        await self.send_embed()
+
+        if guess != self.word:
+            return
 
         name = message.author.display_name
-        pts = 2
-        if name in self.double_points_users: pts *= 2
+        points = 2 if message.author.id in self.double_points_users else 1
 
-        self.round_scores[name] = self.round_scores.get(name,0)+pts
-        self.global_scores[name] = self.global_scores.get(name,0)+pts
-
-        # ------------------- STREAKS & REWARD ------------------- #
+        self.round_scores[name] = self.round_scores.get(name, 0) + points
         self.streaks[name] = self.streaks.get(name, 0) + 1
-        if self.streaks[name] % 3 == 0 and len(self.used_hints) < 3:
-            extra_hint = self.hints[len(self.used_hints)+1]
-            self.used_hints.append(extra_hint)
-            await self.channel.send(f"🔥 {name}'s streak bonus! Extra hint: {extra_hint}")
 
-        self.guessed_players.add(name)
+        leaderboard = load_leaderboard()
+        leaderboard[name] = leaderboard.get(name, 0) + points
+        save_leaderboard(leaderboard)
+
+        if self.streaks[name] % 3 == 0:
+            await self.channel.send(f"🔥 {name} earned a streak reward: +1 free hint!")
 
         await self.channel.send(f"🎉 {name} got it correct!")
-        self.round += 1
+        self.double_points_users.clear()
         await self.new_round()
 
-    # ------------------- HINT ------------------- #
-    @slash_command(name="hint", description="Get a hint for the current word")
-    async def hint(self, ctx: discord.ApplicationContext):
-        if not self.game_running: return await ctx.respond("No game running.", ephemeral=True)
-        if len(self.used_hints) >= 3: return await ctx.respond("No more hints!", ephemeral=True)
+    # ---------------- /hint ---------------- #
+    @app_commands.command(name="hint", description="Get a hint")
+    async def hint(self, interaction: discord.Interaction):
+        if not self.running:
+            await interaction.response.send_message("No game running.", ephemeral=True)
+            return
 
-        hint = self.hints[len(self.used_hints)+1]
+        if len(self.used_hints) >= 3:
+            await interaction.response.send_message("No more hints.", ephemeral=True)
+            return
+
+        hint = self.hints[len(self.used_hints) + 1]
         self.used_hints.append(hint)
-        await ctx.respond(f"Hint: {hint}")
+        await interaction.response.send_message(f"Hint: {hint}")
+        await self.send_embed()
 
-    # ------------------- POWER UPS ------------------- #
-    @slash_command(name="revealletter", description="Reveal a letter in the word")
-    async def reveal_letter(self, ctx: discord.ApplicationContext):
-        if not self.game_running: return await ctx.respond("No game running.", ephemeral=True)
-        indexes = [i for i,c in enumerate(self.display) if c=="⬜"]
-        if not indexes: return await ctx.respond("Nothing to reveal.", ephemeral=True)
-        i = random.choice(indexes)
-        self.display[i] = "🟩"
-        await ctx.respond("♡⠀⠀⠀⠀Power Ups⠀⠀\n/revealletter")
+    # ---------------- /revealletter ---------------- #
+    @app_commands.command(name="revealletter", description="Reveal one letter")
+    async def revealletter(self, interaction: discord.Interaction):
+        for i, c in enumerate(self.word):
+            if self.display[i] == "⬜" and c != " ":
+                self.display[i] = "🟩"
+                break
+        await interaction.response.send_message("♡⠀⠀⠀⠀Power Ups⠀⠀\n/revealletter")
+        await self.send_embed()
 
-    @slash_command(name="doublepoints", description="Get double points for this round")
-    async def double_points(self, ctx: discord.ApplicationContext):
-        self.double_points_users.add(ctx.author.display_name)
-        await ctx.respond("♡⠀⠀⠀⠀Power Ups⠀⠀\n/doublepoints")
+    # ---------------- /doublepoints ---------------- #
+    @app_commands.command(name="doublepoints", description="Double your next correct guess")
+    async def doublepoints(self, interaction: discord.Interaction):
+        self.double_points_users.add(interaction.user.id)
+        await interaction.response.send_message("♡⠀⠀⠀⠀Power Ups⠀⠀\n/doublepoints")
 
-    # ------------------- END GAME ------------------- #
-    async def end_game(self):
-        self.game_running = False
+    # ---------------- /leaderboard ---------------- #
+    @app_commands.command(name="leaderboard", description="Show the global leaderboard")
+    async def leaderboard(self, interaction: discord.Interaction):
+        leaderboard = load_leaderboard()
+
+        if not leaderboard:
+            await interaction.response.send_message("No scores yet.", ephemeral=True)
+            return
+
+        sorted_scores = sorted(leaderboard.items(), key=lambda x: x[1], reverse=True)
+
+        lines = []
+        for i, (name, pts) in enumerate(sorted_scores[:10]):
+            trophy = "<:CC_trophy:1474577678790299821> " if i == 0 else ""
+            lines.append(f"◡◡  {trophy}{name} : {pts} Points ♡  ࣪")
+
+        embed = discord.Embed(
+            description="\n".join(lines),
+            color=EMBED_COLOR
+        )
+
+        await interaction.response.send_message(embed=embed)
+
+    # ---------------- GAME OVER ---------------- #
+    async def game_over(self):
+        self.running = False
         if self.message:
-            try: await self.message.delete()
-            except: pass
+            try:
+                await self.message.delete()
+            except:
+                pass
 
         text = "˚⠀⠀♡⃕⠀⠀Game Over 𓂃　۪ ׄ\n\n"
-        for name, pts in sorted(self.global_scores.items(), key=lambda x:x[1], reverse=True):
+        for name, pts in sorted(self.round_scores.items(), key=lambda x: x[1], reverse=True):
             text += f"{name} - {pts} points\n"
 
         await self.channel.send(text)
+
+async def setup(bot):
+    await bot.add_cog(Game(bot))
