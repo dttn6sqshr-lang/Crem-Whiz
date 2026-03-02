@@ -3,12 +3,14 @@ from discord.ext import commands, tasks
 import json
 import random
 import asyncio
+import os
 
 EMBED_COLOR = discord.Color.from_rgb(27, 28, 35)
 ROUND_TIME = 60
 HEARTS = 10
 
-with open("words.json", "r", encoding="utf-8") as f:
+path = os.path.join(os.path.dirname(__file__), "..", "data", "words.json")
+with open(path, "r", encoding="utf-8") as f:
     WORDS = json.load(f)["All"]
 
 class Game(commands.Cog):
