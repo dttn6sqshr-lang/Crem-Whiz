@@ -112,3 +112,42 @@ Worm
 Zebra
 Pufferfish
 Clam
+Harry Potter
+Iron Man
+Captain America 
+Hulk
+Thor
+Spider Man
+Mickey Mouse
+Minnie Mouse
+Donald Duck
+Daisy Duck
+Cinderella
+Snow White
+Sleeping Beauty
+The Little Mermaid
+Ursula
+Aladdin
+Elsa
+Anna
+Olaf
+Pinocchio
+Peter Pan
+Tinker Bell
+Captain Hook
+Rapunzel
+Buzz Lightyear
+Sadness
+Joy
+Anger
+Fear
+Disgust
+Riley
+Woody
+Dory
+Nemo
+Ladybug
+Alvin
+Simon
+Theodore
+Fiona
