@@ -5,17 +5,18 @@ import os
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = commands.Bot(
-    command_prefix="!",
-    intents=intents
-)
+bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}")
-    print("Bot is online and ready!")
+    try:
+        synced = await bot.tree.sync()
+        print(f"Synced {len(synced)} slash commands.")
+    except Exception as e:
+        print(e)
 
-# Load cogs
-bot.load_extension("cogs.game")
+async def setup():
+    await bot.load_extension("cogs.game")
 
 bot.run(os.getenv("DISCORD_TOKEN"))
