@@ -5,6 +5,7 @@ import json
 import random
 import asyncio
 from collections import defaultdict
+import re
 
 # Load words
 with open("data/words.json", "r") as f:
@@ -100,8 +101,7 @@ class Game(commands.Cog):
                 "Game over! Use /startgame to play again."
             )
         except asyncio.CancelledError:
-            # Timer was cancelled because someone guessed correctly
-            return
+            return  # Timer was cancelled because someone guessed correctly
 
     # ---------------- Slash Commands ----------------
     @app_commands.command(name="startgame", description="Start a new game")
@@ -148,20 +148,25 @@ class Game(commands.Cog):
         await interaction.response.send_message(f"🏆 Leaderboard:\n{msg}")
 
     # ---------------- Message Listener ----------------
+    def clean_message(self, msg):
+        return re.sub(r'[^\w\s]', '', msg).strip().upper()
+
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
         if message.author.bot or not self.active_game or not self.current_word:
             return
 
         user = message.author.name
-        guess = message.content.strip().upper()
+        guess = self.clean_message(message.content)
 
-        # Only accept messages that match the word length
-        if len(guess) != len(self.current_word["word"]):
-            return
+        # Only accept guesses that are in words.json
+        valid_words = {w.upper() for w in WORDS}
+        if guess not in valid_words:
+            return  # Ignore normal chat
 
-        # Check correct guess
-        if guess == self.current_word["word"].upper():
+        word_to_guess = self.current_word["word"].upper()
+        if guess == word_to_guess:
+            # Correct guess
             points = self.calculate_points()
             self.mini_scoreboard[user] += points
             self.leaderboard[user] += points
@@ -174,6 +179,7 @@ class Game(commands.Cog):
 
             if self.round_task:
                 self.round_task.cancel()
+
             # Start new round
             hint = self.pick_word()
             word_length_display = "".join(["▪️" for _ in self.current_word["word"]])
@@ -182,7 +188,7 @@ class Game(commands.Cog):
             )
             self.round_task = asyncio.create_task(self.round_timer(message.channel))
         else:
-            # Only reduce guesses if wrong
+            # Wrong guess → reduce guesses, show Wordle feedback
             self.guesses_per_player[user] += 1
             if self.guesses_per_player[user] > 3:
                 await message.channel.send(f"{user}, you've already used all 3 guesses for this round!")
