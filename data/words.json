@@ -117,7 +117,7 @@
       "start_hint": "A freshwater fish with whisker-like barbels",
       "hint1": "Lives in rivers and ponds",
       "hint2": "Popular in cooking",
-      "hint3": "Despite its name, it’s a fish, not related to cats.,
+      "hint3": "Despite its name, it’s a fish, not related to cats.",
       "difficulty": 3
     },
     {
@@ -650,7 +650,7 @@
     },
     {
       "word": "RHINO",
-      "start_hint": "This animal has very thick, grayish skin.,
+      "start_hint": "This animal has very thick, grayish skin.",
       "hint1": "It is a huge land mammal that can weigh over a ton.",
       "hint2": "They are endangered due to hunting and habitat loss.",
       "hint3": "Starts with 'R'",
