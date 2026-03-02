@@ -57,19 +57,19 @@ class Game(commands.Cog):
         # First pass: correct letter + correct position
         for i, l in enumerate(guess_letters):
             if i < len(word_letters) and l == word_letters[i]:
-                result[i] = "✅"
-                word_letters[i] = None
+                result[i] = f"{l} ✅"
+                word_letters[i] = None  # mark as used
 
         # Second pass: correct letter wrong position
         for i, l in enumerate(guess_letters):
             if result[i] == "":
                 if l in word_letters:
-                    result[i] = "🟡"
+                    result[i] = f"{l} 🟡"
                     word_letters[word_letters.index(l)] = None
                 else:
-                    result[i] = "❌"
+                    result[i] = f"{l} ❌"
 
-        return "".join(result)
+        return "  ".join(result)
 
     # ---------------- Timer ----------------
     async def round_timer(self, channel):
@@ -93,12 +93,14 @@ class Game(commands.Cog):
                     )
                 await asyncio.sleep(1)
 
+            # Time's up
             self.active_game = False
             await channel.send(
                 f"⏰ Time's up! The word was **{self.current_word['word']}**.\n"
                 "Game over! Use /startgame to play again."
             )
         except asyncio.CancelledError:
+            # Timer was cancelled because someone guessed correctly
             return
 
     # ---------------- Slash Commands ----------------
@@ -110,7 +112,7 @@ class Game(commands.Cog):
         self.active_game = True
         self.mini_scoreboard.clear()
         hint = self.pick_word()
-        word_length_display = " ".join(["_" for _ in self.current_word["word"]])
+        word_length_display = "".join(["▪️" for _ in self.current_word["word"]])
         await interaction.response.send_message(
             f"🎮 New game started!\nWord length: {word_length_display}\nFirst hint: **{hint}**"
         )
@@ -174,7 +176,7 @@ class Game(commands.Cog):
                 self.round_task.cancel()
             # Start new round
             hint = self.pick_word()
-            word_length_display = " ".join(["_" for _ in self.current_word["word"]])
+            word_length_display = "".join(["▪️" for _ in self.current_word["word"]])
             await message.channel.send(
                 f"🎮 Next round!\nWord length: {word_length_display}\nFirst hint: **{hint}**"
             )
