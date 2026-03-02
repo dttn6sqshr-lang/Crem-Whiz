@@ -13,17 +13,24 @@ class Game(commands.Cog):
         self.bot = bot
         self.current_word = None
         self.hints_used = 0
+        self.previous_word = None
         self.mini_scoreboard = defaultdict(int)
         self.leaderboard = defaultdict(int)
 
     def start_new_round(self):
-        """Pick a random word and reset hints."""
-        self.current_word = random.choice(WORDS)
+        """Pick a random word avoiding the previous one and reset hints."""
+        if not WORDS:
+            return "No words available!"
+        new_word = random.choice(WORDS)
+        while new_word == self.previous_word and len(WORDS) > 1:
+            new_word = random.choice(WORDS)
+        self.current_word = new_word
+        self.previous_word = new_word
         self.hints_used = 0
         return self.current_word["start_hint"]
 
     def next_hint(self):
-        """Return the next hint for the current word."""
+        """Return the next hint for the current word and increment hint counter."""
         self.hints_used += 1
         if self.hints_used == 1:
             return self.current_word.get("hint1", "No more hints!")
@@ -41,8 +48,10 @@ class Game(commands.Cog):
         return self.current_word["word"].lower() == answer.lower()
 
     def get_points(self):
-        """Return points for current word based on difficulty."""
-        return self.current_word.get("difficulty", 1)
+        """Calculate points based on difficulty and hints used."""
+        difficulty = self.current_word.get("difficulty", 1)
+        # Ensure points are at least 1
+        return max(1, difficulty - self.hints_used)
 
     @commands.command()
     async def startgame(self, ctx):
@@ -62,7 +71,7 @@ class Game(commands.Cog):
 
     @commands.command()
     async def answer(self, ctx, *, guess):
-        """Check a player's guess."""
+        """Check a player's guess and update scores."""
         user = ctx.author.name
         if not self.current_word:
             await ctx.send("No active round. Use /startgame to begin!")
@@ -75,8 +84,8 @@ class Game(commands.Cog):
             new_hint = self.start_new_round()
             await ctx.send(
                 f"✅ Correct, {user}! You earned {points} point(s).\n"
-                f"Mini Score: {self.mini_scoreboard[user]}\n"
-                f"Leaderboard: {self.leaderboard[user]}\n"
+                f"📊 Mini Score: {self.mini_scoreboard[user]}\n"
+                f"🏆 Leaderboard: {self.leaderboard[user]}\n"
                 f"Next round! Here's your first hint:\n**{new_hint}**"
             )
         else:
