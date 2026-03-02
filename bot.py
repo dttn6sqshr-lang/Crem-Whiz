@@ -14,10 +14,8 @@ bot = commands.Bot(
 async def on_ready():
     print(f"Logged in as {bot.user}")
     print("Bot is online and ready!")
-    await bot.sync_commands()  # sync slash commands
 
 # Load cogs
 bot.load_extension("cogs.game")
 
-# Run bot
 bot.run(os.getenv("DISCORD_TOKEN"))
