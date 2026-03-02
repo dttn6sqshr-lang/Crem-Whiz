@@ -1,438 +1,3476 @@
 {
   "All": [
-    {"word":"ALLIGATOR","start_hint":"A large reptile that lives in freshwater","hint1":"Has a long snout","hint2":"Found in swamps and rivers","hint3":"Starts with 'A'","difficulty":2},
-    {"word":"ANACONDA","start_hint":"A giant snake found in South America","hint1":"Can swim in rivers","hint2":"One of the heaviest snakes in the world","hint3":"Starts with 'A'","difficulty":3},
-    {"word":"ANT","start_hint":"A tiny insect that lives in colonies","hint1":"Has six legs","hint2":"Can carry many times its own weight","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"ANTEATER","start_hint":"An animal that eats ants and termites","hint1":"Has a long snout and sticky tongue","hint2":"Found in Central and South America","hint3":"Starts with 'A'","difficulty":2},
-    {"word":"BABOON","start_hint":"A large monkey with a dog-like face","hint1":"Lives in troops","hint2":"Found in Africa","hint3":"Starts with 'B'","difficulty":2},
-    {"word":"BATS","start_hint":"Flying mammals active at night","hint1":"Use echolocation","hint2":"Many species eat insects","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BEAR","start_hint":"Large mammal, can be found in forests","hint1":"Some species hibernate","hint2":"Can be brown, black, or white","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BEAVER","start_hint":"Rodent that builds dams","hint1":"Has a flat tail","hint2":"Lives near rivers or lakes","hint3":"Starts with 'B'","difficulty":2},
-    {"word":"BEE","start_hint":"Insect that makes honey","hint1":"Can sting","hint2":"Lives in hives","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BLUE WHALE","start_hint":"The largest animal on Earth","hint1":"Lives in oceans","hint2":"A marine mammal","hint3":"Starts with 'B'","difficulty":3},
-    {"word":"BUMBLEBEE","start_hint":"A large fuzzy bee","hint1":"Pollinates flowers","hint2":"Can buzz loudly","hint3":"Starts with 'B'","difficulty":2},
-    {"word":"CAMEL","start_hint":"A desert animal with humps","hint1":"Can survive without water for days","hint2":"Used as a mode of transport","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CAT","start_hint":"A common domestic pet","hint1":"Purrs when happy","hint2":"Has whiskers and claws","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CATERPILLAR","start_hint":"The larval stage of a butterfly or moth","hint1":"Crawls on leaves","hint2":"Eventually becomes a butterfly or moth","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"CATFISH","start_hint":"A freshwater fish with whisker-like barbels","hint1":"Lives in rivers and ponds","hint2":"Popular in cooking","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"CATTLE","start_hint":"Farm animals raised for milk or meat","hint1":"Includes cows and bulls","hint2":"Domesticated for thousands of years","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CENTIPEDE","start_hint":"A many-legged arthropod","hint1":"Creeps on the ground","hint2":"Has one pair of legs per body segment","hint3":"Starts with 'C'","difficulty":2}
-    {"word":"CHEETAH","start_hint":"The fastest land animal","hint1":"Spotted coat","hint2":"Native to Africa","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"CHIMPANZEE","start_hint":"A primate closely related to humans","hint1":"Lives in African forests","hint2":"Known for using tools","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"CHIPMUNK","start_hint":"A small striped rodent","hint1":"Stores food in its cheeks","hint2":"Often seen gathering nuts","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"COBRA","start_hint":"A venomous snake that can spread its hood","hint1":"Found in Asia and Africa","hint2":"Famous in snake charming","hint3":"Starts with 'C'","difficulty":3},
-    {"word":"COCKROACH","start_hint":"An insect often found in homes","hint1":"Can survive extreme conditions","hint2":"Lives in kitchens and bathrooms","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"COW","start_hint":"Domesticated farm animal","hint1":"Produces milk","hint2":"Often used for beef","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"COYOTE","start_hint":"A wild canine found in North America","hint1":"Howls at night","hint2":"Related to wolves and dogs","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"CRAB","start_hint":"A crustacean with claws","hint1":"Lives near oceans","hint2":"Walks sideways","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CRICKET","start_hint":"A small jumping insect that chirps","hint1":"Often heard at night","hint2":"Has long antennae","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CROCODILE","start_hint":"Large reptile found in rivers","hint1":"Has powerful jaws","hint2":"Lives in Africa and Asia","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"DEER","start_hint":"Hooved mammal often found in forests","hint1":"Has antlers if male","hint2":"Eats plants","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"DOG","start_hint":"Common domestic pet","hint1":"Loyal and friendly","hint2":"Can be trained to do tricks","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"DOLPHIN","start_hint":"Marine mammal known for its intelligence","hint1":"Lives in oceans","hint2":"Can perform acrobatic jumps","hint3":"Starts with 'D'","difficulty":2},
-    {"word":"DONKEY","start_hint":"A domesticated equine","hint1":"Used as a working animal","hint2":"Has long ears","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"DRAGONFLY","start_hint":"An insect with long wings","hint1":"Found near water","hint2":"Catches mosquitoes mid-air","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"DUCK","start_hint":"A waterfowl with webbed feet","hint1":"Quacks","hint2":"Found in ponds","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"EAGLE","start_hint":"Bird of prey with sharp eyesight","hint1":"Soars high in the sky","hint2":"Has strong talons","hint3":"Starts with 'E'","difficulty":2},
-    {"word":"EARTHWORM","start_hint":"A worm that lives in soil","hint1":"Helps fertilize the ground","hint2":"No legs","hint3":"Starts with 'E'","difficulty":1},
-    {"word":"EEL","start_hint":"A long, slippery fish","hint1":"Lives in freshwater and oceans","hint2":"Looks like a snake","hint3":"Starts with 'E'","difficulty":2},
-    {"word":"FIREFLY","start_hint":"An insect that glows in the dark","hint1":"Produces light in its abdomen","hint2":"Often seen in summer evenings","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"FISH","start_hint":"Aquatic animal with gills","hint1":"Lives in freshwater or oceans","hint2":"Many species are edible","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"FLAMINGO","start_hint":"A pink wading bird","hint1":"Stands on one leg","hint2":"Feeds on algae and crustaceans","hint3":"Starts with 'F'","difficulty":2},
-    {"word":"FOX","start_hint":"A small, cunning wild canine","hint1":"Red or orange fur","hint2":"Known for its cleverness","hint3":"Starts with 'F'","difficulty":2},
-    {"word":"FROG","start_hint":"An amphibian that hops","hint1":"Lives near water","hint2":"Can croak","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"GIRAFFE","start_hint":"The tallest land animal","hint1":"Has a very long neck","hint2":"Eats leaves from trees","hint3":"Starts with 'G'","difficulty":2},
-    {"word":"GOAT","start_hint":"A farm animal with horns","hint1":"Eats almost anything","hint2":"Produces milk","hint3":"Starts with 'G'","difficulty":1}
-    {"word":"GOLDFISH","start_hint":"A small ornamental fish","hint1":"Common in aquariums","hint2":"Usually orange or gold","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"GOOSE","start_hint":"A large waterfowl","hint1":"Honk loudly","hint2":"Often migrates in V formation","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"GORILLA","start_hint":"A large primate","hint1":"Lives in African forests","hint2":"Close relative of humans","hint3":"Starts with 'G'","difficulty":3},
-    {"word":"GRASSHOPPER","start_hint":"A jumping insect","hint1":"Has long hind legs","hint2":"Chirps by rubbing its legs or wings","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"HAMSTER","start_hint":"A small rodent often kept as a pet","hint1":"Stores food in its cheeks","hint2":"Often kept in cages","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"HAWK","start_hint":"A bird of prey","hint1":"Has sharp talons","hint2":"Excellent eyesight","hint3":"Starts with 'H'","difficulty":2},
-    {"word":"HEDGEHOG","start_hint":"A small spiny mammal","hint1":"Rolls into a ball for protection","hint2":"Eats insects","hint3":"Starts with 'H'","difficulty":2},
-    {"word":"HIPPO","start_hint":"A large semi-aquatic mammal","hint1":"Lives in rivers","hint2":"Very aggressive and territorial","hint3":"Starts with 'H'","difficulty":2},
-    {"word":"HORSE","start_hint":"A domesticated equine","hint1":"Used for riding and work","hint2":"Has hooves","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"HUMMINGBIRD","start_hint":"A tiny bird that can hover","hint1":"Feeds on nectar","hint2":"Beats its wings very fast","hint3":"Starts with 'H'","difficulty":2},
-    {"word":"HYENA","start_hint":"A carnivorous African mammal","hint1":"Known for its laughing sound","hint2":"Lives in packs","hint3":"Starts with 'H'","difficulty":3},
-    {"word":"IGUANA","start_hint":"A large lizard","hint1":"Lives in tropical areas","hint2":"Can be green or brown","hint3":"Starts with 'I'","difficulty":2},
-    {"word":"JELLYFISH","start_hint":"A gelatinous marine animal","hint1":"Can sting","hint2":"Mostly transparent","hint3":"Starts with 'J'","difficulty":2},
-    {"word":"KANGAROO","start_hint":"A marsupial from Australia","hint1":"Hops on strong hind legs","hint2":"Carries babies in a pouch","hint3":"Starts with 'K'","difficulty":2},
-    {"word":"KOALA","start_hint":"A tree-dwelling marsupial","hint1":"Eats eucalyptus leaves","hint2":"Native to Australia","hint3":"Starts with 'K'","difficulty":1},
-    {"word":"LADYBUG","start_hint":"A small red insect with black spots","hint1":"Considered a lucky insect","hint2":"Eats aphids","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"LEOPARD","start_hint":"A spotted big cat","hint1":"Lives in Africa and Asia","hint2":"Excellent climber","hint3":"Starts with 'L'","difficulty":2},
-    {"word":"LLAMA","start_hint":"A domesticated South American camelid","hint1":"Used as a pack animal","hint2":"Has thick wool","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"LOBSTER","start_hint":"A marine crustacean with claws","hint1":"Lives in oceans","hint2":"Often eaten as seafood","hint3":"Starts with 'L'","difficulty":2},
-    {"word":"MOTH","start_hint":"An insect often attracted to light","hint1":"Similar to a butterfly","hint2":"Active at night","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MOUSE","start_hint":"A small rodent","hint1":"Often seen in homes","hint2":"Has a long tail","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"OCTOPUS","start_hint":"A sea creature with eight arms","hint1":"Very intelligent","hint2":"Can change color","hint3":"Starts with 'O'","difficulty":3},
-    {"word":"OSTRICH","start_hint":"The largest bird in the world","hint1":"Cannot fly","hint2":"Runs very fast","hint3":"Starts with 'O'","difficulty":2},
-    {"word":"OWL","start_hint":"A nocturnal bird of prey","hint1":"Can rotate its head almost completely","hint2":"Has excellent night vision","hint3":"Starts with 'O'","difficulty":2}
-    {"word":"OYSTER","start_hint":"A marine mollusk that can produce pearls","hint1":"Lives buried in sand","hint2":"Often eaten raw","hint3":"Starts with 'O'","difficulty":2},
-    {"word":"PANDA","start_hint":"A black-and-white bear","hint1":"Eats mainly bamboo","hint2":"Native to China","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"PANTHER","start_hint":"A large black cat","hint1":"Also called a black leopard","hint2":"Stealthy and strong","hint3":"Starts with 'P'","difficulty":3},
-    {"word":"PARROT","start_hint":"A colorful bird that can mimic sounds","hint1":"Loves tropical forests","hint2":"Popular as a pet","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"PEACOCK","start_hint":"A bird with a colorful tail","hint1":"Famous for its display feathers","hint2":"Male shows off to attract females","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"PENGUIN","start_hint":"A flightless bird that swims","hint1":"Lives mostly in the southern hemisphere","hint2":"Waddles on land","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"PIG","start_hint":"A domesticated farm animal","hint1":"Often pink or brown","hint2":"Raised for pork","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PIGEON","start_hint":"A common city bird","hint1":"Can find its way home over long distances","hint2":"Also called a dove","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PLATYPUS","start_hint":"A unique egg-laying mammal","hint1":"Has a duck-like bill","hint2":"Found in Australia","hint3":"Starts with 'P'","difficulty":3},
-    {"word":"POLAR BEAR","start_hint":"A large white bear","hint1":"Lives in the Arctic","hint2":"Excellent swimmer","hint3":"Starts with 'P'","difficulty":3},
-    {"word":"PORCUPINE","start_hint":"A spiny rodent","hint1":"Has quills for defense","hint2":"Slow-moving but well-protected","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"PRAYING MANTIS","start_hint":"A predatory insect","hint1":"Folds its front legs like praying","hint2":"Camouflages well in plants","hint3":"Starts with 'P'","difficulty":3},
-    {"word":"RABBIT","start_hint":"A small hopping mammal","hint1":"Has long ears","hint2":"Eats carrots and plants","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"RACCOON","start_hint":"A nocturnal mammal with a mask-like face","hint1":"Known for washing its food","hint2":"Clever and curious","hint3":"Starts with 'R'","difficulty":2},
-    {"word":"RAT","start_hint":"A common rodent","hint1":"Lives near humans","hint2":"Can spread disease","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"RATTLESNAKE","start_hint":"A venomous snake with a rattling tail","hint1":"Found in North America","hint2":"Warns before striking","hint3":"Starts with 'R'","difficulty":3},
-    {"word":"RAVEN","start_hint":"A large black bird","hint1":"Very intelligent","hint2":"Famous in myths and literature","hint3":"Starts with 'R'","difficulty":2},
-    {"word":"REINDEER","start_hint":"A deer with antlers","hint1":"Often associated with Christmas","hint2":"Lives in Arctic regions","hint3":"Starts with 'R'","difficulty":2},
-    {"word":"RHINO","start_hint":"A large herbivorous mammal","hint1":"Has one or two horns","hint2":"Thick gray skin","hint3":"Starts with 'R'","difficulty":3},
-    {"word":"SARDINE","start_hint":"A small oily fish","hint1":"Often canned","hint2":"Found in oceans","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SEAL","start_hint":"Marine mammal","hint1":"Has flippers","hint2":"Can be trained in aquariums","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SHARK","start_hint":"A large predatory fish","hint1":"Has many sharp teeth","hint2":"Lives in oceans","hint3":"Starts with 'S'","difficulty":3},
-    {"word":"SHEEP","start_hint":"Farm animal with wool","hint1":"Often raised for meat and clothing","hint2":"Can be white or black","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SHRIMP","start_hint":"A small crustacean","hint1":"Lives in oceans and rivers","hint2":"Often eaten as seafood","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SKUNK","start_hint":"A mammal with a strong smell","hint1":"Black and white fur","hint2":"Uses scent to defend itself","hint3":"Starts with 'S'","difficulty":2}
-    {"word":"SLOTH","start_hint":"A slow-moving mammal","hint1":"Lives in trees","hint2":"Found in Central and South America","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SNAIL","start_hint":"A slow-moving mollusk","hint1":"Carries a shell","hint2":"Moves using slime","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SNAKE","start_hint":"A legless reptile","hint1":"Some are venomous","hint2":"Slithers on the ground","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SPIDER","start_hint":"An eight-legged arachnid","hint1":"Spins webs","hint2":"Catches insects for food","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SQUID","start_hint":"A cephalopod with tentacles","hint1":"Can squirt ink","hint2":"Lives in oceans","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SQUIRREL","start_hint":"A small tree-dwelling rodent","hint1":"Stores nuts for winter","hint2":"Has a bushy tail","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"STINGRAY","start_hint":"A flat fish with a barbed tail","hint1":"Lives in oceans","hint2":"Can sting predators","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SWAN","start_hint":"A graceful water bird","hint1":"Has a long neck","hint2":"Often white","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"TICK","start_hint":"A tiny parasitic arachnid","hint1":"Feeds on blood","hint2":"Can carry diseases","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TIGER","start_hint":"A large striped cat","hint1":"Lives in Asia","hint2":"Carnivorous predator","hint3":"Starts with 'T'","difficulty":2},
-    {"word":"TOAD","start_hint":"A bumpy-skinned amphibian","hint1":"Lives near water","hint2":"Can croak","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TORTOISE","start_hint":"A slow-moving land reptile","hint1":"Has a hard shell","hint2":"Can live for many decades","hint3":"Starts with 'T'","difficulty":2},
-    {"word":"TURKEY","start_hint":"A large bird often eaten at Thanksgiving","hint1":"Can gobble","hint2":"Has wattles on its neck","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TURTLE","start_hint":"A reptile with a shell","hint1":"Can live in water or on land","hint2":"Slow moving","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"WASP","start_hint":"A stinging insect","hint1":"Can be aggressive","hint2":"Some build paper-like nests","hint3":"Starts with 'W'","difficulty":1},
-    {"word":"WHALE","start_hint":"A huge marine mammal","hint1":"Lives in oceans","hint2":"Breathes air through a blowhole","hint3":"Starts with 'W'","difficulty":3},
-    {"word":"WOLF","start_hint":"A wild canine","hint1":"Lives and hunts in packs","hint2":"Ancestor of domestic dogs","hint3":"Starts with 'W'","difficulty":2},
-    {"word":"WOODPECKER","start_hint":"A bird that pecks on trees","hint1":"Looks for insects under bark","hint2":"Often has red markings on the head","hint3":"Starts with 'W'","difficulty":2},
-    {"word":"WORM","start_hint":"A soft-bodied invertebrate","hint1":"Lives in soil","hint2":"Helps fertilize the ground","hint3":"Starts with 'W'","difficulty":1},
-    {"word":"ZEBRA","start_hint":"A black-and-white striped horse","hint1":"Lives in Africa","hint2":"Grazes in herds","hint3":"Starts with 'Z'","difficulty":2},
-    {"word":"PUFFERFISH","start_hint":"A fish that inflates itself","hint1":"Often poisonous","hint2":"Has spines when puffed","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"CLAM","start_hint":"A bivalve mollusk","hint1":"Lives buried in sand","hint2":"Can produce pearls","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"HARRY POTTER","start_hint":"Famous wizard in a book series","hint1":"Has a lightning scar on forehead","hint2":"Attends Hogwarts","hint3":"Starts with 'H'","difficulty":2},
-    {"word":"IRON MAN","start_hint":"A superhero in a red and gold suit","hint1":"Uses advanced technology","hint2":"Real name is Tony Stark","hint3":"Starts with 'I'","difficulty":2},
-    {"word":"CAPTAIN AMERICA","start_hint":"Superhero with a shield","hint1":"Known for patriotism","hint2":"Real name is Steve Rogers","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"HULK","start_hint":"A green super-strong superhero","hint1":"Transforms when angry","hint2":"Also called Bruce Banner","hint3":"Starts with 'H'","difficulty":2}
-    {"word":"THOR","start_hint":"Norse god superhero","hint1":"Wields a magical hammer","hint2":"Appears in Marvel movies","hint3":"Starts with 'T'","difficulty":2},
-    {"word":"SPIDER MAN","start_hint":"Superhero bitten by a radioactive spider","hint1":"Climbs walls","hint2":"Real name is Peter Parker","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"MICKEY MOUSE","start_hint":"Famous cartoon mouse","hint1":"Wears red shorts and yellow shoes","hint2":"Disney mascot","hint3":"Starts with 'M'","difficulty":2},
-    {"word":"MINNIE MOUSE","start_hint":"Famous female cartoon mouse","hint1":"Often wears a bow","hint2":"Disney character","hint3":"Starts with 'M'","difficulty":2},
-    {"word":"DONALD DUCK","start_hint":"Disney cartoon duck","hint1":"Wears a sailor shirt and hat","hint2":"Has a loud, distinctive voice","hint3":"Starts with 'D'","difficulty":2},
-    {"word":"DAISY DUCK","start_hint":"Donald Duck's female friend","hint1":"Disney character","hint2":"Often seen with a bow","hint3":"Starts with 'D'","difficulty":2},
-    {"word":"CINDERELLA","start_hint":"Famous princess","hint1":"Lost a glass slipper","hint2":"Attends a royal ball","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"SNOW WHITE","start_hint":"Princess with seven dwarfs","hint1":"Eats a poisoned apple","hint2":"Wears a yellow skirt and blue top","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SLEEPING BEAUTY","start_hint":"Princess cursed to sleep","hint1":"Pricked by a spindle","hint2":"Awakened by a prince","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"THE LITTLE MERMAID","start_hint":"Mermaid princess","hint1":"Lives under the sea","hint2":"Wishes to live on land","hint3":"Starts with 'T'","difficulty":2},
-    {"word":"URSULA","start_hint":"Sea witch villain","hint1":"From The Little Mermaid","hint2":"Has tentacles instead of legs","hint3":"Starts with 'U'","difficulty":2},
-    {"word":"ALADDIN","start_hint":"Boy who finds a magic lamp","hint1":"Has a flying carpet","hint2":"Lives in Agrabah","hint3":"Starts with 'A'","difficulty":2},
-    {"word":"ELSA","start_hint":"Ice queen princess","hint1":"Has magical ice powers","hint2":"Sings 'Let It Go'","hint3":"Starts with 'E'","difficulty":2},
-    {"word":"ANNA","start_hint":"Sister of Elsa","hint1":"Optimistic and brave","hint2":"From Frozen","hint3":"Starts with 'A'","difficulty":2},
-    {"word":"OLAF","start_hint":"Friendly snowman","hint1":"Loves warm hugs","hint2":"From Frozen","hint3":"Starts with 'O'","difficulty":1},
-    {"word":"PINOCCHIO","start_hint":"Wooden puppet who wants to be real","hint1":"Nose grows when lying","hint2":"Created by Geppetto","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"PETER PAN","start_hint":"Boy who never grows up","hint1":"Lives in Neverland","hint2":"Can fly with fairy dust","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"TINKER BELL","start_hint":"Tiny fairy companion","hint1":"From Peter Pan","hint2":"Sprinkles magical fairy dust","hint3":"Starts with 'T'","difficulty":2},
-    {"word":"CAPTAIN HOOK","start_hint":"Pirate villain","hint1":"Has a hook for a hand","hint2":"Enemy of Peter Pan","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"RAPUNZEL","start_hint":"Princess with long magical hair","hint1":"Locked in a tower","hint2":"Hair can heal and glow","hint3":"Starts with 'R'","difficulty":2},
-    {"word":"BUZZ LIGHTYEAR","start_hint":"Space ranger toy","hint1":"Says 'To infinity and beyond'","hint2":"From Toy Story","hint3":"Starts with 'B'","difficulty":2},
-    {"word":"SADNESS","start_hint":"Emotion character from Inside Out","hint1":"Blue colored","hint2":"Shows sadness in Pixar movie","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"JOY","start_hint":"Emotion character from Inside Out","hint1":"Yellow and cheerful","hint2":"Leads the emotions","hint3":"Starts with 'J'","difficulty":1},
-    {"word":"ANGER","start_hint":"Emotion character from Inside Out","hint1":"Red and fiery","hint2":"Easily provoked","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"FEAR","start_hint":"Emotion character from Inside Out","hint1":"Purple and nervous","hint2":"Always anxious","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"DISGUST","start_hint":"Emotion character from Inside Out","hint1":"Green and sassy","hint2":"Keeps Riley from gross things","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"RILEY","start_hint":"Girl in Inside Out","hint1":"Has emotions as characters","hint2":"Main human character","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"WOODY","start_hint":"Cowboy toy from Toy Story","hint1":"Leader of Andy's toys","hint2":"Has a pull-string","hint3":"Starts with 'W'","difficulty":2},
-    {"word":"DORY","start_hint":"Forgetful blue tang fish","hint1":"From Finding Nemo and Finding Dory","hint2":"Always forgets things","hint3":"Starts with 'D'","difficulty":2}
-    {"word":"NEMO","start_hint":"Clownfish who gets lost","hint1":"From Finding Nemo","hint2":"Orange and white stripes","hint3":"Starts with 'N'","difficulty":1},
-     {"word":"LADYBUG","start_hint":"Superheroine from a French animated series","hint1":"Real name is Marinette Dupain-Cheng","hint2":"Fights villains in Paris","hint3":"Wears a red suit with black spots","difficulty":2}
-    {"word":"ALVIN","start_hint":"Singing chipmunk","hint1":"From Alvin and the Chipmunks","hint2":"Wears red sweater with 'A'","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"SIMON","start_hint":"Chipmunk with glasses","hint1":"From Alvin and the Chipmunks","hint2":"The smart one","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"THEODORE","start_hint":"Chubby chipmunk","hint1":"From Alvin and the Chipmunks","hint2":"The youngest","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"FIONA","start_hint":"Princess from Shrek","hint1":"Green ogre at night","hint2":"Falls in love with Shrek","hint3":"Starts with 'F'","difficulty":2},
-    {"word":"APPLE","start_hint":"A common fruit","hint1":"Can be red, green, or yellow","hint2":"Keeps the doctor away","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"AVOCADO","start_hint":"Green creamy fruit","hint1":"Often used for guacamole","hint2":"Has a large seed inside","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"ALMOND","start_hint":"A nut","hint1":"Used in baking and snacks","hint2":"Can be eaten raw or roasted","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"BACON","start_hint":"Cured pork","hint1":"Often eaten at breakfast","hint2":"Crispy and savory","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BAGEL","start_hint":"Round bread with a hole","hint1":"Often toasted and topped with cream cheese","hint2":"Chewy texture","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BAGUETTE","start_hint":"Long thin French bread","hint1":"Crispy crust","hint2":"Popular in France","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BANANA","start_hint":"Yellow fruit","hint1":"Curved shape","hint2":"Peels easily","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BEEF","start_hint":"Meat from cows","hint1":"Can be cooked as steak or ground","hint2":"High in protein","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BLACKBERRY","start_hint":"A dark purple fruit","hint1":"Grows on bushes","hint2":"Used in jams and desserts","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BLUEBERRY","start_hint":"Small blue fruit","hint1":"Used in muffins and pancakes","hint2":"Rich in antioxidants","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BREAD","start_hint":"Staple food made from flour","hint1":"Can be sliced","hint2":"Used for sandwiches","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BURRITO","start_hint":"Mexican food wrapped in a tortilla","hint1":"Often filled with beans and meat","hint2":"Eaten by hand","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BUTTER","start_hint":"Dairy product","hint1":"Used for cooking and baking","hint2":"Made from cream","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"CABBAGE","start_hint":"Green leafy vegetable","hint1":"Used in salads or soups","hint2":"Round and dense","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CAKE","start_hint":"Sweet baked dessert","hint1":"Often frosted","hint2":"Served at birthdays","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CANDY","start_hint":"Sweet treat","hint1":"Comes in many flavors","hint2":"Often chewy or hard","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CARROT","start_hint":"Orange root vegetable","hint1":"Good for eyesight","hint2":"Rabbits love it","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CEREAL","start_hint":"Breakfast food","hint1":"Usually eaten with milk","hint2":"Often comes in flakes or puffs","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CHEESE","start_hint":"Dairy product","hint1":"Comes in many varieties","hint2":"Used in sandwiches and pizza","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CHERRY","start_hint":"Small red fruit","hint1":"Often used as a topping","hint2":"Grows on trees","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CHICKEN","start_hint":"Common poultry","hint1":"Used for meat and eggs","hint2":"Clucks","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CHILI","start_hint":"Spicy pepper","hint1":"Often red or green","hint2":"Used in cooking for heat","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CHOCOLATE","start_hint":"Sweet treat made from cocoa","hint1":"Used in desserts","hint2":"Can be milk, dark, or white","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CINNAMON","start_hint":"Spice","hint1":"Brown powder","hint2":"Used in baking and drinks","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"COCONUT","start_hint":"Tropical fruit with hard shell","hint1":"Contains white flesh and milk","hint2":"Often used in desserts","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"COFFEE","start_hint":"Beverage","hint1":"Made from roasted beans","hint2":"Boosts alertness","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CORN","start_hint":"Yellow vegetable","hint1":"Often eaten on the cob","hint2":"Can be ground into flour","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CRANBERRY","start_hint":"Red tart fruit","hint1":"Used in sauces and juices","hint2":"Grows in bogs","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CREAM","start_hint":"Dairy product","hint1":"Used in desserts and coffee","hint2":"Thick and white","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CROISSANT","start_hint":"Flaky pastry","hint1":"Crescent-shaped","hint2":"Popular in France","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CUCUMBER","start_hint":"Green vegetable","hint1":"Often eaten in salads","hint2":"Has a watery crunch","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"DOUGHNUT","start_hint":"Sweet fried dessert","hint1":"Ring-shaped","hint2":"Often glazed or filled","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"DUMPLING","start_hint":"Food made from dough with filling","hint1":"Boiled, steamed, or fried","hint2":"Found in many cuisines","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"EGG","start_hint":"Oval-shaped food laid by birds","hint1":"Used in cooking and baking","hint2":"Can be boiled or fried","hint3":"Starts with 'E'","difficulty":1},
-    {"word":"EGGPLANT","start_hint":"Purple vegetable","hint1":"Also called aubergine","hint2":"Used in many cuisines","hint3":"Starts with 'E'","difficulty":1},
-    {"word":"FLOUR","start_hint":"Powder used for baking","hint1":"Made from grains","hint2":"Used to make bread, cakes, and pastries","hint3":"Starts with 'F'","difficulty":1}
-    {"word":"FRENCH FRIES","start_hint":"Fried potato strips","hint1":"Often served with ketchup","hint2":"Popular fast food item","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"GARLIC","start_hint":"Pungent bulb used in cooking","hint1":"Adds flavor to dishes","hint2":"Can ward off vampires in legends","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"GINGER","start_hint":"Spicy root used in cooking","hint1":"Used in tea and desserts","hint2":"Often pickled in sushi","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"GRAPE","start_hint":"Small juicy fruit","hint1":"Can be red, green, or purple","hint2":"Used to make wine","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"GRAPEFRUIT","start_hint":"Citrus fruit","hint1":"Tart and slightly bitter","hint2":"Pink or white inside","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"HAM","start_hint":"Cured pork meat","hint1":"Often served at breakfast or sandwiches","hint2":"Can be smoked or baked","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"HAMBURGER","start_hint":"Ground beef patty in a bun","hint1":"Popular fast food","hint2":"Can have cheese, lettuce, and tomato","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"HONEY","start_hint":"Sweet substance made by bees","hint1":"Golden in color","hint2":"Used as a natural sweetener","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"HOT DOG","start_hint":"Sausage in a bun","hint1":"Often topped with mustard and ketchup","hint2":"Popular at baseball games","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"ICE CREAM","start_hint":"Frozen sweet treat","hint1":"Comes in many flavors","hint2":"Served in cones or cups","hint3":"Starts with 'I'","difficulty":1},
-    {"word":"JAM","start_hint":"Sweet spread made from fruit","hint1":"Often eaten on bread","hint2":"Thick consistency","hint3":"Starts with 'J'","difficulty":1},
-    {"word":"JELLY","start_hint":"Gel-like fruit spread","hint1":"Smooth texture","hint2":"Often paired with peanut butter","hint3":"Starts with 'J'","difficulty":1},
-    {"word":"KETCHUP","start_hint":"Tomato-based condiment","hint1":"Often used on fries and burgers","hint2":"Sweet and tangy","hint3":"Starts with 'K'","difficulty":1},
-    {"word":"LASAGNA","start_hint":"Layered pasta dish","hint1":"Often has cheese, meat, and sauce","hint2":"Baked in the oven","hint3":"Starts with 'L'","difficulty":2},
-    {"word":"LEMON","start_hint":"Yellow citrus fruit","hint1":"Sour taste","hint2":"Used in drinks and cooking","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"LETTUCE","start_hint":"Leafy green vegetable","hint1":"Used in salads and sandwiches","hint2":"Crunchy texture","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"LOBSTER","start_hint":"Large marine crustacean","hint1":"Has claws","hint2":"Considered a luxury seafood","hint3":"Starts with 'L'","difficulty":2},
-    {"word":"MACARONI","start_hint":"Short tube-shaped pasta","hint1":"Used in macaroni and cheese","hint2":"Boiled before eating","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MANGO","start_hint":"Sweet tropical fruit","hint1":"Orange-yellow inside","hint2":"Often eaten fresh or in smoothies","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MARSHMALLOW","start_hint":"Soft sugary treat","hint1":"White and fluffy","hint2":"Roasted over a fire or in hot chocolate","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MAYONNAISE","start_hint":"Creamy condiment","hint1":"Made from eggs and oil","hint2":"Often used in sandwiches and salads","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MEATBALL","start_hint":"Ground meat rolled into a ball","hint1":"Cooked in sauce or baked","hint2":"Often served with spaghetti","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MILK","start_hint":"White liquid from cows","hint1":"Drunk on its own or with cereal","hint2":"Used in baking and cooking","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MILKSHAKE","start_hint":"Sweet drink made from milk and ice cream","hint1":"Often served with a straw","hint2":"Comes in many flavors","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MUSHROOM","start_hint":"Fungi often used in cooking","hint1":"Comes in many varieties","hint2":"Can be sautéed or grilled","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"MUSTARD","start_hint":"Condiment made from seeds","hint1":"Yellow or brown","hint2":"Often used on hot dogs and sandwiches","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"NOODLES","start_hint":"Long pasta strands","hint1":"Boiled before eating","hint2":"Used in soups and stir-fry","hint3":"Starts with 'N'","difficulty":1},
-    {"word":"OATMEAL","start_hint":"Breakfast porridge made from oats","hint1":"Can be sweet or savory","hint2":"Often eaten warm","hint3":"Starts with 'O'","difficulty":1},
-    {"word":"ONION","start_hint":"Vegetable with layers","hint1":"Makes you cry when cutting","hint2":"Used in many dishes","hint3":"Starts with 'O'","difficulty":1}
-    {"word":"ORANGE","start_hint":"Citrus fruit","hint1":"Orange color","hint2":"Juicy and sweet","hint3":"Starts with 'O'","difficulty":1},
-    {"word":"PANCAKE","start_hint":"Flat breakfast food","hint1":"Cooked on a griddle","hint2":"Often served with syrup","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PASTA","start_hint":"Italian staple","hint1":"Can be spaghetti or penne","hint2":"Boiled before eating","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PEACH","start_hint":"Soft fuzzy fruit","hint1":"Orange inside","hint2":"Sweet and juicy","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PEANUT","start_hint":"Legume often eaten as a snack","hint1":"Can be made into butter","hint2":"Small and brown","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PEAR","start_hint":"Green or yellow fruit","hint1":"Sweet and juicy","hint2":"Bell-shaped","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PINEAPPLE","start_hint":"Tropical fruit","hint1":"Spiky skin","hint2":"Yellow juicy inside","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PIZZA","start_hint":"Baked flatbread with toppings","hint1":"Cheese and tomato sauce","hint2":"Popular Italian food","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PLUM","start_hint":"Purple or red fruit","hint1":"Sweet and juicy","hint2":"Often made into jam","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"POPCORN","start_hint":"Popped corn kernels","hint1":"Popular snack at movies","hint2":"Can be salted or sweet","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"POTATO","start_hint":"Starchy tuber","hint1":"Can be baked, mashed, or fried","hint2":"Used for French fries","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PRETZEL","start_hint":"Twisted baked snack","hint1":"Often salted","hint2":"Soft or crunchy variety","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PUDDING","start_hint":"Sweet dessert","hint1":"Can be chocolate or vanilla","hint2":"Soft and creamy","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"PUMPKIN","start_hint":"Orange gourd","hint1":"Used in pies and decorations","hint2":"Popular at Halloween","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"RAISIN","start_hint":"Dried grape","hint1":"Sweet and chewy","hint2":"Often in baked goods","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"RASPBERRY","start_hint":"Small red berry","hint1":"Used in desserts and jams","hint2":"Sweet and slightly tart","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"RICE","start_hint":"Staple grain","hint1":"White or brown","hint2":"Boiled before eating","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"SAUSAGE","start_hint":"Ground meat in casing","hint1":"Often grilled or fried","hint2":"Breakfast food","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SALMON","start_hint":"Pink fish","hint1":"Eaten raw or cooked","hint2":"Lives in rivers and oceans","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SALT","start_hint":"Common seasoning","hint1":"White crystals","hint2":"Enhances flavor of food","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SANDWICH","start_hint":"Food between slices of bread","hint1":"Can have meat, cheese, or veggies","hint2":"Eaten cold or hot","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SARDINE","start_hint":"Small oily fish","hint1":"Often canned","hint2":"Eaten as snack or in meals","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SAUCE","start_hint":"Liquid or semi-liquid food","hint1":"Adds flavor","hint2":"Can be tomato, soy, or cream-based","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SHRIMP","start_hint":"Small crustacean","hint1":"Eaten as seafood","hint2":"Pink when cooked","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"STEAK","start_hint":"Cut of beef","hint1":"Cooked by grilling or frying","hint2":"Served medium, rare, or well-done","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"STRAWBERRY","start_hint":"Red fruit with seeds on the outside","hint1":"Sweet and juicy","hint2":"Often used in desserts","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SUGAR","start_hint":"Sweet white crystals","hint1":"Used to sweeten food","hint2":"Comes from sugarcane or sugar beets","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SUSHI","start_hint":"Japanese dish with rice and seafood","hint1":"Often served with soy sauce","hint2":"Can include raw fish","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SWEET POTATO","start_hint":"Orange root vegetable","hint1":"Can be baked or mashed","hint2":"Sweeter than regular potato","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SYRUP","start_hint":"Sweet liquid","hint1":"Often poured on pancakes or waffles","hint2":"Made from sugar or maple","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"TACO","start_hint":"Mexican dish in folded tortilla","hint1":"Can contain meat, beans, and cheese","hint2":"Eaten by hand","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TEA","start_hint":"Beverage made from leaves","hint1":"Can be black, green, or herbal","hint2":"Often served hot","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TOAST","start_hint":"Bread browned by heat","hint1":"Eaten with butter or jam","hint2":"Breakfast food","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TOFU","start_hint":"Soy product","hint1":"Used in vegetarian dishes","hint2":"Soft and white","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TOMATO","start_hint":"Red fruit often used as a vegetable","hint1":"Used in salads and sauces","hint2":"Can be cherry or beefsteak type","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TUNA","start_hint":"Large ocean fish","hint1":"Often canned or grilled","hint2":"Popular in sushi","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TURKEY","start_hint":"Large bird eaten at Thanksgiving","hint1":"Has wattles on its neck","hint2":"Can be roasted","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"VANILLA","start_hint":"Flavoring from orchid pods","hint1":"Used in desserts and ice cream","hint2":"White or light-colored","hint3":"Starts with 'V'","difficulty":1}
-    {"word":"WATERMELON","start_hint":"Large green fruit with red inside","hint1":"Contains black seeds","hint2":"Juicy and sweet","hint3":"Starts with 'W'","difficulty":1},
-    {"word":"YOGURT","start_hint":"Fermented dairy product","hint1":"Creamy texture","hint2":"Often eaten with fruit or honey","hint3":"Starts with 'Y'","difficulty":1},
-    {"word":"CHEESECAKE","start_hint":"Sweet dessert with a creamy filling","hint1":"Often has a crust","hint2":"Baked or chilled","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"BROWNIE","start_hint":"Chocolate baked dessert","hint1":"Dense and fudgy","hint2":"Square or rectangular pieces","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"CUPCAKE","start_hint":"Small individual cake","hint1":"Often frosted on top","hint2":"Served in paper cups","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"MUFFIN","start_hint":"Small baked bread-like item","hint1":"Can be sweet or savory","hint2":"Often eaten for breakfast","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"BISCUIT","start_hint":"Small baked bread","hint1":"Can be sweet or savory","hint2":"Soft or crunchy","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"WAFFLE","start_hint":"Grid-patterned breakfast food","hint1":"Often eaten with syrup or fruit","hint2":"Cooked in a special iron","hint3":"Starts with 'W'","difficulty":1},
-    {"word":"CARAMEL","start_hint":"Sweet brown candy or syrup","hint1":"Made by heating sugar","hint2":"Used in desserts and sauces","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"COTTON CANDY","start_hint":"Fluffy sugary treat","hint1":"Often pink or blue","hint2":"Sold at fairs and carnivals","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"LOLLIPOP","start_hint":"Candy on a stick","hint1":"Comes in many flavors and colors","hint2":"Can be sucked or licked","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"GUMMY BEARS","start_hint":"Chewy candy shaped like bears","hint1":"Comes in multiple colors","hint2":"Fruit flavored","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"LEMONADE","start_hint":"Sweet citrus drink","hint1":"Made from lemons","hint2":"Often served cold","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"SMOOTHIE","start_hint":"Blended fruit drink","hint1":"Often creamy","hint2":"Can include yogurt or milk","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"GRANOLA","start_hint":"Crunchy breakfast food","hint1":"Made from oats, nuts, and honey","hint2":"Often eaten with yogurt or milk","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"CORNFLAKES","start_hint":"Breakfast cereal made from corn","hint1":"Flaky texture","hint2":"Eaten with milk","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"OMELETTE","start_hint":"Egg dish cooked in a pan","hint1":"Can include vegetables, cheese, or meat","hint2":"Folded before serving","hint3":"Starts with 'O'","difficulty":1},
-    {"word":"SCRAMBLED EGGS","start_hint":"Eggs beaten and cooked","hint1":"Soft and fluffy","hint2":"Often eaten for breakfast","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"FRIED EGGS","start_hint":"Eggs cooked in oil or butter","hint1":"Sunny side up or over easy","hint2":"Breakfast favorite","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"BOILED EGGS","start_hint":"Eggs cooked in water","hint1":"Hard or soft boiled","hint2":"Eaten plain or in salads","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"EGG SALAD","start_hint":"Salad made with chopped eggs","hint1":"Mixed with mayonnaise","hint2":"Often eaten in sandwiches","hint3":"Starts with 'E'","difficulty":1},
-    {"word":"CHICKEN SALAD","start_hint":"Salad made with chicken","hint1":"Can include vegetables and dressing","hint2":"Eaten cold or warm","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"POTATO SALAD","start_hint":"Salad made from boiled potatoes","hint1":"Mixed with mayo or mustard","hint2":"Common picnic dish","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"COLESLAW","start_hint":"Shredded cabbage salad","hint1":"Often dressed with mayonnaise or vinaigrette","hint2":"Served as side dish","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"GARLIC BREAD","start_hint":"Bread with garlic and butter","hint1":"Often toasted","hint2":"Served with pasta","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"BREADSTICKS","start_hint":"Thin baked bread","hint1":"Often served as appetizer","hint2":"Can be seasoned with garlic or cheese","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"NACHOS","start_hint":"Tortilla chips with toppings","hint1":"Often has cheese, jalapeños, and meat","hint2":"Popular snack","hint3":"Starts with 'N'","difficulty":1}
-    {"word":"PAINTING","start_hint":"Creating images with colors","hint1":"Can be on canvas, walls, or paper","hint2":"Used as an art form","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"DRAWING","start_hint":"Making images with pencil or pen","hint1":"Often done on paper","hint2":"Sketches, illustrations, or doodles","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"POTTERY","start_hint":"Shaping clay into objects","hint1":"Often baked in a kiln","hint2":"Can make bowls, vases, or plates","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"WOODWORKING","start_hint":"Crafting with wood","hint1":"Can make furniture or decor","hint2":"Involves carving or assembling","hint3":"Starts with 'W'","difficulty":1},
-    {"word":"KNITTING","start_hint":"Creating fabric with yarn","hint1":"Uses needles to make patterns","hint2":"Can make scarves, sweaters, or hats","hint3":"Starts with 'K'","difficulty":1},
-    {"word":"JEWELRY MAKING","start_hint":"Creating wearable art","hint1":"Involves beads, metals, or gems","hint2":"Can make necklaces, bracelets, or rings","hint3":"Starts with 'J'","difficulty":1},
-    {"word":"CANDLE MAKING","start_hint":"Crafting wax items that light up","hint1":"Can be scented or decorative","hint2":"Involves melting wax","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"SOAP MAKING","start_hint":"Creating hygiene products","hint1":"Can be scented or colored","hint2":"Involves oils and lye","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"PHOTOGRAPHY","start_hint":"Capturing images with a camera","hint1":"Can be digital or film","hint2":"Used as a hobby or profession","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"VLOGGING","start_hint":"Recording videos about daily life","hint1":"Shared online, often on YouTube","hint2":"Can include travel, reviews, or tutorials","hint3":"Starts with 'V'","difficulty":1},
-    {"word":"PODCASTING","start_hint":"Creating audio content","hint1":"Often episodic","hint2":"Shared online for listeners","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"READING BOOKS","start_hint":"Engaging with written stories","hint1":"Fiction or non-fiction","hint2":"Can be for entertainment or learning","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"PLAYING MUSICAL INSTRUMENTS","start_hint":"Creating music with instruments","hint1":"Can be piano, guitar, drums, etc.","hint2":"Requires practice","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"SINGING","start_hint":"Using your voice musically","hint1":"Can perform solo or in groups","hint2":"Often accompanies instruments","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"SONGWRITING","start_hint":"Creating original songs","hint1":"Involves lyrics and melody","hint2":"Can be performed by yourself or others","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"KARAOKE","start_hint":"Singing along to a track","hint1":"Lyrics displayed on screen","hint2":"Often done in bars or parties","hint3":"Starts with 'K'","difficulty":1},
-    {"word":"DJING","start_hint":"Mixing music tracks","hint1":"Played at parties and clubs","hint2":"Can involve turntables or software","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"DANCING","start_hint":"Moving rhythmically to music","hint1":"Can be freestyle or choreographed","hint2":"Includes many styles","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"BALLET","start_hint":"Classical dance form","hint1":"Graceful and precise movements","hint2":"Often performed on stage with music","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"SURFING","start_hint":"Riding waves on a board","hint1":"Popular at beaches","hint2":"Requires balance and skill","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SWIMMING","start_hint":"Moving through water","hint1":"Can be for sport or leisure","hint2":"Various strokes exist","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"DIVING","start_hint":"Jumping or plunging into water","hint1":"Can be recreational or competitive","hint2":"Requires control and technique","hint3":"Starts with 'D'","difficulty":2},
-    {"word":"FISHING","start_hint":"Catching fish","hint1":"Can use rod, line, or net","hint2":"Popular outdoor hobby","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"HUNTING","start_hint":"Pursuing animals for food or sport","hint1":"Requires weapons or traps","hint2":"Often outdoors","hint3":"Starts with 'H'","difficulty":2},
-    {"word":"YOGA","start_hint":"Physical and mental exercise","hint1":"Involves poses and breathing","hint2":"Promotes flexibility and relaxation","hint3":"Starts with 'Y'","difficulty":1},
-    {"word":"HIKING","start_hint":"Walking in nature","hint1":"Often on trails or mountains","hint2":"Outdoor activity for exercise","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"CAMPING","start_hint":"Staying outdoors overnight","hint1":"Involves tents or cabins","hint2":"Often includes campfires and cooking","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"ROCK CLIMBING","start_hint":"Climbing natural rock formations","hint1":"Requires ropes or safety gear","hint2":"Can be indoor or outdoor","hint3":"Starts with 'R'","difficulty":2}
-    {"word":"JOGGING","start_hint":"Running at a steady pace","hint1":"Common exercise for fitness","hint2":"Done outdoors or on a treadmill","hint3":"Starts with 'J'","difficulty":1},
-    {"word":"BIRD WATCHING","start_hint":"Observing birds in nature","hint1":"Often uses binoculars","hint2":"Hobby for relaxation and learning","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"GARDENING","start_hint":"Cultivating plants and flowers","hint1":"Can be for food or decoration","hint2":"Involves soil, water, and sunlight","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"BEEKEEPING","start_hint":"Caring for bees","hint1":"Collects honey and beeswax","hint2":"Requires hives and protective clothing","hint3":"Starts with 'B'","difficulty":2},
-    {"word":"HORSEBACK RIDING","start_hint":"Riding horses","hint1":"Can be for sport or leisure","hint2":"Requires a saddle and reins","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"WINE MAKING","start_hint":"Producing alcoholic drink from grapes","hint1":"Fermentation process involved","hint2":"Can be done commercially or at home","hint3":"Starts with 'W'","difficulty":2},
-    {"word":"COOKING","start_hint":"Preparing food","hint1":"Involves heat, ingredients, and techniques","hint2":"Can be for fun or profession","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"BAKING","start_hint":"Cooking with dry heat, usually in an oven","hint1":"Used for bread, cakes, and pastries","hint2":"Requires measuring ingredients","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"FOOD TASTING","start_hint":"Sampling different foods","hint1":"Can be for fun or review","hint2":"Often paired with wine or drinks","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"TEA TASTING","start_hint":"Sampling different teas","hint1":"Can involve brewing and flavor notes","hint2":"Often paired with snacks","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TRAVEL","start_hint":"Going to different places","hint1":"Can be for leisure or work","hint2":"Exploring new cultures and sights","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"COMMUNITY SERVICE","start_hint":"Helping your local community","hint1":"Volunteering for events or aid","hint2":"Can include cleanup or charity work","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"FUNDRAISING","start_hint":"Collecting money for a cause","hint1":"Can be for charity or events","hint2":"Often involves campaigns or events","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"CHARITY WORK","start_hint":"Helping those in need","hint1":"Volunteering or donating","hint2":"Can involve organizing events or programs","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"JIGSAW PUZZLES","start_hint":"Assembling interlocking pieces","hint1":"Can create an image when complete","hint2":"Often done for leisure","hint3":"Starts with 'J'","difficulty":1},
-    {"word":"SUDOKU","start_hint":"Number puzzle on a grid","hint1":"Fill rows, columns, and boxes without repeating numbers","hint2":"Requires logic and attention","hint3":"Starts with 'S'","difficulty":1}
-    {"word":"CROSSWORDS","start_hint":"Word puzzle with intersecting answers","hint1":"Often found in newspapers","hint2":"Requires knowledge and vocabulary","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"BOARD GAMES","start_hint":"Games played on a flat surface","hint1":"Includes pieces and a board","hint2":"Can be strategy or luck-based","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"CHESS","start_hint":"Strategy game with 16 pieces per side","hint1":"King, Queen, and pawns involved","hint2":"Played on a checkered board","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"CHECKERS","start_hint":"Jumping game on a board","hint1":"Pieces move diagonally","hint2":"Capture opponent by jumping over pieces","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"STAR GAZING","start_hint":"Observing stars and celestial objects","hint1":"Often done at night with a telescope","hint2":"Can include planets and constellations","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"DOCTOR","start_hint":"Medical professional","hint1":"Diagnoses and treats patients","hint2":"Works in hospitals or clinics","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"NURSE","start_hint":"Assists doctors and cares for patients","hint1":"Provides medical support and monitoring","hint2":"Works in hospitals or clinics","hint3":"Starts with 'N'","difficulty":1},
-    {"word":"SURGEON","start_hint":"Performs operations","hint1":"Specialized doctor","hint2":"Works in operating rooms","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"DENTIST","start_hint":"Cares for teeth and gums","hint1":"Performs checkups and procedures","hint2":"Can fill cavities or clean teeth","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"PHARMACIST","start_hint":"Dispenses medications","hint1":"Works in pharmacies or hospitals","hint2":"Advises patients on drug use","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"MIDWIFE","start_hint":"Assists childbirth","hint1":"Supports mothers during labor","hint2":"Can work in hospitals or home births","hint3":"Starts with 'M'","difficulty":2},
-    {"word":"YOGA INSTRUCTOR","start_hint":"Teaches yoga","hint1":"Guides poses and breathing","hint2":"Helps improve flexibility and relaxation","hint3":"Starts with 'Y'","difficulty":1},
-    {"word":"LIFEGUARD","start_hint":"Protects swimmers at pools or beaches","hint1":"Trained to rescue people","hint2":"Monitors safety of swimmers","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"TEACHER","start_hint":"Educates students","hint1":"Works in schools or colleges","hint2":"Can specialize in subjects","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"TUTOR","start_hint":"Provides additional teaching support","hint1":"Works individually or in small groups","hint2":"Helps students understand subjects","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"SCHOOL PRINCIPAL","start_hint":"Leads a school","hint1":"Oversees staff and students","hint2":"Responsible for school policies","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"SCHOOL COUNSELOR","start_hint":"Supports students' well-being","hint1":"Helps with academic and personal issues","hint2":"Works in schools","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"TEACHING ASSISTANT","start_hint":"Supports classroom teachers","hint1":"Helps students understand lessons","hint2":"Can grade or supervise activities","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"LIBRARIAN","start_hint":"Manages library resources","hint1":"Helps people find books and materials","hint2":"Organizes collections and archives","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"ACCOUNTANT","start_hint":"Manages financial records","hint1":"Prepares budgets and taxes","hint2":"Works for businesses or individuals","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"REAL ESTATE AGENT","start_hint":"Helps buy, sell, or rent properties","hint1":"Works with clients and listings","hint2":"Earns commissions from sales","hint3":"Starts with 'R'","difficulty":2},
-    {"word":"ARCHITECT","start_hint":"Designs buildings and structures","hint1":"Creates plans and blueprints","hint2":"Ensures safety and functionality","hint3":"Starts with 'A'","difficulty":2},
-    {"word":"INTERIOR DESIGNER","start_hint":"Designs indoor spaces","hint1":"Focuses on aesthetics and functionality","hint2":"Chooses colors, furniture, and layout","hint3":"Starts with 'I'","difficulty":2},
-    {"word":"ANIMATOR","start_hint":"Creates animated visuals","hint1":"Works in films, games, or TV","hint2":"Draws or models sequences frame by frame","hint3":"Starts with 'A'","difficulty":2},
-    {"word":"PHOTOGRAPHER","start_hint":"Captures images with a camera","hint1":"Can work in portraits, events, or nature","hint2":"May edit photos digitally","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"VIDEOGRAPHER","start_hint":"Records video content","hint1":"Can film events or create movies","hint2":"May edit and produce videos","hint3":"Starts with 'V'","difficulty":1},
-    {"word":"FILMMAKER","start_hint":"Creates movies or documentaries","hint1":"Directs and produces content","hint2":"May write scripts or edit","hint3":"Starts with 'F'","difficulty":2},
-    {"word":"DIRECTOR","start_hint":"Leads film or theater production","hint1":"Guides actors and crew","hint2":"Responsible for creative vision","hint3":"Starts with 'D'","difficulty":2},
-    {"word":"PRODUCER","start_hint":"Oversees production of media","hint1":"Handles budgets and logistics","hint2":"Works with directors and teams","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"SCREENWRITER","start_hint":"Writes scripts for film or TV","hint1":"Develops story, dialogue, and scenes","hint2":"Works with directors and producers","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"EDITOR","start_hint":"Edits written or visual content","hint1":"Ensures quality and consistency","hint2":"Can work on books, movies, or articles","hint3":"Starts with 'E'","difficulty":1},
-    {"word":"SINGER","start_hint":"Performs songs vocally","hint1":"Can perform solo or in a group","hint2":"Uses voice for melody and expression","hint3":"Starts with 'S'","difficulty":1}
-    {"word":"ACTOR","start_hint":"Performs roles in films or theater","hint1":"Portrays characters","hint2":"Can work on stage or screen","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"ACTRESS","start_hint":"Female performer in films or theater","hint1":"Portrays characters","hint2":"Can work on stage or screen","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"DANCER","start_hint":"Performs dance professionally or recreationally","hint1":"Can specialize in styles like ballet or hip-hop","hint2":"Expresses through movement","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"MUSICIAN","start_hint":"Performs or creates music","hint1":"Can play instruments or sing","hint2":"Performs solo or in groups","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"BAND MEMBER","start_hint":"Part of a musical group","hint1":"Plays an instrument or sings","hint2":"Performs with other musicians","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"CONDUCTOR","start_hint":"Leads an orchestra or choir","hint1":"Uses a baton or hand signals","hint2":"Directs tempo and dynamics","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"DJ","start_hint":"Mixes and plays music for audiences","hint1":"Often works at clubs or events","hint2":"Uses turntables or software","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"VOICE ACTOR","start_hint":"Provides voices for characters","hint1":"Works in animation, games, or dubbing","hint2":"Does not appear on screen","hint3":"Starts with 'V'","difficulty":2},
-    {"word":"REPORTER","start_hint":"Gathers and delivers news","hint1":"Can work for TV, radio, or newspapers","hint2":"Reports events to the public","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"AUTHOR","start_hint":"Writes books or stories","hint1":"Can be fiction or non-fiction","hint2":"Publishes works for readers","hint3":"Starts with 'A'","difficulty":1},
-    {"word":"BLOGGER","start_hint":"Writes online content regularly","hint1":"Shares opinions or information","hint2":"Can include text, photos, or videos","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"PODCASTER","start_hint":"Creates audio content online","hint1":"Episodes often cover specific topics","hint2":"Shared on platforms for listeners","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"SOCIAL MEDIA MANAGER","start_hint":"Manages online presence for brands or individuals","hint1":"Creates content and posts","hint2":"Engages with followers","hint3":"Starts with 'S'","difficulty":2},
-    {"word":"EVENT PLANNER","start_hint":"Organizes events or parties","hint1":"Coordinates venues, staff, and schedules","hint2":"Ensures event runs smoothly","hint3":"Starts with 'E'","difficulty":2},
-    {"word":"WEDDING PLANNER","start_hint":"Specializes in planning weddings","hint1":"Manages all wedding arrangements","hint2":"Works closely with couples","hint3":"Starts with 'W'","difficulty":2},
-    {"word":"TRAVEL AGENT","start_hint":"Assists clients with travel arrangements","hint1":"Books flights, hotels, and tours","hint2":"Provides advice on destinations","hint3":"Starts with 'T'","difficulty":2},
-    {"word":"TOUR GUIDE","start_hint":"Leads visitors on trips or tours","hint1":"Provides information about sites","hint2":"Often works at tourist destinations","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"FLIGHT ATTENDANT","start_hint":"Assists passengers on airplanes","hint1":"Ensures safety and comfort","hint2":"Demonstrates safety procedures","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"PILOT","start_hint":"Operates an aircraft","hint1":"Responsible for flight navigation","hint2":"Can fly commercial or private planes","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"CO-PILOT","start_hint":"Assists the pilot during flight","hint1":"Shares flight responsibilities","hint2":"Helps with navigation and communication","hint3":"Starts with 'C'","difficulty":2},
-    {"word":"BUS DRIVER","start_hint":"Drives passengers on buses","hint1":"Follows set routes and schedules","hint2":"Ensures passenger safety","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"TRUCK DRIVER","start_hint":"Transports goods via truck","hint1":"Follows long-distance routes","hint2":"Carries cargo safely","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"DELIVERY DRIVER","start_hint":"Delivers packages or food","hint1":"Works locally or regionally","hint2":"Ensures timely delivery","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"TAXI DRIVER","start_hint":"Transports passengers for fare","hint1":"Drives a cab or ride-share vehicle","hint2":"Knows local routes well","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"FISHERMAN","start_hint":"Catches fish for work or sport","hint1":"Uses rods, nets, or traps","hint2":"Works on boats or near water","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"MARINE BIOLOGIST","start_hint":"Studies marine life","hint1":"Works in oceans or labs","hint2":"Researches animals and ecosystems","hint3":"Starts with 'M'","difficulty":2},
-    {"word":"LAB ASSISTANT","start_hint":"Supports laboratory work","hint1":"Prepares experiments and samples","hint2":"Assists scientists with research","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"HEALTH INSPECTOR","start_hint":"Checks sanitation and safety","hint1":"Inspects restaurants and facilities","hint2":"Ensures compliance with regulations","hint3":"Starts with 'H'","difficulty":2},
-    {"word":"PERSONAL CHEF","start_hint":"Prepares meals for individuals or families","hint1":"Cooks customized dishes","hint2":"Can work privately or professionally","hint3":"Starts with 'P'","difficulty":2}
-    {"word":"BAKER","start_hint":"Prepares baked goods","hint1":"Cakes, bread, and pastries","hint2":"Works in a bakery or restaurant","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BARISTA","start_hint":"Prepares coffee drinks","hint1":"Works in cafes or coffee shops","hint2":"Can make lattes and cappuccinos","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"BARTENDER","start_hint":"Serves drinks at a bar","hint1":"Mixes cocktails","hint2":"Interacts with patrons","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"WINEMAKER","start_hint":"Produces wine from grapes","hint1":"Involves fermentation","hint2":"Can manage vineyards","hint3":"Starts with 'W'","difficulty":2},
-    {"word":"ICE CREAM MAKER","start_hint":"Prepares frozen desserts","hint1":"Uses dairy and flavors","hint2":"Can work in shops or factories","hint3":"Starts with 'I'","difficulty":1},
-    {"word":"FLORIST","start_hint":"Arranges and sells flowers","hint1":"Creates bouquets and decorations","hint2":"Works in flower shops or events","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"GARDENER","start_hint":"Cares for plants and gardens","hint1":"Can design outdoor spaces","hint2":"Plants flowers, shrubs, and trees","hint3":"Starts with 'G'","difficulty":1},
-    {"word":"FARMER","start_hint":"Works in agriculture","hint1":"Grows crops or raises livestock","hint2":"Manages land and resources","hint3":"Starts with 'F'","difficulty":1},
-    {"word":"ANIMAL TRAINER","start_hint":"Teaches animals tricks or behaviors","hint1":"Works with pets or zoo animals","hint2":"Can use rewards or commands","hint3":"Starts with 'A'","difficulty":2},
-    {"word":"DOG TRAINER","start_hint":"Trains dogs for obedience or skills","hint1":"Works with pet owners","hint2":"Can specialize in service dogs","hint3":"Starts with 'D'","difficulty":2},
-    {"word":"HORSE TRAINER","start_hint":"Trains horses for riding or competition","hint1":"Works on behavior and performance","hint2":"Often works at stables or ranches","hint3":"Starts with 'H'","difficulty":2},
-    {"word":"ZOOKEEPER","start_hint":"Cares for zoo animals","hint1":"Feeds, monitors, and cleans habitats","hint2":"Works in zoos or wildlife parks","hint3":"Starts with 'Z'","difficulty":2},
-    {"word":"LAWYER","start_hint":"Practices law","hint1":"Represents clients in legal matters","hint2":"Can work in court or advisory roles","hint3":"Starts with 'L'","difficulty":2},
-    {"word":"JUDGE","start_hint":"Presides over court cases","hint1":"Makes legal decisions","hint2":"Ensures justice is served","hint3":"Starts with 'J'","difficulty":2},
-    {"word":"POLICE OFFICER","start_hint":"Enforces the law","hint1":"Protects citizens","hint2":"Investigates crimes","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"DETECTIVE","start_hint":"Investigates crimes","hint1":"Gathers evidence and interviews witnesses","hint2":"Works in plain clothes","hint3":"Starts with 'D'","difficulty":2},
-    {"word":"SECURITY GUARD","start_hint":"Protects people or property","hint1":"Monitors premises and patrols","hint2":"Can work at events or buildings","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"BODYGUARD","start_hint":"Protects a person from danger","hint1":"Ensures safety of VIPs","hint2":"May work closely with celebrities or executives","hint3":"Starts with 'B'","difficulty":2},
-    {"word":"PRIVATE INVESTIGATOR","start_hint":"Conducts private investigations","hint1":"Gathers information for clients","hint2":"Can follow or research subjects","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"LIFEGUARD","start_hint":"Monitors swimmers for safety","hint1":"Trained to rescue in emergencies","hint2":"Works at pools or beaches","hint3":"Starts with 'L'","difficulty":1},
-    {"word":"ELECTRICIAN","start_hint":"Installs and maintains electrical systems","hint1":"Works with wiring, circuits, and devices","hint2":"Can work in homes, offices, or industries","hint3":"Starts with 'E'","difficulty":2},
-    {"word":"PLUMBER","start_hint":"Installs and repairs pipes","hint1":"Works with water supply and drainage","hint2":"Can fix leaks and plumbing systems","hint3":"Starts with 'P'","difficulty":2},
-    {"word":"CARPENTER","start_hint":"Works with wood","hint1":"Builds furniture or structures","hint2":"Uses saws, hammers, and tools","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"MECHANIC","start_hint":"Repairs vehicles","hint1":"Works on engines and machinery","hint2":"Can specialize in cars, trucks, or bikes","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"PERSONAL ASSISTANT","start_hint":"Supports individuals in tasks","hint1":"Schedules appointments and manages tasks","hint2":"Can work for executives or celebrities","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"RECEPTIONIST","start_hint":"Greets visitors and handles front desk duties","hint1":"Manages phone calls and inquiries","hint2":"Works in offices or hotels","hint3":"Starts with 'R'","difficulty":1},
-    {"word":"INFLUENCER","start_hint":"Creates content online","hint1":"Shares opinions or lifestyle with followers","hint2":"Works on social media platforms","hint3":"Starts with 'I'","difficulty":2},
-    {"word":"TOUR GUIDE","start_hint":"Leads tours for visitors","hint1":"Explains landmarks and history","hint2":"Can work locally or abroad","hint3":"Starts with 'T'","difficulty":1},
-    {"word":"HOTEL MANAGER","start_hint":"Oversees hotel operations","hint1":"Manages staff and guests","hint2":"Ensures smooth functioning of the hotel","hint3":"Starts with 'H'","difficulty":2}
-    {"word":"HOUSEKEEPER","start_hint":"Maintains cleanliness in buildings","hint1":"Cleans rooms and organizes spaces","hint2":"Can work in hotels or homes","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"CHEF","start_hint":"Prepares meals professionally","hint1":"Manages kitchen and recipes","hint2":"Can work in restaurants or hotels","hint3":"Starts with 'C'","difficulty":1},
-    {"word":"BUTCHER","start_hint":"Cuts and prepares meat","hint1":"Works in shops or slaughterhouses","hint2":"Prepares cuts for sale","hint3":"Starts with 'B'","difficulty":1},
-    {"word":"FOOD STYLIST","start_hint":"Makes food look appealing for photos or videos","hint1":"Arranges dishes creatively","hint2":"Works in advertising or media","hint3":"Starts with 'F'","difficulty":2},
-    {"word":"PERSONAL TRAINER","start_hint":"Guides people in fitness","hint1":"Creates workout plans","hint2":"Provides motivation and instruction","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"SWIMMING INSTRUCTOR","start_hint":"Teaches swimming techniques","hint1":"Helps people improve in water","hint2":"Can work at pools or beaches","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"DANCE INSTRUCTOR","start_hint":"Teaches dance styles","hint1":"Can specialize in ballet, hip-hop, or salsa","hint2":"Works with individuals or groups","hint3":"Starts with 'D'","difficulty":1},
-    {"word":"MUSIC TEACHER","start_hint":"Teaches how to play instruments or sing","hint1":"Can work in schools or privately","hint2":"Guides students in practice and theory","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"SINGER","start_hint":"Performs songs vocally","hint1":"Can perform solo or in a group","hint2":"Uses voice for melody and expression","hint3":"Starts with 'S'","difficulty":1},
-    {"word":"EDITOR","start_hint":"Edits written or visual content","hint1":"Ensures quality and clarity","hint2":"Can work on books, articles, or media","hint3":"Starts with 'E'","difficulty":1},
-    {"word":"FASHION DESIGNER","start_hint":"Creates clothing and accessories","hint1":"Designs for style and trends","hint2":"Can work in studios or fashion houses","hint3":"Starts with 'F'","difficulty":2},
-    {"word":"MAKEUP ARTIST","start_hint":"Applies makeup professionally","hint1":"Works in fashion, film, or events","hint2":"Enhances appearances creatively","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"HAIR STYLIST","start_hint":"Cuts and styles hair","hint1":"Can work in salons or for media","hint2":"Provides hair care and coloring","hint3":"Starts with 'H'","difficulty":1},
-    {"word":"TATTOO ARTIST","start_hint":"Creates permanent body art","hint1":"Uses tattoo machines and ink","hint2":"Designs tattoos based on client ideas","hint3":"Starts with 'T'","difficulty":2},
-    {"word":"MODEL","start_hint":"Poses for photos or fashion shows","hint1":"Works in advertising or runway","hint2":"Showcases clothing or products","hint3":"Starts with 'M'","difficulty":1},
-    {"word":"PAINTER","start_hint":"Creates art using paints","hint1":"Can work on canvas, walls, or murals","hint2":"Expresses creativity visually","hint3":"Starts with 'P'","difficulty":1},
-    {"word":"LIBRARIAN","start_hint":"Manages library resources","hint1":"Helps people find books and information","hint2":"Organizes and catalogs collections","hint3":"Starts with 'L'","difficulty":1}
+    {
+      "word": "ALLIGATOR",
+      "start_hint": "A large reptile that lives in freshwater",
+      "hint1": "Has a long snout",
+      "hint2": "Found in swamps and rivers",
+      "hint3": "Starts with 'A'",
+      "difficulty": 2
+    },
+    {
+      "word": "ANACONDA",
+      "start_hint": "A giant snake found in South America",
+      "hint1": "Can swim in rivers",
+      "hint2": "One of the heaviest snakes in the world",
+      "hint3": "Starts with 'A'",
+      "difficulty": 3
+    },
+    {
+      "word": "ANT",
+      "start_hint": "A tiny insect that lives in colonies",
+      "hint1": "Has six legs",
+      "hint2": "Can carry many times its own weight",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "ANTEATER",
+      "start_hint": "An animal that eats ants and termites",
+      "hint1": "Has a long snout and sticky tongue",
+      "hint2": "Found in Central and South America",
+      "hint3": "Starts with 'A'",
+      "difficulty": 2
+    },
+    {
+      "word": "BABOON",
+      "start_hint": "A large monkey with a dog-like face",
+      "hint1": "Lives in troops",
+      "hint2": "Found in Africa",
+      "hint3": "Starts with 'B'",
+      "difficulty": 2
+    },
+    {
+      "word": "BATS",
+      "start_hint": "Flying mammals active at night",
+      "hint1": "Use echolocation",
+      "hint2": "Many species eat insects",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BEAR",
+      "start_hint": "Large mammal, can be found in forests",
+      "hint1": "Some species hibernate",
+      "hint2": "Can be brown, black, or white",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BEAVER",
+      "start_hint": "Rodent that builds dams",
+      "hint1": "Has a flat tail",
+      "hint2": "Lives near rivers or lakes",
+      "hint3": "Starts with 'B'",
+      "difficulty": 2
+    },
+    {
+      "word": "BEE",
+      "start_hint": "Insect that makes honey",
+      "hint1": "Can sting",
+      "hint2": "Lives in hives",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BLUE WHALE",
+      "start_hint": "The largest animal on Earth",
+      "hint1": "Lives in oceans",
+      "hint2": "A marine mammal",
+      "hint3": "Starts with 'B'",
+      "difficulty": 3
+    },
+    {
+      "word": "BUMBLEBEE",
+      "start_hint": "A large fuzzy bee",
+      "hint1": "Pollinates flowers",
+      "hint2": "Can buzz loudly",
+      "hint3": "Starts with 'B'",
+      "difficulty": 2
+    },
+    {
+      "word": "CAMEL",
+      "start_hint": "A desert animal with humps",
+      "hint1": "Can survive without water for days",
+      "hint2": "Used as a mode of transport",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CAT",
+      "start_hint": "A common domestic pet",
+      "hint1": "Purrs when happy",
+      "hint2": "Has whiskers and claws",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CATERPILLAR",
+      "start_hint": "The larval stage of a butterfly or moth",
+      "hint1": "Crawls on leaves",
+      "hint2": "Eventually becomes a butterfly or moth",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "CATFISH",
+      "start_hint": "A freshwater fish with whisker-like barbels",
+      "hint1": "Lives in rivers and ponds",
+      "hint2": "Popular in cooking",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "CATTLE",
+      "start_hint": "Farm animals raised for milk or meat",
+      "hint1": "Includes cows and bulls",
+      "hint2": "Domesticated for thousands of years",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CENTIPEDE",
+      "start_hint": "A many-legged arthropod",
+      "hint1": "Creeps on the ground",
+      "hint2": "Has one pair of legs per body segment",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "CHEETAH",
+      "start_hint": "The fastest land animal",
+      "hint1": "Spotted coat",
+      "hint2": "Native to Africa",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "CHIMPANZEE",
+      "start_hint": "A primate closely related to humans",
+      "hint1": "Lives in African forests",
+      "hint2": "Known for using tools",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "CHIPMUNK",
+      "start_hint": "A small striped rodent",
+      "hint1": "Stores food in its cheeks",
+      "hint2": "Often seen gathering nuts",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "COBRA",
+      "start_hint": "A venomous snake that can spread its hood",
+      "hint1": "Found in Asia and Africa",
+      "hint2": "Famous in snake charming",
+      "hint3": "Starts with 'C'",
+      "difficulty": 3
+    },
+    {
+      "word": "COCKROACH",
+      "start_hint": "An insect often found in homes",
+      "hint1": "Can survive extreme conditions",
+      "hint2": "Lives in kitchens and bathrooms",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "COW",
+      "start_hint": "Domesticated farm animal",
+      "hint1": "Produces milk",
+      "hint2": "Often used for beef",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "COYOTE",
+      "start_hint": "A wild canine found in North America",
+      "hint1": "Howls at night",
+      "hint2": "Related to wolves and dogs",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "CRAB",
+      "start_hint": "A crustacean with claws",
+      "hint1": "Lives near oceans",
+      "hint2": "Walks sideways",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CRICKET",
+      "start_hint": "A small jumping insect that chirps",
+      "hint1": "Often heard at night",
+      "hint2": "Has long antennae",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CROCODILE",
+      "start_hint": "Large reptile found in rivers",
+      "hint1": "Has powerful jaws",
+      "hint2": "Lives in Africa and Asia",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "DEER",
+      "start_hint": "Hooved mammal often found in forests",
+      "hint1": "Has antlers if male",
+      "hint2": "Eats plants",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "DOG",
+      "start_hint": "Common domestic pet",
+      "hint1": "Loyal and friendly",
+      "hint2": "Can be trained to do tricks",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "DOLPHIN",
+      "start_hint": "Marine mammal known for its intelligence",
+      "hint1": "Lives in oceans",
+      "hint2": "Can perform acrobatic jumps",
+      "hint3": "Starts with 'D'",
+      "difficulty": 2
+    },
+    {
+      "word": "DONKEY",
+      "start_hint": "A domesticated equine",
+      "hint1": "Used as a working animal",
+      "hint2": "Has long ears",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "DRAGONFLY",
+      "start_hint": "An insect with long wings",
+      "hint1": "Found near water",
+      "hint2": "Catches mosquitoes mid-air",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "DUCK",
+      "start_hint": "A waterfowl with webbed feet",
+      "hint1": "Quacks",
+      "hint2": "Found in ponds",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "EAGLE",
+      "start_hint": "Bird of prey with sharp eyesight",
+      "hint1": "Soars high in the sky",
+      "hint2": "Has strong talons",
+      "hint3": "Starts with 'E'",
+      "difficulty": 2
+    },
+    {
+      "word": "EARTHWORM",
+      "start_hint": "A worm that lives in soil",
+      "hint1": "Helps fertilize the ground",
+      "hint2": "No legs",
+      "hint3": "Starts with 'E'",
+      "difficulty": 1
+    },
+    {
+      "word": "EEL",
+      "start_hint": "A long, slippery fish",
+      "hint1": "Lives in freshwater and oceans",
+      "hint2": "Looks like a snake",
+      "hint3": "Starts with 'E'",
+      "difficulty": 2
+    },
+    {
+      "word": "FIREFLY",
+      "start_hint": "An insect that glows in the dark",
+      "hint1": "Produces light in its abdomen",
+      "hint2": "Often seen in summer evenings",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "FISH",
+      "start_hint": "Aquatic animal with gills",
+      "hint1": "Lives in freshwater or oceans",
+      "hint2": "Many species are edible",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "FLAMINGO",
+      "start_hint": "A pink wading bird",
+      "hint1": "Stands on one leg",
+      "hint2": "Feeds on algae and crustaceans",
+      "hint3": "Starts with 'F'",
+      "difficulty": 2
+    },
+    {
+      "word": "FOX",
+      "start_hint": "A small, cunning wild canine",
+      "hint1": "Red or orange fur",
+      "hint2": "Known for its cleverness",
+      "hint3": "Starts with 'F'",
+      "difficulty": 2
+    },
+    {
+      "word": "FROG",
+      "start_hint": "An amphibian that hops",
+      "hint1": "Lives near water",
+      "hint2": "Can croak",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "GIRAFFE",
+      "start_hint": "The tallest land animal",
+      "hint1": "Has a very long neck",
+      "hint2": "Eats leaves from trees",
+      "hint3": "Starts with 'G'",
+      "difficulty": 2
+    },
+    {
+      "word": "GOAT",
+      "start_hint": "A farm animal with horns",
+      "hint1": "Eats almost anything",
+      "hint2": "Produces milk",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "GOLDFISH",
+      "start_hint": "A small ornamental fish",
+      "hint1": "Common in aquariums",
+      "hint2": "Usually orange or gold",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "GOOSE",
+      "start_hint": "A large waterfowl",
+      "hint1": "Honk loudly",
+      "hint2": "Often migrates in V formation",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "GORILLA",
+      "start_hint": "A large primate",
+      "hint1": "Lives in African forests",
+      "hint2": "Close relative of humans",
+      "hint3": "Starts with 'G'",
+      "difficulty": 3
+    },
+    {
+      "word": "GRASSHOPPER",
+      "start_hint": "A jumping insect",
+      "hint1": "Has long hind legs",
+      "hint2": "Chirps by rubbing its legs or wings",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "HAMSTER",
+      "start_hint": "A small rodent often kept as a pet",
+      "hint1": "Stores food in its cheeks",
+      "hint2": "Often kept in cages",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "HAWK",
+      "start_hint": "A bird of prey",
+      "hint1": "Has sharp talons",
+      "hint2": "Excellent eyesight",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "HEDGEHOG",
+      "start_hint": "A small spiny mammal",
+      "hint1": "Rolls into a ball for protection",
+      "hint2": "Eats insects",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "HIPPO",
+      "start_hint": "A large semi-aquatic mammal",
+      "hint1": "Lives in rivers",
+      "hint2": "Very aggressive and territorial",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "HORSE",
+      "start_hint": "A domesticated equine",
+      "hint1": "Used for riding and work",
+      "hint2": "Has hooves",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "HUMMINGBIRD",
+      "start_hint": "A tiny bird that can hover",
+      "hint1": "Feeds on nectar",
+      "hint2": "Beats its wings very fast",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "HYENA",
+      "start_hint": "A carnivorous African mammal",
+      "hint1": "Known for its laughing sound",
+      "hint2": "Lives in packs",
+      "hint3": "Starts with 'H'",
+      "difficulty": 3
+    },
+    {
+      "word": "IGUANA",
+      "start_hint": "A large lizard",
+      "hint1": "Lives in tropical areas",
+      "hint2": "Can be green or brown",
+      "hint3": "Starts with 'I'",
+      "difficulty": 2
+    },
+    {
+      "word": "JELLYFISH",
+      "start_hint": "A gelatinous marine animal",
+      "hint1": "Can sting",
+      "hint2": "Mostly transparent",
+      "hint3": "Starts with 'J'",
+      "difficulty": 2
+    },
+    {
+      "word": "KANGAROO",
+      "start_hint": "A marsupial from Australia",
+      "hint1": "Hops on strong hind legs",
+      "hint2": "Carries babies in a pouch",
+      "hint3": "Starts with 'K'",
+      "difficulty": 2
+    },
+    {
+      "word": "KOALA",
+      "start_hint": "A tree-dwelling marsupial",
+      "hint1": "Eats eucalyptus leaves",
+      "hint2": "Native to Australia",
+      "hint3": "Starts with 'K'",
+      "difficulty": 1
+    },
+    {
+      "word": "LADYBUG",
+      "start_hint": "A small red insect with black spots",
+      "hint1": "Considered a lucky insect",
+      "hint2": "Eats aphids",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "LEOPARD",
+      "start_hint": "A spotted big cat",
+      "hint1": "Lives in Africa and Asia",
+      "hint2": "Excellent climber",
+      "hint3": "Starts with 'L'",
+      "difficulty": 2
+    },
+    {
+      "word": "LLAMA",
+      "start_hint": "A domesticated South American camelid",
+      "hint1": "Used as a pack animal",
+      "hint2": "Has thick wool",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "LOBSTER",
+      "start_hint": "A marine crustacean with claws",
+      "hint1": "Lives in oceans",
+      "hint2": "Often eaten as seafood",
+      "hint3": "Starts with 'L'",
+      "difficulty": 2
+    },
+    {
+      "word": "MOTH",
+      "start_hint": "An insect often attracted to light",
+      "hint1": "Similar to a butterfly",
+      "hint2": "Active at night",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MOUSE",
+      "start_hint": "A small rodent",
+      "hint1": "Often seen in homes",
+      "hint2": "Has a long tail",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "OCTOPUS",
+      "start_hint": "A sea creature with eight arms",
+      "hint1": "Very intelligent",
+      "hint2": "Can change color",
+      "hint3": "Starts with 'O'",
+      "difficulty": 3
+    },
+    {
+      "word": "OSTRICH",
+      "start_hint": "The largest bird in the world",
+      "hint1": "Cannot fly",
+      "hint2": "Runs very fast",
+      "hint3": "Starts with 'O'",
+      "difficulty": 2
+    },
+    {
+      "word": "OWL",
+      "start_hint": "A nocturnal bird of prey",
+      "hint1": "Can rotate its head almost completely",
+      "hint2": "Has excellent night vision",
+      "hint3": "Starts with 'O'",
+      "difficulty": 2
+    },
+    {
+      "word": "OYSTER",
+      "start_hint": "A marine mollusk that can produce pearls",
+      "hint1": "Lives buried in sand",
+      "hint2": "Often eaten raw",
+      "hint3": "Starts with 'O'",
+      "difficulty": 2
+    },
+    {
+      "word": "PANDA",
+      "start_hint": "A black-and-white bear",
+      "hint1": "Eats mainly bamboo",
+      "hint2": "Native to China",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "PANTHER",
+      "start_hint": "A large black cat",
+      "hint1": "Also called a black leopard",
+      "hint2": "Stealthy and strong",
+      "hint3": "Starts with 'P'",
+      "difficulty": 3
+    },
+    {
+      "word": "PARROT",
+      "start_hint": "A colorful bird that can mimic sounds",
+      "hint1": "Loves tropical forests",
+      "hint2": "Popular as a pet",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "PEACOCK",
+      "start_hint": "A bird with a colorful tail",
+      "hint1": "Famous for its display feathers",
+      "hint2": "Male shows off to attract females",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "PENGUIN",
+      "start_hint": "A flightless bird that swims",
+      "hint1": "Lives mostly in the southern hemisphere",
+      "hint2": "Waddles on land",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "PIG",
+      "start_hint": "A domesticated farm animal",
+      "hint1": "Often pink or brown",
+      "hint2": "Raised for pork",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PIGEON",
+      "start_hint": "A common city bird",
+      "hint1": "Can find its way home over long distances",
+      "hint2": "Also called a dove",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PLATYPUS",
+      "start_hint": "A unique egg-laying mammal",
+      "hint1": "Has a duck-like bill",
+      "hint2": "Found in Australia",
+      "hint3": "Starts with 'P'",
+      "difficulty": 3
+    },
+    {
+      "word": "POLAR BEAR",
+      "start_hint": "A large white bear",
+      "hint1": "Lives in the Arctic",
+      "hint2": "Excellent swimmer",
+      "hint3": "Starts with 'P'",
+      "difficulty": 3
+    },
+    {
+      "word": "PORCUPINE",
+      "start_hint": "A spiny rodent",
+      "hint1": "Has quills for defense",
+      "hint2": "Slow-moving but well-protected",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "PRAYING MANTIS",
+      "start_hint": "A predatory insect",
+      "hint1": "Folds its front legs like praying",
+      "hint2": "Camouflages well in plants",
+      "hint3": "Starts with 'P'",
+      "difficulty": 3
+    },
+    {
+      "word": "RABBIT",
+      "start_hint": "A small hopping mammal",
+      "hint1": "Has long ears",
+      "hint2": "Eats carrots and plants",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "RACCOON",
+      "start_hint": "A nocturnal mammal with a mask-like face",
+      "hint1": "Known for washing its food",
+      "hint2": "Clever and curious",
+      "hint3": "Starts with 'R'",
+      "difficulty": 2
+    },
+    {
+      "word": "RAT",
+      "start_hint": "A common rodent",
+      "hint1": "Lives near humans",
+      "hint2": "Can spread disease",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "RATTLESNAKE",
+      "start_hint": "A venomous snake with a rattling tail",
+      "hint1": "Found in North America",
+      "hint2": "Warns before striking",
+      "hint3": "Starts with 'R'",
+      "difficulty": 3
+    },
+    {
+      "word": "RAVEN",
+      "start_hint": "A large black bird",
+      "hint1": "Very intelligent",
+      "hint2": "Famous in myths and literature",
+      "hint3": "Starts with 'R'",
+      "difficulty": 2
+    },
+    {
+      "word": "REINDEER",
+      "start_hint": "A deer with antlers",
+      "hint1": "Often associated with Christmas",
+      "hint2": "Lives in Arctic regions",
+      "hint3": "Starts with 'R'",
+      "difficulty": 2
+    },
+    {
+      "word": "RHINO",
+      "start_hint": "A large herbivorous mammal",
+      "hint1": "Has one or two horns",
+      "hint2": "Thick gray skin",
+      "hint3": "Starts with 'R'",
+      "difficulty": 3
+    },
+    {
+      "word": "SARDINE",
+      "start_hint": "A small oily fish",
+      "hint1": "Often canned",
+      "hint2": "Found in oceans",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SEAL",
+      "start_hint": "Marine mammal",
+      "hint1": "Has flippers",
+      "hint2": "Can be trained in aquariums",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SHARK",
+      "start_hint": "A large predatory fish",
+      "hint1": "Has many sharp teeth",
+      "hint2": "Lives in oceans",
+      "hint3": "Starts with 'S'",
+      "difficulty": 3
+    },
+    {
+      "word": "SHEEP",
+      "start_hint": "Farm animal with wool",
+      "hint1": "Often raised for meat and clothing",
+      "hint2": "Can be white or black",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SHRIMP",
+      "start_hint": "A small crustacean",
+      "hint1": "Lives in oceans and rivers",
+      "hint2": "Often eaten as seafood",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SKUNK",
+      "start_hint": "A mammal with a strong smell",
+      "hint1": "Black and white fur",
+      "hint2": "Uses scent to defend itself",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SLOTH",
+      "start_hint": "A slow-moving mammal",
+      "hint1": "Lives in trees",
+      "hint2": "Found in Central and South America",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SNAIL",
+      "start_hint": "A slow-moving mollusk",
+      "hint1": "Carries a shell",
+      "hint2": "Moves using slime",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SNAKE",
+      "start_hint": "A legless reptile",
+      "hint1": "Some are venomous",
+      "hint2": "Slithers on the ground",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SPIDER",
+      "start_hint": "An eight-legged arachnid",
+      "hint1": "Spins webs",
+      "hint2": "Catches insects for food",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SQUID",
+      "start_hint": "A cephalopod with tentacles",
+      "hint1": "Can squirt ink",
+      "hint2": "Lives in oceans",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SQUIRREL",
+      "start_hint": "A small tree-dwelling rodent",
+      "hint1": "Stores nuts for winter",
+      "hint2": "Has a bushy tail",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "STINGRAY",
+      "start_hint": "A flat fish with a barbed tail",
+      "hint1": "Lives in oceans",
+      "hint2": "Can sting predators",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SWAN",
+      "start_hint": "A graceful water bird",
+      "hint1": "Has a long neck",
+      "hint2": "Often white",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "TICK",
+      "start_hint": "A tiny parasitic arachnid",
+      "hint1": "Feeds on blood",
+      "hint2": "Can carry diseases",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TIGER",
+      "start_hint": "A large striped cat",
+      "hint1": "Lives in Asia",
+      "hint2": "Carnivorous predator",
+      "hint3": "Starts with 'T'",
+      "difficulty": 2
+    },
+    {
+      "word": "TOAD",
+      "start_hint": "A bumpy-skinned amphibian",
+      "hint1": "Lives near water",
+      "hint2": "Can croak",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TORTOISE",
+      "start_hint": "A slow-moving land reptile",
+      "hint1": "Has a hard shell",
+      "hint2": "Can live for many decades",
+      "hint3": "Starts with 'T'",
+      "difficulty": 2
+    },
+    {
+      "word": "TURKEY",
+      "start_hint": "A large bird often eaten at Thanksgiving",
+      "hint1": "Can gobble",
+      "hint2": "Has wattles on its neck",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TURTLE",
+      "start_hint": "A reptile with a shell",
+      "hint1": "Can live in water or on land",
+      "hint2": "Slow moving",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "WASP",
+      "start_hint": "A stinging insect",
+      "hint1": "Can be aggressive",
+      "hint2": "Some build paper-like nests",
+      "hint3": "Starts with 'W'",
+      "difficulty": 1
+    },
+    {
+      "word": "WHALE",
+      "start_hint": "A huge marine mammal",
+      "hint1": "Lives in oceans",
+      "hint2": "Breathes air through a blowhole",
+      "hint3": "Starts with 'W'",
+      "difficulty": 3
+    },
+    {
+      "word": "WOLF",
+      "start_hint": "A wild canine",
+      "hint1": "Lives and hunts in packs",
+      "hint2": "Ancestor of domestic dogs",
+      "hint3": "Starts with 'W'",
+      "difficulty": 2
+    },
+    {
+      "word": "WOODPECKER",
+      "start_hint": "A bird that pecks on trees",
+      "hint1": "Looks for insects under bark",
+      "hint2": "Often has red markings on the head",
+      "hint3": "Starts with 'W'",
+      "difficulty": 2
+    },
+    {
+      "word": "WORM",
+      "start_hint": "A soft-bodied invertebrate",
+      "hint1": "Lives in soil",
+      "hint2": "Helps fertilize the ground",
+      "hint3": "Starts with 'W'",
+      "difficulty": 1
+    },
+    {
+      "word": "ZEBRA",
+      "start_hint": "A black-and-white striped horse",
+      "hint1": "Lives in Africa",
+      "hint2": "Grazes in herds",
+      "hint3": "Starts with 'Z'",
+      "difficulty": 2
+    },
+    {
+      "word": "PUFFERFISH",
+      "start_hint": "A fish that inflates itself",
+      "hint1": "Often poisonous",
+      "hint2": "Has spines when puffed",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "CLAM",
+      "start_hint": "A bivalve mollusk",
+      "hint1": "Lives buried in sand",
+      "hint2": "Can produce pearls",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "HARRY POTTER",
+      "start_hint": "Famous wizard in a book series",
+      "hint1": "Has a lightning scar on forehead",
+      "hint2": "Attends Hogwarts",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "IRON MAN",
+      "start_hint": "A superhero in a red and gold suit",
+      "hint1": "Uses advanced technology",
+      "hint2": "Real name is Tony Stark",
+      "hint3": "Starts with 'I'",
+      "difficulty": 2
+    },
+    {
+      "word": "CAPTAIN AMERICA",
+      "start_hint": "Superhero with a shield",
+      "hint1": "Known for patriotism",
+      "hint2": "Real name is Steve Rogers",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "HULK",
+      "start_hint": "A green super-strong superhero",
+      "hint1": "Transforms when angry",
+      "hint2": "Also called Bruce Banner",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "THOR",
+      "start_hint": "Norse god superhero",
+      "hint1": "Wields a magical hammer",
+      "hint2": "Appears in Marvel movies",
+      "hint3": "Starts with 'T'",
+      "difficulty": 2
+    },
+    {
+      "word": "SPIDER MAN",
+      "start_hint": "Superhero bitten by a radioactive spider",
+      "hint1": "Climbs walls",
+      "hint2": "Real name is Peter Parker",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "MICKEY MOUSE",
+      "start_hint": "Famous cartoon mouse",
+      "hint1": "Wears red shorts and yellow shoes",
+      "hint2": "Disney mascot",
+      "hint3": "Starts with 'M'",
+      "difficulty": 2
+    },
+    {
+      "word": "MINNIE MOUSE",
+      "start_hint": "Famous female cartoon mouse",
+      "hint1": "Often wears a bow",
+      "hint2": "Disney character",
+      "hint3": "Starts with 'M'",
+      "difficulty": 2
+    },
+    {
+      "word": "DONALD DUCK",
+      "start_hint": "Disney cartoon duck",
+      "hint1": "Wears a sailor shirt and hat",
+      "hint2": "Has a loud, distinctive voice",
+      "hint3": "Starts with 'D'",
+      "difficulty": 2
+    },
+    {
+      "word": "DAISY DUCK",
+      "start_hint": "Donald Duck's female friend",
+      "hint1": "Disney character",
+      "hint2": "Often seen with a bow",
+      "hint3": "Starts with 'D'",
+      "difficulty": 2
+    },
+    {
+      "word": "CINDERELLA",
+      "start_hint": "Famous princess",
+      "hint1": "Lost a glass slipper",
+      "hint2": "Attends a royal ball",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "SNOW WHITE",
+      "start_hint": "Princess with seven dwarfs",
+      "hint1": "Eats a poisoned apple",
+      "hint2": "Wears a yellow skirt and blue top",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SLEEPING BEAUTY",
+      "start_hint": "Princess cursed to sleep",
+      "hint1": "Pricked by a spindle",
+      "hint2": "Awakened by a prince",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "THE LITTLE MERMAID",
+      "start_hint": "Mermaid princess",
+      "hint1": "Lives under the sea",
+      "hint2": "Wishes to live on land",
+      "hint3": "Starts with 'T'",
+      "difficulty": 2
+    },
+    {
+      "word": "URSULA",
+      "start_hint": "Sea witch villain",
+      "hint1": "From The Little Mermaid",
+      "hint2": "Has tentacles instead of legs",
+      "hint3": "Starts with 'U'",
+      "difficulty": 2
+    },
+    {
+      "word": "ALADDIN",
+      "start_hint": "Boy who finds a magic lamp",
+      "hint1": "Has a flying carpet",
+      "hint2": "Lives in Agrabah",
+      "hint3": "Starts with 'A'",
+      "difficulty": 2
+    },
+    {
+      "word": "ELSA",
+      "start_hint": "Ice queen princess",
+      "hint1": "Has magical ice powers",
+      "hint2": "Sings 'Let It Go'",
+      "hint3": "Starts with 'E'",
+      "difficulty": 2
+    },
+    {
+      "word": "ANNA",
+      "start_hint": "Sister of Elsa",
+      "hint1": "Optimistic and brave",
+      "hint2": "From Frozen",
+      "hint3": "Starts with 'A'",
+      "difficulty": 2
+    },
+    {
+      "word": "OLAF",
+      "start_hint": "Friendly snowman",
+      "hint1": "Loves warm hugs",
+      "hint2": "From Frozen",
+      "hint3": "Starts with 'O'",
+      "difficulty": 1
+    },
+    {
+      "word": "PINOCCHIO",
+      "start_hint": "Wooden puppet who wants to be real",
+      "hint1": "Nose grows when lying",
+      "hint2": "Created by Geppetto",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "PETER PAN",
+      "start_hint": "Boy who never grows up",
+      "hint1": "Lives in Neverland",
+      "hint2": "Can fly with fairy dust",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "TINKER BELL",
+      "start_hint": "Tiny fairy companion",
+      "hint1": "From Peter Pan",
+      "hint2": "Sprinkles magical fairy dust",
+      "hint3": "Starts with 'T'",
+      "difficulty": 2
+    },
+    {
+      "word": "CAPTAIN HOOK",
+      "start_hint": "Pirate villain",
+      "hint1": "Has a hook for a hand",
+      "hint2": "Enemy of Peter Pan",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "RAPUNZEL",
+      "start_hint": "Princess with long magical hair",
+      "hint1": "Locked in a tower",
+      "hint2": "Hair can heal and glow",
+      "hint3": "Starts with 'R'",
+      "difficulty": 2
+    },
+    {
+      "word": "BUZZ LIGHTYEAR",
+      "start_hint": "Space ranger toy",
+      "hint1": "Says 'To infinity and beyond'",
+      "hint2": "From Toy Story",
+      "hint3": "Starts with 'B'",
+      "difficulty": 2
+    },
+    {
+      "word": "SADNESS",
+      "start_hint": "Emotion character from Inside Out",
+      "hint1": "Blue colored",
+      "hint2": "Shows sadness in Pixar movie",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "JOY",
+      "start_hint": "Emotion character from Inside Out",
+      "hint1": "Yellow and cheerful",
+      "hint2": "Leads the emotions",
+      "hint3": "Starts with 'J'",
+      "difficulty": 1
+    },
+    {
+      "word": "ANGER",
+      "start_hint": "Emotion character from Inside Out",
+      "hint1": "Red and fiery",
+      "hint2": "Easily provoked",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "FEAR",
+      "start_hint": "Emotion character from Inside Out",
+      "hint1": "Purple and nervous",
+      "hint2": "Always anxious",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "DISGUST",
+      "start_hint": "Emotion character from Inside Out",
+      "hint1": "Green and sassy",
+      "hint2": "Keeps Riley from gross things",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "RILEY",
+      "start_hint": "Girl in Inside Out",
+      "hint1": "Has emotions as characters",
+      "hint2": "Main human character",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "WOODY",
+      "start_hint": "Cowboy toy from Toy Story",
+      "hint1": "Leader of Andy's toys",
+      "hint2": "Has a pull-string",
+      "hint3": "Starts with 'W'",
+      "difficulty": 2
+    },
+    {
+      "word": "DORY",
+      "start_hint": "Forgetful blue tang fish",
+      "hint1": "From Finding Nemo and Finding Dory",
+      "hint2": "Always forgets things",
+      "hint3": "Starts with 'D'",
+      "difficulty": 2
+    },
+    {
+      "word": "NEMO",
+      "start_hint": "Clownfish who gets lost",
+      "hint1": "From Finding Nemo",
+      "hint2": "Orange and white stripes",
+      "hint3": "Starts with 'N'",
+      "difficulty": 1
+    },
+    {
+      "word": "LADYBUG",
+      "start_hint": "Superheroine from a French animated series",
+      "hint1": "Real name is Marinette Dupain-Cheng",
+      "hint2": "Fights villains in Paris",
+      "hint3": "Wears a red suit with black spots",
+      "difficulty": 2
+    },
+    {
+      "word": "ALVIN",
+      "start_hint": "Singing chipmunk",
+      "hint1": "From Alvin and the Chipmunks",
+      "hint2": "Wears red sweater with 'A'",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "SIMON",
+      "start_hint": "Chipmunk with glasses",
+      "hint1": "From Alvin and the Chipmunks",
+      "hint2": "The smart one",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "THEODORE",
+      "start_hint": "Chubby chipmunk",
+      "hint1": "From Alvin and the Chipmunks",
+      "hint2": "The youngest",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "FIONA",
+      "start_hint": "Princess from Shrek",
+      "hint1": "Green ogre at night",
+      "hint2": "Falls in love with Shrek",
+      "hint3": "Starts with 'F'",
+      "difficulty": 2
+    },
+    {
+      "word": "APPLE",
+      "start_hint": "A common fruit",
+      "hint1": "Can be red, green, or yellow",
+      "hint2": "Keeps the doctor away",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "AVOCADO",
+      "start_hint": "Green creamy fruit",
+      "hint1": "Often used for guacamole",
+      "hint2": "Has a large seed inside",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "ALMOND",
+      "start_hint": "A nut",
+      "hint1": "Used in baking and snacks",
+      "hint2": "Can be eaten raw or roasted",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "BACON",
+      "start_hint": "Cured pork",
+      "hint1": "Often eaten at breakfast",
+      "hint2": "Crispy and savory",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BAGEL",
+      "start_hint": "Round bread with a hole",
+      "hint1": "Often toasted and topped with cream cheese",
+      "hint2": "Chewy texture",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BAGUETTE",
+      "start_hint": "Long thin French bread",
+      "hint1": "Crispy crust",
+      "hint2": "Popular in France",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BANANA",
+      "start_hint": "Yellow fruit",
+      "hint1": "Curved shape",
+      "hint2": "Peels easily",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BEEF",
+      "start_hint": "Meat from cows",
+      "hint1": "Can be cooked as steak or ground",
+      "hint2": "High in protein",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BLACKBERRY",
+      "start_hint": "A dark purple fruit",
+      "hint1": "Grows on bushes",
+      "hint2": "Used in jams and desserts",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BLUEBERRY",
+      "start_hint": "Small blue fruit",
+      "hint1": "Used in muffins and pancakes",
+      "hint2": "Rich in antioxidants",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BREAD",
+      "start_hint": "Staple food made from flour",
+      "hint1": "Can be sliced",
+      "hint2": "Used for sandwiches",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BURRITO",
+      "start_hint": "Mexican food wrapped in a tortilla",
+      "hint1": "Often filled with beans and meat",
+      "hint2": "Eaten by hand",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BUTTER",
+      "start_hint": "Dairy product",
+      "hint1": "Used for cooking and baking",
+      "hint2": "Made from cream",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "CABBAGE",
+      "start_hint": "Green leafy vegetable",
+      "hint1": "Used in salads or soups",
+      "hint2": "Round and dense",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CAKE",
+      "start_hint": "Sweet baked dessert",
+      "hint1": "Often frosted",
+      "hint2": "Served at birthdays",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CANDY",
+      "start_hint": "Sweet treat",
+      "hint1": "Comes in many flavors",
+      "hint2": "Often chewy or hard",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CARROT",
+      "start_hint": "Orange root vegetable",
+      "hint1": "Good for eyesight",
+      "hint2": "Rabbits love it",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CEREAL",
+      "start_hint": "Breakfast food",
+      "hint1": "Usually eaten with milk",
+      "hint2": "Often comes in flakes or puffs",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHEESE",
+      "start_hint": "Dairy product",
+      "hint1": "Comes in many varieties",
+      "hint2": "Used in sandwiches and pizza",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHERRY",
+      "start_hint": "Small red fruit",
+      "hint1": "Often used as a topping",
+      "hint2": "Grows on trees",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHICKEN",
+      "start_hint": "Common poultry",
+      "hint1": "Used for meat and eggs",
+      "hint2": "Clucks",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHILI",
+      "start_hint": "Spicy pepper",
+      "hint1": "Often red or green",
+      "hint2": "Used in cooking for heat",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHOCOLATE",
+      "start_hint": "Sweet treat made from cocoa",
+      "hint1": "Used in desserts",
+      "hint2": "Can be milk, dark, or white",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CINNAMON",
+      "start_hint": "Spice",
+      "hint1": "Brown powder",
+      "hint2": "Used in baking and drinks",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "COCONUT",
+      "start_hint": "Tropical fruit with hard shell",
+      "hint1": "Contains white flesh and milk",
+      "hint2": "Often used in desserts",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "COFFEE",
+      "start_hint": "Beverage",
+      "hint1": "Made from roasted beans",
+      "hint2": "Boosts alertness",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CORN",
+      "start_hint": "Yellow vegetable",
+      "hint1": "Often eaten on the cob",
+      "hint2": "Can be ground into flour",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CRANBERRY",
+      "start_hint": "Red tart fruit",
+      "hint1": "Used in sauces and juices",
+      "hint2": "Grows in bogs",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CREAM",
+      "start_hint": "Dairy product",
+      "hint1": "Used in desserts and coffee",
+      "hint2": "Thick and white",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CROISSANT",
+      "start_hint": "Flaky pastry",
+      "hint1": "Crescent-shaped",
+      "hint2": "Popular in France",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CUCUMBER",
+      "start_hint": "Green vegetable",
+      "hint1": "Often eaten in salads",
+      "hint2": "Has a watery crunch",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "DOUGHNUT",
+      "start_hint": "Sweet fried dessert",
+      "hint1": "Ring-shaped",
+      "hint2": "Often glazed or filled",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "DUMPLING",
+      "start_hint": "Food made from dough with filling",
+      "hint1": "Boiled, steamed, or fried",
+      "hint2": "Found in many cuisines",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "EGG",
+      "start_hint": "Oval-shaped food laid by birds",
+      "hint1": "Used in cooking and baking",
+      "hint2": "Can be boiled or fried",
+      "hint3": "Starts with 'E'",
+      "difficulty": 1
+    },
+    {
+      "word": "EGGPLANT",
+      "start_hint": "Purple vegetable",
+      "hint1": "Also called aubergine",
+      "hint2": "Used in many cuisines",
+      "hint3": "Starts with 'E'",
+      "difficulty": 1
+    },
+    {
+      "word": "FLOUR",
+      "start_hint": "Powder used for baking",
+      "hint1": "Made from grains",
+      "hint2": "Used to make bread, cakes, and pastries",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "FRENCH FRIES",
+      "start_hint": "Fried potato strips",
+      "hint1": "Often served with ketchup",
+      "hint2": "Popular fast food item",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "GARLIC",
+      "start_hint": "Pungent bulb used in cooking",
+      "hint1": "Adds flavor to dishes",
+      "hint2": "Can ward off vampires in legends",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "GINGER",
+      "start_hint": "Spicy root used in cooking",
+      "hint1": "Used in tea and desserts",
+      "hint2": "Often pickled in sushi",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "GRAPE",
+      "start_hint": "Small juicy fruit",
+      "hint1": "Can be red, green, or purple",
+      "hint2": "Used to make wine",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "GRAPEFRUIT",
+      "start_hint": "Citrus fruit",
+      "hint1": "Tart and slightly bitter",
+      "hint2": "Pink or white inside",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "HAM",
+      "start_hint": "Cured pork meat",
+      "hint1": "Often served at breakfast or sandwiches",
+      "hint2": "Can be smoked or baked",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "HAMBURGER",
+      "start_hint": "Ground beef patty in a bun",
+      "hint1": "Popular fast food",
+      "hint2": "Can have cheese, lettuce, and tomato",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "HONEY",
+      "start_hint": "Sweet substance made by bees",
+      "hint1": "Golden in color",
+      "hint2": "Used as a natural sweetener",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "HOT DOG",
+      "start_hint": "Sausage in a bun",
+      "hint1": "Often topped with mustard and ketchup",
+      "hint2": "Popular at baseball games",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "ICE CREAM",
+      "start_hint": "Frozen sweet treat",
+      "hint1": "Comes in many flavors",
+      "hint2": "Served in cones or cups",
+      "hint3": "Starts with 'I'",
+      "difficulty": 1
+    },
+    {
+      "word": "JAM",
+      "start_hint": "Sweet spread made from fruit",
+      "hint1": "Often eaten on bread",
+      "hint2": "Thick consistency",
+      "hint3": "Starts with 'J'",
+      "difficulty": 1
+    },
+    {
+      "word": "JELLY",
+      "start_hint": "Gel-like fruit spread",
+      "hint1": "Smooth texture",
+      "hint2": "Often paired with peanut butter",
+      "hint3": "Starts with 'J'",
+      "difficulty": 1
+    },
+    {
+      "word": "KETCHUP",
+      "start_hint": "Tomato-based condiment",
+      "hint1": "Often used on fries and burgers",
+      "hint2": "Sweet and tangy",
+      "hint3": "Starts with 'K'",
+      "difficulty": 1
+    },
+    {
+      "word": "LASAGNA",
+      "start_hint": "Layered pasta dish",
+      "hint1": "Often has cheese, meat, and sauce",
+      "hint2": "Baked in the oven",
+      "hint3": "Starts with 'L'",
+      "difficulty": 2
+    },
+    {
+      "word": "LEMON",
+      "start_hint": "Yellow citrus fruit",
+      "hint1": "Sour taste",
+      "hint2": "Used in drinks and cooking",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "LETTUCE",
+      "start_hint": "Leafy green vegetable",
+      "hint1": "Used in salads and sandwiches",
+      "hint2": "Crunchy texture",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "LOBSTER",
+      "start_hint": "Large marine crustacean",
+      "hint1": "Has claws",
+      "hint2": "Considered a luxury seafood",
+      "hint3": "Starts with 'L'",
+      "difficulty": 2
+    },
+    {
+      "word": "MACARONI",
+      "start_hint": "Short tube-shaped pasta",
+      "hint1": "Used in macaroni and cheese",
+      "hint2": "Boiled before eating",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MANGO",
+      "start_hint": "Sweet tropical fruit",
+      "hint1": "Orange-yellow inside",
+      "hint2": "Often eaten fresh or in smoothies",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MARSHMALLOW",
+      "start_hint": "Soft sugary treat",
+      "hint1": "White and fluffy",
+      "hint2": "Roasted over a fire or in hot chocolate",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MAYONNAISE",
+      "start_hint": "Creamy condiment",
+      "hint1": "Made from eggs and oil",
+      "hint2": "Often used in sandwiches and salads",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MEATBALL",
+      "start_hint": "Ground meat rolled into a ball",
+      "hint1": "Cooked in sauce or baked",
+      "hint2": "Often served with spaghetti",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MILK",
+      "start_hint": "White liquid from cows",
+      "hint1": "Drunk on its own or with cereal",
+      "hint2": "Used in baking and cooking",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MILKSHAKE",
+      "start_hint": "Sweet drink made from milk and ice cream",
+      "hint1": "Often served with a straw",
+      "hint2": "Comes in many flavors",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MUSHROOM",
+      "start_hint": "Fungi often used in cooking",
+      "hint1": "Comes in many varieties",
+      "hint2": "Can be sautéed or grilled",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "MUSTARD",
+      "start_hint": "Condiment made from seeds",
+      "hint1": "Yellow or brown",
+      "hint2": "Often used on hot dogs and sandwiches",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "NOODLES",
+      "start_hint": "Long pasta strands",
+      "hint1": "Boiled before eating",
+      "hint2": "Used in soups and stir-fry",
+      "hint3": "Starts with 'N'",
+      "difficulty": 1
+    },
+    {
+      "word": "OATMEAL",
+      "start_hint": "Breakfast porridge made from oats",
+      "hint1": "Can be sweet or savory",
+      "hint2": "Often eaten warm",
+      "hint3": "Starts with 'O'",
+      "difficulty": 1
+    },
+    {
+      "word": "ONION",
+      "start_hint": "Vegetable with layers",
+      "hint1": "Makes you cry when cutting",
+      "hint2": "Used in many dishes",
+      "hint3": "Starts with 'O'",
+      "difficulty": 1
+    },
+    {
+      "word": "ORANGE",
+      "start_hint": "Citrus fruit",
+      "hint1": "Orange color",
+      "hint2": "Juicy and sweet",
+      "hint3": "Starts with 'O'",
+      "difficulty": 1
+    },
+    {
+      "word": "PANCAKE",
+      "start_hint": "Flat breakfast food",
+      "hint1": "Cooked on a griddle",
+      "hint2": "Often served with syrup",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PASTA",
+      "start_hint": "Italian staple",
+      "hint1": "Can be spaghetti or penne",
+      "hint2": "Boiled before eating",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PEACH",
+      "start_hint": "Soft fuzzy fruit",
+      "hint1": "Orange inside",
+      "hint2": "Sweet and juicy",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PEANUT",
+      "start_hint": "Legume often eaten as a snack",
+      "hint1": "Can be made into butter",
+      "hint2": "Small and brown",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PEAR",
+      "start_hint": "Green or yellow fruit",
+      "hint1": "Sweet and juicy",
+      "hint2": "Bell-shaped",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PINEAPPLE",
+      "start_hint": "Tropical fruit",
+      "hint1": "Spiky skin",
+      "hint2": "Yellow juicy inside",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PIZZA",
+      "start_hint": "Baked flatbread with toppings",
+      "hint1": "Cheese and tomato sauce",
+      "hint2": "Popular Italian food",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PLUM",
+      "start_hint": "Purple or red fruit",
+      "hint1": "Sweet and juicy",
+      "hint2": "Often made into jam",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "POPCORN",
+      "start_hint": "Popped corn kernels",
+      "hint1": "Popular snack at movies",
+      "hint2": "Can be salted or sweet",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "POTATO",
+      "start_hint": "Starchy tuber",
+      "hint1": "Can be baked, mashed, or fried",
+      "hint2": "Used for French fries",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PRETZEL",
+      "start_hint": "Twisted baked snack",
+      "hint1": "Often salted",
+      "hint2": "Soft or crunchy variety",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PUDDING",
+      "start_hint": "Sweet dessert",
+      "hint1": "Can be chocolate or vanilla",
+      "hint2": "Soft and creamy",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "PUMPKIN",
+      "start_hint": "Orange gourd",
+      "hint1": "Used in pies and decorations",
+      "hint2": "Popular at Halloween",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "RAISIN",
+      "start_hint": "Dried grape",
+      "hint1": "Sweet and chewy",
+      "hint2": "Often in baked goods",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "RASPBERRY",
+      "start_hint": "Small red berry",
+      "hint1": "Used in desserts and jams",
+      "hint2": "Sweet and slightly tart",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "RICE",
+      "start_hint": "Staple grain",
+      "hint1": "White or brown",
+      "hint2": "Boiled before eating",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "SAUSAGE",
+      "start_hint": "Ground meat in casing",
+      "hint1": "Often grilled or fried",
+      "hint2": "Breakfast food",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SALMON",
+      "start_hint": "Pink fish",
+      "hint1": "Eaten raw or cooked",
+      "hint2": "Lives in rivers and oceans",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SALT",
+      "start_hint": "Common seasoning",
+      "hint1": "White crystals",
+      "hint2": "Enhances flavor of food",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SANDWICH",
+      "start_hint": "Food between slices of bread",
+      "hint1": "Can have meat, cheese, or veggies",
+      "hint2": "Eaten cold or hot",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SARDINE",
+      "start_hint": "Small oily fish",
+      "hint1": "Often canned",
+      "hint2": "Eaten as snack or in meals",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SAUCE",
+      "start_hint": "Liquid or semi-liquid food",
+      "hint1": "Adds flavor",
+      "hint2": "Can be tomato, soy, or cream-based",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SHRIMP",
+      "start_hint": "Small crustacean",
+      "hint1": "Eaten as seafood",
+      "hint2": "Pink when cooked",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "STEAK",
+      "start_hint": "Cut of beef",
+      "hint1": "Cooked by grilling or frying",
+      "hint2": "Served medium, rare, or well-done",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "STRAWBERRY",
+      "start_hint": "Red fruit with seeds on the outside",
+      "hint1": "Sweet and juicy",
+      "hint2": "Often used in desserts",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SUGAR",
+      "start_hint": "Sweet white crystals",
+      "hint1": "Used to sweeten food",
+      "hint2": "Comes from sugarcane or sugar beets",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SUSHI",
+      "start_hint": "Japanese dish with rice and seafood",
+      "hint1": "Often served with soy sauce",
+      "hint2": "Can include raw fish",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SWEET POTATO",
+      "start_hint": "Orange root vegetable",
+      "hint1": "Can be baked or mashed",
+      "hint2": "Sweeter than regular potato",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SYRUP",
+      "start_hint": "Sweet liquid",
+      "hint1": "Often poured on pancakes or waffles",
+      "hint2": "Made from sugar or maple",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "TACO",
+      "start_hint": "Mexican dish in folded tortilla",
+      "hint1": "Can contain meat, beans, and cheese",
+      "hint2": "Eaten by hand",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TEA",
+      "start_hint": "Beverage made from leaves",
+      "hint1": "Can be black, green, or herbal",
+      "hint2": "Often served hot",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TOAST",
+      "start_hint": "Bread browned by heat",
+      "hint1": "Eaten with butter or jam",
+      "hint2": "Breakfast food",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TOFU",
+      "start_hint": "Soy product",
+      "hint1": "Used in vegetarian dishes",
+      "hint2": "Soft and white",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TOMATO",
+      "start_hint": "Red fruit often used as a vegetable",
+      "hint1": "Used in salads and sauces",
+      "hint2": "Can be cherry or beefsteak type",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TUNA",
+      "start_hint": "Large ocean fish",
+      "hint1": "Often canned or grilled",
+      "hint2": "Popular in sushi",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TURKEY",
+      "start_hint": "Large bird eaten at Thanksgiving",
+      "hint1": "Has wattles on its neck",
+      "hint2": "Can be roasted",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "VANILLA",
+      "start_hint": "Flavoring from orchid pods",
+      "hint1": "Used in desserts and ice cream",
+      "hint2": "White or light-colored",
+      "hint3": "Starts with 'V'",
+      "difficulty": 1
+    },
+    {
+      "word": "WATERMELON",
+      "start_hint": "Large green fruit with red inside",
+      "hint1": "Contains black seeds",
+      "hint2": "Juicy and sweet",
+      "hint3": "Starts with 'W'",
+      "difficulty": 1
+    },
+    {
+      "word": "YOGURT",
+      "start_hint": "Fermented dairy product",
+      "hint1": "Creamy texture",
+      "hint2": "Often eaten with fruit or honey",
+      "hint3": "Starts with 'Y'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHEESECAKE",
+      "start_hint": "Sweet dessert with a creamy filling",
+      "hint1": "Often has a crust",
+      "hint2": "Baked or chilled",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "BROWNIE",
+      "start_hint": "Chocolate baked dessert",
+      "hint1": "Dense and fudgy",
+      "hint2": "Square or rectangular pieces",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "CUPCAKE",
+      "start_hint": "Small individual cake",
+      "hint1": "Often frosted on top",
+      "hint2": "Served in paper cups",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "MUFFIN",
+      "start_hint": "Small baked bread-like item",
+      "hint1": "Can be sweet or savory",
+      "hint2": "Often eaten for breakfast",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "BISCUIT",
+      "start_hint": "Small baked bread",
+      "hint1": "Can be sweet or savory",
+      "hint2": "Soft or crunchy",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "WAFFLE",
+      "start_hint": "Grid-patterned breakfast food",
+      "hint1": "Often eaten with syrup or fruit",
+      "hint2": "Cooked in a special iron",
+      "hint3": "Starts with 'W'",
+      "difficulty": 1
+    },
+    {
+      "word": "CARAMEL",
+      "start_hint": "Sweet brown candy or syrup",
+      "hint1": "Made by heating sugar",
+      "hint2": "Used in desserts and sauces",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "COTTON CANDY",
+      "start_hint": "Fluffy sugary treat",
+      "hint1": "Often pink or blue",
+      "hint2": "Sold at fairs and carnivals",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "LOLLIPOP",
+      "start_hint": "Candy on a stick",
+      "hint1": "Comes in many flavors and colors",
+      "hint2": "Can be sucked or licked",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "GUMMY BEARS",
+      "start_hint": "Chewy candy shaped like bears",
+      "hint1": "Comes in multiple colors",
+      "hint2": "Fruit flavored",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "LEMONADE",
+      "start_hint": "Sweet citrus drink",
+      "hint1": "Made from lemons",
+      "hint2": "Often served cold",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "SMOOTHIE",
+      "start_hint": "Blended fruit drink",
+      "hint1": "Often creamy",
+      "hint2": "Can include yogurt or milk",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "GRANOLA",
+      "start_hint": "Crunchy breakfast food",
+      "hint1": "Made from oats, nuts, and honey",
+      "hint2": "Often eaten with yogurt or milk",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "CORNFLAKES",
+      "start_hint": "Breakfast cereal made from corn",
+      "hint1": "Flaky texture",
+      "hint2": "Eaten with milk",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "OMELETTE",
+      "start_hint": "Egg dish cooked in a pan",
+      "hint1": "Can include vegetables, cheese, or meat",
+      "hint2": "Folded before serving",
+      "hint3": "Starts with 'O'",
+      "difficulty": 1
+    },
+    {
+      "word": "SCRAMBLED EGGS",
+      "start_hint": "Eggs beaten and cooked",
+      "hint1": "Soft and fluffy",
+      "hint2": "Often eaten for breakfast",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "FRIED EGGS",
+      "start_hint": "Eggs cooked in oil or butter",
+      "hint1": "Sunny side up or over easy",
+      "hint2": "Breakfast favorite",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "BOILED EGGS",
+      "start_hint": "Eggs cooked in water",
+      "hint1": "Hard or soft boiled",
+      "hint2": "Eaten plain or in salads",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "EGG SALAD",
+      "start_hint": "Salad made with chopped eggs",
+      "hint1": "Mixed with mayonnaise",
+      "hint2": "Often eaten in sandwiches",
+      "hint3": "Starts with 'E'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHICKEN SALAD",
+      "start_hint": "Salad made with chicken",
+      "hint1": "Can include vegetables and dressing",
+      "hint2": "Eaten cold or warm",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "POTATO SALAD",
+      "start_hint": "Salad made from boiled potatoes",
+      "hint1": "Mixed with mayo or mustard",
+      "hint2": "Common picnic dish",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "COLESLAW",
+      "start_hint": "Shredded cabbage salad",
+      "hint1": "Often dressed with mayonnaise or vinaigrette",
+      "hint2": "Served as side dish",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "GARLIC BREAD",
+      "start_hint": "Bread with garlic and butter",
+      "hint1": "Often toasted",
+      "hint2": "Served with pasta",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "BREADSTICKS",
+      "start_hint": "Thin baked bread",
+      "hint1": "Often served as appetizer",
+      "hint2": "Can be seasoned with garlic or cheese",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "NACHOS",
+      "start_hint": "Tortilla chips with toppings",
+      "hint1": "Often has cheese, jalapeños, and meat",
+      "hint2": "Popular snack",
+      "hint3": "Starts with 'N'",
+      "difficulty": 1
+    },
+    {
+      "word": "PAINTING",
+      "start_hint": "Creating images with colors",
+      "hint1": "Can be on canvas, walls, or paper",
+      "hint2": "Used as an art form",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "DRAWING",
+      "start_hint": "Making images with pencil or pen",
+      "hint1": "Often done on paper",
+      "hint2": "Sketches, illustrations, or doodles",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "POTTERY",
+      "start_hint": "Shaping clay into objects",
+      "hint1": "Often baked in a kiln",
+      "hint2": "Can make bowls, vases, or plates",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "WOODWORKING",
+      "start_hint": "Crafting with wood",
+      "hint1": "Can make furniture or decor",
+      "hint2": "Involves carving or assembling",
+      "hint3": "Starts with 'W'",
+      "difficulty": 1
+    },
+    {
+      "word": "KNITTING",
+      "start_hint": "Creating fabric with yarn",
+      "hint1": "Uses needles to make patterns",
+      "hint2": "Can make scarves, sweaters, or hats",
+      "hint3": "Starts with 'K'",
+      "difficulty": 1
+    },
+    {
+      "word": "JEWELRY MAKING",
+      "start_hint": "Creating wearable art",
+      "hint1": "Involves beads, metals, or gems",
+      "hint2": "Can make necklaces, bracelets, or rings",
+      "hint3": "Starts with 'J'",
+      "difficulty": 1
+    },
+    {
+      "word": "CANDLE MAKING",
+      "start_hint": "Crafting wax items that light up",
+      "hint1": "Can be scented or decorative",
+      "hint2": "Involves melting wax",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "SOAP MAKING",
+      "start_hint": "Creating hygiene products",
+      "hint1": "Can be scented or colored",
+      "hint2": "Involves oils and lye",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "PHOTOGRAPHY",
+      "start_hint": "Capturing images with a camera",
+      "hint1": "Can be digital or film",
+      "hint2": "Used as a hobby or profession",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "VLOGGING",
+      "start_hint": "Recording videos about daily life",
+      "hint1": "Shared online, often on YouTube",
+      "hint2": "Can include travel, reviews, or tutorials",
+      "hint3": "Starts with 'V'",
+      "difficulty": 1
+    },
+    {
+      "word": "PODCASTING",
+      "start_hint": "Creating audio content",
+      "hint1": "Often episodic",
+      "hint2": "Shared online for listeners",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "READING BOOKS",
+      "start_hint": "Engaging with written stories",
+      "hint1": "Fiction or non-fiction",
+      "hint2": "Can be for entertainment or learning",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "PLAYING MUSICAL INSTRUMENTS",
+      "start_hint": "Creating music with instruments",
+      "hint1": "Can be piano, guitar, drums, etc.",
+      "hint2": "Requires practice",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "SINGING",
+      "start_hint": "Using your voice musically",
+      "hint1": "Can perform solo or in groups",
+      "hint2": "Often accompanies instruments",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "SONGWRITING",
+      "start_hint": "Creating original songs",
+      "hint1": "Involves lyrics and melody",
+      "hint2": "Can be performed by yourself or others",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "KARAOKE",
+      "start_hint": "Singing along to a track",
+      "hint1": "Lyrics displayed on screen",
+      "hint2": "Often done in bars or parties",
+      "hint3": "Starts with 'K'",
+      "difficulty": 1
+    },
+    {
+      "word": "DJING",
+      "start_hint": "Mixing music tracks",
+      "hint1": "Played at parties and clubs",
+      "hint2": "Can involve turntables or software",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "DANCING",
+      "start_hint": "Moving rhythmically to music",
+      "hint1": "Can be freestyle or choreographed",
+      "hint2": "Includes many styles",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "BALLET",
+      "start_hint": "Classical dance form",
+      "hint1": "Graceful and precise movements",
+      "hint2": "Often performed on stage with music",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "SURFING",
+      "start_hint": "Riding waves on a board",
+      "hint1": "Popular at beaches",
+      "hint2": "Requires balance and skill",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SWIMMING",
+      "start_hint": "Moving through water",
+      "hint1": "Can be for sport or leisure",
+      "hint2": "Various strokes exist",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "DIVING",
+      "start_hint": "Jumping or plunging into water",
+      "hint1": "Can be recreational or competitive",
+      "hint2": "Requires control and technique",
+      "hint3": "Starts with 'D'",
+      "difficulty": 2
+    },
+    {
+      "word": "FISHING",
+      "start_hint": "Catching fish",
+      "hint1": "Can use rod, line, or net",
+      "hint2": "Popular outdoor hobby",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "HUNTING",
+      "start_hint": "Pursuing animals for food or sport",
+      "hint1": "Requires weapons or traps",
+      "hint2": "Often outdoors",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "YOGA",
+      "start_hint": "Physical and mental exercise",
+      "hint1": "Involves poses and breathing",
+      "hint2": "Promotes flexibility and relaxation",
+      "hint3": "Starts with 'Y'",
+      "difficulty": 1
+    },
+    {
+      "word": "HIKING",
+      "start_hint": "Walking in nature",
+      "hint1": "Often on trails or mountains",
+      "hint2": "Outdoor activity for exercise",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "CAMPING",
+      "start_hint": "Staying outdoors overnight",
+      "hint1": "Involves tents or cabins",
+      "hint2": "Often includes campfires and cooking",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "ROCK CLIMBING",
+      "start_hint": "Climbing natural rock formations",
+      "hint1": "Requires ropes or safety gear",
+      "hint2": "Can be indoor or outdoor",
+      "hint3": "Starts with 'R'",
+      "difficulty": 2
+    },
+    {
+      "word": "JOGGING",
+      "start_hint": "Running at a steady pace",
+      "hint1": "Common exercise for fitness",
+      "hint2": "Done outdoors or on a treadmill",
+      "hint3": "Starts with 'J'",
+      "difficulty": 1
+    },
+    {
+      "word": "BIRD WATCHING",
+      "start_hint": "Observing birds in nature",
+      "hint1": "Often uses binoculars",
+      "hint2": "Hobby for relaxation and learning",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "GARDENING",
+      "start_hint": "Cultivating plants and flowers",
+      "hint1": "Can be for food or decoration",
+      "hint2": "Involves soil, water, and sunlight",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "BEEKEEPING",
+      "start_hint": "Caring for bees",
+      "hint1": "Collects honey and beeswax",
+      "hint2": "Requires hives and protective clothing",
+      "hint3": "Starts with 'B'",
+      "difficulty": 2
+    },
+    {
+      "word": "HORSEBACK RIDING",
+      "start_hint": "Riding horses",
+      "hint1": "Can be for sport or leisure",
+      "hint2": "Requires a saddle and reins",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "WINE MAKING",
+      "start_hint": "Producing alcoholic drink from grapes",
+      "hint1": "Fermentation process involved",
+      "hint2": "Can be done commercially or at home",
+      "hint3": "Starts with 'W'",
+      "difficulty": 2
+    },
+    {
+      "word": "COOKING",
+      "start_hint": "Preparing food",
+      "hint1": "Involves heat, ingredients, and techniques",
+      "hint2": "Can be for fun or profession",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "BAKING",
+      "start_hint": "Cooking with dry heat, usually in an oven",
+      "hint1": "Used for bread, cakes, and pastries",
+      "hint2": "Requires measuring ingredients",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "FOOD TASTING",
+      "start_hint": "Sampling different foods",
+      "hint1": "Can be for fun or review",
+      "hint2": "Often paired with wine or drinks",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "TEA TASTING",
+      "start_hint": "Sampling different teas",
+      "hint1": "Can involve brewing and flavor notes",
+      "hint2": "Often paired with snacks",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TRAVEL",
+      "start_hint": "Going to different places",
+      "hint1": "Can be for leisure or work",
+      "hint2": "Exploring new cultures and sights",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "COMMUNITY SERVICE",
+      "start_hint": "Helping your local community",
+      "hint1": "Volunteering for events or aid",
+      "hint2": "Can include cleanup or charity work",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "FUNDRAISING",
+      "start_hint": "Collecting money for a cause",
+      "hint1": "Can be for charity or events",
+      "hint2": "Often involves campaigns or events",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHARITY WORK",
+      "start_hint": "Helping those in need",
+      "hint1": "Volunteering or donating",
+      "hint2": "Can involve organizing events or programs",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "JIGSAW PUZZLES",
+      "start_hint": "Assembling interlocking pieces",
+      "hint1": "Can create an image when complete",
+      "hint2": "Often done for leisure",
+      "hint3": "Starts with 'J'",
+      "difficulty": 1
+    },
+    {
+      "word": "SUDOKU",
+      "start_hint": "Number puzzle on a grid",
+      "hint1": "Fill rows, columns, and boxes without repeating numbers",
+      "hint2": "Requires logic and attention",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "CROSSWORDS",
+      "start_hint": "Word puzzle with intersecting answers",
+      "hint1": "Often found in newspapers",
+      "hint2": "Requires knowledge and vocabulary",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "BOARD GAMES",
+      "start_hint": "Games played on a flat surface",
+      "hint1": "Includes pieces and a board",
+      "hint2": "Can be strategy or luck-based",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHESS",
+      "start_hint": "Strategy game with 16 pieces per side",
+      "hint1": "King, Queen, and pawns involved",
+      "hint2": "Played on a checkered board",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHECKERS",
+      "start_hint": "Jumping game on a board",
+      "hint1": "Pieces move diagonally",
+      "hint2": "Capture opponent by jumping over pieces",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "STAR GAZING",
+      "start_hint": "Observing stars and celestial objects",
+      "hint1": "Often done at night with a telescope",
+      "hint2": "Can include planets and constellations",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "DOCTOR",
+      "start_hint": "Medical professional",
+      "hint1": "Diagnoses and treats patients",
+      "hint2": "Works in hospitals or clinics",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "NURSE",
+      "start_hint": "Assists doctors and cares for patients",
+      "hint1": "Provides medical support and monitoring",
+      "hint2": "Works in hospitals or clinics",
+      "hint3": "Starts with 'N'",
+      "difficulty": 1
+    },
+    {
+      "word": "SURGEON",
+      "start_hint": "Performs operations",
+      "hint1": "Specialized doctor",
+      "hint2": "Works in operating rooms",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "DENTIST",
+      "start_hint": "Cares for teeth and gums",
+      "hint1": "Performs checkups and procedures",
+      "hint2": "Can fill cavities or clean teeth",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "PHARMACIST",
+      "start_hint": "Dispenses medications",
+      "hint1": "Works in pharmacies or hospitals",
+      "hint2": "Advises patients on drug use",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "MIDWIFE",
+      "start_hint": "Assists childbirth",
+      "hint1": "Supports mothers during labor",
+      "hint2": "Can work in hospitals or home births",
+      "hint3": "Starts with 'M'",
+      "difficulty": 2
+    },
+    {
+      "word": "YOGA INSTRUCTOR",
+      "start_hint": "Teaches yoga",
+      "hint1": "Guides poses and breathing",
+      "hint2": "Helps improve flexibility and relaxation",
+      "hint3": "Starts with 'Y'",
+      "difficulty": 1
+    },
+    {
+      "word": "LIFEGUARD",
+      "start_hint": "Protects swimmers at pools or beaches",
+      "hint1": "Trained to rescue people",
+      "hint2": "Monitors safety of swimmers",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "TEACHER",
+      "start_hint": "Educates students",
+      "hint1": "Works in schools or colleges",
+      "hint2": "Can specialize in subjects",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "TUTOR",
+      "start_hint": "Provides additional teaching support",
+      "hint1": "Works individually or in small groups",
+      "hint2": "Helps students understand subjects",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "SCHOOL PRINCIPAL",
+      "start_hint": "Leads a school",
+      "hint1": "Oversees staff and students",
+      "hint2": "Responsible for school policies",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "SCHOOL COUNSELOR",
+      "start_hint": "Supports students' well-being",
+      "hint1": "Helps with academic and personal issues",
+      "hint2": "Works in schools",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "TEACHING ASSISTANT",
+      "start_hint": "Supports classroom teachers",
+      "hint1": "Helps students understand lessons",
+      "hint2": "Can grade or supervise activities",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "LIBRARIAN",
+      "start_hint": "Manages library resources",
+      "hint1": "Helps people find books and materials",
+      "hint2": "Organizes collections and archives",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "ACCOUNTANT",
+      "start_hint": "Manages financial records",
+      "hint1": "Prepares budgets and taxes",
+      "hint2": "Works for businesses or individuals",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "REAL ESTATE AGENT",
+      "start_hint": "Helps buy, sell, or rent properties",
+      "hint1": "Works with clients and listings",
+      "hint2": "Earns commissions from sales",
+      "hint3": "Starts with 'R'",
+      "difficulty": 2
+    },
+    {
+      "word": "ARCHITECT",
+      "start_hint": "Designs buildings and structures",
+      "hint1": "Creates plans and blueprints",
+      "hint2": "Ensures safety and functionality",
+      "hint3": "Starts with 'A'",
+      "difficulty": 2
+    },
+    {
+      "word": "INTERIOR DESIGNER",
+      "start_hint": "Designs indoor spaces",
+      "hint1": "Focuses on aesthetics and functionality",
+      "hint2": "Chooses colors, furniture, and layout",
+      "hint3": "Starts with 'I'",
+      "difficulty": 2
+    },
+    {
+      "word": "ANIMATOR",
+      "start_hint": "Creates animated visuals",
+      "hint1": "Works in films, games, or TV",
+      "hint2": "Draws or models sequences frame by frame",
+      "hint3": "Starts with 'A'",
+      "difficulty": 2
+    },
+    {
+      "word": "PHOTOGRAPHER",
+      "start_hint": "Captures images with a camera",
+      "hint1": "Can work in portraits, events, or nature",
+      "hint2": "May edit photos digitally",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "VIDEOGRAPHER",
+      "start_hint": "Records video content",
+      "hint1": "Can film events or create movies",
+      "hint2": "May edit and produce videos",
+      "hint3": "Starts with 'V'",
+      "difficulty": 1
+    },
+    {
+      "word": "FILMMAKER",
+      "start_hint": "Creates movies or documentaries",
+      "hint1": "Directs and produces content",
+      "hint2": "May write scripts or edit",
+      "hint3": "Starts with 'F'",
+      "difficulty": 2
+    },
+    {
+      "word": "DIRECTOR",
+      "start_hint": "Leads film or theater production",
+      "hint1": "Guides actors and crew",
+      "hint2": "Responsible for creative vision",
+      "hint3": "Starts with 'D'",
+      "difficulty": 2
+    },
+    {
+      "word": "PRODUCER",
+      "start_hint": "Oversees production of media",
+      "hint1": "Handles budgets and logistics",
+      "hint2": "Works with directors and teams",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "SCREENWRITER",
+      "start_hint": "Writes scripts for film or TV",
+      "hint1": "Develops story, dialogue, and scenes",
+      "hint2": "Works with directors and producers",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "EDITOR",
+      "start_hint": "Edits written or visual content",
+      "hint1": "Ensures quality and consistency",
+      "hint2": "Can work on books, movies, or articles",
+      "hint3": "Starts with 'E'",
+      "difficulty": 1
+    },
+    {
+      "word": "SINGER",
+      "start_hint": "Performs songs vocally",
+      "hint1": "Can perform solo or in a group",
+      "hint2": "Uses voice for melody and expression",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "ACTOR",
+      "start_hint": "Performs roles in films or theater",
+      "hint1": "Portrays characters",
+      "hint2": "Can work on stage or screen",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "ACTRESS",
+      "start_hint": "Female performer in films or theater",
+      "hint1": "Portrays characters",
+      "hint2": "Can work on stage or screen",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "DANCER",
+      "start_hint": "Performs dance professionally or recreationally",
+      "hint1": "Can specialize in styles like ballet or hip-hop",
+      "hint2": "Expresses through movement",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "MUSICIAN",
+      "start_hint": "Performs or creates music",
+      "hint1": "Can play instruments or sing",
+      "hint2": "Performs solo or in groups",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "BAND MEMBER",
+      "start_hint": "Part of a musical group",
+      "hint1": "Plays an instrument or sings",
+      "hint2": "Performs with other musicians",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "CONDUCTOR",
+      "start_hint": "Leads an orchestra or choir",
+      "hint1": "Uses a baton or hand signals",
+      "hint2": "Directs tempo and dynamics",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "DJ",
+      "start_hint": "Mixes and plays music for audiences",
+      "hint1": "Often works at clubs or events",
+      "hint2": "Uses turntables or software",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "VOICE ACTOR",
+      "start_hint": "Provides voices for characters",
+      "hint1": "Works in animation, games, or dubbing",
+      "hint2": "Does not appear on screen",
+      "hint3": "Starts with 'V'",
+      "difficulty": 2
+    },
+    {
+      "word": "REPORTER",
+      "start_hint": "Gathers and delivers news",
+      "hint1": "Can work for TV, radio, or newspapers",
+      "hint2": "Reports events to the public",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "AUTHOR",
+      "start_hint": "Writes books or stories",
+      "hint1": "Can be fiction or non-fiction",
+      "hint2": "Publishes works for readers",
+      "hint3": "Starts with 'A'",
+      "difficulty": 1
+    },
+    {
+      "word": "BLOGGER",
+      "start_hint": "Writes online content regularly",
+      "hint1": "Shares opinions or information",
+      "hint2": "Can include text, photos, or videos",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "PODCASTER",
+      "start_hint": "Creates audio content online",
+      "hint1": "Episodes often cover specific topics",
+      "hint2": "Shared on platforms for listeners",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "SOCIAL MEDIA MANAGER",
+      "start_hint": "Manages online presence for brands or individuals",
+      "hint1": "Creates content and posts",
+      "hint2": "Engages with followers",
+      "hint3": "Starts with 'S'",
+      "difficulty": 2
+    },
+    {
+      "word": "EVENT PLANNER",
+      "start_hint": "Organizes events or parties",
+      "hint1": "Coordinates venues, staff, and schedules",
+      "hint2": "Ensures event runs smoothly",
+      "hint3": "Starts with 'E'",
+      "difficulty": 2
+    },
+    {
+      "word": "WEDDING PLANNER",
+      "start_hint": "Specializes in planning weddings",
+      "hint1": "Manages all wedding arrangements",
+      "hint2": "Works closely with couples",
+      "hint3": "Starts with 'W'",
+      "difficulty": 2
+    },
+    {
+      "word": "TRAVEL AGENT",
+      "start_hint": "Assists clients with travel arrangements",
+      "hint1": "Books flights, hotels, and tours",
+      "hint2": "Provides advice on destinations",
+      "hint3": "Starts with 'T'",
+      "difficulty": 2
+    },
+    {
+      "word": "TOUR GUIDE",
+      "start_hint": "Leads visitors on trips or tours",
+      "hint1": "Provides information about sites",
+      "hint2": "Often works at tourist destinations",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "FLIGHT ATTENDANT",
+      "start_hint": "Assists passengers on airplanes",
+      "hint1": "Ensures safety and comfort",
+      "hint2": "Demonstrates safety procedures",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "PILOT",
+      "start_hint": "Operates an aircraft",
+      "hint1": "Responsible for flight navigation",
+      "hint2": "Can fly commercial or private planes",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "CO-PILOT",
+      "start_hint": "Assists the pilot during flight",
+      "hint1": "Shares flight responsibilities",
+      "hint2": "Helps with navigation and communication",
+      "hint3": "Starts with 'C'",
+      "difficulty": 2
+    },
+    {
+      "word": "BUS DRIVER",
+      "start_hint": "Drives passengers on buses",
+      "hint1": "Follows set routes and schedules",
+      "hint2": "Ensures passenger safety",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "TRUCK DRIVER",
+      "start_hint": "Transports goods via truck",
+      "hint1": "Follows long-distance routes",
+      "hint2": "Carries cargo safely",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "DELIVERY DRIVER",
+      "start_hint": "Delivers packages or food",
+      "hint1": "Works locally or regionally",
+      "hint2": "Ensures timely delivery",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "TAXI DRIVER",
+      "start_hint": "Transports passengers for fare",
+      "hint1": "Drives a cab or ride-share vehicle",
+      "hint2": "Knows local routes well",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "FISHERMAN",
+      "start_hint": "Catches fish for work or sport",
+      "hint1": "Uses rods, nets, or traps",
+      "hint2": "Works on boats or near water",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "MARINE BIOLOGIST",
+      "start_hint": "Studies marine life",
+      "hint1": "Works in oceans or labs",
+      "hint2": "Researches animals and ecosystems",
+      "hint3": "Starts with 'M'",
+      "difficulty": 2
+    },
+    {
+      "word": "LAB ASSISTANT",
+      "start_hint": "Supports laboratory work",
+      "hint1": "Prepares experiments and samples",
+      "hint2": "Assists scientists with research",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "HEALTH INSPECTOR",
+      "start_hint": "Checks sanitation and safety",
+      "hint1": "Inspects restaurants and facilities",
+      "hint2": "Ensures compliance with regulations",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "PERSONAL CHEF",
+      "start_hint": "Prepares meals for individuals or families",
+      "hint1": "Cooks customized dishes",
+      "hint2": "Can work privately or professionally",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "BAKER",
+      "start_hint": "Prepares baked goods",
+      "hint1": "Cakes, bread, and pastries",
+      "hint2": "Works in a bakery or restaurant",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BARISTA",
+      "start_hint": "Prepares coffee drinks",
+      "hint1": "Works in cafes or coffee shops",
+      "hint2": "Can make lattes and cappuccinos",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "BARTENDER",
+      "start_hint": "Serves drinks at a bar",
+      "hint1": "Mixes cocktails",
+      "hint2": "Interacts with patrons",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "WINEMAKER",
+      "start_hint": "Produces wine from grapes",
+      "hint1": "Involves fermentation",
+      "hint2": "Can manage vineyards",
+      "hint3": "Starts with 'W'",
+      "difficulty": 2
+    },
+    {
+      "word": "ICE CREAM MAKER",
+      "start_hint": "Prepares frozen desserts",
+      "hint1": "Uses dairy and flavors",
+      "hint2": "Can work in shops or factories",
+      "hint3": "Starts with 'I'",
+      "difficulty": 1
+    },
+    {
+      "word": "FLORIST",
+      "start_hint": "Arranges and sells flowers",
+      "hint1": "Creates bouquets and decorations",
+      "hint2": "Works in flower shops or events",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "GARDENER",
+      "start_hint": "Cares for plants and gardens",
+      "hint1": "Can design outdoor spaces",
+      "hint2": "Plants flowers, shrubs, and trees",
+      "hint3": "Starts with 'G'",
+      "difficulty": 1
+    },
+    {
+      "word": "FARMER",
+      "start_hint": "Works in agriculture",
+      "hint1": "Grows crops or raises livestock",
+      "hint2": "Manages land and resources",
+      "hint3": "Starts with 'F'",
+      "difficulty": 1
+    },
+    {
+      "word": "ANIMAL TRAINER",
+      "start_hint": "Teaches animals tricks or behaviors",
+      "hint1": "Works with pets or zoo animals",
+      "hint2": "Can use rewards or commands",
+      "hint3": "Starts with 'A'",
+      "difficulty": 2
+    },
+    {
+      "word": "DOG TRAINER",
+      "start_hint": "Trains dogs for obedience or skills",
+      "hint1": "Works with pet owners",
+      "hint2": "Can specialize in service dogs",
+      "hint3": "Starts with 'D'",
+      "difficulty": 2
+    },
+    {
+      "word": "HORSE TRAINER",
+      "start_hint": "Trains horses for riding or competition",
+      "hint1": "Works on behavior and performance",
+      "hint2": "Often works at stables or ranches",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "ZOOKEEPER",
+      "start_hint": "Cares for zoo animals",
+      "hint1": "Feeds, monitors, and cleans habitats",
+      "hint2": "Works in zoos or wildlife parks",
+      "hint3": "Starts with 'Z'",
+      "difficulty": 2
+    },
+    {
+      "word": "LAWYER",
+      "start_hint": "Practices law",
+      "hint1": "Represents clients in legal matters",
+      "hint2": "Can work in court or advisory roles",
+      "hint3": "Starts with 'L'",
+      "difficulty": 2
+    },
+    {
+      "word": "JUDGE",
+      "start_hint": "Presides over court cases",
+      "hint1": "Makes legal decisions",
+      "hint2": "Ensures justice is served",
+      "hint3": "Starts with 'J'",
+      "difficulty": 2
+    },
+    {
+      "word": "POLICE OFFICER",
+      "start_hint": "Enforces the law",
+      "hint1": "Protects citizens",
+      "hint2": "Investigates crimes",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "DETECTIVE",
+      "start_hint": "Investigates crimes",
+      "hint1": "Gathers evidence and interviews witnesses",
+      "hint2": "Works in plain clothes",
+      "hint3": "Starts with 'D'",
+      "difficulty": 2
+    },
+    {
+      "word": "SECURITY GUARD",
+      "start_hint": "Protects people or property",
+      "hint1": "Monitors premises and patrols",
+      "hint2": "Can work at events or buildings",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "BODYGUARD",
+      "start_hint": "Protects a person from danger",
+      "hint1": "Ensures safety of VIPs",
+      "hint2": "May work closely with celebrities or executives",
+      "hint3": "Starts with 'B'",
+      "difficulty": 2
+    },
+    {
+      "word": "PRIVATE INVESTIGATOR",
+      "start_hint": "Conducts private investigations",
+      "hint1": "Gathers information for clients",
+      "hint2": "Can follow or research subjects",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "LIFEGUARD",
+      "start_hint": "Monitors swimmers for safety",
+      "hint1": "Trained to rescue in emergencies",
+      "hint2": "Works at pools or beaches",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    },
+    {
+      "word": "ELECTRICIAN",
+      "start_hint": "Installs and maintains electrical systems",
+      "hint1": "Works with wiring, circuits, and devices",
+      "hint2": "Can work in homes, offices, or industries",
+      "hint3": "Starts with 'E'",
+      "difficulty": 2
+    },
+    {
+      "word": "PLUMBER",
+      "start_hint": "Installs and repairs pipes",
+      "hint1": "Works with water supply and drainage",
+      "hint2": "Can fix leaks and plumbing systems",
+      "hint3": "Starts with 'P'",
+      "difficulty": 2
+    },
+    {
+      "word": "CARPENTER",
+      "start_hint": "Works with wood",
+      "hint1": "Builds furniture or structures",
+      "hint2": "Uses saws, hammers, and tools",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "MECHANIC",
+      "start_hint": "Repairs vehicles",
+      "hint1": "Works on engines and machinery",
+      "hint2": "Can specialize in cars, trucks, or bikes",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "PERSONAL ASSISTANT",
+      "start_hint": "Supports individuals in tasks",
+      "hint1": "Schedules appointments and manages tasks",
+      "hint2": "Can work for executives or celebrities",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "RECEPTIONIST",
+      "start_hint": "Greets visitors and handles front desk duties",
+      "hint1": "Manages phone calls and inquiries",
+      "hint2": "Works in offices or hotels",
+      "hint3": "Starts with 'R'",
+      "difficulty": 1
+    },
+    {
+      "word": "INFLUENCER",
+      "start_hint": "Creates content online",
+      "hint1": "Shares opinions or lifestyle with followers",
+      "hint2": "Works on social media platforms",
+      "hint3": "Starts with 'I'",
+      "difficulty": 2
+    },
+    {
+      "word": "TOUR GUIDE",
+      "start_hint": "Leads tours for visitors",
+      "hint1": "Explains landmarks and history",
+      "hint2": "Can work locally or abroad",
+      "hint3": "Starts with 'T'",
+      "difficulty": 1
+    },
+    {
+      "word": "HOTEL MANAGER",
+      "start_hint": "Oversees hotel operations",
+      "hint1": "Manages staff and guests",
+      "hint2": "Ensures smooth functioning of the hotel",
+      "hint3": "Starts with 'H'",
+      "difficulty": 2
+    },
+    {
+      "word": "HOUSEKEEPER",
+      "start_hint": "Maintains cleanliness in buildings",
+      "hint1": "Cleans rooms and organizes spaces",
+      "hint2": "Can work in hotels or homes",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "CHEF",
+      "start_hint": "Prepares meals professionally",
+      "hint1": "Manages kitchen and recipes",
+      "hint2": "Can work in restaurants or hotels",
+      "hint3": "Starts with 'C'",
+      "difficulty": 1
+    },
+    {
+      "word": "BUTCHER",
+      "start_hint": "Cuts and prepares meat",
+      "hint1": "Works in shops or slaughterhouses",
+      "hint2": "Prepares cuts for sale",
+      "hint3": "Starts with 'B'",
+      "difficulty": 1
+    },
+    {
+      "word": "FOOD STYLIST",
+      "start_hint": "Makes food look appealing for photos or videos",
+      "hint1": "Arranges dishes creatively",
+      "hint2": "Works in advertising or media",
+      "hint3": "Starts with 'F'",
+      "difficulty": 2
+    },
+    {
+      "word": "PERSONAL TRAINER",
+      "start_hint": "Guides people in fitness",
+      "hint1": "Creates workout plans",
+      "hint2": "Provides motivation and instruction",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "SWIMMING INSTRUCTOR",
+      "start_hint": "Teaches swimming techniques",
+      "hint1": "Helps people improve in water",
+      "hint2": "Can work at pools or beaches",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "DANCE INSTRUCTOR",
+      "start_hint": "Teaches dance styles",
+      "hint1": "Can specialize in ballet, hip-hop, or salsa",
+      "hint2": "Works with individuals or groups",
+      "hint3": "Starts with 'D'",
+      "difficulty": 1
+    },
+    {
+      "word": "MUSIC TEACHER",
+      "start_hint": "Teaches how to play instruments or sing",
+      "hint1": "Can work in schools or privately",
+      "hint2": "Guides students in practice and theory",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "SINGER",
+      "start_hint": "Performs songs vocally",
+      "hint1": "Can perform solo or in a group",
+      "hint2": "Uses voice for melody and expression",
+      "hint3": "Starts with 'S'",
+      "difficulty": 1
+    },
+    {
+      "word": "EDITOR",
+      "start_hint": "Edits written or visual content",
+      "hint1": "Ensures quality and clarity",
+      "hint2": "Can work on books, articles, or media",
+      "hint3": "Starts with 'E'",
+      "difficulty": 1
+    },
+    {
+      "word": "FASHION DESIGNER",
+      "start_hint": "Creates clothing and accessories",
+      "hint1": "Designs for style and trends",
+      "hint2": "Can work in studios or fashion houses",
+      "hint3": "Starts with 'F'",
+      "difficulty": 2
+    },
+    {
+      "word": "MAKEUP ARTIST",
+      "start_hint": "Applies makeup professionally",
+      "hint1": "Works in fashion, film, or events",
+      "hint2": "Enhances appearances creatively",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "HAIR STYLIST",
+      "start_hint": "Cuts and styles hair",
+      "hint1": "Can work in salons or for media",
+      "hint2": "Provides hair care and coloring",
+      "hint3": "Starts with 'H'",
+      "difficulty": 1
+    },
+    {
+      "word": "TATTOO ARTIST",
+      "start_hint": "Creates permanent body art",
+      "hint1": "Uses tattoo machines and ink",
+      "hint2": "Designs tattoos based on client ideas",
+      "hint3": "Starts with 'T'",
+      "difficulty": 2
+    },
+    {
+      "word": "MODEL",
+      "start_hint": "Poses for photos or fashion shows",
+      "hint1": "Works in advertising or runway",
+      "hint2": "Showcases clothing or products",
+      "hint3": "Starts with 'M'",
+      "difficulty": 1
+    },
+    {
+      "word": "PAINTER",
+      "start_hint": "Creates art using paints",
+      "hint1": "Can work on canvas, walls, or murals",
+      "hint2": "Expresses creativity visually",
+      "hint3": "Starts with 'P'",
+      "difficulty": 1
+    },
+    {
+      "word": "LIBRARIAN",
+      "start_hint": "Manages library resources",
+      "hint1": "Helps people find books and information",
+      "hint2": "Organizes and catalogs collections",
+      "hint3": "Starts with 'L'",
+      "difficulty": 1
+    }
   ]
 }
