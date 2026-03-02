@@ -770,35 +770,35 @@
     },
     {
       "word": "TICK",
-      "start_hint": "A tiny parasitic arachnid",
-      "hint1": "Feeds on blood",
-      "hint2": "Can carry diseases",
-      "hint3": "Starts with 'T'",
-      "difficulty": 1
+      "start_hint": "This is a very small creature that feeds on blood.",
+      "hint1": "It attaches itself to animals or humans.",
+      "hint2": "It can swell up when it drinks blood.",
+      "hint3": "It is hard to notice because it is so tiny.",
+      "difficulty": 3
     },
     {
       "word": "TIGER",
-      "start_hint": "A large striped cat",
-      "hint1": "Lives in Asia",
+      "start_hint": "This is a large wild cat.",
+      "hint1": "It has orange fur with black stripes.",
       "hint2": "Carnivorous predator",
       "hint3": "Starts with 'T'",
       "difficulty": 2
     },
     {
       "word": "TOAD",
-      "start_hint": "A bumpy-skinned amphibian",
-      "hint1": "Lives near water",
+      "start_hint": "It looks similar to a frog but has dry, bumpy skin.",
+      "hint1": "It is often found in gardens, ponds, and damp places.",
       "hint2": "Can croak",
       "hint3": "Starts with 'T'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "TORTOISE",
-      "start_hint": "A slow-moving land reptile",
-      "hint1": "Has a hard shell",
+      "start_hint": "This animal carries its house on its back.",
+      "hint1": "It is one of the longest-living animals on Earth.",
       "hint2": "Can live for many decades",
       "hint3": "Starts with 'T'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "TURKEY",
@@ -809,34 +809,18 @@
       "difficulty": 1
     },
     {
-      "word": "TURTLE",
-      "start_hint": "A reptile with a shell",
-      "hint1": "Can live in water or on land",
-      "hint2": "Slow moving",
-      "hint3": "Starts with 'T'",
-      "difficulty": 1
-    },
-    {
-      "word": "WASP",
-      "start_hint": "A stinging insect",
-      "hint1": "Can be aggressive",
-      "hint2": "Some build paper-like nests",
-      "hint3": "Starts with 'W'",
-      "difficulty": 1
-    },
-    {
       "word": "WHALE",
-      "start_hint": "A huge marine mammal",
-      "hint1": "Lives in oceans",
-      "hint2": "Breathes air through a blowhole",
-      "hint3": "Starts with 'W'",
-      "difficulty": 3
+      "start_hint": "This is one of the largest animals on Earth.",
+      "hint1": "They can travel very long distances during migration.",
+      "hint2": "It breathes air through a blowhole on top of its head.",
+      "hint3": "They are mammals, not fish.",
+      "difficulty": 2
     },
     {
       "word": "WOLF",
-      "start_hint": "A wild canine",
-      "hint1": "Lives and hunts in packs",
-      "hint2": "Ancestor of domestic dogs",
+      "start_hint": "This is a wild dog-like animal.",
+      "hint1": "It hunts in groups called packs.",
+      "hint2": "It howls to communicate",
       "hint3": "Starts with 'W'",
       "difficulty": 2
     },
@@ -847,14 +831,6 @@
       "hint2": "Often has red markings on the head",
       "hint3": "Starts with 'W'",
       "difficulty": 2
-    },
-    {
-      "word": "WORM",
-      "start_hint": "A soft-bodied invertebrate",
-      "hint1": "Lives in soil",
-      "hint2": "Helps fertilize the ground",
-      "hint3": "Starts with 'W'",
-      "difficulty": 1
     },
     {
       "word": "ZEBRA",
@@ -874,11 +850,11 @@
     },
     {
       "word": "CLAM",
-      "start_hint": "A bivalve mollusk",
-      "hint1": "Lives buried in sand",
-      "hint2": "Can produce pearls",
-      "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "start_hint": "This is a small sea creature that lives inside a shell.",
+      "hint1": "It has two hinged shells that open and close.",
+      "hint2": "People eat it cooked, raw, or in soups.",
+      "hint3": "It has a soft body protected by its hard shell.",
+      "difficulty": 2
     },
     {
       "word": "HARRY POTTER",
@@ -914,10 +890,10 @@
     },
     {
       "word": "THOR",
-      "start_hint": "Norse god superhero",
-      "hint1": "Wields a magical hammer",
-      "hint2": "Appears in Marvel movies",
-      "hint3": "Starts with 'T'",
+      "start_hint": "He is known as the god of thunder.",
+      "hint1": "He wields a magical hammer called Mjolnir.",
+      "hint2": "He controls storms, lightning, and thunder.",
+      "hint3": "In Marvel comics and movies, he is one of the Avengers.",
       "difficulty": 2
     },
     {
@@ -930,41 +906,41 @@
     },
     {
       "word": "MICKEY MOUSE",
-      "start_hint": "Famous cartoon mouse",
-      "hint1": "Wears red shorts and yellow shoes",
-      "hint2": "Disney mascot",
-      "hint3": "Starts with 'M'",
+      "start_hint": "He is a cheerful mouse with big round ears.",
+      "hint1": "He usually wears red shorts, yellow shoes, and white gloves.",
+      "hint2": "He is often seen with his friends Minnie, Donald, and Goofy.",
+      "hint3": "He is known for his high-pitched, friendly voice.",
       "difficulty": 2
     },
     {
       "word": "MINNIE MOUSE",
-      "start_hint": "Famous female cartoon mouse",
-      "hint1": "Often wears a bow",
-      "hint2": "Disney character",
+      "start_hint": "She is a cheerful female mouse with big round ears.",
+      "hint1": "She usually wears a polka-dot dress and a bow on her head.",
+      "hint2": "Her outfit and bow are her signature style.",
       "hint3": "Starts with 'M'",
       "difficulty": 2
     },
     {
       "word": "DONALD DUCK",
-      "start_hint": "Disney cartoon duck",
-      "hint1": "Wears a sailor shirt and hat",
-      "hint2": "Has a loud, distinctive voice",
-      "hint3": "Starts with 'D'",
+      "start_hint": "He is a white duck with a yellow-orange beak and feet.",
+      "hint1": "He is famous for his loud, unique, sometimes hard-to-understand voice.",
+      "hint2": "He appears alongside Mickey Mouse, Goofy, and his nephews Huey, Dewey, and Louie.",
+      "hint3": "He is one of Disney’s most iconic and beloved characters.",
       "difficulty": 2
     },
     {
       "word": "DAISY DUCK",
-      "start_hint": "Donald Duck's female friend",
-      "hint1": "Disney character",
-      "hint2": "Often seen with a bow",
+      "start_hint": "She is the girlfriend of Donald Duck.",
+      "hint1": "She is known for being smart, sassy, and fashionable.",
+      "hint2": "She usually wears a bow on her head and a stylish dress.",
       "hint3": "Starts with 'D'",
       "difficulty": 2
     },
     {
       "word": "CINDERELLA",
-      "start_hint": "Famous princess",
-      "hint1": "Lost a glass slipper",
-      "hint2": "Attends a royal ball",
+      "start_hint": "She wears a blue ball gown and glass slippers.",
+      "hint1": "She was mistreated by her stepmother and stepsisters.",
+      "hint2": "She meets the prince at the ball and leaves behind a glass slipper.",
       "hint3": "Starts with 'C'",
       "difficulty": 2
     },
@@ -986,10 +962,10 @@
     },
     {
       "word": "THE LITTLE MERMAID",
-      "start_hint": "Mermaid princess",
-      "hint1": "Lives under the sea",
-      "hint2": "Wishes to live on land",
-      "hint3": "Starts with 'T'",
+      "start_hint": "She is a young mermaid who lives under the sea.",
+      "hint1": "She dreams of living on land with humans.",
+      "hint2": "She makes a deal with a sea witch to gain legs.",
+      "hint3": "She falls in love with a human prince.",
       "difficulty": 2
     },
     {
@@ -1010,10 +986,10 @@
     },
     {
       "word": "ELSA",
-      "start_hint": "Ice queen princess",
-      "hint1": "Has magical ice powers",
-      "hint2": "Sings 'Let It Go'",
-      "hint3": "Starts with 'E'",
+      "start_hint": "She has magical powers to create ice and snow.",
+      "hint1": "She accidentally traps her kingdom in eternal winter.",
+      "hint2": "Her younger sister is named Anna.",
+      "hint3": "She sings the famous song ‘Let It Go.’",
       "difficulty": 2
     },
     {
@@ -1050,19 +1026,19 @@
     },
     {
       "word": "TINKER BELL",
-      "start_hint": "Tiny fairy companion",
-      "hint1": "From Peter Pan",
-      "hint2": "Sprinkles magical fairy dust",
-      "hint3": "Starts with 'T'",
+      "start_hint": "She is a tiny fairy from Peter Pan.",
+      "hint1": "She has blonde hair tied in a bun.",
+      "hint2": "She wears a green dress and tiny shoes.",
+      "hint3": "She can fly using pixie dust.",
       "difficulty": 2
     },
     {
       "word": "CAPTAIN HOOK",
-      "start_hint": "Pirate villain",
-      "hint1": "Has a hook for a hand",
-      "hint2": "Enemy of Peter Pan",
-      "hint3": "Starts with 'C'",
-      "difficulty": 2
+      "start_hint": "He is the main villain in Peter Pan.",
+      "hint1": "He has a hook instead of one of his hands.",
+      "hint2": "He is always trying to capture Peter Pan.",
+      "hint3": "He is afraid of a ticking crocodile that follows him.",
+      "difficulty": 3
     },
     {
       "word": "RAPUNZEL",
@@ -1074,51 +1050,51 @@
     },
     {
       "word": "BUZZ LIGHTYEAR",
-      "start_hint": "Space ranger toy",
-      "hint1": "Says 'To infinity and beyond'",
-      "hint2": "From Toy Story",
+      "start_hint": "He is a space ranger toy from Toy Story.",
+      "hint1": "His catchphrase is ‘To infinity… and beyond!’",
+      "hint2": "He often leads missions and battles villains in imaginative play.",
       "hint3": "Starts with 'B'",
       "difficulty": 2
     },
     {
       "word": "SADNESS",
-      "start_hint": "Emotion character from Inside Out",
-      "hint1": "Blue colored",
-      "hint2": "Shows sadness in Pixar movie",
+      "start_hint": "This character often wears blue and has blue hair.",
+      "hint1": "She moves slowly and her expressions are often downcast.",
+      "hint2": "She often sits quietly while others take the lead.",
       "hint3": "Starts with 'S'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "JOY",
-      "start_hint": "Emotion character from Inside Out",
+      "start_hint": "This character has bright blue hair and a glowing yellow outfit.",
       "hint1": "Yellow and cheerful",
       "hint2": "Leads the emotions",
-      "hint3": "Starts with 'J'",
-      "difficulty": 1
+      "hint3": "She moves quickly and often jumps or dances around.",
+      "difficulty": 2
     },
     {
       "word": "ANGER",
-      "start_hint": "Emotion character from Inside Out",
-      "hint1": "Red and fiery",
-      "hint2": "Easily provoked",
+      "start_hint": "He has flames that appear on his head when upset.",
+      "hint1": "He gets frustrated or furious very easily.",
+      "hint2": "He stomps, clenches his fists, and frowns when angry.",
       "hint3": "Starts with 'A'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "FEAR",
-      "start_hint": "Emotion character from Inside Out",
-      "hint1": "Purple and nervous",
-      "hint2": "Always anxious",
-      "hint3": "Starts with 'F'",
-      "difficulty": 1
+      "start_hint": "This character is tall, thin, and purple.",
+      "hint1": "He has a worried expression most of the time.",
+      "hint2": "He worries about everything and expects the worst.",
+      "hint3": "His long, skinny body and expressive face show his anxiety.",
+      "difficulty": 2
     },
     {
       "word": "DISGUST",
-      "start_hint": "Emotion character from Inside Out",
-      "hint1": "Green and sassy",
-      "hint2": "Keeps Riley from gross things",
-      "hint3": "Starts with 'D'",
-      "difficulty": 1
+      "start_hint": "This character is green with a stylish appearance.",
+      "hint1": "She has a sassy attitude and rolls her eyes often.",
+      "hint2": "She wears a purple dress and matching scarf.",
+      "hint3": "She dislikes anything messy, smelly, or uncool.",
+      "difficulty": 2
     },
     {
       "word": "RILEY",
@@ -1154,19 +1130,19 @@
     },
     {
       "word": "LADYBUG",
-      "start_hint": "Superheroine from a French animated series",
-      "hint1": "Real name is Marinette Dupain-Cheng",
-      "hint2": "Fights villains in Paris",
-      "hint3": "Wears a red suit with black spots",
+      "start_hint": "She is a teenage superhero who fights villains in Paris.",
+      "hint1": "She wears a red suit with black spots, like a ladybug.",
+      "hint2": "She uses a yo-yo as her main tool and weapon.",
+      "hint3": "Her real name is Marinette.",
       "difficulty": 2
     },
     {
       "word": "ALVIN",
-      "start_hint": "Singing chipmunk",
-      "hint1": "From Alvin and the Chipmunks",
-      "hint2": "Wears red sweater with 'A'",
-      "hint3": "Starts with 'A'",
-      "difficulty": 1
+      "start_hint": "He is one of three singing chipmunks.",
+      "hint1": "He wears a red hoodie with a big yellow ‘A’ on it.",
+      "hint2": "He sings high-pitched songs with his brothers.",
+      "hint3": "He is the leader of the chipmunk trio.",
+      "difficulty": 2
     },
     {
       "word": "SIMON",
@@ -1178,10 +1154,10 @@
     },
     {
       "word": "THEODORE",
-      "start_hint": "Chubby chipmunk",
-      "hint1": "From Alvin and the Chipmunks",
+      "start_hint": "He is one of three singing chipmunks.",
+      "hint1": "He is the sweetest and most innocent of the trio.",
       "hint2": "The youngest",
-      "hint3": "Starts with 'T'",
+      "hint3": "He loves to eat and often enjoys snacks.",
       "difficulty": 1
     },
     {
@@ -1194,33 +1170,33 @@
     },
     {
       "word": "APPLE",
-      "start_hint": "A common fruit",
-      "hint1": "Can be red, green, or yellow",
-      "hint2": "Keeps the doctor away",
-      "hint3": "Starts with 'A'",
+      "start_hint": "This is a round fruit that can be red, green, or yellow.",
+      "hint1": "It can be eaten raw, baked, or made into juice or pie.",
+      "hint2": "Famous saying: ‘An ___ a day keeps the doctor away.’",
+      "hint3": "It is often associated with teachers and education.",
       "difficulty": 1
     },
     {
       "word": "AVOCADO",
-      "start_hint": "Green creamy fruit",
-      "hint1": "Often used for guacamole",
-      "hint2": "Has a large seed inside",
+      "start_hint": "It is often used in salads, sandwiches, and guacamole.",
+      "hint1": "It has a large seed or pit in the center.",
+      "hint2": "The skin is dark green and bumpy on most varieties.",
       "hint3": "Starts with 'A'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "ALMOND",
-      "start_hint": "A nut",
-      "hint1": "Used in baking and snacks",
+      "start_hint": "This is an edible nut that grows on trees.",
+      "hint1": "They are often used to make milk or butter.",
       "hint2": "Can be eaten raw or roasted",
       "hint3": "Starts with 'A'",
       "difficulty": 1
     },
     {
       "word": "BACON",
-      "start_hint": "Cured pork",
-      "hint1": "Often eaten at breakfast",
-      "hint2": "Crispy and savory",
+      "start_hint": "This is a type of meat usually from pigs.",
+      "hint1": "It is often served with eggs, pancakes, or in sandwiches.",
+      "hint2": "t can be fried, baked, or grilled.",
       "hint3": "Starts with 'B'",
       "difficulty": 1
     },
@@ -1242,42 +1218,42 @@
     },
     {
       "word": "BANANA",
-      "start_hint": "Yellow fruit",
-      "hint1": "Curved shape",
-      "hint2": "Peels easily",
+      "start_hint": "This is a long, curved, yellow fruit.",
+      "hint1": "Monkeys are often shown eating this fruit.",
+      "hint2": "Unripe ones are green and less sweet.",
       "hint3": "Starts with 'B'",
       "difficulty": 1
     },
     {
       "word": "BEEF",
-      "start_hint": "Meat from cows",
-      "hint1": "Can be cooked as steak or ground",
-      "hint2": "High in protein",
+      "start_hint": "It can be cooked as steaks, roasts, or ground.",
+      "hint1": "It is often used in burgers, tacos, and stews.",
+      "hint2": "Different cuts include ribeye, sirloin, and brisket.",
       "hint3": "Starts with 'B'",
       "difficulty": 1
     },
     {
       "word": "BLACKBERRY",
-      "start_hint": "A dark purple fruit",
-      "hint1": "Grows on bushes",
-      "hint2": "Used in jams and desserts",
-      "hint3": "Starts with 'B'",
-      "difficulty": 1
+      "start_hint": "This is a small, dark purple or black fruit.",
+      "hint1": "People eat it fresh, in jams, or in desserts.",
+      "hint2": "It is often used in pies, muffins, and smoothies.",
+      "hint3": "It is a popular fruit in summer and early fall.",
+      "difficulty": 2
     },
     {
       "word": "BLUEBERRY",
-      "start_hint": "Small blue fruit",
-      "hint1": "Used in muffins and pancakes",
-      "hint2": "Rich in antioxidants",
-      "hint3": "Starts with 'B'",
-      "difficulty": 1
+      "start_hint": "This is a small, round fruit that is blue or purple.",
+      "hint1": "People eat it fresh, in muffins, or in smoothies.",
+      "hint2": "It is often used in pancakes, pies, and jams.",
+      "hint3": "The fruit has a smooth skin and juicy inside.",
+      "difficulty": 2
     },
     {
       "word": "BREAD",
-      "start_hint": "Staple food made from flour",
-      "hint1": "Can be sliced",
-      "hint2": "Used for sandwiches",
-      "hint3": "Starts with 'B'",
+      "start_hint": "This is a staple food made from flour, water, and yeast.",
+      "hint1": "It can be baked as loaves, rolls, or buns.",
+      "hint2": "It comes in many types like white, whole wheat, or sourdough.",
+      "hint3": "It can be eaten plain or used for sandwiches.",
       "difficulty": 1
     },
     {
@@ -1290,83 +1266,83 @@
     },
     {
       "word": "BUTTER",
-      "start_hint": "Dairy product",
-      "hint1": "Used for cooking and baking",
-      "hint2": "Made from cream",
-      "hint3": "Starts with 'B'",
+      "start_hint": "This is a yellow/white dairy product made from cream.",
+      "hint1": "It is used for cooking, baking, or spreading on bread.",
+      "hint2": "It can be salted or unsalted.",
+      "hint3": "It melts when heated.",
       "difficulty": 1
     },
     {
       "word": "CABBAGE",
-      "start_hint": "Green leafy vegetable",
-      "hint1": "Used in salads or soups",
-      "hint2": "Round and dense",
+      "start_hint": "It can be green, purple, or white vegetable.",
+      "hint1": "It is often used to make sauerkraut or kimchi.",
+      "hint2": "The leaves can be large and used for wraps.",
       "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "CAKE",
-      "start_hint": "Sweet baked dessert",
-      "hint1": "Often frosted",
-      "hint2": "Served at birthdays",
-      "hint3": "Starts with 'C'",
+      "start_hint": "People eat it at birthdays, weddings, or celebrations.",
+      "hint1": "It is often frosted or decorated.",
+      "hint2": "It can have layers with cream or jam in between.",
+      "hint3": "Common flavors include chocolate, vanilla, and fruit.",
       "difficulty": 1
     },
     {
       "word": "CANDY",
-      "start_hint": "Sweet treat",
-      "hint1": "Comes in many flavors",
-      "hint2": "Often chewy or hard",
-      "hint3": "Starts with 'C'",
+      "start_hint": "This is a sweet treat often eaten as a snack.",
+      "hint1": "It can come in many shapes, colors, and flavors.",
+      "hint2": "People eat it at parties, holidays, or as a treat.",
+      "hint3": "Chocolate, lollipops, and gummies are all types of this.",
       "difficulty": 1
     },
     {
       "word": "CARROT",
-      "start_hint": "Orange root vegetable",
-      "hint1": "Good for eyesight",
-      "hint2": "Rabbits love it",
+      "start_hint": "This is a long, orange vegetable.",
+      "hint1": "Rabbits are often shown eating it.",
+      "hint2": "It can be used in soups, salads, or cakes.",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
     {
       "word": "CEREAL",
-      "start_hint": "Breakfast food",
-      "hint1": "Usually eaten with milk",
-      "hint2": "Often comes in flakes or puffs",
-      "hint3": "Starts with 'C'",
+      "start_hint": "People often eat it with milk.",
+      "hint1": "It can be sweet, crunchy, or made from grains.",
+      "hint2": "It is quick to prepare and easy to eat.",
+      "hint3": "It is often colorful and shaped in fun designs for kids.",
       "difficulty": 1
     },
     {
       "word": "CHEESE",
-      "start_hint": "Dairy product",
-      "hint1": "Comes in many varieties",
-      "hint2": "Used in sandwiches and pizza",
-      "hint3": "Starts with 'C'",
+      "start_hint": "This is a dairy product made from milk.",
+      "hint1": "It can be soft, hard, or shredded.",
+      "hint2": "It comes in many flavors like cheddar, mozzarella, and Swiss.",
+      "hint3": "People put it on sandwiches, pizzas, and crackers.",
       "difficulty": 1
     },
     {
       "word": "CHERRY",
-      "start_hint": "Small red fruit",
-      "hint1": "Often used as a topping",
-      "hint2": "Grows on trees",
+      "start_hint": "This is a small, round, red fruit.",
+      "hint1": "People eat it fresh or use it in pies, jams, and desserts.",
+      "hint2": "It is often used as a topping for ice cream or cakes.",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
     {
       "word": "CHICKEN",
-      "start_hint": "Common poultry",
-      "hint1": "Used for meat and eggs",
-      "hint2": "Clucks",
+      "start_hint": "It can be eaten as meat or produce eggs.",
+      "hint1": "It is commonly cooked fried, roasted, or grilled.",
+      "hint2": "It can be served in soups, sandwiches, or curries.",
       "hint3": "Starts with 'C'",
       "difficulty": 1
     },
     {
       "word": "CHILI",
-      "start_hint": "Spicy pepper",
-      "hint1": "Often red or green",
-      "hint2": "Used in cooking for heat",
+      "start_hint": "This is a small, spicy pepper used in cooking.",
+      "hint1": "It is common in cuisines like Mexican, Indian, and Thai.",
+      "hint2": "It is sometimes used to make sauces or salsas.",
       "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "CHOCOLATE",
@@ -1378,19 +1354,19 @@
     },
     {
       "word": "CINNAMON",
-      "start_hint": "Spice",
-      "hint1": "Brown powder",
-      "hint2": "Used in baking and drinks",
-      "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "start_hint": "This is a brown spice often used in baking.",
+      "hint1": "People sprinkle it on desserts, drinks, and cereals.",
+      "hint2": "It is commonly used in cinnamon rolls, cookies, and pies.",
+      "hint3": "It can be ground into powder or sold as sticks.",
+      "difficulty": 2
     },
     {
       "word": "COCONUT",
-      "start_hint": "Tropical fruit with hard shell",
+      "start_hint": "This is a large, brown, round fruit from a tropical tree.",
       "hint1": "Contains white flesh and milk",
-      "hint2": "Often used in desserts",
-      "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "hint2": "It can be eaten raw, dried, or used in cooking and baking.",
+      "hint3": "It is used to make oil, milk, and flour.",
+      "difficulty": 2
     },
     {
       "word": "COFFEE",
