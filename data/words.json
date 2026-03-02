@@ -2,19 +2,19 @@
   "All": [
     {
       "word": "ALLIGATOR",
-      "start_hint": "A large reptile that lives in freshwater",
+      "start_hint": "People often confuse it with a crocodile, but it’s not quite the same.",
       "hint1": "Has a long snout",
       "hint2": "Found in swamps and rivers",
       "hint3": "Starts with 'A'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "ANACONDA",
       "start_hint": "A giant snake found in South America",
       "hint1": "Can swim in rivers",
       "hint2": "One of the heaviest snakes in the world",
-      "hint3": "Starts with 'A'",
-      "difficulty": 3
+      "hint3": "Often mistaken for other large snakes, but it’s one of the heaviest in the world.",
+      "difficulty": 4
     },
     {
       "word": "ANT",
@@ -38,23 +38,23 @@
       "hint1": "Lives in troops",
       "hint2": "Found in Africa",
       "hint3": "Starts with 'B'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "BATS",
-      "start_hint": "Flying mammals active at night",
+      "start_hint": "They hang upside down when resting.",
       "hint1": "Use echolocation",
       "hint2": "Many species eat insects",
-      "hint3": "Starts with 'B'",
-      "difficulty": 1
+      "hint3": "This is a small, flying mammal.",
+      "difficulty": 2
     },
     {
       "word": "BEAR",
-      "start_hint": "Large mammal, can be found in forests",
+      "start_hint": "Famous species include grizzly, polar, and panda.",
       "hint1": "Some species hibernate",
       "hint2": "Can be brown, black, or white",
-      "hint3": "Starts with 'B'",
-      "difficulty": 1
+      "hint3": "This is a big, furry mammal often found in fairy tales and cartoons.",
+      "difficulty": 2
     },
     {
       "word": "BEAVER",
@@ -82,11 +82,11 @@
     },
     {
       "word": "BUMBLEBEE",
-      "start_hint": "A large fuzzy bee",
+      "start_hint": "This small insect is fuzzy and black-and-yellow striped.",
       "hint1": "Pollinates flowers",
       "hint2": "Can buzz loudly",
-      "hint3": "Starts with 'B'",
-      "difficulty": 2
+      "hint3": "This flying insect has a round, chubby body and a cheerful buzz.",
+      "difficulty": 3
     },
     {
       "word": "CAMEL",
@@ -98,10 +98,10 @@
     },
     {
       "word": "CAT",
-      "start_hint": "A common domestic pet",
-      "hint1": "Purrs when happy",
+      "start_hint": "It purrs when happy and may scratch or knead with its paws.",
+      "hint1": "It’s known for its agility, sharp claws, and playful behavior.",
       "hint2": "Has whiskers and claws",
-      "hint3": "Starts with 'C'",
+      "hint3": "Famous breeds include Siamese, Persian, and Maine Coon.",
       "difficulty": 1
     },
     {
@@ -117,24 +117,24 @@
       "start_hint": "A freshwater fish with whisker-like barbels",
       "hint1": "Lives in rivers and ponds",
       "hint2": "Popular in cooking",
-      "hint3": "Starts with 'C'",
-      "difficulty": 2
+      "hint3": "Despite its name, it’s a fish, not related to cats.,
+      "difficulty": 3
     },
     {
       "word": "CATTLE",
-      "start_hint": "Farm animals raised for milk or meat",
-      "hint1": "Includes cows and bulls",
+      "start_hint": "This word refers to a group of cows or similar livestock.",
+      "hint1": "They produce milk which humans often consume as dairy products.",
       "hint2": "Domesticated for thousands of years",
       "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "CENTIPEDE",
-      "start_hint": "A many-legged arthropod",
+      "start_hint": "It’s an arthropod, related to millipedes but slimmer and faster.",
       "hint1": "Creeps on the ground",
       "hint2": "Has one pair of legs per body segment",
       "hint3": "Starts with 'C'",
-      "difficulty": 2
+      "difficulty": 4
     },
     {
       "word": "CHEETAH",
@@ -146,19 +146,19 @@
     },
     {
       "word": "CHIMPANZEE",
-      "start_hint": "A primate closely related to humans",
-      "hint1": "Lives in African forests",
-      "hint2": "Known for using tools",
-      "hint3": "Starts with 'C'",
-      "difficulty": 2
+      "start_hint": "This primate is an ape, not a monkey, and very intelligent.",
+      "hint1": "It is known for using tools, like sticks to catch termites.",
+      "hint2": "It lives in African forests and savannas.",
+      "hint3": "This primate is closely related to humans.",
+      "difficulty": 4
     },
     {
       "word": "CHIPMUNK",
-      "start_hint": "A small striped rodent",
-      "hint1": "Stores food in its cheeks",
-      "hint2": "Often seen gathering nuts",
-      "hint3": "Starts with 'C'",
-      "difficulty": 1
+      "start_hint": "It stores food in its cheeks to eat later.",
+      "hint1": "Often seen darting in and out of burrows or climbing trees.",
+      "hint2": "It is smaller than a squirrel but very similar in appearance.",
+      "hint3": "Famous cartoon versions have exaggerated cheek pouches and chatter sounds.",
+      "difficulty": 3
     },
     {
       "word": "COBRA",
@@ -171,23 +171,23 @@
     {
       "word": "COCKROACH",
       "start_hint": "An insect often found in homes",
-      "hint1": "Can survive extreme conditions",
+      "hint1": "This insect can live for months without its head.",
       "hint2": "Lives in kitchens and bathrooms",
-      "hint3": "Starts with 'C'",
-      "difficulty": 2
+      "hint3": "Some species can fly short distances.",
+      "difficulty": 4
     },
     {
       "word": "COW",
-      "start_hint": "Domesticated farm animal",
-      "hint1": "Produces milk",
-      "hint2": "Often used for beef",
-      "hint3": "Starts with 'C'",
+      "start_hint": "This animal can moo loudly and has a large head with horns on some breeds.",
+      "hint1": "They produce milk, which humans use to make cheese, butter, and yogurt.",
+      "hint2": "Often kept for milk, meat, or as working animals.",
+      "hint3": "It has four legs, hooves, and a large body",
       "difficulty": 1
     },
     {
       "word": "COYOTE",
-      "start_hint": "A wild canine found in North America",
-      "hint1": "Howls at night",
+      "start_hint": "This is a wild animal that looks like a small wolf.",
+      "hint1": "It can howl or yip to communicate with others.",
       "hint2": "Related to wolves and dogs",
       "hint3": "Starts with 'C'",
       "difficulty": 2
@@ -218,18 +218,18 @@
     },
     {
       "word": "DEER",
-      "start_hint": "Hooved mammal often found in forests",
-      "hint1": "Has antlers if male",
-      "hint2": "Eats plants",
+      "start_hint": "Young ones are called fawns and often have spots.",
+      "hint1": "It is graceful and frequently appears in folklore, myths, and Christmas imagery.",
+      "hint2": "Many species have antlers, usually on males.",
       "hint3": "Starts with 'D'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "DOG",
-      "start_hint": "Common domestic pet",
-      "hint1": "Loyal and friendly",
+      "start_hint": "It is known as man’s best friend.",
+      "hint1": "Famous breeds include Labrador, Beagle, and German Shepherd.",
       "hint2": "Can be trained to do tricks",
-      "hint3": "Starts with 'D'",
+      "hint3": "It has a keen sense of smell and hearing.",
       "difficulty": 1
     },
     {
@@ -242,35 +242,35 @@
     },
     {
       "word": "DONKEY",
-      "start_hint": "A domesticated equine",
-      "hint1": "Used as a working animal",
-      "hint2": "Has long ears",
+      "start_hint": "Often used as a pack animal to carry loads.",
+      "hint1": "It can bray loudly, making a distinctive ‘hee-haw’ sound.",
+      "hint2": "It has a gray, brown, or sometimes white coat.",
       "hint3": "Starts with 'D'",
       "difficulty": 1
     },
     {
       "word": "DRAGONFLY",
-      "start_hint": "An insect with long wings",
-      "hint1": "Found near water",
+      "start_hint": "It has two pairs of long, transparent wings.",
+      "hint1": "It has a long, slender body with bright colors on some species.",
       "hint2": "Catches mosquitoes mid-air",
       "hint3": "Starts with 'D'",
-      "difficulty": 1
+      "difficulty": 3
     },
     {
       "word": "DUCK",
-      "start_hint": "A waterfowl with webbed feet",
-      "hint1": "Quacks",
-      "hint2": "Found in ponds",
+      "start_hint": "This is a bird often found on ponds and lakes.",
+      "hint1": "It has webbed feet that help it paddle through water easily.",
+      "hint2": "People sometimes keep them on farms for eggs or meat.",
       "hint3": "Starts with 'D'",
       "difficulty": 1
     },
     {
       "word": "EAGLE",
-      "start_hint": "Bird of prey with sharp eyesight",
-      "hint1": "Soars high in the sky",
+      "start_hint": "It soars high in the sky and can glide for long distances.",
+      "hint1": "This bird is often a symbol of strength and freedom in many countries.",
       "hint2": "Has strong talons",
       "hint3": "Starts with 'E'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "EARTHWORM",
@@ -283,8 +283,8 @@
     {
       "word": "EEL",
       "start_hint": "A long, slippery fish",
-      "hint1": "Lives in freshwater and oceans",
-      "hint2": "Looks like a snake",
+      "hint1": "It swims by wiggling its entire body from side to side.",
+      "hint2": "Despite looking like a snake, it is fully a fish.",
       "hint3": "Starts with 'E'",
       "difficulty": 2
     },
@@ -298,17 +298,17 @@
     },
     {
       "word": "FISH",
-      "start_hint": "Aquatic animal with gills",
-      "hint1": "Lives in freshwater or oceans",
-      "hint2": "Many species are edible",
-      "hint3": "Starts with 'F'",
+      "start_hint": "It has gills to breathe underwater.",
+      "hint1": "Most of them have fins to help them swim.",
+      "hint2": "People catch them for food or keep them in aquariums as pets.",
+      "hint3": "They have scales covering their bodies for protection.",
       "difficulty": 1
     },
     {
       "word": "FLAMINGO",
-      "start_hint": "A pink wading bird",
-      "hint1": "Stands on one leg",
-      "hint2": "Feeds on algae and crustaceans",
+      "start_hint": "This is a tall, pink bird often found near lakes and lagoons.",
+      "hint1": "Its pink color comes from the food it eats, like shrimp and algae.",
+      "hint2": "This bird is often seen in wildlife documentaries or zoos for its striking look.",
       "hint3": "Starts with 'F'",
       "difficulty": 2
     },
@@ -346,27 +346,11 @@
     },
     {
       "word": "GOLDFISH",
-      "start_hint": "A small ornamental fish",
-      "hint1": "Common in aquariums",
+      "start_hint": "This is a small fish often kept in bowls or aquariums.",
+      "hint1": "It is a popular first pet for children.",
       "hint2": "Usually orange or gold",
       "hint3": "Starts with 'G'",
-      "difficulty": 1
-    },
-    {
-      "word": "GOOSE",
-      "start_hint": "A large waterfowl",
-      "hint1": "Honk loudly",
-      "hint2": "Often migrates in V formation",
-      "hint3": "Starts with 'G'",
-      "difficulty": 1
-    },
-    {
-      "word": "GORILLA",
-      "start_hint": "A large primate",
-      "hint1": "Lives in African forests",
-      "hint2": "Close relative of humans",
-      "hint3": "Starts with 'G'",
-      "difficulty": 3
+      "difficulty": 2
     },
     {
       "word": "GRASSHOPPER",
@@ -378,43 +362,35 @@
     },
     {
       "word": "HAMSTER",
-      "start_hint": "A small rodent often kept as a pet",
-      "hint1": "Stores food in its cheeks",
-      "hint2": "Often kept in cages",
-      "hint3": "Starts with 'H'",
-      "difficulty": 1
-    },
-    {
-      "word": "HAWK",
-      "start_hint": "A bird of prey",
-      "hint1": "Has sharp talons",
-      "hint2": "Excellent eyesight",
-      "hint3": "Starts with 'H'",
+      "start_hint": "This is a small, furry rodent often kept as a pet.",
+      "hint1": "It loves to run on wheels to exercise.",
+      "hint2": "It stores food in its cheeks to eat later.",
+      "hint3": "It comes in many colors, like brown, white, or gray.",
       "difficulty": 2
     },
     {
       "word": "HEDGEHOG",
       "start_hint": "A small spiny mammal",
-      "hint1": "Rolls into a ball for protection",
-      "hint2": "Eats insects",
+      "hint1": "When it feels scared, it curls up into a tight ball.",
+      "hint2": "It is often seen in storybooks and cartoons as a cute spiky animal.",
       "hint3": "Starts with 'H'",
       "difficulty": 2
     },
     {
       "word": "HIPPO",
       "start_hint": "A large semi-aquatic mammal",
-      "hint1": "Lives in rivers",
-      "hint2": "Very aggressive and territorial",
+      "hint1": "It is one of the heaviest land animals in the world.",
+      "hint2": "It can open its mouth extremely wide.",
       "hint3": "Starts with 'H'",
       "difficulty": 2
     },
     {
       "word": "HORSE",
-      "start_hint": "A domesticated equine",
-      "hint1": "Used for riding and work",
-      "hint2": "Has hooves",
+      "start_hint": "This is a large animal often kept on farms or ranches.",
+      "hint1": "People ride it for travel, work, or sport.",
+      "hint2": "Foals are baby versions of this animal.",
       "hint3": "Starts with 'H'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "HUMMINGBIRD",
@@ -422,44 +398,44 @@
       "hint1": "Feeds on nectar",
       "hint2": "Beats its wings very fast",
       "hint3": "Starts with 'H'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "HYENA",
-      "start_hint": "A carnivorous African mammal",
-      "hint1": "Known for its laughing sound",
-      "hint2": "Lives in packs",
+      "start_hint": "This is a wild animal that looks a bit like a dog.",
+      "hint1": "It is known for making laughing or giggling sounds.",
+      "hint2": "They are often shown in movies as sneaky or tricky characters.",
       "hint3": "Starts with 'H'",
       "difficulty": 3
     },
     {
       "word": "IGUANA",
       "start_hint": "A large lizard",
-      "hint1": "Lives in tropical areas",
+      "hint1": "It often sits on tree branches or rocks in the sun.",
       "hint2": "Can be green or brown",
       "hint3": "Starts with 'I'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "JELLYFISH",
-      "start_hint": "A gelatinous marine animal",
-      "hint1": "Can sting",
-      "hint2": "Mostly transparent",
+      "start_hint": "This sea creature has no brain, no heart, and no bones.",
+      "hint1": "It looks like a floating bag or balloon in the ocean.",
+      "hint2": "People are warned not to touch it when swimming.",
       "hint3": "Starts with 'J'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "KANGAROO",
-      "start_hint": "A marsupial from Australia",
-      "hint1": "Hops on strong hind legs",
-      "hint2": "Carries babies in a pouch",
+      "start_hint": "It moves by hopping instead of walking.",
+      "hint1": "The baby lives in a pouch on its mother’s belly.",
+      "hint2": "It can jump very far in one leap.",
       "hint3": "Starts with 'K'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "KOALA",
-      "start_hint": "A tree-dwelling marsupial",
-      "hint1": "Eats eucalyptus leaves",
+      "start_hint": "It looks like a teddy bear but is not a bear.",
+      "hint1": "It has fluffy ears and a big black nose.",
       "hint2": "Native to Australia",
       "hint3": "Starts with 'K'",
       "difficulty": 1
@@ -482,19 +458,19 @@
     },
     {
       "word": "LLAMA",
-      "start_hint": "A domesticated South American camelid",
-      "hint1": "Used as a pack animal",
-      "hint2": "Has thick wool",
+      "start_hint": "It is related to camels but has no hump.",
+      "hint1": "It can carry loads on its back over mountains.",
+      "hint2": "It is gentle but can spit if annoyed.",
       "hint3": "Starts with 'L'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "LOBSTER",
-      "start_hint": "A marine crustacean with claws",
-      "hint1": "Lives in oceans",
+      "start_hint": "This sea animal has a tough shell that protects its body.",
+      "hint1": "It has two big claws, one for crushing and one for cutting.",
       "hint2": "Often eaten as seafood",
       "hint3": "Starts with 'L'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "MOTH",
@@ -506,9 +482,9 @@
     },
     {
       "word": "MOUSE",
-      "start_hint": "A small rodent",
-      "hint1": "Often seen in homes",
-      "hint2": "Has a long tail",
+      "start_hint": "This tiny animal has whiskers on its face.",
+      "hint1": "It can squeeze through holes much smaller than its body.",
+      "hint2": "It is prey for cats, owls, and snakes.",
       "hint3": "Starts with 'M'",
       "difficulty": 1
     },
@@ -530,19 +506,19 @@
     },
     {
       "word": "OWL",
-      "start_hint": "A nocturnal bird of prey",
+      "start_hint": "This is a bird that is mostly active at night.",
       "hint1": "Can rotate its head almost completely",
       "hint2": "Has excellent night vision",
-      "hint3": "Starts with 'O'",
+      "hint3": "often seen as symbols of wisdom in stories and cultures.",
       "difficulty": 2
     },
     {
       "word": "OYSTER",
-      "start_hint": "A marine mollusk that can produce pearls",
+      "start_hint": "This shellfish is famous for pearls and its delicate taste.",
       "hint1": "Lives buried in sand",
       "hint2": "Often eaten raw",
       "hint3": "Starts with 'O'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "PANDA",
@@ -586,27 +562,19 @@
     },
     {
       "word": "PIG",
-      "start_hint": "A domesticated farm animal",
-      "hint1": "Often pink or brown",
-      "hint2": "Raised for pork",
+      "start_hint": "This animal has a curly tail and a big appetite.",
+      "hint1": "People raise pigs for meat like bacon, ham, and pork.",
+      "hint2": "It likes to roll in mud to stay cool.",
       "hint3": "Starts with 'P'",
       "difficulty": 1
     },
     {
       "word": "PIGEON",
-      "start_hint": "A common city bird",
-      "hint1": "Can find its way home over long distances",
-      "hint2": "Also called a dove",
+      "start_hint": "They make a cooing sound instead of chirping.",
+      "hint1": "It walks on the ground and pecks at seeds or crumbs.",
+      "hint2": "This is a bird often seen in cities and parks.",
       "hint3": "Starts with 'P'",
       "difficulty": 1
-    },
-    {
-      "word": "PLATYPUS",
-      "start_hint": "A unique egg-laying mammal",
-      "hint1": "Has a duck-like bill",
-      "hint2": "Found in Australia",
-      "hint3": "Starts with 'P'",
-      "difficulty": 3
     },
     {
       "word": "POLAR BEAR",
@@ -618,19 +586,19 @@
     },
     {
       "word": "PORCUPINE",
-      "start_hint": "A spiny rodent",
-      "hint1": "Has quills for defense",
+      "start_hint": "Its back is covered in sharp quills for protection.",
+      "hint1": "It can live in forests, deserts, or grasslands depending on the species.",
       "hint2": "Slow-moving but well-protected",
       "hint3": "Starts with 'P'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "PRAYING MANTIS",
-      "start_hint": "A predatory insect",
-      "hint1": "Folds its front legs like praying",
-      "hint2": "Camouflages well in plants",
+      "start_hint": "It gets its name because it holds its front legs like it is praying.",
+      "hint1": "This insect is often used in educational displays because of its unique posture.",
+      "hint2": "It is usually green or brown to blend in with plants.",
       "hint3": "Starts with 'P'",
-      "difficulty": 3
+      "difficulty": 4
     },
     {
       "word": "RABBIT",
@@ -642,18 +610,18 @@
     },
     {
       "word": "RACCOON",
-      "start_hint": "A nocturnal mammal with a mask-like face",
-      "hint1": "Known for washing its food",
+      "start_hint": "It has a mask-like black marking around its eyes.",
+      "hint1": "They eat fruits, insects, small animals, and sometimes human garbage.",
       "hint2": "Clever and curious",
       "hint3": "Starts with 'R'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "RAT",
-      "start_hint": "A common rodent",
+      "start_hint": "This is a small, furry rodent.",
       "hint1": "Lives near humans",
       "hint2": "Can spread disease",
-      "hint3": "Starts with 'R'",
+      "hint3": "It eats grains, seeds, and sometimes leftover food.",
       "difficulty": 1
     },
     {
@@ -674,24 +642,24 @@
     },
     {
       "word": "REINDEER",
-      "start_hint": "A deer with antlers",
-      "hint1": "Often associated with Christmas",
+      "start_hint": "It is famous for pulling sleighs in holiday stories.",
+      "hint1": "It eats grass, moss, and lichen.",
       "hint2": "Lives in Arctic regions",
-      "hint3": "Starts with 'R'",
-      "difficulty": 2
-    },
-    {
-      "word": "RHINO",
-      "start_hint": "A large herbivorous mammal",
-      "hint1": "Has one or two horns",
-      "hint2": "Thick gray skin",
       "hint3": "Starts with 'R'",
       "difficulty": 3
     },
     {
+      "word": "RHINO",
+      "start_hint": "This animal has very thick, grayish skin.,
+      "hint1": "It is a huge land mammal that can weigh over a ton.",
+      "hint2": "They are endangered due to hunting and habitat loss.",
+      "hint3": "Starts with 'R'",
+      "difficulty": 4
+    },
+    {
       "word": "SARDINE",
       "start_hint": "A small oily fish",
-      "hint1": "Often canned",
+      "hint1": "People eat it canned, smoked, or fresh.",
       "hint2": "Found in oceans",
       "hint3": "Starts with 'S'",
       "difficulty": 1
@@ -699,14 +667,14 @@
     {
       "word": "SEAL",
       "start_hint": "Marine mammal",
-      "hint1": "Has flippers",
+      "hint1": "It can bark, grunt, or make other noises to communicate.",
       "hint2": "Can be trained in aquariums",
       "hint3": "Starts with 'S'",
       "difficulty": 2
     },
     {
       "word": "SHARK",
-      "start_hint": "A large predatory fish",
+      "start_hint": "There are many types, including great white, hammerhead, and tiger.",
       "hint1": "Has many sharp teeth",
       "hint2": "Lives in oceans",
       "hint3": "Starts with 'S'",
@@ -722,11 +690,11 @@
     },
     {
       "word": "SHRIMP",
-      "start_hint": "A small crustacean",
-      "hint1": "Lives in oceans and rivers",
-      "hint2": "Often eaten as seafood",
+      "start_hint": "This is a small crustacean that lives in oceans and rivers.",
+      "hint1": "People eat them boiled, fried, or in seafood dishes.",
+      "hint2": "Some species are transparent or pinkish in color.",
       "hint3": "Starts with 'S'",
-      "difficulty": 1
+      "difficulty": 2
     },
     {
       "word": "SKUNK",
@@ -746,32 +714,32 @@
     },
     {
       "word": "SNAIL",
-      "start_hint": "A slow-moving mollusk",
-      "hint1": "Carries a shell",
-      "hint2": "Moves using slime",
+      "start_hint": "This is a small, slow-moving animal.",
+      "hint1": "It leaves a shiny trail of slime wherever it goes.",
+      "hint2": "They are found in gardens, forests, and even near water.",
       "hint3": "Starts with 'S'",
       "difficulty": 1
     },
     {
       "word": "SNAKE",
-      "start_hint": "A legless reptile",
-      "hint1": "Some are venomous",
-      "hint2": "Slithers on the ground",
+      "start_hint": "This is a long, legless reptile.",
+      "hint1": "It sheds its skin as it grows.",
+      "hint2": "It moves by slithering on the ground.",
       "hint3": "Starts with 'S'",
       "difficulty": 1
     },
     {
       "word": "SPIDER",
-      "start_hint": "An eight-legged arachnid",
+      "start_hint": "This is an eight-legged creature.",
       "hint1": "Spins webs",
       "hint2": "Catches insects for food",
       "hint3": "Starts with 'S'",
-      "difficulty": 2
+      "difficulty": 1
     },
     {
       "word": "SQUID",
-      "start_hint": "A cephalopod with tentacles",
-      "hint1": "Can squirt ink",
+      "start_hint": "It can squirt ink to escape from predators.",
+      "hint1": "It eats fish, crustaceans, and plankton.",
       "hint2": "Lives in oceans",
       "hint3": "Starts with 'S'",
       "difficulty": 2
@@ -786,17 +754,17 @@
     },
     {
       "word": "STINGRAY",
-      "start_hint": "A flat fish with a barbed tail",
-      "hint1": "Lives in oceans",
+      "start_hint": "This is a flat-bodied animal that lives in the ocean.",
+      "hint1": "It has wide, wing-like fins that help it glide through water.",
       "hint2": "Can sting predators",
       "hint3": "Starts with 'S'",
-      "difficulty": 2
+      "difficulty": 3
     },
     {
       "word": "SWAN",
       "start_hint": "A graceful water bird",
       "hint1": "Has a long neck",
-      "hint2": "Often white",
+      "hint2": "Its feathers are usually white, though some are black.",
       "hint3": "Starts with 'S'",
       "difficulty": 1
     },
