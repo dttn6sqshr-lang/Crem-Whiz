@@ -50,16 +50,15 @@ class Game(commands.Cog):
     def wordle_feedback(self, guess):
         guess = guess.upper()
         word = self.current_word["word"].upper()
-        feedback = ""
         word_letters = list(word)
         guess_letters = list(guess)
+        result = [""] * len(guess_letters)
 
         # First pass: correct letter + correct position
-        result = [""] * len(guess_letters)
         for i, l in enumerate(guess_letters):
             if i < len(word_letters) and l == word_letters[i]:
                 result[i] = "✅"
-                word_letters[i] = None  # mark as used
+                word_letters[i] = None
 
         # Second pass: correct letter wrong position
         for i, l in enumerate(guess_letters):
@@ -72,10 +71,10 @@ class Game(commands.Cog):
 
         return "".join(result)
 
-    # ---------------- Timer with warnings ----------------
+    # ---------------- Timer ----------------
     async def round_timer(self, channel):
         total_time = ROUND_TIME
-        warnings = [30, 15]  # seconds remaining to announce
+        warnings = [30, 15]
         try:
             for remaining in range(total_time, 0, -1):
                 if remaining in warnings:
@@ -94,14 +93,12 @@ class Game(commands.Cog):
                     )
                 await asyncio.sleep(1)
 
-            # Time's up
             self.active_game = False
             await channel.send(
                 f"⏰ Time's up! The word was **{self.current_word['word']}**.\n"
                 "Game over! Use /startgame to play again."
             )
         except asyncio.CancelledError:
-            # Timer was cancelled because someone guessed correctly
             return
 
     # ---------------- Slash Commands ----------------
@@ -113,7 +110,10 @@ class Game(commands.Cog):
         self.active_game = True
         self.mini_scoreboard.clear()
         hint = self.pick_word()
-        await interaction.response.send_message(f"🎮 New game started!\nFirst hint: **{hint}**")
+        word_length_display = " ".join(["_" for _ in self.current_word["word"]])
+        await interaction.response.send_message(
+            f"🎮 New game started!\nWord length: {word_length_display}\nFirst hint: **{hint}**"
+        )
         self.round_task = asyncio.create_task(self.round_timer(interaction.channel))
 
     @app_commands.command(name="hint", description="Get a hint for the current word")
@@ -148,15 +148,17 @@ class Game(commands.Cog):
     # ---------------- Message Listener ----------------
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
-        if message.author.bot:
-            return
-        if not self.active_game or not self.current_word:
+        if message.author.bot or not self.active_game or not self.current_word:
             return
 
         user = message.author.name
         guess = message.content.strip().upper()
 
-        # Check guess
+        # Only accept messages that match the word length
+        if len(guess) != len(self.current_word["word"]):
+            return
+
+        # Check correct guess
         if guess == self.current_word["word"].upper():
             points = self.calculate_points()
             self.mini_scoreboard[user] += points
@@ -168,12 +170,14 @@ class Game(commands.Cog):
                 "\n".join([f"{u} - {s}" for u, s in self.mini_scoreboard.items()])
             )
 
-            # Correct guess does NOT reduce guesses
-            # Cancel old timer & start next round
             if self.round_task:
                 self.round_task.cancel()
+            # Start new round
             hint = self.pick_word()
-            await message.channel.send(f"🎮 Next round! First hint: **{hint}**")
+            word_length_display = " ".join(["_" for _ in self.current_word["word"]])
+            await message.channel.send(
+                f"🎮 Next round!\nWord length: {word_length_display}\nFirst hint: **{hint}**"
+            )
             self.round_task = asyncio.create_task(self.round_timer(message.channel))
         else:
             # Only reduce guesses if wrong
