@@ -9,7 +9,7 @@ TOKEN = os.getenv("DISCORD_TOKEN")
 if not TOKEN:
     raise ValueError("DISCORD_TOKEN environment variable not set!")
 
-GUILD_ID = 123456789012345678  # replace with your server ID for instant slash command sync
+GUILD_ID = 1474038672830500966  # replace with your server ID for instant slash command sync
 
 # ======== Intents ========
 intents = discord.Intents.default()
