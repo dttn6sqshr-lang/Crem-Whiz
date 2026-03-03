@@ -1,28 +1,29 @@
 import discord
 from discord.ext import commands
-from cogs.game import Game  # Make sure your cog is here
 import os
-import asyncio
 
 TOKEN = os.getenv("DISCORD_TOKEN")
 
-class Bot(discord.Client):
-    def __init__(self):
-        intents = discord.Intents.default()
-        super().__init__(intents=intents)
-        self.tree = discord.app_commands.CommandTree(self)
+intents = discord.Intents.default()
+intents.message_content = True  # needed later for guesses
 
-    async def setup_hook(self):
-        # Load the game cog asynchronously
-        await self.load_extension("cogs.game")
-        await self.tree.sync()  # sync slash commands globally
-        print("Cogs loaded and commands synced!")
+bot = commands.Bot(command_prefix="!", intents=intents)
 
-bot = Bot()
+@bot.event
+async def on_ready():
+    print(f"Logged in as {bot.user}")
+    await bot.tree.sync()
+    print("Slash commands synced")
 
-@bot.tree.command(name="ping", description="Check if bot is alive")
+# test command
+@bot.tree.command(name="ping", description="Test command")
 async def ping(interaction: discord.Interaction):
     await interaction.response.send_message("pong")
 
-# Start the bot
-bot.run(TOKEN)
+async def main():
+    async with bot:
+        await bot.load_extension("cogs.game")
+        await bot.start(TOKEN)
+
+import asyncio
+asyncio.run(main())
