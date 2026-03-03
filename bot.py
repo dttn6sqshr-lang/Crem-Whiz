@@ -1,37 +1,22 @@
-# bot.py
-import os
 import discord
-from discord.ext import commands
-from cogs.game import Game
+from discord import app_commands
+import os
 
-# ======== Config ========
 TOKEN = os.getenv("DISCORD_TOKEN")
-if not TOKEN:
-    raise ValueError("DISCORD_TOKEN environment variable not set!")
 
-GUILD_ID = 1474038672830500966  # replace with your server ID for instant slash command sync
+class Bot(discord.Client):
+    def __init__(self):
+        super().__init__(intents=discord.Intents.default())
+        self.tree = app_commands.CommandTree(self)
 
-# ======== Intents ========
-intents = discord.Intents.default()
-intents.messages = True
-intents.message_content = True
-intents.guilds = True
+    async def setup_hook(self):
+        await self.tree.sync()
+        print("Synced")
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+bot = Bot()
 
-# ======== On Ready ========
-@bot.event
-async def on_ready():
-    print(f"Logged in as {bot.user} (ID: {bot.user.id})")
-    try:
-        guild = discord.Object(id=GUILD_ID)
-        await bot.tree.sync(guild=guild)
-        print("Slash commands synced to test guild!")
-    except Exception as e:
-        print("Error syncing slash commands:", e)
+@bot.tree.command(name="ping")
+async def ping(interaction: discord.Interaction):
+    await interaction.response.send_message("pong")
 
-# ======== Add Cogs ========
-bot.add_cog(Game(bot))
-
-# ======== Run Bot ========
 bot.run(TOKEN)
