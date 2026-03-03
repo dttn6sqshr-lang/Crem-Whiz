@@ -25,6 +25,10 @@ class Game(commands.Cog):
         self.round_scores = {}
         self.total_scores = {}
 
+        # NEW
+        self.hearts = 5
+        self.used_hints = []
+
         self.words = self.load_words()
 
     def load_words(self):
@@ -54,6 +58,10 @@ class Game(commands.Cog):
 
         self.timer = 60
         self.round_scores = {}
+
+        # NEW
+        self.hearts = 5
+        self.used_hints = []
 
         await interaction.followup.send("🎮 Game started!")
         await self.send_embed()
@@ -141,16 +149,41 @@ class Game(commands.Cog):
         if guess == target:
             self.round_scores[player] = self.round_scores.get(player, 0) + 1
             self.total_scores[player] = self.total_scores.get(player, 0) + 1
-
             await self.channel.send(f"🎉 {player} guessed the word!")
             await self.end_game()
+        else:
+            # WRONG GUESS = LOSE HEART
+            self.hearts -= 1
+            if self.hearts <= 0:
+                await self.end_game()
+            else:
+                await self.send_embed()
 
     # ================= EMBED =================
     async def send_embed(self):
         embed = discord.Embed(title="Guess the Word")
-        embed.add_field(name="Word", value="".join(self.word_display))
-        embed.add_field(name="Time", value=f"{self.timer}s")
-        embed.add_field(name="Hint", value=self.word_entry.get("start_hint", "No hint"))
+
+        hearts_display = "❤️" * self.hearts + "🖤" * (5 - self.hearts)
+
+        embed.add_field(name="Word", value="".join(self.word_display), inline=False)
+        embed.add_field(name="Time", value=f"{self.timer}s", inline=False)
+
+        # STARTER HINT
+        embed.add_field(
+            name="Starter Hint",
+            value=self.word_entry.get("start_hint", "No hint"),
+            inline=False
+        )
+
+        # USED HINTS
+        embed.add_field(
+            name="Used Hints",
+            value="\n".join(self.used_hints) or "None",
+            inline=False
+        )
+
+        embed.add_field(name="Hearts", value=hearts_display, inline=False)
+
         await self.channel.send(embed=embed)
 
     # ================= END =================
@@ -159,7 +192,10 @@ class Game(commands.Cog):
             self.timer_task.cancel()
             self.timer_task = None
 
-        embed = discord.Embed(title="Game Over", description=f"The word was: **{self.word}**")
+        embed = discord.Embed(
+            title="Game Over",
+            description=f"The word was: **{self.word}**"
+        )
         await self.channel.send(embed=embed)
 
         self.game_running = False
