@@ -5,20 +5,18 @@ import os
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
-intents.message_content = True  # needed later for guesses
+intents.message_content = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}")
-    await bot.tree.sync()
-    print("Slash commands synced")
-
-# test command
-@bot.tree.command(name="ping", description="Test command")
-async def ping(interaction: discord.Interaction):
-    await interaction.response.send_message("pong")
+    try:
+        synced = await bot.tree.sync()
+        print(f"Synced {len(synced)} commands")
+    except Exception as e:
+        print("Sync failed:", e)
 
 async def main():
     async with bot:
