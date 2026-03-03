@@ -24,6 +24,7 @@ class Game(commands.Cog):
         self.starter_hint = ""
         self.round_scores = {}
         self.streaks = {}
+        self.game_active = False
 
     # ===== LOAD WORDS =====
     def load_words(self):
@@ -31,34 +32,23 @@ class Game(commands.Cog):
         try:
             with open(path, "r", encoding="utf-8") as f:
                 data = json.load(f)
-
                 if isinstance(data, dict) and "All" in data:
                     return data["All"]
-
                 if isinstance(data, list):
                     return data
-
-                print("Unexpected words.json format")
                 return []
         except Exception as e:
             print("Error loading words.json:", e)
             return []
 
-    # ===== SLASH COMMAND: START GAME =====
-    @app_commands.command(name="gamestart", description="Start Guess the Word")
-    async def gamestart(self, interaction: discord.Interaction):
-        await interaction.response.defer()
-
-        if not self.word_list:
-            await interaction.followup.send("No words loaded.")
-            return
-
-        self.channel = interaction.channel
+    # ===== START ROUND =====
+    async def start_new_round(self):
         self.round += 1
         self.round_scores = {}
         self.used_hints = []
         self.timer = 60
         self.hearts = 5
+        self.game_active = True
 
         self.word_entry = random.choice(self.word_list)
         self.word = self.word_entry["word"].upper()
@@ -72,12 +62,30 @@ class Game(commands.Cog):
 
         self.timer_task = asyncio.create_task(self.timer_countdown())
 
-    # ===== SLASH COMMAND: HINT =====
+    # ===== SLASH COMMAND =====
+    @app_commands.command(name="gamestart", description="Start Guess the Word")
+    async def gamestart(self, interaction: discord.Interaction):
+        await interaction.response.defer()
+
+        if not self.word_list:
+            await interaction.followup.send("No words loaded.")
+            return
+
+        self.channel = interaction.channel
+        self.round = 0
+        self.streaks = {}
+
+        if self.timer_task:
+            self.timer_task.cancel()
+
+        await self.start_new_round()
+
+    # ===== HINT =====
     @app_commands.command(name="hint", description="Get a hint")
     async def hint(self, interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
 
-        if not self.word:
+        if not self.game_active:
             await interaction.followup.send("No game running.")
             return
 
@@ -102,29 +110,30 @@ class Game(commands.Cog):
 
     # ===== TIMER =====
     async def timer_countdown(self):
-        while self.timer > 0:
-            await asyncio.sleep(1)
-            self.timer -= 1
+        try:
+            while self.timer > 0 and self.game_active:
+                await asyncio.sleep(1)
+                self.timer -= 1
 
-            if self.timer in (30, 15):
-                await self.channel.send(f"⠀ꕀ⠀⠀⠀ׄ⠀⠀ִ⠀ {self.timer} seconds remaining ⠀ּ ּ    ✧")
+                if self.timer in (30, 15):
+                    await self.channel.send(f"⠀ꕀ⠀⠀⠀ׄ⠀⠀ִ⠀ {self.timer} seconds remaining ⠀ּ ּ    ✧")
 
-        await self.game_over()
+            if self.game_active:
+                await self.game_over()
+        except asyncio.CancelledError:
+            pass
 
-    # ===== CHAT LISTENER =====
+    # ===== LISTEN FOR GUESSES =====
     @commands.Cog.listener()
     async def on_message(self, message: discord.Message):
-        if not self.word:
+        if not self.game_active:
             return
-
         if message.author.bot:
             return
-
         if message.channel != self.channel:
             return
 
         guess = message.content.strip().upper()
-
         if len(guess) != len(self.word):
             return
 
@@ -149,7 +158,14 @@ class Game(commands.Cog):
 
             await self.channel.send(f"🎉 {player} guessed the word! 🔥 {self.streaks[player]} streak")
             await self.send_mini_leaderboard()
-            await self.game_over()
+
+            # STOP timer cleanly
+            self.game_active = False
+            if self.timer_task:
+                self.timer_task.cancel()
+
+            await asyncio.sleep(2)
+            await self.start_new_round()
         else:
             self.round_scores.setdefault(player, 0)
             await self.send_round_embed()
@@ -200,6 +216,8 @@ class Game(commands.Cog):
 
     # ===== GAME OVER =====
     async def game_over(self):
+        self.game_active = False
+
         embed = discord.Embed(color=EMBED_COLOR)
         embed.add_field(
             name="˚⠀⠀♡⃕⠀⠀game over 𓂃　۪ ׄ",
@@ -207,6 +225,10 @@ class Game(commands.Cog):
             inline=False,
         )
         await self.channel.send(embed=embed)
+
+        if self.timer_task:
+            self.timer_task.cancel()
+
         self.word = ""
 
 async def setup(bot):
