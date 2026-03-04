@@ -5,23 +5,24 @@ import os
 TOKEN = os.getenv("DISCORD_TOKEN")
 
 intents = discord.Intents.default()
-intents.message_content = True
+intents.message_content = True  # needed for guessing via chat
 
-bot = commands.Bot(command_prefix="!", intents=intents)
+class Bot(commands.Bot):
+    def __init__(self):
+        super().__init__(command_prefix="!", intents=intents)
+
+    async def setup_hook(self):
+        # Load game cog
+        await self.load_extension("cogs.game")
+
+        # Sync slash commands globally
+        await self.tree.sync()
+        print("Commands synced")
+
+bot = Bot()
 
 @bot.event
 async def on_ready():
     print(f"Logged in as {bot.user}")
-    try:
-        synced = await bot.tree.sync()
-        print(f"Synced {len(synced)} commands")
-    except Exception as e:
-        print("Sync failed:", e)
 
-async def main():
-    async with bot:
-        await bot.load_extension("cogs.game")
-        await bot.start(TOKEN)
-
-import asyncio
-asyncio.run(main())
+bot.run(TOKEN)
