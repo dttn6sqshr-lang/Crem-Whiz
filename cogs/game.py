@@ -2,8 +2,10 @@ import discord
 from discord.ext import commands
 from discord import app_commands
 import json, random, os, asyncio, re
+from datetime import datetime
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "../data/words.json")
+LOG_CHANNEL_NAME = "ᐢᗜᐢ﹑logs！﹒"
 
 def normalize(text: str):
     return re.sub(r"[^a-zA-Z]", "", text).upper()
@@ -44,11 +46,26 @@ class Game(commands.Cog):
                         all_words.append(item)
         return all_words
 
+    # ================= SEND LOG =================
+    async def send_log(self, title, main_line, detail_line):
+        """Send an audit log to the logs channel as an embed."""
+        log_channel = discord.utils.get(self.bot.get_all_channels(), name=LOG_CHANNEL_NAME)
+        if not log_channel:
+            return
+
+        embed = discord.Embed(color=0x1b1c23, timestamp=datetime.utcnow())
+        embed.title = f"Ი ⁠ᰍ៸៸　　{title}"
+        embed.description = f"　　　　　　　{main_line} ೀ 𝄄𝄄　 ۪‎      ‎ ࣪ 　\n　　　　　　　𐔌 ̣̣ {detail_line}"
+        await log_channel.send(embed=embed)
+
     # ================= /gamestart =================
     @app_commands.command(name="gamestart", description="Start Guess the Word")
     async def gamestart(self, interaction: discord.Interaction):
         if self.game_running:
             await interaction.response.send_message("A game is already running.", ephemeral=True)
+            await self.send_log("Game Start Blocked",
+                                f"{interaction.user.name} tried to start a game",
+                                f"Server: {interaction.guild.name} | Channel: {interaction.channel.name}")
             return
 
         await interaction.response.defer()
@@ -64,6 +81,10 @@ class Game(commands.Cog):
         self.incorrect_guesses = {}
         self.round_guess_order = []
 
+        await self.send_log("Game Started",
+                            f"Started by {interaction.user.name}",
+                            f"Server: {interaction.guild.name} | Channel: {interaction.channel.name}")
+
         await self.start_new_round()  # first embed will show here
 
     # ================= /stopgame =================
@@ -76,6 +97,9 @@ class Game(commands.Cog):
             await interaction.response.send_message("Only the starter can stop the game.", ephemeral=True)
             return
         await interaction.response.send_message("🛑 Game stopped.", ephemeral=True)
+        await self.send_log("Game Stopped",
+                            f"Stopped by {interaction.user.name}",
+                            f"Server: {interaction.guild.name} | Channel: {interaction.channel.name}")
         await self.end_game(manual=True)
 
     # ================= /leaderboard =================
@@ -109,6 +133,9 @@ class Game(commands.Cog):
         self.timer = max(self.timer - 10, 0)
         await self.send_round_embed()
         await interaction.response.send_message(f"Hint:\n{hint_text}", ephemeral=True)
+        await self.send_log("Hint Used",
+                            f"{player} used a hint",
+                            f"Server: {interaction.guild.name} | Channel: {interaction.channel.name} | Round {self.round}")
 
     # ================= Timer Loop =================
     async def timer_loop(self):
@@ -118,8 +145,14 @@ class Game(commands.Cog):
                 self.timer -= 1
                 if self.timer in (30, 15):
                     await self.channel.send(f"⠀ꕀ⠀⠀⠀ׄ⠀⠀ִ⠀ {self.timer} seconds remaining ⠀ּ ּ    ✧")
+                    await self.send_log("Timer Warning",
+                                        f"{self.timer}s remaining",
+                                        f"Server: {self.channel.guild.name} | Channel: {self.channel.name} | Round {self.round}")
             if self.game_running:
                 await self.channel.send("⏰ Time's up!")
+                await self.send_log("Game Ended (Timer)",
+                                    f"Time ran out",
+                                    f"Server: {self.channel.guild.name} | Channel: {self.channel.name} | Round {self.round}")
                 await self.end_game()
         except asyncio.CancelledError:
             return
@@ -155,16 +188,25 @@ class Game(commands.Cog):
         self.last_guess_colors = "".join(colors)
 
         # ===== Update points =====
+        correct = False
         if guess == target:
             self.round_scores[player] = self.round_scores.get(player, 0) + 1
             self.total_scores[player] = self.total_scores.get(player, 0) + 1
             self.round_guess_order.append(player)
+            correct = True
             await self.channel.send(f"🎉 {player} guessed the word correctly! (+1 pt)")
-            await self.start_new_round()
-            return  # exit so we don't send duplicate embed
 
-        # Only send embed for incorrect guesses
+        # Send embed for every guess
         await self.send_round_embed()
+
+        # Audit log for guesses
+        await self.send_log("Guess",
+                            f"{player} guessed {'correctly' if correct else 'wrong'}",
+                            f"Server: {self.channel.guild.name} | Channel: {self.channel.name} | Round {self.round}")
+
+        # Start new round if correct
+        if correct:
+            await self.start_new_round()
 
     # ================= Start New Round =================
     async def start_new_round(self):
@@ -197,6 +239,9 @@ class Game(commands.Cog):
         self.timer_task = asyncio.create_task(self.timer_loop())
 
         await self.send_round_embed()
+        await self.send_log("Round Started",
+                            f"Round {self.round} started",
+                            f"Server: {self.channel.guild.name} | Channel: {self.channel.name}")
 
     # ================= Round Embed =================
     async def send_round_embed(self):
@@ -233,14 +278,30 @@ class Game(commands.Cog):
                 pass
             self.timer_task = None
 
+        if not manual:
+            await self.send_log("Game Ended",
+                                f"Game over (timer)",
+                                f"Server: {self.channel.guild.name} | Channel: {self.channel.name}")
+        else:
+            await self.send_log("Game Stopped",
+                                f"Stopped manually by {self.starter.name}",
+                                f"Server: {self.channel.guild.name} | Channel: {self.channel.name}")
+
         self.game_running = False
 
         embed = discord.Embed(color=0x1b1c23)
-        embed.add_field(
-            name="˚⠀⠀♡⃕⠀⠀game over 𓂃　۪ ׄ",
-            value=f"The word was: **{self.word}**\nUse /gamestart to play again",
-            inline=False,
-        )
+        if not manual:
+            embed.add_field(
+                name="˚⠀⠀♡⃕⠀⠀game over 𓂃　۪ ׄ",
+                value=f"The word was: **{self.word}**\nUse /gamestart to play again",
+                inline=False,
+            )
+        else:
+            embed.add_field(
+                name="˚⠀⠀♡⃕⠀⠀game over 𓂃　۪ ׄ",
+                value="Game stopped manually.\nUse /gamestart to play again",
+                inline=False,
+            )
         await self.channel.send(embed=embed)
         self.reset_game()
 
