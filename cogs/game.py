@@ -44,11 +44,14 @@ class Game(commands.Cog):
             await interaction.response.send_message("A game is already running!", ephemeral=True)
             return
 
+        # Defer first to prevent timeout
+        await interaction.response.defer()
+
         self.game_running = True
         self.channel = interaction.channel
         self.starter = interaction.user
 
-        # Pick a new word not in recent_words
+        # Pick a new word not recently used
         choices = [w for w in self.words if w["word"] not in self.recent_words]
         if not choices:
             self.recent_words = []
@@ -64,14 +67,14 @@ class Game(commands.Cog):
         self.used_hints = []
         self.timer = 60
 
-        # Send first round embed
+        # Send first round embed immediately
         await self.send_round_embed()
 
-        # Respond to interaction
-        await interaction.response.send_message("🎮 Game started! Check the channel for the round.", ephemeral=True)
-
-        # Start timer loop in background
+        # Start timer in background
         self.timer_task = asyncio.create_task(self.timer_loop())
+
+        # Follow-up message to confirm game start
+        await interaction.followup.send("🎮 Game started! Check the channel for the round.", ephemeral=True)
 
     # ================= STOP =================
     @app_commands.command(name="stopgame", description="Stop the game")
@@ -122,7 +125,7 @@ class Game(commands.Cog):
         if guess not in valid_words:
             return
 
-        # Wordle colors
+        # Wordle-style colors
         colors = []
         for i, c in enumerate(guess):
             if i < len(target):
@@ -134,12 +137,10 @@ class Game(commands.Cog):
                     colors.append("⬜")
             else:
                 colors.append("⬜")
-
         await self.channel.send("".join(colors))
 
         player = message.author.name
 
-        # Correct guess
         if guess == target:
             self.round_scores[player] = self.round_scores.get(player, 0) + 1
             self.total_scores[player] = self.total_scores.get(player, 0) + 1
