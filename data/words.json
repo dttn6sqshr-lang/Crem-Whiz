@@ -3017,14 +3017,6 @@
       "difficulty": 2
     },
     {
-      "word": "PERSONAL CHEF",
-      "start_hint": "Prepares meals for individuals or families",
-      "hint1": "Cooks customized dishes",
-      "hint2": "Can work privately or professionally",
-      "hint3": "Starts with 'P'",
-      "difficulty": 2
-    },
-    {
       "word": "BAKER",
       "start_hint": "Prepares baked goods",
       "hint1": "Cakes, bread, and pastries",
@@ -3217,7 +3209,7 @@
       "difficulty": 1
     },
     {
-      "word": "PERSONAL ASSISTANT",
+      "word": "ASSISTANT",
       "start_hint": "Supports individuals in tasks",
       "hint1": "Schedules appointments and manages tasks",
       "hint2": "Can work for executives or celebrities",
@@ -3289,7 +3281,7 @@
       "difficulty": 2
     },
     {
-      "word": "PERSONAL TRAINER",
+      "word": "TRAINER",
       "start_hint": "Guides people in fitness",
       "hint1": "Creates workout plans",
       "hint2": "Provides motivation and instruction",
