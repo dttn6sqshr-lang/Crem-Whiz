@@ -31,13 +31,18 @@ class Game(commands.Cog):
         self.words = self.load_words()
         print("Loaded words:", len(self.words))
 
+    # ===== LOAD WORDS SAFELY =====
     def load_words(self):
         with open(DATA_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         all_words = []
-        for cat in data.values():
-            all_words.extend(cat)
+        for category in data.values():
+            if isinstance(category, list):
+                for item in category:
+                    if isinstance(item, dict) and "word" in item:
+                        all_words.append(item)
+
         return all_words
 
     # ================= START =================
