@@ -32,7 +32,7 @@ class Game(commands.Cog):
         self.words = self.load_words()
         print("Loaded words:", len(self.words))
 
-    # ===== LOAD WORDS SAFELY =====
+    # ===== LOAD WORDS =====
     def load_words(self):
         with open(DATA_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -48,46 +48,22 @@ class Game(commands.Cog):
     # ================= START =================
     @app_commands.command(name="gamestart", description="Start Guess the Word")
     async def gamestart(self, interaction: discord.Interaction):
-        try:
-            await interaction.response.send_message("🎮 Starting game...", ephemeral=True)
+        if self.game_running:
+            await interaction.response.send_message("A game is already running.", ephemeral=True)
+            return
 
-            if self.game_running:
-                await interaction.followup.send("A game is already running.", ephemeral=True)
-                return
+        await interaction.response.send_message("🎮 Starting game...", ephemeral=True)
 
-            self.game_running = True
-            self.channel = interaction.channel
-            self.starter = interaction.user
+        self.game_running = True
+        self.channel = interaction.channel
+        self.starter = interaction.user
 
-            choices = [w for w in self.words if w["word"] not in self.recent_words]
-            if not choices:
-                self.recent_words = []
-                choices = self.words
+        self.round_scores = {}
+        self.last_guess_colors = ""
+        self.timer = 60
 
-            self.word_entry = random.choice(choices)
-            self.word = self.word_entry["word"]
-            self.word_display = ["⬜"] * len(self.word)
-
-            self.recent_words.append(self.word)
-            if len(self.recent_words) > 3:
-                self.recent_words.pop(0)
-
-            self.used_hints = []
-            self.round_scores = {}
-            self.last_guess_colors = ""
-            self.timer = 60
-
-            await self.send_round_embed()
-
-            self.timer_task = asyncio.create_task(self.timer_loop())
-
-        except Exception as e:
-            print("GAMESTART ERROR:", e)
-            self.reset_game()
-            try:
-                await interaction.followup.send("❌ Game failed to start.", ephemeral=True)
-            except:
-                pass
+        await self.start_new_round()
+        self.timer_task = asyncio.create_task(self.timer_loop())
 
     # ================= STOP =================
     @app_commands.command(name="stopgame", description="Stop the game")
@@ -143,8 +119,7 @@ class Game(commands.Cog):
         if message.channel != self.channel:
             return
 
-        guess_raw = message.content
-        guess = normalize(guess_raw)
+        guess = normalize(message.content)
         target = normalize(self.word)
 
         valid_words = [normalize(w["word"]) for w in self.words]
@@ -164,22 +139,37 @@ class Game(commands.Cog):
                 colors.append("⬜")
 
         self.last_guess_colors = "".join(colors)
-
         await self.send_round_embed()
 
         player = message.author.name
 
         if guess == target:
-            if self.timer_task:
-                self.timer_task.cancel()
-                self.timer_task = None
-
             self.round_scores[player] = self.round_scores.get(player, 0) + 1
             self.total_scores[player] = self.total_scores.get(player, 0) + 1
 
             await self.send_mini_leaderboard()
             await self.channel.send(f"🎉 {player} guessed the word!")
-            await self.end_game()
+
+            await self.start_new_round()
+
+    # ================= NEW ROUND =================
+    async def start_new_round(self):
+        choices = [w for w in self.words if w["word"] not in self.recent_words]
+        if not choices:
+            self.recent_words = []
+            choices = self.words
+
+        self.word_entry = random.choice(choices)
+        self.word = self.word_entry["word"]
+        self.word_display = ["⬜"] * len(self.word)
+        self.last_guess_colors = ""
+        self.used_hints = []
+
+        self.recent_words.append(self.word)
+        if len(self.recent_words) > 3:
+            self.recent_words.pop(0)
+
+        await self.send_round_embed()
 
     # ================= EMBED =================
     async def send_round_embed(self):
