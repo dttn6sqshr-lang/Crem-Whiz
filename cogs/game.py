@@ -320,7 +320,7 @@ class Game(commands.Cog):
         self.timer_task = None
 
     # ================= 24H Guess Channel Purger =================
-    @tasks.loop(hours=24)
+    @tasks.loop(hours=2)
     async def guess_purger_task(self):
         await self.bot.wait_until_ready()
         channel = discord.utils.get(self.bot.get_all_channels(), name=GUESS_CHANNEL_NAME)
