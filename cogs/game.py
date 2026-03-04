@@ -18,6 +18,7 @@ class Game(commands.Cog):
         self.word_entry = None
         self.word = ""
         self.word_display = []
+
         self.timer = 60
         self.timer_task = None
 
@@ -44,14 +45,12 @@ class Game(commands.Cog):
             await interaction.response.send_message("A game is already running!", ephemeral=True)
             return
 
-        # Defer first to prevent timeout
-        await interaction.response.defer()
-
+        # Mark game running and channel/starter immediately
         self.game_running = True
         self.channel = interaction.channel
         self.starter = interaction.user
 
-        # Pick a new word not recently used
+        # Pick a new word
         choices = [w for w in self.words if w["word"] not in self.recent_words]
         if not choices:
             self.recent_words = []
@@ -67,14 +66,21 @@ class Game(commands.Cog):
         self.used_hints = []
         self.timer = 60
 
-        # Send first round embed immediately
-        await self.send_round_embed()
+        # ✅ Immediately respond to interaction
+        await interaction.response.send_message(
+            "🎮 Game started! First round is in the channel.", ephemeral=True
+        )
 
-        # Start timer in background
-        self.timer_task = asyncio.create_task(self.timer_loop())
+        # ✅ Run round in background
+        asyncio.create_task(self.start_round())
 
-        # Follow-up message to confirm game start
-        await interaction.followup.send("🎮 Game started! Check the channel for the round.", ephemeral=True)
+    async def start_round(self):
+        try:
+            await self.send_round_embed()
+            self.timer_task = asyncio.create_task(self.timer_loop())
+        except Exception as e:
+            print("Error starting round:", e)
+            self.game_running = False
 
     # ================= STOP =================
     @app_commands.command(name="stopgame", description="Stop the game")
