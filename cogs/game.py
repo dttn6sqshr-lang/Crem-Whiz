@@ -29,16 +29,14 @@ class Game(commands.Cog):
         self.total_scores = {}
         self.recent_words = []
 
-        # Player tracking
-        self.active_powerups = {}  # {player_name: {powerup_name: True/False}}
-        self.incorrect_guesses = {}  # {player_name: count of incorrect guesses this round}
-        self.round_guess_order = []  # list of player names in order they guessed correctly
-        self.round_start_time = None  # datetime when round started
+        self.incorrect_guesses = {}  # Track incorrect guesses per player
+        self.round_guess_order = []
+        self.round_start_time = None
 
         self.words = self.load_words()
         print(f"[Game] Loaded {len(self.words)} words.")
 
-    # ===== Load words =====
+    # Load words
     def load_words(self):
         with open(DATA_PATH, "r", encoding="utf-8") as f:
             data = json.load(f)
@@ -65,8 +63,7 @@ class Game(commands.Cog):
         self.last_guess_colors = ""
         self.timer = 60
         self.round = 0
-        self.used_hints = []
-        self.active_powerups = {}
+        self.used_hints = {}
         self.incorrect_guesses = {}
         self.round_guess_order = []
         self.round_start_time = datetime.utcnow()
@@ -113,7 +110,7 @@ class Game(commands.Cog):
 
         hint_text = random.choice(available_hints)
         self.used_hints.append(hint_text)
-        self.timer = max(self.timer - 10, 0)  # Deduct time as penalty for hint
+        self.timer = max(self.timer - 10, 0)  # Penalty for using hint
         await self.send_round_embed()
         await interaction.response.send_message(f"Hint: {hint_text}", ephemeral=True)
 
@@ -144,23 +141,7 @@ class Game(commands.Cog):
             return
 
         player = message.author.name
-        if player not in self.active_powerups:
-            # Initialize all automatic power-ups
-            self.active_powerups[player] = {
-                "reveal_letter": True,
-                "hint_boost": True,
-                "skip_timer": True,
-                "streak_shield": True,
-                "steal_point": True,
-                "double_points": True,
-                "triple_points": True,
-                "point_steal": True,
-                "streak_bonus": True,
-                "fast_guess": True,
-                "lucky_letter": True,
-                "perfect_guess": True,
-            }
-            self.incorrect_guesses[player] = 0
+        self.incorrect_guesses[player] = self.incorrect_guesses.get(player, 0)
 
         # ===== Wordle coloring =====
         colors = []
@@ -176,91 +157,17 @@ class Game(commands.Cog):
                 colors.append("⬜")
         self.last_guess_colors = "".join(colors)
 
-        # ===== Automatic power-ups logic =====
-        pu = self.active_powerups[player]
-        points = 1
-
-        # Incorrect guess power-ups
-        if guess != target:
+        # ===== Update points =====
+        if guess == target:
+            self.round_scores[player] = self.round_scores.get(player, 0) + 1
+            self.total_scores[player] = self.total_scores.get(player, 0) + 1
+            self.round_guess_order.append(player)
+            await self.channel.send(f"🎉 {player} guessed the word correctly! (+1 pt)")
+            await self.start_new_round()
+        else:
             self.incorrect_guesses[player] += 1
-            # Reveal Letter
-            if pu["reveal_letter"]:
-                index_to_reveal = random.randint(0, len(target) - 1)
-                self.word_display[index_to_reveal] = target[index_to_reveal]
-                pu["reveal_letter"] = False
-            # Hint Boost after 2 incorrect guesses
-            if pu["hint_boost"] and self.incorrect_guesses[player] >= 2:
-                all_hints = [self.word_entry.get("hint1"), self.word_entry.get("hint2"), self.word_entry.get("hint3")]
-                self.used_hints = list({h for h in all_hints if h})
-                pu["hint_boost"] = False
-            await self.send_round_embed()
-            return
 
-        # Correct guess power-ups
-        # Double / Triple points
-        if pu["triple_points"]:
-            points *= 3
-            pu["triple_points"] = False
-        elif pu["double_points"]:
-            points *= 2
-            pu["double_points"] = False
-
-        # Fast guess bonus
-        time_elapsed = (datetime.utcnow() - self.round_start_time).total_seconds()
-        if pu["fast_guess"] and time_elapsed <= 15:
-            points += 1
-            pu["fast_guess"] = False
-
-        # Streak bonus
-        if pu["streak_bonus"] and player not in self.round_guess_order:
-            points += 1
-            pu["streak_bonus"] = False
-
-        # Lucky letter bonus (first correct letter in round)
-        if pu["lucky_letter"]:
-            points += 1
-            pu["lucky_letter"] = False
-
-        # Perfect guess bonus
-        if pu["perfect_guess"] and not self.used_hints:
-            points += 1
-            pu["perfect_guess"] = False
-
-        # Apply points
-        self.round_scores[player] = self.round_scores.get(player, 0) + points
-        self.total_scores[player] = self.total_scores.get(player, 0) + points
-        self.round_guess_order.append(player)
-
-        # Steal point
-        if pu["steal_point"]:
-            for other in self.round_scores:
-                if other != player:
-                    self.round_scores[player] += 1
-                    self.total_scores[player] += 1
-                    pu["steal_point"] = False
-                    break
-
-        # Point steal
-        if pu["point_steal"]:
-            others = [p for p in self.round_scores if p != player]
-            if others:
-                victim = random.choice(others)
-                if self.round_scores[victim] > 0:
-                    self.round_scores[victim] -= 1
-                    self.round_scores[player] += 1
-                    self.total_scores[victim] -= 1
-                    self.total_scores[player] += 1
-            pu["point_steal"] = False
-
-        await self.send_mini_leaderboard()
-        await self.channel.send(f"🎉 {player} guessed the word correctly! (+{points} pts)")
-
-        # Skip timer
-        if pu["skip_timer"]:
-            self.timer += 10
-            pu["skip_timer"] = False
-
-        await self.start_new_round()
+        await self.send_round_embed()
 
     # ===== Start new round =====
     async def start_new_round(self):
@@ -275,7 +182,7 @@ class Game(commands.Cog):
         self.word_display = ["⬜"] * len(self.word)
         self.last_guess_colors = ""
         self.used_hints = []
-        self.incorrect_guesses = {p: 0 for p in self.active_powerups}
+        self.incorrect_guesses = {p: 0 for p in self.round_scores}
         self.round_guess_order = []
         self.round_start_time = datetime.utcnow()
 
@@ -304,14 +211,8 @@ class Game(commands.Cog):
             f"⃕⠀⠀Timer 𓂃　۪ ׄ\n"
             f"{'❤️'*5}\n\n"
             f"⃕⠀⠀starter hint 𓂃　۪ ׄ\n{self.word_entry.get('start_hint','No hint')}\n\n"
-            f"⠀♡⃕⠀⠀used hints 𓂃　۪ ׄ\n{'None' if not self.used_hints else '\\n'.join(self.used_hints)}\n\n"
-            f"♡ Power-Ups ♡\n"
+            f"⠀♡⃕⠀⠀used hints 𓂃　۪ ׄ\n{'None' if not self.used_hints else '\\n'.join(self.used_hints)}\n"
         )
-        for player, pu in self.active_powerups.items():
-            active = [k.replace("_", " ").title() for k, v in pu.items() if v]
-            if active:
-                embed.description += f"{player}: {', '.join(active)}\n"
-
         await self.channel.send(embed=embed)
 
     # ===== Mini leaderboard =====
@@ -350,7 +251,6 @@ class Game(commands.Cog):
         self.round_scores = {}
         self.last_guess_colors = ""
         self.round = 0
-        self.active_powerups = {}
         self.incorrect_guesses = {}
         self.round_guess_order = []
         self.round_start_time = None
