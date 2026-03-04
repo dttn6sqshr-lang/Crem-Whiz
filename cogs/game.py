@@ -18,6 +18,7 @@ class Game(commands.Cog):
         self.word = ""
         self.word_entry = None
         self.word_display = []
+        self.last_guess_colors = ""
 
         self.timer = 60
         self.timer_task = None
@@ -42,7 +43,6 @@ class Game(commands.Cog):
                 for item in category:
                     if isinstance(item, dict) and "word" in item:
                         all_words.append(item)
-
         return all_words
 
     # ================= START =================
@@ -74,6 +74,7 @@ class Game(commands.Cog):
 
             self.used_hints = []
             self.round_scores = {}
+            self.last_guess_colors = ""
             self.timer = 60
 
             await self.send_round_embed()
@@ -162,11 +163,17 @@ class Game(commands.Cog):
             else:
                 colors.append("⬜")
 
-        await self.channel.send("".join(colors))
+        self.last_guess_colors = "".join(colors)
+
+        await self.send_round_embed()
 
         player = message.author.name
 
         if guess == target:
+            if self.timer_task:
+                self.timer_task.cancel()
+                self.timer_task = None
+
             self.round_scores[player] = self.round_scores.get(player, 0) + 1
             self.total_scores[player] = self.total_scores.get(player, 0) + 1
 
@@ -176,13 +183,15 @@ class Game(commands.Cog):
 
     # ================= EMBED =================
     async def send_round_embed(self):
+        word_line = self.last_guess_colors if self.last_guess_colors else "".join(self.word_display)
+
         embed = discord.Embed(color=0x1b1c23)
 
         embed.description = (
             f"ᰍ   ⟡   ꒰ Guess the Word ꒱   |   ᣟᣟᰍᣟᣟᣟ⟡ᣟᣟᣟ꒰ Round ꒱ᣟᣟᣟ꒱\n"
             f"﹒🍥﹒  ୧  Time Left   ﹒♡﹒  ˚   |   ﹒🍥﹒ᣟᣟ୧ᣟᣟ {self.timer}s ᣟᣟᣟ﹒♡﹒ᣟᣟ˚\n"
             f" ♩  ﹒ ﹒  Streak  ﹒ ୨୧   |   ᣟ♩ᣟᣟ﹒ᣟ﹒ᣟ 🔥 {max(self.round_scores.values(), default=0)} ᣟ﹒ᣟ୨୧\n\n"
-            f"{''.join(self.word_display)}\n\n"
+            f"{word_line}\n\n"
             f"⃕⠀⠀Timer 𓂃　۪ ׄ\n"
             f"{'❤️'*5}\n\n"
             f"⃕⠀⠀starter hint 𓂃　۪ ׄ\n{self.word_entry.get('start_hint','No hint')}\n\n"
@@ -225,6 +234,7 @@ class Game(commands.Cog):
         self.starter = None
         self.used_hints = []
         self.round_scores = {}
+        self.last_guess_colors = ""
 
 async def setup(bot):
     await bot.add_cog(Game(bot))
