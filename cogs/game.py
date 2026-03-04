@@ -37,20 +37,18 @@ class Game(commands.Cog):
             all_words.extend(cat)
         return all_words
 
+    # ================= START =================
     @app_commands.command(name="gamestart", description="Start a Guess the Word game")
     async def gamestart(self, interaction: discord.Interaction):
-        # Immediate reply so Discord doesn't timeout
-        await interaction.response.send_message("Starting game...", ephemeral=True)
-
         if self.game_running:
-            await interaction.followup.send("A game is already running!", ephemeral=True)
+            await interaction.response.send_message("A game is already running!", ephemeral=True)
             return
 
         self.game_running = True
         self.channel = interaction.channel
         self.starter = interaction.user
 
-        # Pick word not in recent_words
+        # Pick a new word not in recent_words
         choices = [w for w in self.words if w["word"] not in self.recent_words]
         if not choices:
             self.recent_words = []
@@ -66,12 +64,16 @@ class Game(commands.Cog):
         self.used_hints = []
         self.timer = 60
 
-        # Send first aesthetic embed
+        # Send first round embed
         await self.send_round_embed()
 
-        # Start timer in background
+        # Respond to interaction
+        await interaction.response.send_message("🎮 Game started! Check the channel for the round.", ephemeral=True)
+
+        # Start timer loop in background
         self.timer_task = asyncio.create_task(self.timer_loop())
 
+    # ================= STOP =================
     @app_commands.command(name="stopgame", description="Stop the game")
     async def stopgame(self, interaction: discord.Interaction):
         await interaction.response.defer(ephemeral=True)
@@ -83,6 +85,7 @@ class Game(commands.Cog):
             return
         await self.end_game()
 
+    # ================= LEADERBOARD =================
     @app_commands.command(name="leaderboard", description="Show total leaderboard")
     async def leaderboard(self, interaction: discord.Interaction):
         await interaction.response.defer()
@@ -94,6 +97,7 @@ class Game(commands.Cog):
         embed = discord.Embed(title="Leaderboard", description="\n".join(lines), color=0x1b1c23)
         await interaction.followup.send(embed=embed)
 
+    # ================= TIMER =================
     async def timer_loop(self):
         try:
             while self.timer > 0 and self.game_running:
@@ -106,6 +110,7 @@ class Game(commands.Cog):
         except asyncio.CancelledError:
             return
 
+    # ================= MESSAGE LISTENER =================
     @commands.Cog.listener()
     async def on_message(self, message):
         if not self.game_running or message.author.bot or message.channel != self.channel:
@@ -117,11 +122,24 @@ class Game(commands.Cog):
         if guess not in valid_words:
             return
 
-        colors = ["🟩" if guess[i]==target[i] else "🟨" if guess[i] in target else "⬜"
-                  for i in range(len(guess))]
+        # Wordle colors
+        colors = []
+        for i, c in enumerate(guess):
+            if i < len(target):
+                if c == target[i]:
+                    colors.append("🟩")
+                elif c in target:
+                    colors.append("🟨")
+                else:
+                    colors.append("⬜")
+            else:
+                colors.append("⬜")
+
         await self.channel.send("".join(colors))
 
         player = message.author.name
+
+        # Correct guess
         if guess == target:
             self.round_scores[player] = self.round_scores.get(player, 0) + 1
             self.total_scores[player] = self.total_scores.get(player, 0) + 1
@@ -133,32 +151,41 @@ class Game(commands.Cog):
             self.streaks[player] = 0
             await self.send_round_embed()
 
+    # ================= ROUND EMBED =================
     async def send_round_embed(self):
         embed = discord.Embed(color=0x1b1c23)
-        embed.title = f"ᰍ   ⟡   ꒰ Guess the Word ꒱   |   Round"
+        embed.title = f"ᰍ   ⟡   ꒰ Guess the Word ꒱   |   ᣟᣟᰍᣟᣟᣟ⡟ᣟᣟᣟ꒰ Round 1 ꒱ᣟᣟᣟ꒱"
+        embed.add_field(name="﹒🍥﹒  ୧  Time Left   ﹒♡﹒  ˚", value=f"﹒🍥﹒ᣟᣟ {self.timer}s ᣟᣟᣟ﹒♡﹒ᣟᣟ˚", inline=False)
+        streak_display = max(self.streaks.values(), default=0)
+        embed.add_field(name="♩  ﹒ ﹒  Streak  ﹒ ୨୧", value=f"ᣟ♩ᣟᣟ﹒ᣟ﹒ᣟ 🔥 {streak_display} ᣟ﹒ᣟ୨୧", inline=False)
         embed.add_field(name="▪️▪️▪️▪️▪️", value="".join(self.word_display), inline=False)
-        embed.add_field(name="Time", value=f"{self.timer}s", inline=False)
-        embed.add_field(name="Starter Hint", value=self.word_entry.get("start_hint", "No hint"), inline=False)
-        embed.add_field(name="Used Hints", value="\n".join(self.used_hints) or "None", inline=False)
+        hearts_display = "❤️" * 5 + "🖤" * (5 - 5)
+        embed.add_field(name="⃕⠀⠀Timer 𓂃　۪ ׄ", value=hearts_display, inline=False)
+        embed.add_field(name="⃕⠀⠀starter hint 𓂃　۪ ׄ", value=self.word_entry.get("start_hint", "No hint"), inline=False)
+        embed.add_field(name="⠀♡⃕⠀⠀used hints 𓂃　۪ ׄ", value="\n".join(self.used_hints) or "None", inline=False)
         await self.channel.send(embed=embed)
 
+    # ================= MINI LEADERBOARD =================
     async def send_mini_leaderboard(self):
         lines = [f"◡◡  <:CC_trophy:1474577678790299821> {u}: {s} Points ♡  ࣪"
                  for u, s in sorted(self.round_scores.items(), key=lambda x: x[1], reverse=True)]
         embed = discord.Embed(title="Mini Leaderboard", description="\n".join(lines) or "No scores yet", color=0x1b1c23)
         await self.channel.send(embed=embed)
 
+    # ================= END GAME =================
     async def end_game(self):
         if self.timer_task:
             self.timer_task.cancel()
             self.timer_task = None
+
         embed = discord.Embed(
             title="˚⠀⠀♡⃕⠀⠀game over 𓂃　۪ ׄ",
             description=f"The word was: **{self.word}**\nUse `/gamestart` to play again",
             color=0x1b1c23
         )
         await self.channel.send(embed=embed)
-        # Reset state
+
+        # Reset game state
         self.game_running = False
         self.channel = None
         self.starter = None
