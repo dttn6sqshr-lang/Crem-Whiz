@@ -67,9 +67,9 @@
     {
       "word": "BEE",
       "start_hint": "Insect that makes honey",
-      "hint1": "Can sting",
-      "hint2": "Lives in hives",
-      "hint3": "Starts with 'B'",
+      "hint1": "It has yellow and black stripes",
+      "hint2": "It can sting to protect itself",
+      "hint3": "It helps plants grow by pollination",
       "difficulty": 1
     },
     {
@@ -258,10 +258,10 @@
     },
     {
       "word": "DUCK",
-      "start_hint": "This is a bird often found on ponds and lakes.",
-      "hint1": "It has webbed feet that help it paddle through water easily.",
-      "hint2": "People sometimes keep them on farms for eggs or meat.",
-      "hint3": "Starts with 'D'",
+      "start_hint": "It is a bird that can swim and fly.",
+      "hint1": "It has webbed feet for swimming.",
+      "hint2": "It makes a “quack” sound.",
+      "hint3": "It is smaller than many birds",
       "difficulty": 1
     },
     {
@@ -562,10 +562,10 @@
     },
     {
       "word": "PIG",
-      "start_hint": "This animal has a curly tail and a big appetite.",
-      "hint1": "People raise pigs for meat like bacon, ham, and pork.",
-      "hint2": "It likes to roll in mud to stay cool.",
-      "hint3": "Starts with 'P'",
+      "start_hint": "It makes an “oink” sound.",
+      "hint1": "It likes to roll in mud.",
+      "hint2": "	It has four legs and a curly tail.",
+      "hint3": "People sometimes raise it for food",
       "difficulty": 1
     },
     {
@@ -1250,10 +1250,10 @@
     },
     {
       "word": "BREAD",
-      "start_hint": "This is a staple food made from flour, water, and yeast.",
-      "hint1": "It can be baked as loaves, rolls, or buns.",
-      "hint2": "It comes in many types like white, whole wheat, or sourdough.",
-      "hint3": "It can be eaten plain or used for sandwiches.",
+      "start_hint": "It is a food made from flour and baked.",
+      "hint1": "It is soft inside and firm outside.",
+      "hint2": "It is eaten for breakfast or lunch.",
+      "hint3": "It is baked in an oven.",
       "difficulty": 1
     },
     {
@@ -1418,10 +1418,10 @@
     },
     {
       "word": "EGG",
-      "start_hint": "Oval-shaped food laid by birds",
-      "hint1": "Used in cooking and baking",
-      "hint2": "Can be boiled or fried",
-      "hint3": "Starts with 'E'",
+      "start_hint": "It is something that comes from animals like chickens",
+      "hint1": "It can be cooked and eaten",
+      "hint2": "It is used in many recipes",
+      "hint3": "It can break easily",
       "difficulty": 1
     },
     {
@@ -3435,10 +3435,10 @@
       },
       {
         "word": "Bed",
-        "start_hint": "It is a piece of furniture that you use for sleeping and resting.",
-        "hint1": "It is usually soft and comfortable so your body can relax.",
-        "hint2": "It is found in bedrooms.",
-        "hint3": "You lie down on it instead of sitting or standing",
+        "start_hint": "It is used for sleeping and resting.",
+        "hint1": "It is found in bedrooms.",
+        "hint2": "You use it every night.",
+        "hint3": "It helps you relax",
         "difficulty": 1
       },
       {
@@ -3482,27 +3482,123 @@
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Rain",
+        "start_hint": "It is water that falls from the sky.",
+        "hint1": "You may need an umbrella when it happens.",
+        "hint2": "It helps plants grow.",
+        "hint3": "It is part of the weather",
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Bag",
+        "start_hint": "It is something used to carry items.",
+        "hint1": "It can be made of cloth, plastic, or leather.",
+        "hint2": "You can carry it in your hand or on your shoulder.",
+        "hint3": "It is used for school, shopping, or travel",
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
+        "difficulty": 1
+      },
+      {
+        "word": "Mom",
+        "start_hint": "She is your female parent.",
+        "hint1": "She may cook or help at home",
+        "hint2": "You can talk to her.",
+        "hint3": "She is important in your life",
         "difficulty": 1
       },
       {
