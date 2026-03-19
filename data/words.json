@@ -3634,19 +3634,19 @@
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Basketball",
+        "start_hint": "It is a sport played with a ball and a hoop.",
+        "hint1": "Players try to throw the ball into a basket",
+        "hint2": "It is played on a court.",
+        "hint3": "You can bounce the ball while moving",
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Tennis",
+        "start_hint": "It is a sport played with a racket and a ball.",
+        "hint1": "Players hit the ball over a net",
+        "hint2": "The ball must stay inside the court.",
+        "hint3": "Players take turns hitting the ball",
         "difficulty": 1
       },
       {
