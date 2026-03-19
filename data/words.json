@@ -3376,6 +3376,14 @@
         "hint2": "Knights and heroes in legends often battle it.",
         "hint3": "Starts with 'D'",
         "difficulty": 1
+      },
+      {
+        "word": "Sun",
+        "start_hint": "Gives us light during the day ",
+        "hint1": "Very hot and bright.",
+        "hint2": "In the sky.",
+        "hint3": "Helps plants grow ",
+        "difficulty": 1
       }
     ]
   ]
