@@ -3618,19 +3618,19 @@
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Dishwasher",
+        "start_hint": "It is a machine that cleans dishes.",
+        "hint1": "Plates, cups, and spoons go inside it",
+        "hint2": "It runs automatically.",
+        "hint3": "It makes dishes clean and dry",
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Volcano",
+        "start_hint": "It is a mountain that can erupt.",
+        "hint1": "It sends out lava, ash, and smoke",
+        "hint2": "It is found in certain parts of the world.",
+        "hint3": "When it erupts, it can be dangerous",
         "difficulty": 1
       },
       {
