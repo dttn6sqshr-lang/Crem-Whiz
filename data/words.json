@@ -3562,19 +3562,19 @@
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Sofa",
+        "start_hint": "It is furniture for sitting or lying down.",
+        "hint1": "People use it in living rooms",
+        "hint2": "It has cushions and sometimes armrests.",
+        "hint3": "You sit on it every day",
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Wardrobe",
+        "start_hint": "It is a tall furniture for keeping clothes.",
+        "hint1": "You can hang shirts, pants, and coats inside",
+        "hint2": "People use it in bedrooms.",
+        "hint3": "It keeps clothes organized",
         "difficulty": 1
       },
       {
