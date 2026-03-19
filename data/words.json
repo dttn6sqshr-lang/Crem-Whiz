@@ -1283,8 +1283,8 @@
     {
       "word": "CAKE",
       "start_hint": "People eat it at birthdays, weddings, or celebrations.",
-      "hint1": "It is often frosted or decorated.",
-      "hint2": "It can have layers with cream or jam in between.",
+      "hint1": "It is a sweet food that people eat as a dessert.",
+      "hint2": "It is often made with flour, sugar, eggs, and butter.",
       "hint3": "Common flavors include chocolate, vanilla, and fruit.",
       "difficulty": 1
     },
@@ -1618,10 +1618,10 @@
     },
     {
       "word": "MILK",
-      "start_hint": "White liquid from cows",
-      "hint1": "Drunk on its own or with cereal",
-      "hint2": "Used in baking and cooking",
-      "hint3": "Starts with 'M'",
+      "start_hint": "It is a white liquid that people drink every day",
+      "hint1": "It comes from animals like cows and is used in many foods",
+      "hint2": "People often drink it with breakfast",
+      "hint3": "It is used to make things like cheese, butter, and yogurt",
       "difficulty": 1
     },
     {
@@ -3458,11 +3458,11 @@
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Door",
+        "start_hint": "It is something that you open and close to enter or leave a room.",
+        "hint1": "It is attached to a wall and can swing open or shut.",
+        "hint2": "It helps keep a space private and safe.",
+        "hint3": "It usually has a handle or knob to turn",
         "difficulty": 1
       },
       {
