@@ -298,10 +298,10 @@
     },
     {
       "word": "FISH",
-      "start_hint": "It has gills to breathe underwater.",
-      "hint1": "Most of them have fins to help them swim.",
-      "hint2": "People catch them for food or keep them in aquariums as pets.",
-      "hint3": "They have scales covering their bodies for protection.",
+      "start_hint": "It is an animal that lives in water all the time and cannot survive on land.",
+      "hint1": " It breathes underwater using special parts called gills instead of lungs.",
+      "hint2": "Its body is usually covered in small, shiny scales.",
+      "hint3": "You can find it in places like oceans, rivers, lakes, and aquariums.",
       "difficulty": 1
     },
     {
@@ -3394,35 +3394,35 @@
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Cup",
+        "start_hint": "Used for drinking.",
+        "hint1": "Found in the kitchen .",
+        "hint2": "Can hold tea or coffee .",
+        "hint3": "You wash it after use ",
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Book",
+        "start_hint": "Used for reading.",
+        "hint1": "Found in libraries.",
+        "hint2": "Used to learn.",
+        "hint3": "Can be fun or educational",
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Tree",
+        "start_hint": "Grows outside.",
+        "hint1": "Lives for many years.",
+        "hint2": "Can have fruit.",
+        "hint3": "Has a trunk",
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Ball",
+        "start_hint": "It is a round object that is commonly used for playing games and sports.",
+        "hint1": "You can throw it, catch it, kick it, or bounce it depending on the game.",
+        "hint2": "It can be made from different materials like rubber, plastic, or leather.",
+        "hint3": "It comes in different sizes, from small ones to very large ones.",
         "difficulty": 1
       },
       {
