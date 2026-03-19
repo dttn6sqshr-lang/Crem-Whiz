@@ -564,7 +564,7 @@
       "word": "PIG",
       "start_hint": "It makes an “oink” sound.",
       "hint1": "It likes to roll in mud.",
-      "hint2": "	It has four legs and a curly tail.",
+      "hint2": "It has four legs and a curly tail.",
       "hint3": "People sometimes raise it for food",
       "difficulty": 1
     },
@@ -3427,10 +3427,10 @@
       },
       {
         "word": "Car",
-        "start_hint": "It is a vehicle that people use to travel from one place to another on roads.",
-        "hint1": "It has four wheels and an engine that helps it move.",
-        "hint2": "It can take you to places like school, work, or the store.",
-        "hint3": "It uses fuel or electricity to run",
+        "start_hint": "It is a vehicle used to travel on roads.",
+        "hint1": "Usually has four wheels.",
+        "hint2": "It has an engine and uses fuel or electricity.",
+        "hint3": "It can take you to school, work, or the store",
         "difficulty": 1
       },
       {
