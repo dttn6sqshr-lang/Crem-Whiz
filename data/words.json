@@ -3466,11 +3466,11 @@
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Key",
+        "start_hint": "It is a small object used to open or lock something.",
+        "hint1": "It is usually made of metal.",
+        "hint2": "It has a special shape that fits into a lock.",
+        "hint3": "It is small enough to carry in your pocket",
         "difficulty": 1
       },
       {
