@@ -3426,35 +3426,35 @@
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Car",
+        "start_hint": "It is a vehicle that people use to travel from one place to another on roads.",
+        "hint1": "It has four wheels and an engine that helps it move.",
+        "hint2": "It can take you to places like school, work, or the store.",
+        "hint3": "It uses fuel or electricity to run",
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Bed",
+        "start_hint": "It is a piece of furniture that you use for sleeping and resting.",
+        "hint1": "It is usually soft and comfortable so your body can relax.",
+        "hint2": "It is found in bedrooms.",
+        "hint3": "You lie down on it instead of sitting or standing",
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Toy",
+        "start_hint": "It is something that children use to play and have fun.",
+        "hint1": "It can be many things like dolls, cars, or action figures.",
+        "hint2": "It is made for entertainment, not for work.",
+        "hint3": "It helps children use their imagination",
         "difficulty": 1
       },
       {
-        "word": "Dragon",
-        "start_hint": "This creature can breathe fire.",
-        "hint1": "It often has large wings and scaly skin.",
-        "hint2": "Knights and heroes in legends often battle it.",
-        "hint3": "Starts with 'D'",
+        "word": "Shoe",
+        "start_hint": "It is something you wear on your feet to protect them.",
+        "hint1": "It can be made of materials like leather, rubber, or fabric.",
+        "hint2": "There are different types for running, school, or special events.",
+        "hint3": "People wear it every day",
         "difficulty": 1
       },
       {
