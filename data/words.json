@@ -3530,19 +3530,19 @@
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Fridge",
+        "start_hint": "It is a machine that keeps food cold.",
+        "hint1": "People use it at home or in shops",
+        "hint2": "It helps food stay fresh.",
+        "hint3": "It runs on electricity",
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Freezer",
+        "start_hint": "It is like a fridge but colder.",
+        "hint1": "It keeps food frozen for a long time",
+        "hint2": "It can be a part of a fridge or a separate machine.",
+        "hint3": "It stops food from going bad quickly",
         "difficulty": 1
       },
       {
