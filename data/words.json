@@ -3506,19 +3506,19 @@
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Truck",
+        "start_hint": "It is a long vehicle that moves on tracks.",
+        "hint1": "It can carry people or goods",
+        "hint2": "It has many connected cars.",
+        "hint3": "People get on and off at stations",
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Airplane",
+        "start_hint": "It is a vehicle that flies in the sky.",
+        "hint1": "People sit inside to travel long distances",
+        "hint2": "It has wings and a tail to help it fly.",
+        "hint3": "Pilots control it from the cockpit",
         "difficulty": 1
       },
       {
