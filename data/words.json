@@ -3690,19 +3690,19 @@
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
+        "word": "Library",
+        "start_hint": "A building where books, magazines, and other media are stored.",
+        "hint1": "People visit to read, study, or borrow books",
+        "hint2": "Can include computers and educational resources.",
+        "hint3": "Sometimes hosts events or reading clubs",
+        "difficulty": 2
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "School",
+        "start_hint": "A building where children go to learn.",
+        "hint1": "Includes classrooms, a playground, and sometimes a gym",
+        "hint2": "Students attend daily for lessons and activities.",
+        "hint3": "Can be elementary, middle, or high school",
         "difficulty": 1
       },
       {
