@@ -3706,91 +3706,91 @@
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Hospital",
+        "start_hint": "A building where sick or injured people are treated.",
+        "hint1": "Has emergency rooms, wards, and operating theaters",
+        "hint2": "Patients may stay overnight or for long periods.",
+        "hint3": "Provides medical care for everyone",
+        "difficulty": 2
+      },
+      {
+        "word": "Bank",
+        "start_hint": "A building where money is stored, managed, or lent.",
+        "hint1": "People deposit, withdraw, or transfer money here",
+        "hint2": "Can include ATMs for 24/7 service.",
+        "hint3": "Provides financial services to the public",
+        "difficulty": 2
+      },
+      {
+        "word": "Post Office",
+        "start_hint": "A building where letters and packages are sent and received.",
+        "hint1": "Often has mailboxes outside",
+        "hint2": "	Found in towns, cities, and rural areas.",
+        "hint3": "Provides services like registered mail or parcel delivery",
         "difficulty": 1
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
+        "word": "Airport",
+        "start_hint": "A building where airplanes take off and land.",
+        "hint1": "Passengers check in, go through security, and wait at gates",
+        "hint2": "Staff include pilots, flight attendants, and security.",
+        "hint3": "Includes runways, control towers, and terminals",
+        "difficulty": 3
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
+        "word": "Supermarket",
+        "start_hint": "A large store selling food and household items.",
+        "hint1": "Shoppers use carts or baskets to collect goods",
+        "hint2": "Often has checkout counters and cashiers.",
+        "hint3": "Open daily for public shopping",
+        "difficulty": 2
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
+        "word": "Fire Station",
+        "start_hint": "A building where firefighters work and store fire trucks.",
+        "hint1": "Staff respond to fires, emergencies, and rescues",
+        "hint2": "Sometimes has a pole to slide down quickly to trucks.",
+        "hint3": "Serves as a hub for fire safety and training",
+        "difficulty": 2
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
+        "word": "Bakery",
+        "start_hint": "A building where bread, cakes, and pastries are made and sold",
+        "hint1": "Staff include bakers and cashiers",
+        "hint2": "People visit to buy fresh food daily.",
+        "hint3": "Sometimes includes coffee or small seating areas",
+        "difficulty": 2
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
+        "word": "Wedding",
+        "start_hint": "A ceremony where two people get married.",
+        "hint1": "Can have a reception with food, music, and dancing",
+        "hint2": "Brides may wear a dress, grooms a suit or tuxedo",
+        "hint3": "Symbolizes love, commitment, and partnership",
+        "difficulty": 2
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
+        "word": "Halloween",
+        "start_hint": "Involves costumes, trick-or-treating, and pumpkin carving.",
+        "hint1": "Often associated with ghosts, witches, and spooky decorations",
+        "hint2": "Popular among children for candy collection.",
+        "hint3": "Some people have themed parties or haunted houses",
+        "difficulty": 3
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
+        "word": "Baby Shower",
+        "start_hint": "A celebration for expecting parents before a baby is born.",
+        "hint1": "Guests give gifts like clothes, toys, and baby supplies",
+        "hint2": "Often includes games, cake, and decorations themed around babies.",
+        "hint3": "Celebrates the upcoming arrival of a newborn",
+        "difficulty": 2
       },
       {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
-      },
-      {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
-        "difficulty": 1
-      },
-      {
-        "word": "Mom",
-        "start_hint": "She is your female parent.",
-        "hint1": "She may cook or help at home",
-        "hint2": "You can talk to her.",
-        "hint3": "She is important in your life",
+        "word": "Sleepover",
+        "start_hint": "An event where friends stay overnight at someone’s house.",
+        "hint1": "Often includes pajamas, snacks, movies, and games",
+        "hint2": "Usually hosted by one of the participants’ homes.",
+        "hint3": "Popular among children and teens",
         "difficulty": 1
       },
       {
